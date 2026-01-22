@@ -6,6 +6,7 @@ import SelectedWork from "@/components/SelectedWork";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  const lang = "es";
   return (
     <>
       {/* Global Grid Overlay */}
@@ -21,16 +22,16 @@ export default function Home() {
         <span className="sticky-label rotate-180 font-meta text-[10px] font-extrabold tracking-[0.2em] uppercase opacity-40">EST. 2024 / TOKYO / NYC</span>
       </div>
 
-      <Header />
+      <Header lang={lang} />
 
       <main className="relative z-10 pt-24">
-        <Hero />
-        <Blueprints />
-        <DeepDive />
-        <SelectedWork />
+        <Hero lang={lang} />
+        <Blueprints lang={lang} />
+        <DeepDive lang={lang} />
+        <SelectedWork lang={lang} />
       </main>
 
-      <Footer />
+      <Footer lang={lang} />
     </>
   );
 }
