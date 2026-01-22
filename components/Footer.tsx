@@ -1,0 +1,45 @@
+export default function Footer() {
+    return (
+        <footer className="bg-electric-blue text-carbon min-h-screen flex flex-col justify-between p-6 lg:p-12 relative overflow-hidden z-10">
+            <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden xl:block">
+                <p className="sticky-label font-display font-bold text-xs tracking-[0.4em] uppercase opacity-40">
+                    CONEXIÓN // 2024 // LISTO PARA EL FUTURO
+                </p>
+            </div>
+
+            <div className="pt-20 relative z-10 mb-12">
+                <h2 className="font-display font-black text-[8vw] md:text-[6rem] leading-[0.9] tracking-[-0.03em] uppercase mb-6">
+                    El Futuro es Ahora.<br />
+                    <span className="text-white">Evolucioná tu negocio.</span>
+                </h2>
+                <p className="font-meta text-lg md:text-xl text-carbon/80 max-w-2xl font-bold leading-relaxed">
+                    Convertimos tu visión en un activo digital con ingeniería, medición y foco en los detalles.
+                </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-end relative z-10 pb-12">
+                <div className="md:col-span-6">
+                    <a className="inline-flex items-center gap-4 px-10 py-5 bg-carbon text-white rounded-full font-display font-bold text-2xl md:text-3xl uppercase tracking-widest hover:scale-105 hover:bg-white hover:text-carbon transition-all shadow-xl group" href="mailto:hello@joserey101.com">
+                        Hablemos <span className="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
+                    </a>
+                </div>
+                <div className="md:col-span-3 flex flex-col gap-2 font-display text-sm uppercase tracking-widest font-bold">
+                    <a className="hover:text-white transition-colors" href="#">LinkedIn</a>
+                    <a className="hover:text-white transition-colors" href="#">Twitter / X</a>
+                    <a className="hover:text-white transition-colors" href="#">Read.cv</a>
+                </div>
+                <div className="md:col-span-3 text-right">
+                    <p className="font-meta text-[10px] uppercase tracking-widest font-bold opacity-60">
+                        © 2024 JOSEREY STUDIO<br />
+                        DISEÑADO EN EL VACÍO<br />
+                        TODOS LOS DERECHOS RESERVADOS
+                    </p>
+                </div>
+            </div>
+
+            <span className="material-symbols-outlined absolute bottom-[-50px] right-[-50px] text-[300px] opacity-10 pointer-events-none icon-filled animate-pulse">
+                bolt
+            </span>
+        </footer>
+    );
+}

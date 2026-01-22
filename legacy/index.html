@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>joserey101 | Inteligencia Estratégica</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@400;600;800&amp;family=Special+Elite&amp;family=Permanent+Marker&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00ffff",
+                        "background-light": "#f9fafa", // Oyster White
+                        "background-dark": "#050505",
+                        "carbon": "#111111",
+                        "electric-blue": "#00F0FF",
+                        "neon-pink": "#FF0099",
+                        "acid-green": "#ccff00",
+                        "vibrant-orange": "#FF4F00",
+                        "grid-line": "#E5E5E5"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "meta": ["Manrope", "sans-serif"],
+                        "mono": ["Special Elite", "cursive"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, #E5E5E5 1px, transparent 1px),
+                linear-gradient(to bottom, #E5E5E5 1px, transparent 1px);
+        }
+
+        .text-gradient-pop {
+            background: linear-gradient(to right, #FF0099, #FF4F00);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sticky-label {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Typewriter & Reveal Effects */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+            color: #FF0099;
+            margin-left: 2px;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .fade-in-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+        }
+
+        .fade-in-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Fade out effect for Block A */
+        .fade-out {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 1s ease-in, transform 1s ease-in;
+            pointer-events: none;
+        }
+
+        /* Fix for gradient text clipping */
+        .gradient-text-fix {
+            padding-bottom: 0.2em;
+            /* Restore padding for descenders */
+            padding-top: 0.15em;
+            /* ADDED: Padding for ascenders (Ñ tilde) */
+            line-height: 1.1;
+            /* INCREASED: From 0.9 to 1.1 to avoid overlapping/cutting */
+            display: inline-block;
+            /* Ensure padding works correctly */
+        }
+
+        .handwritten-plus {
+            font-family: 'Permanent Marker', cursive;
+            color: #111;
+            /* Carbon */
+            font-size: 3rem;
+            line-height: 1;
+            margin: -10px 0;
+            /* Tighten vertical space around plus */
+            transform: rotate(-5deg);
+            /* Slight organic tilt */
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light font-display text-carbon selection:bg-primary/30 relative min-h-screen overflow-x-hidden">
+
+    <!-- Global Grid Overlay -->
+    <div class="fixed inset-0 grid-bg pointer-events-none opacity-40 z-0"></div>
+
+    <!-- Sticky Edge Labels -->
+    <div
+        class="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 mix-blend-multiply">
+        <span class="sticky-label font-meta text-[10px] font-extrabold tracking-[0.2em] uppercase opacity-40">ESTRATEGIA
+            /
+            DISEÑO / IA</span>
+        <div class="w-[1px] h-20 bg-carbon/20"></div>
+    </div>
+    <div
+        class="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 mix-blend-multiply pointer-events-none">
+        <div class="w-[1px] h-20 bg-carbon/20"></div>
+        <span
+            class="sticky-label rotate-180 font-meta text-[10px] font-extrabold tracking-[0.2em] uppercase opacity-40">EST.
+            2024 / TOKYO / NYC</span>
+    </div>
+
+    <!-- Header -->
+    <header
+        class="fixed top-0 w-full z-50 bg-background-light/90 backdrop-blur-md border-b border-grid-line transition-all duration-300">
+        <div class="flex items-center justify-between px-6 py-4 lg:px-12">
+            <div class="flex items-center gap-3">
+                <div class="size-8 bg-carbon flex items-center justify-center rounded-none rotate-45">
+                    <span class="material-symbols-outlined text-primary text-xl -rotate-45">bolt</span>
+                </div>
+                <h1 class="font-display font-bold text-xl tracking-tighter uppercase italic">joserey101</h1>
+            </div>
+            <nav
+                class="hidden md:flex items-center gap-12 font-meta text-[11px] font-bold uppercase tracking-widest text-carbon/80">
+                <a class="hover:text-electric-blue transition-colors hover:underline underline-offset-8 decoration-2"
+                    href="#work">Trabajo</a>
+                <a class="hover:text-electric-blue transition-colors hover:underline underline-offset-8 decoration-2"
+                    href="#capabilities">Capacidades</a>
+                <a class="hover:text-electric-blue transition-colors hover:underline underline-offset-8 decoration-2"
+                    href="#lab">Estudio</a>
+                <div class="flex items-center gap-2 border-l border-carbon/20 pl-8 ml-4">
+                    <span class="text-carbon cursor-default">ES</span>
+                    <span class="text-carbon/30">/</span>
+                    <a href="index_en.html" class="text-carbon/40 hover:text-carbon transition-colors">EN</a>
+                </div>
+            </nav>
+            <a href="mailto:hello@joserey101.com"
+                class="bg-carbon text-white px-6 py-2 rounded-full font-meta text-xs font-bold uppercase tracking-wider hover:bg-neon-pink hover:scale-105 transition-all shadow-lg">
+                Contrátanos
+            </a>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-24">
+
+        <!-- SECTION 1: HERO -->
+        <!-- SECTION 1: HERO -->
+        <!-- SECTION 1: HERO -->
+        <section
+            class="flex flex-col items-center justify-center pt-0 px-8 text-center h-screen relative overflow-hidden bg-background-light border-b border-grid-line">
+            <!-- Grid Background -->
+            <div class="absolute inset-0 z-0 opacity-40 grid-bg pointer-events-none"></div>
+
+            <!-- Soft Gradient Overlay -->
+            <div
+                class="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-white/50 to-white pointer-events-none">
+            </div>
+
+            <div class="max-w-[1400px] w-full relative z-10 flex flex-col items-center justify-center h-full">
+
+                <!-- 1. BLOCK A: The Problem (Typewriter) -->
+                <div id="block-a"
+                    class="absolute inset-0 flex flex-col items-center justify-center transition-all duration-1000 -mt-12">
+                    <p
+                        class="font-meta text-sm md:text-base font-extrabold tracking-[0.3em] uppercase mb-8 md:mb-12 text-neon-pink animate-pulse">
+                        Redefiniendo la Autoridad Digital</p>
+                    <div class="flex flex-col items-center gap-2 md:gap-4">
+                        <span
+                            class="block text-[8vw] md:text-[5rem] tracking-[0.1em] font-bold leading-none text-carbon">LÓGICA</span>
+                        <!-- Dynamic Text -->
+                        <span id="dynamic-text"
+                            class="text-carbon typing-cursor block font-mono text-[10vw] md:text-[7rem] leading-none text-center break-words max-w-full min-h-[1.2em]"></span>
+                    </div>
+                </div>
+
+                <!-- 2. BLOCK B: The Solution (Final Reveal) -->
+                <div id="block-b"
+                    class="hidden opacity-0 flex flex-col items-center justify-center transition-all duration-1000 w-full h-full py-12 md:py-0 gap-8">
+
+                    <div class="flex flex-col items-center justify-center -mt-12 md:mt-0">
+                        <span
+                            class="block text-xs md:text-sm font-meta font-bold opacity-40 mb-4 tracking-[0.3em] uppercase text-carbon">Creamos</span>
+                        <div class="flex flex-col items-center text-center gap-0">
+                            <!-- Restore original clamp logic -->
+                            <span
+                                class="text-gradient-pop font-display font-black text-[clamp(2.5rem,7vw,6.5rem)] gradient-text-fix tracking-tighter leading-none">ESTRATEGIA</span>
+                            <!-- Custom SVG Plus -->
+                            <div class="text-carbon w-6 h-6 md:w-8 md:h-8 my-[-10px] md:my-[-35px] z-10 relative">
+                                <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    class="w-full h-full transform -rotate-6">
+                                    <path
+                                        d="M 40 10 L 45 5 L 55 8 L 60 5 L 58 40 L 90 38 L 95 45 L 92 55 L 58 58 L 60 90 L 50 95 L 42 90 L 40 60 L 10 62 L 5 50 L 8 40 L 42 42 Z" />
+                                </svg>
+                            </div>
+                            <span
+                                class="text-gradient-pop font-display font-black text-[clamp(2.5rem,7vw,6.5rem)] gradient-text-fix tracking-tighter leading-none relative z-0">SISTEMAS</span>
+                            <!-- Custom SVG Plus -->
+                            <div class="text-carbon w-6 h-6 md:w-8 md:h-8 my-[-10px] md:my-[-35px] z-10 relative">
+                                <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    class="w-full h-full transform -rotate-6">
+                                    <path
+                                        d="M 40 10 L 45 5 L 55 8 L 60 5 L 58 40 L 90 38 L 95 45 L 92 55 L 58 58 L 60 90 L 50 95 L 42 90 L 40 60 L 10 62 L 5 50 L 8 40 L 42 42 Z" />
+                                </svg>
+                            </div>
+                            <span
+                                class="text-gradient-pop font-display font-black text-[clamp(2.5rem,7vw,6.5rem)] gradient-text-fix tracking-tighter leading-none whitespace-nowrap relative z-0">MENTE
+                                DIGITAL</span>
+                        </div>
+                    </div>
+
+                    <!-- Intro Paragraph & Button (Anchored Closer) -->
+                    <div id="hero-footer-text"
+                        class="opacity-0 transition-all duration-1000 relative flex flex-col items-center justify-start gap-8 w-full max-w-4xl mx-auto -mt-4 md:-mt-[40px]">
+
+                        <!-- Paragraph -->
+                        <p
+                            class="text-sm md:text-lg leading-relaxed text-carbon/70 font-medium text-balance text-center max-w-3xl mx-auto hidden md:block">
+                            <strong class="text-carbon block mb-2">Trabajamos sobre los fundamentos esenciales:
+                                Personas,
+                                Procesos y Datos.</strong>
+                            Unificamos Marketing Estratégico, Ingeniería, Operaciones y Cultura bajo una misma
+                            arquitectura.
+                        </p>
+                        <p class="text-sm leading-relaxed text-carbon/70 font-medium text-center md:hidden px-4">
+                            Unificamos Marketing, Ingeniería y Cultura. Transformamos visiones en sistemas escalables.
+                        </p>
+
+                        <!-- NEW CTA BUTTON -->
+                        <a href="#work"
+                            class="bg-carbon text-white px-8 py-3 rounded-full font-meta text-xs md:text-sm font-bold uppercase tracking-wider hover:bg-neon-pink hover:scale-105 transition-all shadow-lg">
+                            Descúbranos
+                        </a>
+
+                        <div class="shrink-0">
+                            <a href="#work"
+                                class="inline-flex items-center justify-center h-12 w-12 md:h-16 md:w-16 rounded-full bg-electric-blue text-carbon border-2 border-carbon hover:bg-carbon hover:text-white transition-all duration-300">
+                                <span class="material-symbols-outlined text-2xl animate-bounce">arrow_downward</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Hero Decorative Blob -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary/20 to-neon-pink/20 blur-[120px] rounded-full pointer-events-none -z-10">
+            </div>
+            Unificamos Marketing, Ingeniería y Cultura. Transformamos visiones en sistemas escalables.
+            </p>
+
+            <div class="shrink-0">
+                <a href="#work"
+                    class="inline-flex items-center justify-center h-12 w-12 md:h-16 md:w-16 rounded-full bg-electric-blue text-carbon border-2 border-carbon hover:bg-carbon hover:text-white transition-all duration-300">
+                    <span class="material-symbols-outlined text-2xl animate-bounce">arrow_downward</span>
+                </a>
+            </div>
+            </div>
+
+            </div>
+
+            </div>
+
+            <!-- Hero Decorative Blob -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary/20 to-neon-pink/20 blur-[120px] rounded-full pointer-events-none -z-10">
+            </div>
+        </section>
+
+        <!-- SECTION 2: INGENIERÍA DE MERCADO (Formerly CAPABILITIES) -->
+        <section id="blueprints" class="border-t border-grid-line bg-white relative z-20">
+            <div
+                class="flex flex-col md:flex-row items-baseline justify-between px-8 py-10 border-b border-grid-line bg-[#E5E5E5]">
+                <!-- Header with Offset -->
+                <div class="flex items-center w-full md:w-auto">
+                    <h2
+                        class="text-[50px] md:text-[80px] font-bold tracking-tighter uppercase italic text-carbon md:ml-[80px] leading-none">
+                        INGENIERÍA DE MERCADO</h2>
+                </div>
+                <span
+                    class="font-meta text-xs font-bold uppercase tracking-[0.2em] opacity-40 mt-4 md:mt-0">Competencias
+                    Clave / 001-003</span>
+            </div>
+
+            <!-- Accordions Container -->
+            <div class="flex flex-col">
+
+                <!-- Blueprint 01 (Carbon / White) -->
+                <div class="blueprint-item border-b border-grid-line bg-white transition-all duration-300 group overflow-hidden hover:bg-carbon"
+                    onclick="toggleBlueprint(this)" data-color="carbon">
+                    <div
+                        class="flex flex-col md:flex-row items-start md:items-center justify-between px-8 py-10 cursor-pointer">
+                        <div class="flex items-start gap-6 md:gap-12 w-full md:w-auto">
+                            <span
+                                class="font-meta text-xl font-black text-carbon/30 group-hover:text-white/20 transition-colors duration-300 number-label w-[2ch]">01</span>
+                            <div class="flex flex-col gap-1">
+                                <h3
+                                    class="text-4xl md:text-6xl font-bold tracking-tighter uppercase text-carbon group-hover:text-white transition-colors duration-300 title-label">
+                                    ARQUITECTURA DE NEGOCIO
+                                </h3>
+                                <p
+                                    class="font-meta text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-carbon/60 group-hover:text-white/60 transition-colors duration-300 subtitle-label">
+                                    PENSAMIENTO SISTÉMICO Y POSICIONAMIENTO 101
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-4 md:mt-0 transform transition-transform duration-300 arrow-icon">
+                            <span
+                                class="material-symbols-outlined text-4xl text-carbon group-hover:text-white transition-colors duration-300">arrow_forward</span>
+                        </div>
+                    </div>
+                    <!-- Hidden Content -->
+                    <div class="blueprint-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="px-8 pb-12 pt-0 md:pl-[120px] max-w-4xl">
+                            <p class="font-meta text-lg md:text-xl leading-relaxed text-carbon/80 description-text">
+                                No hacemos 'branding' decorativo. Diseñamos la estructura comercial y la narrativa de
+                                marca necesarias para penetrar mercados saturados. Definimos el norte estratégico y la
+                                viabilidad económica antes de escribir una sola línea de código.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blueprint 02 (Blue / Black) -->
+                <div class="blueprint-item border-b border-grid-line bg-white transition-all duration-300 group overflow-hidden hover:bg-electric-blue"
+                    onclick="toggleBlueprint(this)" data-color="blue">
+                    <div
+                        class="flex flex-col md:flex-row items-start md:items-center justify-between px-8 py-10 cursor-pointer">
+                        <div class="flex items-start gap-6 md:gap-12 w-full md:w-auto">
+                            <span
+                                class="font-meta text-xl font-black text-carbon/30 group-hover:text-carbon/20 transition-colors duration-300 number-label w-[2ch]">02</span>
+                            <div class="flex flex-col gap-1">
+                                <h3
+                                    class="text-4xl md:text-6xl font-bold tracking-tighter uppercase text-carbon transition-colors duration-300 title-label">
+                                    INGENIERÍA DE SISTEMAS
+                                </h3>
+                                <p
+                                    class="font-meta text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-carbon/60 group-hover:text-carbon transition-colors duration-300 subtitle-label">
+                                    FLUJOS GENERATIVOS Y AUTOMATIZACIÓN (AGENTS)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-4 md:mt-0 transform transition-transform duration-300 arrow-icon">
+                            <span
+                                class="material-symbols-outlined text-4xl text-carbon transition-colors duration-300">arrow_forward</span>
+                        </div>
+                    </div>
+                    <!-- Hidden Content -->
+                    <div class="blueprint-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="px-8 pb-12 pt-0 md:pl-[120px] max-w-4xl">
+                            <p class="font-meta text-lg md:text-xl leading-relaxed text-carbon/80 description-text">
+                                Desarrollo de software a medida potenciado por Inteligencia Artificial. Creamos
+                                ecosistemas digitales que trabajan 24/7, eliminando tareas repetitivas y reduciendo la
+                                fricción operativa a cero. Tecnología invisible, resultados tangibles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blueprint 03 (Pink / Black) -->
+                <div class="blueprint-item border-b border-grid-line bg-white transition-all duration-300 group overflow-hidden hover:bg-neon-pink"
+                    onclick="toggleBlueprint(this)" data-color="pink">
+                    <div
+                        class="flex flex-col md:flex-row items-start md:items-center justify-between px-8 py-10 cursor-pointer">
+                        <div class="flex items-start gap-6 md:gap-12 w-full md:w-auto">
+                            <span
+                                class="font-meta text-xl font-black text-carbon/30 group-hover:text-carbon/20 transition-colors duration-300 number-label w-[2ch]">03</span>
+                            <div class="flex flex-col gap-1">
+                                <h3
+                                    class="text-4xl md:text-6xl font-bold tracking-tighter uppercase text-carbon transition-colors duration-300 title-label">
+                                    OPERACIONES & DATA
+                                </h3>
+                                <p
+                                    class="font-meta text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-carbon/60 group-hover:text-carbon transition-colors duration-300 subtitle-label">
+                                    ENFOQUE DATA-DRIVEN Y ESCALABILIDAD
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-4 md:mt-0 transform transition-transform duration-300 arrow-icon">
+                            <span
+                                class="material-symbols-outlined text-4xl text-carbon transition-colors duration-300">arrow_forward</span>
+                        </div>
+                    </div>
+                    <!-- Hidden Content -->
+                    <div class="blueprint-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="px-8 pb-12 pt-0 md:pl-[120px] max-w-4xl">
+                            <p class="font-meta text-lg md:text-xl leading-relaxed text-carbon/80 description-text">
+                                Lo que no se mide, no existe. Transformamos la intuición en certeza mediante tableros de
+                                control y métricas en tiempo real. Diseñamos la infraestructura operativa necesaria para
+                                soportar un crecimiento masivo sin generar caos interno.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DISRUPTIVE CTA: THE ABYSS (Concrete Variant) -->
+        <section class="relative py-32 px-6 md:px-12 overflow-hidden border-b border-grid-line">
+            <!-- Background Texture -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/img/concrete_noise.png"
+                    class="w-full h-full object-cover opacity-100 mix-blend-multiply" alt="Concrete Texture">
+                <div class="absolute inset-0 bg-carbon/90 mix-blend-multiply"></div> <!-- Darken for text contrast -->
+            </div>
+
+            <div
+                class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+                <div class="flex-1">
+                    <h2
+                        class="font-display font-black text-6xl md:text-8xl uppercase leading-[0.9] tracking-tighter mb-6 text-white relative">
+                        ¿Lo <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-electric-blue to-white">viste?</span>
+                        <br>Ahora <span class="italic font-serif font-light text-white/50">hazlo.</span>
+                    </h2>
+                    <p class="font-meta text-white/60 text-lg max-w-xl">
+                        La estrategia es solo ruido sin ejecución. Convierte la visión en sistema hoy mismo.
+                    </p>
+                </div>
+
+                <div class="flex-shrink-0">
+                    <a href="mailto:hello@joserey101.com"
+                        class="group relative inline-flex items-center justify-center px-12 py-6 bg-white overflow-hidden rounded-none transition-all hover:scale-105 shadow-2xl">
+                        <span
+                            class="absolute w-0 h-0 transition-all duration-500 ease-out bg-electric-blue rounded-full group-hover:w-96 group-hover:h-96 opacity-10"></span>
+                        <span
+                            class="relative font-bold font-display uppercase tracking-widest text-carbon text-xl group-hover:tracking-[0.3em] transition-all">Iniciar
+                            Ahora</span>
+                        <span
+                            class="material-symbols-outlined ml-4 text-carbon relative group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SELECTED WORK -->
+        <section id="work" class="relative z-10">
+            <!-- Section Header -->
+            <!-- Section Header -->
+            <div class="px-6 lg:px-12 py-20 border-b border-grid-line bg-background-light">
+                <div class="flex flex-col md:flex-row gap-8 items-end justify-between max-w-[1400px] mx-auto">
+                    <h2
+                        class="font-display font-black text-[12vw] md:text-[8rem] leading-[0.85] tracking-[-0.05em] uppercase text-carbon">
+                        Casos de<br />Estudio
+                    </h2>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span onclick="filterCases('TODOS')"
+                            class="px-4 py-1.5 rounded-full bg-carbon text-white text-xs font-bold uppercase transition-all cursor-pointer hover:scale-105 active:scale-95"
+                            id="filter-all">Todos</span>
+                        <span onclick="filterCases('CORPORATIVO')"
+                            class="px-4 py-1.5 rounded-full border border-carbon text-xs font-bold uppercase hover:bg-acid-green hover:border-acid-green transition-all cursor-pointer hover:scale-105 active:scale-95"
+                            id="filter-corp">Corporativo</span>
+                        <span onclick="filterCases('E-COMMERCE')"
+                            class="px-4 py-1.5 rounded-full border border-carbon text-xs font-bold uppercase hover:bg-electric-blue hover:border-electric-blue transition-all cursor-pointer hover:scale-105 active:scale-95"
+                            id="filter-ecom">E-Commerce</span>
+                        <span onclick="filterCases('CULTURA')"
+                            class="px-4 py-1.5 rounded-full border border-carbon text-xs font-bold uppercase hover:bg-neon-pink hover:border-neon-pink transition-all cursor-pointer hover:scale-105 active:scale-95"
+                            id="filter-cultura">Cultura & Educación</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Case Gallery Container -->
+            <div id="case-gallery"
+                class="w-full bg-background-light border-b border-grid-line p-4 md:p-8 min-h-[800px]">
+                <!-- Content injected by JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SECTION 4: FOOTER -->
+    <footer
+        class="bg-electric-blue text-carbon min-h-screen flex flex-col justify-between p-6 lg:p-12 relative overflow-hidden z-10">
+        <!-- Floating Label -->
+        <div class="absolute left-6 top-1/2 -translate-y-1/2 hidden xl:block">
+            <p class="sticky-label font-display font-bold text-xs tracking-[0.4em] uppercase opacity-40">
+                CONEXIÓN // 2024 // LISTO PARA EL FUTURO
+            </p>
+        </div>
+
+        <div class="pt-20 relative z-10 mb-12">
+            <h2
+                class="font-display font-black text-[8vw] md:text-[6rem] leading-[0.9] tracking-[-0.03em] uppercase mb-6">
+                El Futuro es Ahora.<br />
+                <span class="text-white">Evolucioná tu negocio.</span>
+            </h2>
+            <p class="font-meta text-lg md:text-xl text-carbon/80 max-w-2xl font-bold leading-relaxed">
+                Convertimos tu visión en un activo digital con ingeniería, medición y foco en los detalles.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-end relative z-10 pb-12">
+            <div class="md:col-span-6">
+                <a class="inline-flex items-center gap-4 px-10 py-5 bg-carbon text-white rounded-full font-display font-bold text-2xl md:text-3xl uppercase tracking-widest hover:scale-105 hover:bg-white hover:text-carbon transition-all shadow-xl group"
+                    href="mailto:hello@joserey101.com">
+                    Hablemos <span
+                        class="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
+                </a>
+            </div>
+            <div class="md:col-span-3 flex flex-col gap-2 font-display text-sm uppercase tracking-widest font-bold">
+                <a class="hover:text-white transition-colors" href="#">LinkedIn</a>
+                <a class="hover:text-white transition-colors" href="#">Twitter / X</a>
+                <a class="hover:text-white transition-colors" href="#">Read.cv</a>
+            </div>
+            <div class="md:col-span-3 text-right">
+                <p class="font-meta text-[10px] uppercase tracking-widest font-bold opacity-60">
+                    © 2024 JOSEREY STUDIO<br />
+                    DISEÑADO EN EL VACÍO<br />
+                    TODOS LOS DERECHOS RESERVADOS
+                </p>
+            </div>
+        </div>
+
+        <!-- Decoration -->
+        <span
+            class="material-symbols-outlined absolute bottom-[-50px] right-[-50px] text-[300px] opacity-10 pointer-events-none icon-filled animate-pulse">
+            bolt
+        </span>
+    </footer>
+
+    <!-- Typewriter Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const words = ["Convencional", "Rígida", "Burocrática"];
+            const dynamicText = document.getElementById("dynamic-text");
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            // Initial delay
+            setTimeout(type, 1000);
+
+            function type() {
+                const currentWord = words[wordIndex];
+
+                if (isDeleting) {
+                    dynamicText.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    dynamicText.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                let typeSpeed = isDeleting ? 40 : 100;
+
+                if (!isDeleting && charIndex === currentWord.length) {
+                    // Full word typed
+
+                    if (wordIndex === words.length - 1) {
+                        // IT IS THE LAST WORD ("Burocrática") -> STOP & REVEAL
+                        dynamicText.classList.remove("typing-cursor");
+
+                        // Wait a bit then swap blocks
+                        setTimeout(() => {
+                            const blockA = document.getElementById("block-a");
+                            const blockB = document.getElementById("block-b");
+
+                            // Fade out A
+                            blockA.classList.add("fade-out");
+                            blockA.style.opacity = "0";
+
+                            // Show B
+                            setTimeout(() => {
+                                blockA.classList.add("hidden"); // Remove from flow
+                                blockB.classList.remove("hidden");
+                                // Trigger reflow
+                                void blockB.offsetWidth;
+                                blockB.classList.add("fade-in-reveal");
+                                blockB.classList.add("visible");
+                                blockB.style.opacity = "1";
+
+                                // Reveal Footer Text Sync
+                                const footerText = document.getElementById("hero-footer-text");
+                                if (footerText) footerText.style.opacity = "1";
+
+                            }, 1000); // Wait for A to fade out
+
+                        }, 1000); // Pause on "Burocrática"
+
+                        return; // End animation loop
+                    }
+
+                    typeSpeed = 1500; // Pause before deleting
+                    isDeleting = true;
+
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex++;
+                    typeSpeed = 300; // Pause before typing next word
+                }
+
+                setTimeout(type, typeSpeed);
+            }
+        });
+    </script>
+
+    <!-- Accordion Logic -->
+    <script>
+        function toggleBlueprint(element) {
+            // 1. Get Elements
+            const content = element.querySelector('.blueprint-content');
+            const arrow = element.querySelector('.arrow-icon');
+            const title = element.querySelector('.title-label');
+            const subtitle = element.querySelector('.subtitle-label');
+            const number = element.querySelector('.number-label');
+            const arrowSpan = element.querySelector('.arrow-icon span');
+            const description = element.querySelector('.description-text');
+
+            const colorType = element.getAttribute('data-color'); // carbon, blue, pink
+
+            // 2. Check State
+            const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+
+            // 3. Reset All
+            document.querySelectorAll('.blueprint-item').forEach(item => {
+                const c = item.querySelector('.blueprint-content');
+                const a = item.querySelector('.arrow-icon');
+                const t = item.querySelector('.title-label');
+                const s = item.querySelector('.subtitle-label');
+                const n = item.querySelector('.number-label');
+                const as = item.querySelector('.arrow-icon span');
+                const d = item.querySelector('.description-text');
+
+                // Close
+                c.style.maxHeight = null;
+
+                // Reset Backgrounds
+                item.classList.remove('bg-carbon', 'bg-electric-blue', 'bg-neon-pink');
+                item.classList.add('bg-white');
+
+                // Reset Text Colors (Always back to Carbon/Black style)
+                t.classList.remove('text-white');
+                t.classList.add('text-carbon');
+
+                s.classList.remove('text-white/60', 'text-carbon');
+                s.classList.add('text-carbon/60');
+
+                n.classList.remove('text-white/20', 'text-carbon/20');
+                n.classList.add('text-carbon/30');
+
+                as.classList.remove('text-white');
+                as.classList.add('text-carbon');
+
+                d.classList.remove('text-white/80', 'text-carbon');
+                d.classList.add('text-carbon/80');
+
+                // Reset Arrow
+                a.classList.remove('rotate-90');
+            });
+
+            // 4. Toggle Current
+            if (!isOpen) {
+                // Open it
+                content.style.maxHeight = content.scrollHeight + "px";
+                element.classList.remove('bg-white');
+
+                // Apply Specific Colors
+                if (colorType === 'carbon') {
+                    // 01: Black BG, White Text
+                    element.classList.add('bg-carbon');
+
+                    title.classList.remove('text-carbon');
+                    title.classList.add('text-white');
+
+                    subtitle.classList.remove('text-carbon/60');
+                    subtitle.classList.add('text-white/60');
+
+                    number.classList.remove('text-carbon/30');
+                    number.classList.add('text-white/20');
+
+                    arrowSpan.classList.remove('text-carbon');
+                    arrowSpan.classList.add('text-white');
+
+                    description.classList.remove('text-carbon/80');
+                    description.classList.add('text-white/80');
+
+                } else if (colorType === 'blue') {
+                    // 02: Blue BG, Black Text
+                    element.classList.add('bg-electric-blue');
+
+                    // Keep text carbon (default) but ensure contrast if needed
+                    // No changes needed for title/arrow as they default to carbon
+
+                    // Make subtitle slightly darker for better contrast on blue?
+                    subtitle.classList.remove('text-carbon/60');
+                    subtitle.classList.add('text-carbon'); // Darker
+
+                    number.classList.remove('text-carbon/30');
+                    number.classList.add('text-carbon/20'); // Keep subtle
+
+                    description.classList.remove('text-carbon/80');
+                    description.classList.add('text-carbon'); // Full black for readability
+
+                } else if (colorType === 'pink') {
+                    // 03: Pink BG, Black Text
+                    element.classList.add('bg-neon-pink');
+
+                    // Same as blue
+                    subtitle.classList.remove('text-carbon/60');
+                    subtitle.classList.add('text-carbon');
+
+                    number.classList.remove('text-carbon/30');
+                    number.classList.add('text-carbon/20');
+
+                    description.classList.remove('text-carbon/80');
+                    description.classList.add('text-carbon');
+                }
+
+                // Rotate Arrow
+                arrow.classList.add('rotate-90');
+            }
+        }
+
+        // --- CASE STUDY GALLERY LOGIC ---
+        const casesData = [
+            {
+                id: 1,
+                title: "OSCAR ACADEMY AWARD",
+                subtitle: "Infraestructura Digital para Productoras de Élite",
+                tag: "CULTURA",
+                img: "assets/img/haddock.png",
+                color: "bg-neon-pink"
+            },
+            {
+                id: 2,
+                title: "LÍDER INDUSTRIAL LATAM",
+                subtitle: "Arquitectura de Negocios Corporativa",
+                tag: "CORPORATIVO",
+                img: "assets/img/mirgor.png",
+                color: "bg-electric-blue"
+            },
+            {
+                id: 3,
+                title: "+50.000 ALUMNOS CONECTADOS",
+                subtitle: "Ecosistema Educativo de Alto Tráfico",
+                tag: "EDUCACIÓN", // Mapped from CULTURA & EDUCACIÓN
+                img: "assets/img/ucasal.png",
+                color: "bg-acid-green"
+            },
+            {
+                id: 4,
+                title: "OPERACIÓN USA - LATAM",
+                subtitle: "Logística Cross-Border y LLCs",
+                tag: "E-COMMERCE",
+                img: "assets/img/columba.png",
+                color: "bg-orange-500"
+            }
+        ];
+
+        let activeCaseId = 1;
+        let currentFilter = 'TODOS';
+
+        function filterCases(tag) {
+            currentFilter = tag;
+            const filtered = getFilteredCases();
+
+            // If active case is not in filtered list, switch to first available
+            if (!filtered.find(c => c.id === activeCaseId)) {
+                if (filtered.length > 0) activeCaseId = filtered[0].id;
+            }
+
+            renderCases();
+        }
+
+        function getFilteredCases() {
+            if (currentFilter === 'TODOS') return casesData;
+            if (currentFilter === 'CULTURA') return casesData.filter(c => c.tag === 'CULTURA' || c.tag === 'EDUCACIÓN'); // Handle grouping
+            return casesData.filter(c => c.tag === currentFilter);
+        }
+
+        function setActiveCase(id) {
+            activeCaseId = id;
+            renderCases();
+        }
+
+        function renderCases() {
+            const container = document.getElementById('case-gallery');
+            if (!container) return;
+
+            const visibleCases = getFilteredCases();
+            if (visibleCases.length === 0) {
+                container.innerHTML = '<div class="text-center py-20 text-carbon/50 font-meta uppercase tracking-widest">No cases found</div>';
+                return;
+            }
+
+            const activeItem = visibleCases.find(c => c.id === activeCaseId) || visibleCases[0];
+            const stackItems = visibleCases.filter(c => c.id !== activeItem.id);
+
+            let html = `
+                <!-- DESKTOP: Asymmetric Grid -->
+                <div class="hidden lg:grid grid-cols-4 gap-4 h-[650px] transition-all duration-500">
+                    <!-- ACTIVE HERO (Left - 75%) -->
+                    <div class="col-span-3 h-full relative group overflow-hidden bg-carbon rounded-lg cursor-default border border-transparent hover:border-white/20 transition-all">
+                        <img src="${activeItem.img}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40" alt="${activeItem.title}">
+                         <div class="absolute inset-0 bg-gradient-to-t from-carbon via-transparent to-transparent opacity-90"></div>
+                         
+                         <div class="absolute bottom-0 left-0 p-12 z-20 max-w-3xl">
+                             <span class="inline-block px-3 py-1 mb-6 text-xs font-bold uppercase tracking-widest text-carbon ${activeItem.color}">${activeItem.tag}</span>
+                             <h3 class="font-display font-black text-6xl md:text-7xl uppercase leading-[0.85] text-white mb-4 tracking-tighter shadow-black drop-shadow-lg">${activeItem.title}</h3>
+                             <p class="font-meta text-xl text-gray-300 border-l-2 border-white/30 pl-4">${activeItem.subtitle}</p>
+                         </div>
+                    </div>
+
+                    <!-- STACK (Right - 25%) -->
+                    <div class="col-span-1 flex flex-col gap-4 h-full">
+                        ${stackItems.map(item => `
+                            <div onclick="setActiveCase(${item.id})" 
+                                 class="flex-1 relative group overflow-hidden bg-carbon rounded-lg cursor-pointer border border-transparent hover:border-electric-blue transition-all">
+                                <img src="${item.img}" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 opacity-50 group-hover:opacity-80" alt="${item.title}">
+                                <div class="absolute inset-0 bg-carbon/50 group-hover:bg-transparent transition-all"></div>
+                                
+                                <div class="absolute bottom-0 left-0 p-6 z-20">
+                                     <span class="text-[10px] font-bold uppercase tracking-widest text-white/50 mb-1 block">${item.tag}</span>
+                                     <h4 class="font-display font-bold text-xl uppercase text-white leading-none tracking-tight group-hover:text-electric-blue transition-colors">${item.title}</h4>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <!-- MOBILE: Vertical Stack -->
+                <div class="flex flex-col gap-8 lg:hidden">
+                     ${visibleCases.map(item => `
+                        <div class="aspect-[4/5] relative group overflow-hidden bg-carbon rounded-none border-b-2 border-carbon">
+                            <img src="${item.img}" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="${item.title}">
+                            <div class="absolute inset-0 bg-gradient-to-t from-carbon via-transparent to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 p-6 z-20">
+                                 <span class="inline-block px-3 py-1 mb-4 text-xs font-bold uppercase tracking-widest text-carbon ${item.color}">${item.tag}</span>
+                                 <h3 class="font-display font-black text-4xl uppercase leading-none text-white mb-2 tracking-tighter">${item.title}</h3>
+                                 <p class="font-meta text-sm text-gray-300 pl-0">${item.subtitle}</p>
+                            </div>
+                        </div>
+                     `).join('')}
+                </div>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        // Initialize Call
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCases();
+        });
+    </script>
+</body>
+
+</html>
