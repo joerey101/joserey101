@@ -1,26 +1,103 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #00ffff;
+  --color-background-light: #f9fafa;
+  --color-background-dark: #050505;
+  --color-carbon: #111111;
+  --color-electric-blue: #00F0FF;
+  --color-neon-pink: #FF0099;
+  --color-acid-green: #ccff00;
+  --color-vibrant-orange: #FF4F00;
+  --color-grid-line: #E5E5E5;
+
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-meta: var(--font-manrope), sans-serif;
+  --font-mono: var(--font-special-elite), monospace;
+  --font-handwritten: var(--font-permanent-marker), cursive;
+
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .grid-bg {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, #E5E5E5 1px, transparent 1px),
+      linear-gradient(to bottom, #E5E5E5 1px, transparent 1px);
+  }
+
+  .text-gradient-pop {
+    background: linear-gradient(to right, #FF0099, #FF4F00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .sticky-label {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .typing-cursor::after {
+    content: '|';
+    animation: blink 1s step-start infinite;
+    color: #FF0099;
+    margin-left: 2px;
+  }
+
+  .fade-in-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  }
+
+  .fade-in-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1s ease-in, transform 1s ease-in;
+    pointer-events: none;
+  }
+
+  .gradient-text-fix {
+    padding-bottom: 0.2em;
+    padding-top: 0.15em;
+    line-height: 1.1;
+    display: inline-block;
+  }
+
+  .handwritten-plus {
+    font-family: var(--font-handwritten);
+    color: #111;
+    font-size: 3rem;
+    line-height: 1;
+    margin: -10px 0;
+    transform: rotate(-5deg);
   }
 }
 
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background-light);
+  color: var(--color-carbon);
+  font-family: var(--font-display);
 }
