@@ -1,8 +1,8 @@
 "use client";
 
-import { use } from "react";
+import { use, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { getCaseStudyById } from "@/app/content";
+import { client } from "@/sanity/client";
 import CaseStudyModal from "@/components/CaseStudyModal";
 
 // Client component wrapper to handle the async data fetching in a way that allows us to use the existing Modal
@@ -16,17 +16,43 @@ export default function InterceptedWorkPage({ params }: { params: Promise<{ id: 
     const router = useRouter();
     const searchParams = useSearchParams();
     const lang = searchParams.get('lang') === 'en' ? 'en' : 'es';
+    const [caseStudy, setCaseStudy] = useState<any>(null);
 
-    // We are on the client, so we import the content directly which is also safe if getCaseStudyById is in a shared file
-    const caseStudy = getCaseStudyById(id, lang);
+    useEffect(() => {
+        // If ID is numeric strings '1', '2' etc, it might be legacy static. 
+        // But since we want to move to CMS, let's try fetch from Sanity.
+        // Sanity IDs are usually UUIDs.
 
-    if (!caseStudy) return null; // Or some error state
+        const query = `*[_type == "caseStudy" && _id == "${id}"][0]{
+        _id,
+        title,
+        subtitle,
+        tag,
+        tagDisplay,
+        color,
+        "img": mainImage.asset->url,
+        details,
+        stats,
+        "gallery": gallery[].asset->url
+    }`;
+
+        client.fetch(query).then(data => {
+            if (data) {
+                setCaseStudy({ ...data, id: data._id });
+            } else {
+                // Fallback for untracked static items if needed, or just handle missing
+                // console.log("Case study not found in Sanity");
+            }
+        });
+    }, [id]);
+
+    if (!caseStudy) return null; // Loading state could be added here
 
     return (
         <CaseStudyModal
-            isOpen={true} // Always open when this route is active
+            isOpen={true}
             onClose={() => router.back()}
-            caseStudy={caseStudy as any}
+            caseStudy={caseStudy}
             lang={lang}
         />
     );

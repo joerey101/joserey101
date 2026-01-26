@@ -9,7 +9,7 @@ interface CaseStudyDetails {
 }
 
 interface CaseStudy {
-    id: number;
+    id: number | string;
     title: string;
     subtitle: string;
     tag: string;
@@ -17,6 +17,13 @@ interface CaseStudy {
     img: string;
     color: string;
     details?: CaseStudyDetails;
+    stats?: {
+        year: string;
+        role: string;
+        client: string;
+        link: string;
+    };
+    gallery?: string[];
 }
 
 interface CaseStudyContentProps {
@@ -86,6 +93,55 @@ export default function CaseStudyContent({ caseStudy, lang }: CaseStudyContentPr
                         </div>
                     </div>
                 </div>
+
+                {/* Stats Grid */}
+                {caseStudy.stats && (
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 py-12 border-t border-b border-grid-line">
+                        <div>
+                            <h4 className="font-meta text-xs font-bold uppercase tracking-widest text-carbon/50 mb-2">Year</h4>
+                            <p className="font-display font-medium text-lg">{caseStudy.stats.year}</p>
+                        </div>
+                        <div>
+                            <h4 className="font-meta text-xs font-bold uppercase tracking-widest text-carbon/50 mb-2">Role</h4>
+                            <p className="font-display font-medium text-lg">{caseStudy.stats.role}</p>
+                        </div>
+                        <div>
+                            <h4 className="font-meta text-xs font-bold uppercase tracking-widest text-carbon/50 mb-2">Client</h4>
+                            <p className="font-display font-medium text-lg">{caseStudy.stats.client}</p>
+                        </div>
+                        <div>
+                            <h4 className="font-meta text-xs font-bold uppercase tracking-widest text-carbon/50 mb-2">Link</h4>
+                            {caseStudy.stats.link ? (
+                                <a href={caseStudy.stats.link} target="_blank" rel="noopener noreferrer" className="font-display font-medium text-lg underline decoration-electric-blue underline-offset-4 hover:bg-electric-blue hover:text-white transition-colors">
+                                    Visit Live
+                                </a>
+                            ) : (
+                                <p className="font-display font-medium text-lg text-carbon/50">-</p>
+                            )}
+                        </div>
+                    </div>
+                )}
+
+                {/* Image Gallery */}
+                {caseStudy.gallery && caseStudy.gallery.length > 0 && (
+                    <div className="space-y-8">
+                        <h2 className="font-display font-bold text-2xl uppercase text-carbon/40 tracking-widest">
+                            {lang === 'es' ? 'Galería' : 'Gallery'}
+                        </h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {caseStudy.gallery.map((img, i) => (
+                                <div key={i} className="relative w-full aspect-video bg-carbon/5">
+                                    <Image
+                                        src={img}
+                                        alt={`Gallery image ${i + 1}`}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );
