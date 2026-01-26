@@ -76,6 +76,23 @@ export const caseStudy = defineType({
             type: 'text',
         }),
         defineField({
+            name: 'stats',
+            title: 'Project Data',
+            type: 'object',
+            fields: [
+                { name: 'year', type: 'string', title: 'Year' },
+                { name: 'role', type: 'string', title: 'Role' },
+                { name: 'client', type: 'string', title: 'Client' },
+                { name: 'link', type: 'url', title: 'Live Project URL' },
+            ]
+        }),
+        defineField({
+            name: 'gallery',
+            title: 'Image Gallery',
+            type: 'array',
+            of: [{ type: 'image' }]
+        }),
+        defineField({
             name: 'language',
             title: 'Language',
             type: 'string',
