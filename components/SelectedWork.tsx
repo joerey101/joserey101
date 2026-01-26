@@ -1,35 +1,51 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { content } from '@/app/content';
+import { client, urlFor } from '@/sanity/client';
 
 interface SelectedWorkProps {
     lang: "es" | "en";
 }
 
 export default function SelectedWork({ lang }: SelectedWorkProps) {
-    const t = content[lang].selectedWork;
+    const t = content[lang].selectedWork; // Keep static text for titles/filters
     const [filter, setFilter] = useState("TODOS");
+    const [cases, setCases] = useState<any[]>([]);
 
-    // Map internal filter keys to display logic
-    // We used simple string matching before. Let's keep it simple.
-    // 'TODOS' matches everything.
-    // 'CORPORATIVO' matches tag 'CORPORATIVO'
-    // 'E-COMMERCE' matches tag 'E-COMMERCE'
-    // 'CULTURA' matches tag 'CULTURA' or 'EDUCACIÓN'
+    useEffect(() => {
+        const query = `*[_type == "caseStudy" && language == "${lang}"]{
+            _id,
+            title,
+            subtitle,
+            tag,
+            tagDisplay,
+            img,
+            color,
+            "imgUrl": mainImage.asset->url
+        }`;
 
-    // The items in content.ts have 'tag'. 
-    // In Spanish: CULTURA, CORPORATIVO, EDUCACIÓN, E-COMMERCE
-    // In English: CULTURA, CORPORATIVO, EDUCACIÓN, E-COMMERCE (Tags are internal keys essentially)
+        client.fetch(query).then(data => {
+            setCases(data);
+        }).catch(err => console.error(err));
+    }, [lang]);
 
-    // Wait, in my content object I kept the tags as constants across languages to simplify logic, 
-    // but added a `tagDisplay` field for the UI.
+    // Fallback to static content if no sanity data yet (so site doesn't look empty during dev)
+    const displayItems = cases.length > 0 ? cases.map(c => ({
+        id: c._id,
+        title: c.title,
+        subtitle: c.subtitle,
+        tag: c.tag,
+        tagDisplay: c.tagDisplay,
+        img: c.imgUrl || "/assets/img/haddock.png", // Fallback image
+        color: c.color
+    })) : t.items;
 
     const filteredCases = filter === "TODOS"
-        ? t.items
-        : t.items.filter(c => {
+        ? displayItems
+        : displayItems.filter(c => {
             if (filter === "CULTURA") return c.tag === "CULTURA" || c.tag === "EDUCACIÓN";
             return c.tag === filter;
         });
