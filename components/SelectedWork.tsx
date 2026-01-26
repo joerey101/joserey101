@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { client } from '@/sanity/client';
-import CaseStudySystem from './CaseStudySystem';
+import CaseStudySystemV2 from './CaseStudySystemV2';
+// import CaseStudySystem from './CaseStudySystem'; // Backup version
 
 interface SelectedWorkProps {
     lang: "es" | "en";
@@ -48,7 +49,7 @@ export default function SelectedWork({ lang }: SelectedWorkProps) {
 
             <div className="-mt-12">
                 {/* Negative margin to pull grid closer if needed, adjusting visual hierarchy */}
-                <CaseStudySystem initialCases={cases} lang={lang} />
+                <CaseStudySystemV2 initialCases={cases} lang={lang} />
             </div>
         </section>
     );
