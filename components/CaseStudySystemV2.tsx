@@ -47,15 +47,15 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
         offset: ["start start", "end end"]
     });
 
-    // Transforms for the "Apple Esfumado" inside the drawer
-    const blurOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-    const imageScale = useTransform(scrollYProgress, [0, 0.1], [1, 1.1]);
-    const textFadeOut = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
-    const metricsY = useTransform(scrollYProgress, [0, 0.1], [0, -30]);
+    // Transforms for the "Apple Esfumado" - MUCH MORE STABLE RANGES
+    const blurOpacity = useTransform(scrollYProgress, [0.1, 0.4], [0, 1]);
+    const imageScale = useTransform(scrollYProgress, [0.1, 0.4], [1, 1.1]);
+    const textFadeOut = useTransform(scrollYProgress, [0.05, 0.3], [1, 0]);
+    const metricsY = useTransform(scrollYProgress, [0.1, 0.4], [0, -100]);
 
-    // Content entrance
-    const contentOpacity = useTransform(scrollYProgress, [0.08, 0.15], [0, 1]);
-    const contentY = useTransform(scrollYProgress, [0.08, 0.15], [30, 0]);
+    // Content entrance (Start later, move smoother)
+    const contentOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]);
+    const contentY = useTransform(scrollYProgress, [0.35, 0.55], [100, 0]);
 
     // Scroll Lock Effect
     useEffect(() => {
@@ -75,6 +75,10 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
         };
         setSelectedCase(formatted);
         setIsDrawerOpen(true);
+        // Reset scroll position on open
+        setTimeout(() => {
+            if (drawerContainerRef.current) drawerContainerRef.current.scrollTop = 0;
+        }, 50);
     };
 
     const closeDrawer = () => {
@@ -158,24 +162,26 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
                                 ref={drawerContainerRef}
                                 className="flex-1 overflow-y-auto overflow-x-hidden scroll-smooth w-full h-full relative"
                             >
-                                <div className="relative h-[250vh] w-full">
+                                <div className="relative h-[350vh] w-full">
 
-                                    {/* STICKY HERO SECTION (APPLE STYLE) */}
-                                    <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+                                    {/* STICKY HERO SECTION (APPLE STYLE) - HEIGHT 100vh */}
+                                    <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden z-20">
 
                                         {/* Background Image inside Drawer */}
                                         <motion.div
                                             style={{ scale: imageScale }}
                                             className="absolute inset-0 z-0"
                                         >
-                                            <Image
-                                                src={selectedCase.mainImage}
-                                                alt={selectedCase.title}
-                                                fill
-                                                className="object-cover brightness-50"
-                                                priority
-                                                unoptimized
-                                            />
+                                            {selectedCase.mainImage && (
+                                                <Image
+                                                    src={selectedCase.mainImage}
+                                                    alt={selectedCase.title}
+                                                    fill
+                                                    className="object-cover brightness-50"
+                                                    priority
+                                                    unoptimized
+                                                />
+                                            )}
                                         </motion.div>
 
                                         {/* Esfumado (Blur) Layer */}
@@ -184,7 +190,7 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
                                             className="absolute inset-0 z-10 bg-black/70 backdrop-blur-3xl"
                                         />
 
-                                        {/* Top Controls (FIXED Z-INDEX TO BE TOP) */}
+                                        {/* Top Controls (ALWAYS ON TOP) */}
                                         <div className="absolute top-0 left-0 w-full p-6 md:p-10 z-[100] flex justify-between items-center">
                                             <div className="flex gap-3">
                                                 <button
@@ -208,18 +214,18 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
                                             </button>
                                         </div>
 
-                                        {/* Hero Text */}
+                                        {/* Hero Text - Massive and centered */}
                                         <motion.div
                                             style={{ opacity: textFadeOut, y: metricsY }}
                                             className="relative z-20 text-center px-8 md:px-16"
                                         >
-                                            <span className={`inline-block px-3 py-1 mb-6 text-[10px] font-bold uppercase tracking-[0.3em] text-carbon ${selectedCase.color}`}>
+                                            <span className={`inline-block px-4 py-1.5 mb-8 text-[10px] font-bold uppercase tracking-[0.4em] text-carbon ${selectedCase.color}`}>
                                                 {selectedCase.tagDisplay}
                                             </span>
-                                            <h2 className="text-5xl md:text-[7vw] font-display font-black uppercase leading-[0.85] tracking-tighter text-white mb-6">
+                                            <h2 className="text-5xl md:text-[7vw] font-display font-black uppercase leading-[0.8] tracking-tighter text-white mb-6">
                                                 {selectedCase.title}
                                             </h2>
-                                            <p className="text-lg md:text-xl font-light text-white/50 uppercase tracking-widest">
+                                            <p className="text-lg md:text-2xl font-light text-white/50 uppercase tracking-[0.2em]">
                                                 {selectedCase.subtitle}
                                             </p>
                                         </motion.div>
@@ -231,19 +237,19 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
                                                 className="absolute bottom-12 left-0 w-full flex justify-center gap-4 px-6 overflow-x-auto no-scrollbar"
                                             >
                                                 {selectedCase.keyMetrics.map((m, i) => (
-                                                    <div key={i} className="bg-white/5 backdrop-blur-xl border border-white/10 p-5 rounded-xl min-w-[140px] text-center">
-                                                        <p className="text-2xl font-display font-bold text-white mb-1">{m.value}</p>
-                                                        <p className="text-[9px] uppercase tracking-[0.2em] text-white/40">{m.label}</p>
+                                                    <div key={i} className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-2xl min-w-[150px] text-center">
+                                                        <p className="text-3xl font-display font-bold text-white mb-1">{m.value}</p>
+                                                        <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">{m.label}</p>
                                                     </div>
                                                 ))}
                                             </motion.div>
                                         )}
                                     </div>
 
-                                    {/* SCROLLABLE CONTENT AREA */}
+                                    {/* SCROLLABLE CONTENT AREA - Starts AFTER hero (100vh down) */}
                                     <motion.div
                                         style={{ opacity: contentOpacity, y: contentY }}
-                                        className="relative z-30 -mt-[45vh] pb-32 bg-transparent"
+                                        className="relative z-30 pb-32 pt-[20vh] bg-transparent"
                                     >
                                         <div className="max-w-4xl mx-auto px-8 md:px-16 flex flex-col gap-32">
 
@@ -259,7 +265,7 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
                                             <div className="flex flex-col gap-6">
                                                 <h3 className="text-white/20 text-[10px] font-bold uppercase tracking-[0.5em]">{lang === 'es' ? 'La Solución' : 'The Solution'}</h3>
                                                 <div className="space-y-10">
-                                                    <p className="text-lg md:text-xl font-light leading-relaxed text-white/70">
+                                                    <p className="text-xl md:text-2xl font-light leading-relaxed text-white/70">
                                                         {selectedCase.solution}
                                                     </p>
 
@@ -268,7 +274,7 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
                                                         <div className="pt-10 border-t border-white/5">
                                                             <div className="flex flex-wrap gap-2">
                                                                 {selectedCase.techStack.map(tech => (
-                                                                    <span key={tech} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase font-bold text-white/40">
+                                                                    <span key={tech} className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase font-bold text-white/40">
                                                                         {tech}
                                                                     </span>
                                                                 ))}
@@ -281,16 +287,16 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
                                             {/* Impact */}
                                             <div className="flex flex-col gap-6">
                                                 <h3 className="text-white/20 text-[10px] font-bold uppercase tracking-[0.5em]">{lang === 'es' ? 'El Impacto' : 'The Impact'}</h3>
-                                                <p className="text-xl md:text-3xl font-display font-medium leading-relaxed text-white">
+                                                <p className="text-xl md:text-4xl font-display font-medium leading-relaxed text-white">
                                                     {selectedCase.impact}
                                                 </p>
                                             </div>
 
-                                            {/* Simple Gallery */}
+                                            {/* Gallery */}
                                             {selectedCase.gallery && selectedCase.gallery.length > 0 && (
-                                                <div className="grid grid-cols-1 gap-4">
+                                                <div className="grid grid-cols-1 gap-8">
                                                     {selectedCase.gallery.map((img, i) => (
-                                                        <div key={i} className="relative aspect-video rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+                                                        <div key={i} className="relative aspect-video rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000">
                                                             <Image src={img} alt="Detail" fill className="object-cover" />
                                                         </div>
                                                     ))}
@@ -304,7 +310,7 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
                                                     className="group flex flex-col items-center gap-4 mx-auto"
                                                 >
                                                     <span className="text-white/20 text-[10px] uppercase tracking-[0.4em]">{lang === 'es' ? 'Próximo Proyecto' : 'Next Project'}</span>
-                                                    <span className="text-4xl md:text-6xl font-display font-black uppercase text-white group-hover:text-electric-blue transition-colors">
+                                                    <span className="text-5xl md:text-7xl font-display font-black uppercase text-white group-hover:text-electric-blue transition-colors">
                                                         CONTINUAR
                                                     </span>
                                                 </button>
