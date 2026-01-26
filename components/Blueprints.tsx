@@ -56,7 +56,7 @@ export default function Blueprints({ lang }: BlueprintsProps) {
     };
 
     return (
-        <section id="blueprints" className="border-t border-grid-line bg-white relative z-20">
+        <section id="blueprints" className="border-t border-grid-line bg-white relative">
             <div className="flex flex-col md:flex-row items-baseline justify-between px-8 py-10 border-b border-grid-line bg-[#E5E5E5]">
                 <div className="flex items-center w-full md:w-auto">
                     <h2 className="text-[50px] md:text-[80px] font-bold tracking-tighter uppercase italic text-carbon md:ml-[80px] leading-none">
