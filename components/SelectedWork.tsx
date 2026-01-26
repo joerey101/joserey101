@@ -38,7 +38,7 @@ export default function SelectedWork({ lang }: SelectedWorkProps) {
     if (cases.length === 0) return null; // Or skeleton
 
     return (
-        <section id="work" className="relative z-10">
+        <section id="work" className="relative">
             <div className="px-6 lg:px-12 py-20 border-b border-grid-line bg-background-light">
                 <div className="flex flex-col md:flex-row gap-8 items-end justify-between max-w-[1400px] mx-auto">
                     <h2 className="font-display font-black text-[12vw] md:text-[8rem] leading-[0.85] tracking-[-0.05em] uppercase text-carbon">
