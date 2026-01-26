@@ -76,15 +76,53 @@ export const caseStudy = defineType({
             type: 'text',
         }),
         defineField({
+            name: 'tier',
+            title: 'Tier (Importance)',
+            type: 'number',
+            initialValue: 1,
+            description: 'Higher numbers appear first (e.g. 10 = Top Project)',
+        }),
+        defineField({
+            name: 'duration',
+            title: 'Duration',
+            type: 'string',
+            description: 'e.g. "4 Weeks" or "Q1 2024"',
+        }),
+        defineField({
             name: 'stats',
-            title: 'Project Data',
+            title: 'Project Data (Legacy)',
             type: 'object',
+            hidden: true,
             fields: [
                 { name: 'year', type: 'string', title: 'Year' },
                 { name: 'role', type: 'string', title: 'Role' },
                 { name: 'client', type: 'string', title: 'Client' },
                 { name: 'link', type: 'url', title: 'Live Project URL' },
             ]
+        }),
+        defineField({
+            name: 'keyMetrics',
+            title: 'Key Metrics (Hybrid UI)',
+            type: 'array',
+            of: [
+                {
+                    type: 'object',
+                    fields: [
+                        { name: 'value', type: 'string', title: 'Value (e.g. +40%)' },
+                        { name: 'label', type: 'string', title: 'Label (e.g. Rate)' },
+                        { name: 'icon', type: 'string', title: 'Icon (Material Name)' },
+                    ]
+                }
+            ]
+        }),
+        defineField({
+            name: 'techStack',
+            title: 'Tech Stack',
+            type: 'array',
+            of: [{ type: 'string' }],
+            options: {
+                layout: 'tags'
+            }
         }),
         defineField({
             name: 'gallery',
