@@ -24,7 +24,7 @@ export default function Home() {
 
       <Header lang={lang} />
 
-      <main className="relative z-10 pt-24">
+      <main className="relative pt-24">
         <Hero lang={lang} />
         <Blueprints lang={lang} />
         <DeepDive lang={lang} />
