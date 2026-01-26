@@ -71,7 +71,12 @@ export const content = {
                     tag: "CULTURA",
                     tagDisplay: "CULTURA",
                     img: "/assets/img/haddock.png",
-                    color: "bg-neon-pink"
+                    color: "bg-neon-pink",
+                    details: {
+                        challenge: "Modernizar la presencia digital de una productora ganadora del Oscar sin perder su legado histórico.",
+                        solution: "Desarrollo de un sitio web inmersivo tipo 'archivo vivo', utilizando Next.js para una carga instantánea de portfolios de video de alta resolución.",
+                        impact: "Aumento del 40% en consultas internacionales y una plataforma escalable para nuevos lanzamientos."
+                    }
                 },
                 {
                     id: 2,
@@ -80,7 +85,12 @@ export const content = {
                     tag: "CORPORATIVO",
                     tagDisplay: "CORPORATIVO",
                     img: "/assets/img/mirgor.png",
-                    color: "bg-electric-blue"
+                    color: "bg-electric-blue",
+                    details: {
+                        challenge: "Unificar la comunicación de un conglomerado industrial con múltiples unidades de negocio bajo una sola identidad digital coherente.",
+                        solution: "Implementación de un sistema de diseño atomizado y un CMS headless para gestionar contenido corporativo complejo.",
+                        impact: "Reducción del 60% en tiempos de actualización de contenido y mejora en la percepción de marca ante inversionistas."
+                    }
                 },
                 {
                     id: 3,
@@ -89,7 +99,12 @@ export const content = {
                     tag: "EDUCACIÓN",
                     tagDisplay: "EDUCACIÓN",
                     img: "/assets/img/ucasal.png",
-                    color: "bg-acid-green"
+                    color: "bg-acid-green",
+                    details: {
+                        challenge: "Soportar picos de tráfico de 50k+ usuarios concurrentes durante inscripciones y exámenes.",
+                        solution: "Arquitectura cloud-native en AWS con auto-scaling y optimización de base de datos para alta disponibilidad.",
+                        impact: "0% de tiempo de inactividad durante los períodos críticos del año académico 2024."
+                    }
                 },
                 {
                     id: 4,
@@ -98,7 +113,12 @@ export const content = {
                     tag: "E-COMMERCE",
                     tagDisplay: "E-COMMERCE",
                     img: "/assets/img/columba.png",
-                    color: "bg-vibrant-orange"
+                    color: "bg-vibrant-orange",
+                    details: {
+                        challenge: "Simplificar la complejidad operativa y legal del comercio transfronterizo para usuarios finales.",
+                        solution: "Plataforma de autogestión con integración de APIs de logística y seguimiento en tiempo real.",
+                        impact: "Automatización del 80% de las consultas de seguimiento y expansión exitosa al mercado estadounidense."
+                    }
                 }
             ]
         },
