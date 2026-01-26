@@ -35,10 +35,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal
 }: Readonly<{
   children: React.ReactNode;
-  modal: React.ReactNode;
 }>) {
   return (
     <html lang="es">
@@ -49,7 +47,6 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${manrope.variable} ${specialElite.variable} ${permanentMarker.variable} antialiased`}
       >
         {children}
-        {modal}
       </body>
     </html>
   );
