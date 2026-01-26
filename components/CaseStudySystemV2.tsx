@@ -73,7 +73,7 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
         const formatted = {
             ...c,
             id: c._id,
-            mainImage: c.imgUrl || c.mainImage
+            mainImage: c.imgUrl || (c.mainImage?.asset?.url) || ""
         };
         setSelectedCase(formatted);
         setIsDrawerOpen(true);
@@ -163,6 +163,7 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
                                             fill
                                             className="object-cover brightness-50"
                                             priority
+                                            unoptimized
                                         />
                                     </motion.div>
 
