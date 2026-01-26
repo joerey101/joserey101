@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from 'react';
 import { content } from '@/app/content';
+import ContactForm from './ContactForm';
 
 interface FooterProps {
     lang: "es" | "en";
@@ -6,6 +10,13 @@ interface FooterProps {
 
 export default function Footer({ lang }: FooterProps) {
     const t = content[lang].footer;
+    const [isFormOpen, setIsFormOpen] = useState(false);
+
+    const socialLinks = [
+        { name: "LinkedIn", url: "https://linkedin.com/in/joserey" }, // Replace with actual if known, or keep generic for now
+        { name: "Twitter / X", url: "https://x.com/joserey" },
+        { name: "Read.cv", url: "https://read.cv/joserey" }
+    ];
 
     return (
         <footer className="bg-electric-blue text-carbon min-h-screen flex flex-col justify-between p-6 lg:p-12 relative overflow-hidden z-10">
@@ -26,13 +37,24 @@ export default function Footer({ lang }: FooterProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-end relative z-10 pb-12">
                 <div className="md:col-span-6">
-                    <a className="inline-flex items-center gap-4 px-10 py-5 bg-carbon text-white rounded-full font-display font-bold text-2xl md:text-3xl uppercase tracking-widest hover:scale-105 hover:bg-white hover:text-carbon transition-all shadow-xl group" href="mailto:hello@joserey101.com">
+                    <button
+                        onClick={() => setIsFormOpen(true)}
+                        className="inline-flex items-center gap-4 px-10 py-5 bg-carbon text-white rounded-full font-display font-bold text-2xl md:text-3xl uppercase tracking-widest hover:scale-105 hover:bg-white hover:text-carbon transition-all shadow-xl group cursor-pointer"
+                    >
                         {t.cta} <span className="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
-                    </a>
+                    </button>
                 </div>
                 <div className="md:col-span-3 flex flex-col gap-2 font-display text-sm uppercase tracking-widest font-bold">
-                    {t.links.map((link, i) => (
-                        <a key={i} className="hover:text-white transition-colors" href="#">{link}</a>
+                    {socialLinks.map((link, i) => (
+                        <a
+                            key={i}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-white transition-colors w-fit"
+                        >
+                            {link.name}
+                        </a>
                     ))}
                 </div>
                 <div className="md:col-span-3 text-right">
@@ -45,6 +67,12 @@ export default function Footer({ lang }: FooterProps) {
             <span className="material-symbols-outlined absolute bottom-[-50px] right-[-50px] text-[300px] opacity-10 pointer-events-none icon-filled animate-pulse">
                 bolt
             </span>
+
+            <ContactForm
+                isOpen={isFormOpen}
+                onClose={() => setIsFormOpen(false)}
+                lang={lang}
+            />
         </footer>
     );
 }

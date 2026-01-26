@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { content } from '@/app/content';
+import CaseStudyModal from './CaseStudyModal';
 
 interface SelectedWorkProps {
     lang: "es" | "en";
@@ -11,6 +12,7 @@ interface SelectedWorkProps {
 export default function SelectedWork({ lang }: SelectedWorkProps) {
     const t = content[lang].selectedWork;
     const [filter, setFilter] = useState("TODOS"); // Keep internal filter key as TODOS/ALL logic
+    const [selectedCase, setSelectedCase] = useState<any>(null); // Using any temporarily to avoid strict type duplication
 
     // Map internal filter keys to display logic
     // We used simple string matching before. Let's keep it simple.
@@ -51,7 +53,11 @@ export default function SelectedWork({ lang }: SelectedWorkProps) {
 
             <div id="case-gallery" className="w-full bg-background-light border-b border-grid-line p-4 md:p-8 min-h-[800px] grid grid-cols-1 md:grid-cols-2 gap-4">
                 {filteredCases.map(item => (
-                    <div key={item.id} className="relative group w-full aspect-[4/3] overflow-hidden border border-carbon bg-carbon">
+                    <div
+                        key={item.id}
+                        onClick={() => setSelectedCase(item)}
+                        className="relative group w-full aspect-[4/3] overflow-hidden border border-carbon bg-carbon cursor-pointer"
+                    >
                         <Image
                             src={item.img}
                             alt={item.title}
@@ -79,6 +85,13 @@ export default function SelectedWork({ lang }: SelectedWorkProps) {
                     </div>
                 ))}
             </div>
+
+            <CaseStudyModal
+                isOpen={!!selectedCase}
+                onClose={() => setSelectedCase(null)}
+                caseStudy={selectedCase}
+                lang={lang}
+            />
         </section>
     );
 }
