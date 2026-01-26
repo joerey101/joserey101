@@ -306,3 +306,4 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
         </>
     );
 }
+ 
