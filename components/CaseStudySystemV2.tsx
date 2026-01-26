@@ -41,21 +41,21 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const drawerContainerRef = useRef<HTMLDivElement>(null);
 
-    // Scroll Progress logic for the Apple Effect (Targeting the internal container)
+    // Scroll Progress logic for the Apple Effect
     const { scrollYProgress } = useScroll({
         container: drawerContainerRef,
         offset: ["start start", "end end"]
     });
 
-    // Transforms for the "Apple Esfumado" - MUCH MORE STABLE RANGES
-    const blurOpacity = useTransform(scrollYProgress, [0.1, 0.4], [0, 1]);
-    const imageScale = useTransform(scrollYProgress, [0.1, 0.4], [1, 1.1]);
-    const textFadeOut = useTransform(scrollYProgress, [0.05, 0.3], [1, 0]);
-    const metricsY = useTransform(scrollYProgress, [0.1, 0.4], [0, -100]);
+    // MUCH MORE CONSERVATIVE RANGES - Only start fading after 20% scroll
+    const blurOpacity = useTransform(scrollYProgress, [0.2, 0.5], [0, 1]);
+    const imageScale = useTransform(scrollYProgress, [0.2, 0.5], [1, 1.1]);
+    const textFadeOut = useTransform(scrollYProgress, [0.15, 0.4], [1, 0]);
+    const metricsY = useTransform(scrollYProgress, [0.2, 0.5], [0, -100]);
 
-    // Content entrance (Start later, move smoother)
-    const contentOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]);
-    const contentY = useTransform(scrollYProgress, [0.35, 0.55], [100, 0]);
+    // Content entrance (Start even later to ensure zero overlap at start)
+    const contentOpacity = useTransform(scrollYProgress, [0.4, 0.6], [0, 1]);
+    const contentY = useTransform(scrollYProgress, [0.4, 0.6], [100, 0]);
 
     // Scroll Lock Effect
     useEffect(() => {
@@ -75,10 +75,11 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
         };
         setSelectedCase(formatted);
         setIsDrawerOpen(true);
-        // Reset scroll position on open
-        setTimeout(() => {
-            if (drawerContainerRef.current) drawerContainerRef.current.scrollTop = 0;
-        }, 50);
+
+        // Immediate scroll reset
+        if (drawerContainerRef.current) {
+            drawerContainerRef.current.scrollTop = 0;
+        }
     };
 
     const closeDrawer = () => {
@@ -104,7 +105,7 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
 
     return (
         <>
-            {/* 1. THE GRID (Industrial Aesthetics) */}
+            {/* 1. THE GRID */}
             <section className="px-4 py-20 bg-background-light">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1400px] mx-auto">
                     {initialCases.map((item) => (
@@ -120,9 +121,7 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
                                 className="object-cover opacity-60 group-hover:opacity-40 transition-all duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                                <span
-                                    className={`inline-block w-fit px-2 py-1 mb-4 text-[10px] font-bold uppercase tracking-widest text-carbon ${item.color}`}
-                                >
+                                <span className={`inline-block w-fit px-2 py-1 mb-4 text-[10px] font-bold uppercase tracking-widest text-carbon ${item.color}`}>
                                     {item.tagDisplay}
                                 </span>
                                 <h3 className="text-4xl md:text-5xl font-display font-black uppercase text-white leading-[0.9]">
@@ -134,147 +133,132 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
                 </div>
             </section>
 
-            {/* 2. THE RIGHT SIDE DRAWER (Hybrid: Gemini Mobility + Apple Aesthetics) */}
+            {/* 2. THE DRAWER */}
             <AnimatePresence>
                 {isDrawerOpen && selectedCase && (
-                    <div className="fixed inset-0 z-[9999] pointer-events-none">
+                    <div className="fixed inset-0 z-[10000] pointer-events-none">
 
-                        {/* Backdrop (GEMINI MOBILITY) */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={closeDrawer}
-                            className="absolute inset-0 bg-black/60 backdrop-blur-sm pointer-events-auto"
+                            className="absolute inset-0 bg-black/80 backdrop-blur-md pointer-events-auto"
                         />
 
-                        {/* Drawer Panel (SIDE DEPLOYMENT) */}
                         <motion.div
                             initial={{ x: "100%" }}
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
-                            transition={{ type: "spring", damping: 30, stiffness: 200 }}
-                            className="absolute top-0 right-0 h-full w-full md:w-[85vw] lg:w-[65vw] bg-carbon shadow-2xl pointer-events-auto flex flex-col"
+                            transition={{ type: "spring", damping: 35, stiffness: 250 }}
+                            className="absolute top-0 right-0 h-full w-full md:w-[85vw] lg:w-[65vw] bg-black shadow-2xl pointer-events-auto flex flex-col overflow-hidden"
                         >
 
-                            {/* Scroll Area inside Drawer */}
                             <div
                                 ref={drawerContainerRef}
-                                className="flex-1 overflow-y-auto overflow-x-hidden scroll-smooth w-full h-full relative"
+                                className="flex-1 overflow-y-auto overflow-x-hidden scroll-smooth relative"
                             >
-                                <div className="relative h-[350vh] w-full">
+                                <div className="relative h-[400vh] w-full bg-black">
 
-                                    {/* STICKY HERO SECTION (APPLE STYLE) - HEIGHT 100vh */}
+                                    {/* STICKY HERO - ENSURING VISIBILITY */}
                                     <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden z-20">
 
-                                        {/* Background Image inside Drawer */}
+                                        {/* Background Image - Brightness Fix */}
                                         <motion.div
                                             style={{ scale: imageScale }}
-                                            className="absolute inset-0 z-0"
+                                            className="absolute inset-0 z-0 h-full w-full"
                                         >
                                             {selectedCase.mainImage && (
                                                 <Image
                                                     src={selectedCase.mainImage}
                                                     alt={selectedCase.title}
                                                     fill
-                                                    className="object-cover brightness-50"
+                                                    className="object-cover brightness-75" // Slightly brighter for better visibility
                                                     priority
                                                     unoptimized
                                                 />
                                             )}
                                         </motion.div>
 
-                                        {/* Esfumado (Blur) Layer */}
+                                        {/* Esfumado (Blur) Layer - Start at 0% opacity */}
                                         <motion.div
                                             style={{ opacity: blurOpacity }}
-                                            className="absolute inset-0 z-10 bg-black/70 backdrop-blur-3xl"
+                                            className="absolute inset-0 z-10 bg-black/80 backdrop-blur-3xl"
                                         />
 
-                                        {/* Top Controls (ALWAYS ON TOP) */}
+                                        {/* Top Controls - Fixed on Top */}
                                         <div className="absolute top-0 left-0 w-full p-6 md:p-10 z-[100] flex justify-between items-center">
                                             <div className="flex gap-3">
-                                                <button
-                                                    onClick={handlePrev}
-                                                    className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-carbon transition-all"
-                                                >
+                                                <button onClick={handlePrev} className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white/20 backdrop-blur-xl rounded-full text-white hover:bg-white hover:text-carbon transition-all">
                                                     <CaretLeft size={24} weight="bold" />
                                                 </button>
-                                                <button
-                                                    onClick={handleNext}
-                                                    className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-carbon transition-all"
-                                                >
+                                                <button onClick={handleNext} className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white/20 backdrop-blur-xl rounded-full text-white hover:bg-white hover:text-carbon transition-all">
                                                     <CaretRight size={24} weight="bold" />
                                                 </button>
                                             </div>
-                                            <button
-                                                onClick={closeDrawer}
-                                                className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white text-carbon rounded-full hover:rotate-90 transition-all duration-300 shadow-xl"
-                                            >
+                                            <button onClick={closeDrawer} className="w-12 h-12 flex items-center justify-center bg-white text-carbon rounded-full shadow-2xl hover:scale-110 transition-transform">
                                                 <X size={24} weight="bold" />
                                             </button>
                                         </div>
 
-                                        {/* Hero Text - Massive and centered */}
+                                        {/* Hero Text - Force Opacity 1 at Start */}
                                         <motion.div
                                             style={{ opacity: textFadeOut, y: metricsY }}
-                                            className="relative z-20 text-center px-8 md:px-16"
+                                            className="relative z-30 text-center px-8 md:px-16"
                                         >
-                                            <span className={`inline-block px-4 py-1.5 mb-8 text-[10px] font-bold uppercase tracking-[0.4em] text-carbon ${selectedCase.color}`}>
+                                            <span className={`inline-block px-4 py-1.5 mb-8 text-[10px] font-bold uppercase tracking-[0.5em] text-carbon ${selectedCase.color}`}>
                                                 {selectedCase.tagDisplay}
                                             </span>
-                                            <h2 className="text-5xl md:text-[7vw] font-display font-black uppercase leading-[0.8] tracking-tighter text-white mb-6">
+                                            <h2 className="text-5xl md:text-[6vw] font-display font-black uppercase leading-[0.8] tracking-tighter text-white mb-6">
                                                 {selectedCase.title}
                                             </h2>
-                                            <p className="text-lg md:text-2xl font-light text-white/50 uppercase tracking-[0.2em]">
+                                            <p className="text-lg md:text-xl font-light text-white/70 uppercase tracking-[0.3em]">
                                                 {selectedCase.subtitle}
                                             </p>
                                         </motion.div>
 
-                                        {/* Float Metrics */}
+                                        {/* Metrics */}
                                         {selectedCase.keyMetrics && (
                                             <motion.div
                                                 style={{ opacity: textFadeOut, y: metricsY }}
                                                 className="absolute bottom-12 left-0 w-full flex justify-center gap-4 px-6 overflow-x-auto no-scrollbar"
                                             >
                                                 {selectedCase.keyMetrics.map((m, i) => (
-                                                    <div key={i} className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-2xl min-w-[150px] text-center">
-                                                        <p className="text-3xl font-display font-bold text-white mb-1">{m.value}</p>
-                                                        <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">{m.label}</p>
+                                                    <div key={i} className="bg-white/10 backdrop-blur-2xl border border-white/10 p-6 rounded-2xl min-w-[140px] text-center">
+                                                        <p className="text-2xl font-display font-bold text-white mb-1">{m.value}</p>
+                                                        <p className="text-[9px] uppercase tracking-[0.2em] text-white/40">{m.label}</p>
                                                     </div>
                                                 ))}
                                             </motion.div>
                                         )}
                                     </div>
 
-                                    {/* SCROLLABLE CONTENT AREA - Starts AFTER hero (100vh down) */}
+                                    {/* CONTENT AREA - Massive top padding to prevent early appearance */}
                                     <motion.div
                                         style={{ opacity: contentOpacity, y: contentY }}
-                                        className="relative z-30 pb-32 pt-[20vh] bg-transparent"
+                                        className="relative z-40 pb-32"
                                     >
-                                        <div className="max-w-4xl mx-auto px-8 md:px-16 flex flex-col gap-32">
+                                        <div className="max-w-4xl mx-auto px-8 md:px-16 flex flex-col gap-32 bg-transparent">
 
-                                            {/* Challenge */}
-                                            <div className="flex flex-col gap-6">
+                                            <div className="flex flex-col gap-8">
                                                 <h3 className="text-white/20 text-[10px] font-bold uppercase tracking-[0.5em]">{lang === 'es' ? 'El Desafío' : 'The Challenge'}</h3>
-                                                <p className="text-2xl md:text-4xl font-light leading-tight text-white italic">
+                                                <p className="text-2xl md:text-5xl font-light leading-tight text-white italic">
                                                     "{selectedCase.challenge}"
                                                 </p>
                                             </div>
 
-                                            {/* Solution */}
-                                            <div className="flex flex-col gap-6">
+                                            <div className="flex flex-col gap-8">
                                                 <h3 className="text-white/20 text-[10px] font-bold uppercase tracking-[0.5em]">{lang === 'es' ? 'La Solución' : 'The Solution'}</h3>
-                                                <div className="space-y-10">
-                                                    <p className="text-xl md:text-2xl font-light leading-relaxed text-white/70">
+                                                <div className="space-y-12">
+                                                    <p className="text-xl md:text-2xl font-light leading-relaxed text-white/80">
                                                         {selectedCase.solution}
                                                     </p>
 
-                                                    {/* Tech Grid */}
                                                     {selectedCase.techStack && (
-                                                        <div className="pt-10 border-t border-white/5">
-                                                            <div className="flex flex-wrap gap-2">
+                                                        <div className="pt-12 border-t border-white/5">
+                                                            <div className="flex flex-wrap gap-3">
                                                                 {selectedCase.techStack.map(tech => (
-                                                                    <span key={tech} className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase font-bold text-white/40">
+                                                                    <span key={tech} className="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase font-bold text-white/40">
                                                                         {tech}
                                                                     </span>
                                                                 ))}
@@ -284,33 +268,27 @@ export default function CaseStudySystemV2({ initialCases, lang }: CaseStudySyste
                                                 </div>
                                             </div>
 
-                                            {/* Impact */}
-                                            <div className="flex flex-col gap-6">
+                                            <div className="flex flex-col gap-8">
                                                 <h3 className="text-white/20 text-[10px] font-bold uppercase tracking-[0.5em]">{lang === 'es' ? 'El Impacto' : 'The Impact'}</h3>
-                                                <p className="text-xl md:text-4xl font-display font-medium leading-relaxed text-white">
+                                                <p className="text-2xl md:text-4xl font-display font-medium leading-relaxed text-white">
                                                     {selectedCase.impact}
                                                 </p>
                                             </div>
 
-                                            {/* Gallery */}
                                             {selectedCase.gallery && selectedCase.gallery.length > 0 && (
-                                                <div className="grid grid-cols-1 gap-8">
+                                                <div className="grid grid-cols-1 gap-12">
                                                     {selectedCase.gallery.map((img, i) => (
-                                                        <div key={i} className="relative aspect-video rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000">
+                                                        <div key={i} className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
                                                             <Image src={img} alt="Detail" fill className="object-cover" />
                                                         </div>
                                                     ))}
                                                 </div>
                                             )}
 
-                                            {/* Bottom CTA */}
-                                            <div className="py-20 text-center border-t border-white/5">
-                                                <button
-                                                    onClick={handleNext}
-                                                    className="group flex flex-col items-center gap-4 mx-auto"
-                                                >
-                                                    <span className="text-white/20 text-[10px] uppercase tracking-[0.4em]">{lang === 'es' ? 'Próximo Proyecto' : 'Next Project'}</span>
-                                                    <span className="text-5xl md:text-7xl font-display font-black uppercase text-white group-hover:text-electric-blue transition-colors">
+                                            <div className="py-32 text-center border-t border-white/5">
+                                                <button onClick={handleNext} className="group flex flex-col items-center gap-6 mx-auto">
+                                                    <span className="text-white/20 text-[10px] uppercase tracking-[0.5em]">{lang === 'es' ? 'Siguiente Proyecto' : 'Next Project'}</span>
+                                                    <span className="text-4xl md:text-7xl font-display font-black uppercase text-white group-hover:text-electric-blue transition-colors">
                                                         CONTINUAR
                                                     </span>
                                                 </button>
