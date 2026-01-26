@@ -244,3 +244,8 @@ export const content = {
         }
     }
 };
+
+export function getCaseStudyById(id: string, lang: "es" | "en") {
+    const items = content[lang].selectedWork.items;
+    return items.find(item => item.id.toString() === id) || null;
+}
