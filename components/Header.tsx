@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { content } from '@/app/content';
+import AppleSidebarMenu from './AppleSidebarMenu';
 
 interface HeaderProps {
     lang: "es" | "en";
@@ -8,6 +9,12 @@ interface HeaderProps {
 export default function Header({ lang }: HeaderProps) {
     const t = content[lang].header;
     const isEs = lang === "es";
+
+    const menuItems = [
+        { label: t.work, href: "#work" },
+        { label: t.capabilities, href: "#blueprints" },
+        { label: t.studio, href: "#lab" },
+    ];
 
     return (
         <header className="fixed top-0 w-full z-50 bg-background-light/90 backdrop-blur-md border-b border-grid-line transition-all duration-300">
@@ -18,6 +25,7 @@ export default function Header({ lang }: HeaderProps) {
                     </div>
                     <h1 className="font-display font-bold text-xl tracking-tighter uppercase italic">joserey101</h1>
                 </div>
+
                 <nav className="hidden md:flex items-center gap-12 font-meta text-[11px] font-bold uppercase tracking-widest text-carbon/80">
                     <Link className="hover:text-electric-blue transition-colors hover:underline underline-offset-8 decoration-2" href="#work">{t.work}</Link>
                     <Link className="hover:text-electric-blue transition-colors hover:underline underline-offset-8 decoration-2" href="#blueprints">{t.capabilities}</Link>
@@ -36,12 +44,15 @@ export default function Header({ lang }: HeaderProps) {
                                 <span className="text-carbon cursor-default">EN</span>
                             </>
                         )}
-
                     </div>
                 </nav>
-                <a href="mailto:hello@joserey101.com" className="bg-carbon text-white px-6 py-2 rounded-full font-meta text-xs font-bold uppercase tracking-wider hover:bg-neon-pink hover:scale-105 transition-all shadow-lg">
-                    {t.hire}
-                </a>
+
+                <div className="flex items-center gap-4">
+                    <a href="mailto:hello@joserey101.com" className="hidden sm:block bg-carbon text-white px-6 py-2 rounded-full font-meta text-xs font-bold uppercase tracking-wider hover:bg-neon-pink hover:scale-105 transition-all shadow-lg">
+                        {t.hire}
+                    </a>
+                    <AppleSidebarMenu lang={lang} items={menuItems} />
+                </div>
             </div>
         </header>
     );

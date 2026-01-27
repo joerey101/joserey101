@@ -68,10 +68,17 @@ export const content = {
                     id: 1,
                     title: "OSCAR ACADEMY AWARD",
                     subtitle: "Infraestructura Digital para Productoras de Élite",
+                    slug: "oscar-academy-award",
                     tag: "CULTURA",
                     tagDisplay: "CULTURA",
                     img: "/assets/img/haddock.png",
                     color: "bg-neon-pink",
+                    keyMetrics: [
+                        { value: "40%", label: "Interacción" },
+                        { value: "Oscar", label: "Legacy" },
+                        { value: "4K", label: "Video" }
+                    ],
+                    techStack: ["React", "Motion", "Nex.js"],
                     details: {
                         challenge: "Modernizar la presencia digital de una productora ganadora del Oscar sin perder su legado histórico.",
                         solution: "Desarrollo de un sitio web inmersivo tipo 'archivo vivo', utilizando Next.js para una carga instantánea de portfolios de video de alta resolución.",
@@ -82,10 +89,17 @@ export const content = {
                     id: 2,
                     title: "LÍDER INDUSTRIAL LATAM",
                     subtitle: "Arquitectura de Negocios Corporativa",
+                    slug: "lider-industrial-latam",
                     tag: "CORPORATIVO",
                     tagDisplay: "CORPORATIVO",
                     img: "/assets/img/mirgor.png",
                     color: "bg-electric-blue",
+                    keyMetrics: [
+                        { value: "60%", label: "Eficiencia" },
+                        { value: "SAP", label: "Sync" },
+                        { value: "Multi", label: "Tenant" }
+                    ],
+                    techStack: ["System Design", "CMS", "Data"],
                     details: {
                         challenge: "Unificar la comunicación de un conglomerado industrial con múltiples unidades de negocio bajo una sola identidad digital coherente.",
                         solution: "Implementación de un sistema de diseño atomizado y un CMS headless para gestionar contenido corporativo complejo.",
@@ -96,10 +110,17 @@ export const content = {
                     id: 3,
                     title: "+50.000 ALUMNOS CONECTADOS",
                     subtitle: "Ecosistema Educativo de Alto Tráfico",
+                    slug: "ucasal-alumnos-conectados",
                     tag: "EDUCACIÓN",
                     tagDisplay: "EDUCACIÓN",
                     img: "/assets/img/ucasal.png",
                     color: "bg-acid-green",
+                    keyMetrics: [
+                        { value: "50k+", label: "Alumnos" },
+                        { value: "0%", label: "Downtime" },
+                        { value: "AWS", label: "Cloud" }
+                    ],
+                    techStack: ["Cloud", "Scaling", "Database"],
                     details: {
                         challenge: "Soportar picos de tráfico de 50k+ usuarios concurrentes durante inscripciones y exámenes.",
                         solution: "Arquitectura cloud-native en AWS con auto-scaling y optimización de base de datos para alta disponibilidad.",
@@ -110,10 +131,17 @@ export const content = {
                     id: 4,
                     title: "OPERACIÓN USA - LATAM",
                     subtitle: "Logística Cross-Border y LLCs",
+                    slug: "operacion-usa-latam",
                     tag: "E-COMMERCE",
                     tagDisplay: "E-COMMERCE",
                     img: "/assets/img/columba.png",
                     color: "bg-vibrant-orange",
+                    keyMetrics: [
+                        { value: "80%", label: "Automatización" },
+                        { value: "USA", label: "Market" },
+                        { value: "Cross", label: "Border" }
+                    ],
+                    techStack: ["Logistics", "API", "LLC"],
                     details: {
                         challenge: "Simplificar la complejidad operativa y legal del comercio transfronterizo para usuarios finales.",
                         solution: "Plataforma de autogestión con integración de APIs de logística y seguimiento en tiempo real.",
@@ -200,37 +228,85 @@ export const content = {
                     id: 1,
                     title: "OSCAR ACADEMY AWARD",
                     subtitle: "Digital Infrastructure for Elite Producers",
+                    slug: "oscar-academy-award",
                     tag: "CULTURA",
                     tagDisplay: "CULTURE",
                     img: "/assets/img/haddock.png",
-                    color: "bg-neon-pink"
+                    color: "bg-neon-pink",
+                    keyMetrics: [
+                        { value: "40%", label: "Engagement" },
+                        { value: "Oscar", label: "Legacy" },
+                        { value: "4K", label: "Video" }
+                    ],
+                    techStack: ["React", "Motion", "Next.js"],
+                    details: {
+                        challenge: "Modernize the digital presence of an Oscar-winning production company without losing its historical legacy.",
+                        solution: "Development of an immersive 'living archive' website, using Next.js for instant loading of high-resolution video portfolios.",
+                        impact: "40% increase in international inquiries and a scalable platform for new releases."
+                    }
                 },
                 {
                     id: 2,
                     title: "LATAM INDUSTRIAL LEADER",
                     subtitle: "Corporate Business Architecture",
+                    slug: "lider-industrial-latam",
                     tag: "CORPORATIVO",
                     tagDisplay: "CORPORATE",
                     img: "/assets/img/mirgor.png",
-                    color: "bg-electric-blue"
+                    color: "bg-electric-blue",
+                    keyMetrics: [
+                        { value: "60%", label: "Efficiency" },
+                        { value: "SAP", label: "Sync" },
+                        { value: "Multi", label: "Tenant" }
+                    ],
+                    techStack: ["System Design", "CMS", "Data"],
+                    details: {
+                        challenge: "Unify the communication of an industrial conglomerate with multiple business units under a single coherent digital identity.",
+                        solution: "Implementation of an atomic design system and a headless CMS to manage complex corporate content.",
+                        impact: "60% reduction in content update times and improved brand perception for investors."
+                    }
                 },
                 {
                     id: 3,
                     title: "+50.000 CONNECTED STUDENTS",
                     subtitle: "High Traffic Educational Ecosystem",
+                    slug: "ucasal-alumnos-conectados",
                     tag: "EDUCACIÓN",
                     tagDisplay: "EDUCATION",
                     img: "/assets/img/ucasal.png",
-                    color: "bg-acid-green"
+                    color: "bg-acid-green",
+                    keyMetrics: [
+                        { value: "50k+", label: "Students" },
+                        { value: "0%", label: "Downtime" },
+                        { value: "AWS", label: "Cloud" }
+                    ],
+                    techStack: ["Cloud", "Scaling", "Database"],
+                    details: {
+                        challenge: "Support traffic peaks of 50k+ concurrent users during registrations and exams.",
+                        solution: "Cloud-native architecture on AWS with auto-scaling and database optimization for high availability.",
+                        impact: "0% downtime during critical academic periods of 2024."
+                    }
                 },
                 {
                     id: 4,
                     title: "USA - LATAM OPERATION",
                     subtitle: "Cross-Border Logistics and LLCs",
+                    slug: "operacion-usa-latam",
                     tag: "E-COMMERCE",
                     tagDisplay: "E-COMMERCE",
                     img: "/assets/img/columba.png",
-                    color: "bg-vibrant-orange"
+                    color: "bg-vibrant-orange",
+                    keyMetrics: [
+                        { value: "80%", label: "Automation" },
+                        { value: "USA", label: "Market" },
+                        { value: "Cross", label: "Border" }
+                    ],
+                    techStack: ["Logistics", "API", "LLC"],
+                    details: {
+                        challenge: "Simplify the operational and legal complexity of cross-border trade for end users.",
+                        solution: "Self-management platform with integration of logistics APIs and real-time tracking.",
+                        impact: "80% automation of tracking inquiries and successful expansion into the US market."
+                    }
                 }
             ]
         },
@@ -245,7 +321,12 @@ export const content = {
     }
 };
 
-export function getCaseStudyById(id: string, lang: "es" | "en") {
+export function getCaseStudyBySlug(slug: string, lang: "es" | "en") {
     const items = content[lang].selectedWork.items;
-    return items.find(item => item.id.toString() === id) || null;
+    return items.find(item => item.slug === slug) || null;
+}
+
+export function getCaseStudyById(id: string, lang: "es" | "en") {
+    const items = content[lang].selectedWork.items as any[];
+    return items.find(item => item.id?.toString() === id || item.slug === id) || null;
 }
