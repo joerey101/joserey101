@@ -1,41 +1,14 @@
-"use client";
-
-import { useState, useEffect } from 'react';
-import { client } from '@/sanity/client';
+import { content } from '@/app/content';
 import CaseStudySystemV2 from './CaseStudySystemV2';
-// import CaseStudySystem from './CaseStudySystem'; // Backup version
 
 interface SelectedWorkProps {
     lang: "es" | "en";
 }
 
 export default function SelectedWork({ lang }: SelectedWorkProps) {
-    const [cases, setCases] = useState<any[]>([]);
+    const cases = content[lang].selectedWork.items;
 
-    useEffect(() => {
-        // Fetch logic similar to before but including new fields
-        const query = `*[_type == "caseStudy" && language == "${lang}"] | order(tier desc, _createdAt desc) {
-            _id,
-            title,
-            subtitle,
-            "slug": slug.current,
-            tier,
-            tagDisplay,
-            tag,
-            color,
-            "imgUrl": mainImage.asset->url,
-            keyMetrics,
-            techStack,
-            challenge,
-            solution,
-            impact,
-            "gallery": gallery[].asset->url
-        }`;
-
-        client.fetch(query).then(data => setCases(data));
-    }, [lang]);
-
-    if (cases.length === 0) return null; // Or skeleton
+    if (!cases || cases.length === 0) return null;
 
     return (
         <section id="work" className="relative">
