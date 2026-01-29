@@ -12,15 +12,9 @@ export default function MasonryCaseGrid() {
     // Handle Browser Back Button and Deep Linking
     useEffect(() => {
         const handlePopState = () => {
-            // If navigating back to root/home, close drawer
             const path = window.location.pathname;
             if (path === '/' || path === '/case-studies') {
                 setSelectedCase(null);
-            } else if (path.startsWith('/case-studies/')) {
-                // Potentially reopen if we are handling forward navigation, 
-                // but for now simplest is to rely on page load or explicit interaction.
-                // This primarily handles the "Back" action closing the drawer.
-                // The "Deep Link" logic for initial load is handled by the page.tsx component anyway.
             }
         };
 
@@ -30,72 +24,52 @@ export default function MasonryCaseGrid() {
 
     const openDrawer = (c: CaseStudy) => {
         setSelectedCase(c);
-        // Push state so URL updates and Back button works
         window.history.pushState({ caseId: c.id }, '', `/case-studies/${c.slug}`);
     };
 
     const closeDrawer = () => {
-        // Go back to remove the pushed state, but only if we pushed it ourselves.
-        // A safer heuristic for this SPA-like behavior:
-        window.history.pushState(null, '', window.location.pathname.replace(/\/case-studies\/[^\/]+/, '/case-studies'));
-        // Or simply back() if we are sure we came from there. 
-        // Let's use history.back() as it's more natural for "closing" a state navigation
-        // Check if we can go back? Hard to know strict history stack.
-        // Fallback: replaceState to root if unsure.
-        // Actually, simplest UX:
-        window.history.pushState(null, '', '/'); // Reset to home anchor or current page context
+        window.history.pushState(null, '', '/');
         setSelectedCase(null);
     };
 
     return (
         <>
-            <section className="px-4 md:px-6 lg:px-12 py-20 bg-background">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-[1400px] mx-auto grid-flow-dense">
+            <section className="px-4 py-20 bg-background-light">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1400px] mx-auto">
                     {CASE_STUDIES.map((item) => (
                         <div
                             key={item.id}
                             onClick={() => openDrawer(item)}
-                            className={`group relative cursor-pointer overflow-hidden border border-border/50 bg-neutral-900
-                                ${item.isFlagship ? 'md:col-span-2 md:row-span-2 aspect-[4/3] md:aspect-auto' : 'col-span-1 row-span-1 aspect-[4/3]'}
-                            `}
+                            className="group relative aspect-[4/3] bg-neutral-900 cursor-pointer overflow-hidden border border-white/10"
                         >
-                            {/* Image Background */}
-                            <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
-                                <Image
-                                    src={item.coverImage}
-                                    alt={item.title}
-                                    fill
-                                    className="object-cover opacity-70 group-hover:opacity-50 transition-opacity duration-500"
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                />
-                            </div>
+                            <Image
+                                src={item.coverImage}
+                                alt={item.title}
+                                fill
+                                className="object-cover opacity-80 group-hover:opacity-60 transition-all duration-700 group-hover:scale-105 saturate-0 group-hover:saturate-100" // Grayscale default, color hover for dramatic effect
+                            />
 
-                            {/* Gradient Overlay for Text Readability */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                            {/* Overlay Vignette */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80" />
 
-                            {/* Content Content Overlay */}
-                            <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end items-start transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-
-                                <span className={`inline-block px-3 py-1 mb-4 text-[10px] md:text-xs font-bold uppercase tracking-widest text-black bg-white
-                                      opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100`}>
+                            <div className="absolute inset-0 p-8 flex flex-col justify-end items-start">
+                                {/* Tag Badge - Using the color prop from data */}
+                                <span className={`inline-block px-3 py-1 mb-4 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm text-white shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100 ${item.color}`}>
                                     {item.tag}
                                 </span>
 
-                                <h3 className={`font-display font-black uppercase text-white leading-[0.85] tracking-tight
-                                    ${item.isFlagship ? 'text-4xl md:text-6xl lg:text-7xl' : 'text-2xl md:text-3xl'}
-                                `}>
+                                {/* Big Title */}
+                                <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase text-white leading-[0.9] tracking-tighter drop-shadow-2xl">
                                     {item.title}
                                 </h3>
 
-                                <div className={`overflow-hidden transition-all duration-500 max-h-0 group-hover:max-h-[100px] mt-0 group-hover:mt-4`}>
-                                    <p className="text-white/90 font-light text-sm md:text-base border-l-2 border-white/50 pl-4">
+                                {/* Metric/Subtitle on hover */}
+                                <div className="h-0 overflow-hidden group-hover:h-auto transition-all duration-500">
+                                    <p className="pt-4 text-white/80 font-light text-lg border-l-2 border-white/50 pl-4 mt-4">
                                         {item.highlight}
                                     </p>
                                 </div>
                             </div>
-
-                            {/* Hover Border Effect */}
-                            <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/20 transition-colors duration-500 pointer-events-none" />
                         </div>
                     ))}
                 </div>
