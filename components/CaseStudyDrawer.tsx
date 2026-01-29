@@ -30,7 +30,7 @@ export default function CaseStudyDrawer({ isOpen, onClose, caseStudy }: CaseStud
     // --- APPLE / CRYSTAL EFFECT MAPPINGS (PIXEL BASED) ---
     // 0px to 300px: Transition from Crystal Clear to Blurred
     const imageScale = useTransform(scrollY, [0, 400], [1, 1.1]);
-    const blurOpacity = useTransform(scrollY, [10, 300], [0, 1]); // Starts after 10px to be safe
+    const blurOpacity = useTransform(scrollY, [100, 300], [0, 1]); // Starts after 100px to strictly prevent initial blur
 
     // Hero Text Animations
     const heroTextOpacity = useTransform(scrollY, [0, 200], [1, 0]);
