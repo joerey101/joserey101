@@ -1,0 +1,91 @@
+Caso 2 – Segue Yachts
+Rol del caso dentro del sistema
+Segue Yachts es un caso flagship.
+Este caso cumple una función estratégica clave:
+	•	Elevar el posicionamiento del sitio con una marca aspiracional y de alto prestigio
+	•	Comunicar capacidad para traducir lujo, escala e identidad a una experiencia digital
+	•	Mostrar tecnología como soporte invisible al resultado (no como protagonista)
+Debe aparecer dentro de los primeros 3 casos y con presencia visual destacada.
+
+TARJETA (Index / Grid)
+Objetivo de la tarjeta
+Transmitir “marca histórica + lujo + nueva era digital” en un golpe de vista.
+Contenido de la tarjeta
+	•	Título: Segue Yachts
+	•	Tag: LUXURY / INDUSTRIA
+	•	Highlight (1 línea): Landing de alto impacto para el lanzamiento digital de la nueva X & XS Series
+(Opcional en segunda línea o microtexto, si el diseño lo permite)
+	•	Next.js + React al servicio de una experiencia premium
+Uso visual
+	•	Imagen hero de embarcación (escala, aire, silencio)
+	•	Estética limpia y majestuosa
+	•	Poco texto, máxima presencia visual
+La tarjeta debe comunicar implícitamente:
+“Una marca histórica entrando a una nueva era.”
+
+DESPLIEGUE DEL CASO – PANEL LATERAL
+Función del panel
+Explicar el valor estratégico del proyecto y cómo la experiencia digital construye marca y genera contacto, sin convertir el caso en una ficha técnica.
+
+1. Hero
+Contenido:
+	•	Imagen principal (yate / detalle de diseño)
+	•	Título: Segue Yachts
+	•	Subtítulo: Una experiencia digital a la altura de una marca emblemática
+	•	Tag visible: LUXURY / INDUSTRIA
+El hero debe sentirse como una portada editorial: lujo, precisión, calma.
+
+2. Snapshot (datos clave)
+Objetivo: lectura ejecutiva inmediata.
+Campos sugeridos:
+	•	Industria: Náutica / Fabricación de yates
+	•	Tipo de proyecto: Landing estratégica (lead capture)
+	•	Alcance: Internacional
+	•	Contexto: Marca argentina con +50 años
+	•	Producto: Embarcaciones 32 a 100 pies
+	•	Lanzamiento: X & XS Series
+	•	Canales: Web + Instagram (14.300+ seguidores)
+	•	Arquitectura: Next.js / React
+
+3. El desafío
+Traducir la majestuosidad, la escala y el diseño de Segue Yachts al lenguaje digital, construyendo un primer punto de contacto de alto nivel que acompañe el crecimiento de la marca y el lanzamiento de su nueva línea.
+
+4. La solución
+Se diseñó una landing page concebida como una expresión viva de la marca: narrativa visual, ritmo editorial, foco en detalle y una experiencia premium coherente con el producto.
+La implementación se realizó con una arquitectura moderna basada en Next.js y React para lograr rendimiento, fluidez y control total de la experiencia, integrando CTA y formularios que convierten el interés en contacto real.
+Tecnología al servicio de:
+	•	imagen
+	•	performance
+	•	conversión
+
+5. El impacto
+Segue incorporó un punto de entrada sólido al mundo digital: una pieza diseñada para captar interés internacional, sostener el relato de marca y transformar audiencia en oportunidades de contacto, en sinergia con su canal de Instagram.
+(Si más adelante tenés métricas: tasa de conversión, leads/mes, tiempo en página, etc., este bloque escala perfecto.)
+
+6. CTA
+Texto sugerido:
+Construyamos una experiencia digital a la altura de tu marca
+
+PÁGINA STANDALONE (EXPANSIÓN DEL CASO)
+Rol de la página individual
+Profundizar el relato y mostrar la dirección creativa con más espacio y material.
+Contenido adicional sugerido
+	•	Enfoque de dirección creativa (tono, ritmo, lenguaje visual)
+	•	Cómo se definieron los puntos de contacto (CTA, formulario, recorrido)
+	•	Rol de performance y fluidez en la experiencia premium
+	•	Galería extendida (detalles, secciones, microinteracciones)
+	•	Un bloque “Discover more” / “Ver el sitio” como cierre
+
+Qué NO mostrar en este caso
+	•	Jerga de desarrollo extensa
+	•	Listados de librerías o componentes
+	•	Explicaciones técnicas que no aporten a la narrativa de marca
+El foco está en:
+lujo, precisión, experiencia y conversión.
+
+Estado del caso
+	•	Tono aspiracional + lujo definido
+	•	Estructura lista para diseño e implementación
+Siguiente paso:
+Caso 3 – Haddock Films
+

@@ -1,0 +1,81 @@
+Caso 6 – Gate Priority
+Rol del caso dentro del sistema
+Gate Priority es un caso corporativo–institucional.
+Dentro del sistema cumple una función estratégica específica:
+	•	Demostrar capacidad para trabajar con infraestructura, procesos y servicios complejos
+	•	Mostrar criterio en comunicación corporativa B2B
+	•	Evidenciar orden, claridad y jerarquía en entornos donde la información es crítica
+Es un caso que transmite solidez, estructura y profesionalismo.
+
+TARJETA (Index / Grid)
+Objetivo de la tarjeta
+Comunicar confiabilidad, escala operativa y rol estratégico dentro de la logística.
+Contenido de la tarjeta
+	•	Título: Gate Priority
+	•	Tag: CORPORATIVO / LOGÍSTICA
+	•	Highlight (1 línea): Plataforma institucional para uno de los principales operadores logísticos de Argentina
+Uso visual
+	•	Imagen de infraestructura / operación logística
+	•	Estética sobria, corporativa
+	•	Sensación de control, orden y escala
+La tarjeta debe comunicar implícitamente:
+“Una empresa preparada para operar en entornos críticos.”
+
+DESPLIEGUE DEL CASO – PANEL LATERAL
+Función del panel
+Mostrar cómo se estructura y comunica una empresa logística compleja de forma clara y accesible.
+
+1. Hero
+Contenido:
+	•	Imagen principal del centro logístico
+	•	Título: Gate Priority
+	•	Subtítulo: Comunicación digital para un nuevo centro logístico de alcance nacional
+	•	Tag visible: CORPORATIVO / LOGÍSTICA
+
+2. Snapshot (datos clave)
+Objetivo: lectura ejecutiva inmediata.
+Campos sugeridos:
+	•	Industria: Logística / Servicios
+	•	Tipo de proyecto: Web institucional corporativa
+	•	Alcance: Argentina
+	•	Contexto: Nuevo centro logístico
+	•	Plataforma: WordPress
+	•	Estructura: Servicios + Landings + Contacto
+	•	Objetivo: Comunicación clara y generación de consultas
+
+3. El desafío
+Construir una web institucional que represente la escala y complejidad de un nuevo centro logístico, comunicando claramente sus servicios, capacidades y diferenciales a distintos públicos B2B.
+
+4. La solución
+Se realizó un análisis integral de la documentación y los servicios ofrecidos, definiendo una arquitectura de información clara y ordenada.
+El sitio se desarrolló sobre WordPress como CMS principal, con páginas individuales para cada servicio, landings específicas y formularios de contacto orientados a la captación de consultas calificadas.
+
+5. El impacto
+Gate Priority cuenta hoy con una plataforma digital profesional que acompaña su posicionamiento como uno de los principales operadores logísticos del país, facilitando la comunicación de sus servicios y el contacto con potenciales clientes.
+
+6. CTA
+Texto sugerido:
+Organicemos la comunicación digital de tu empresa
+
+PÁGINA STANDALONE (EXPANSIÓN DEL CASO)
+Rol de la página individual
+Profundizar en la lógica de arquitectura, jerarquía de servicios y comunicación corporativa.
+Contenido adicional sugerido
+	•	Proceso de análisis y ordenamiento de la información
+	•	Estructura de servicios y landings
+	•	Estrategia de contacto y conversión B2B
+	•	Ejemplos de secciones clave del sitio
+
+Qué NO mostrar en este caso
+	•	Detalles técnicos de WordPress
+	•	Listados de plugins
+	•	Jerga innecesaria
+El foco está en:
+estructura, claridad y comunicación corporativa.
+
+Estado del caso
+	•	Caso corporativo definido
+	•	Contenido alineado al sistema general
+Siguiente paso:
+Caso 7 – CAIC
+

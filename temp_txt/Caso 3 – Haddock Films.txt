@@ -1,0 +1,87 @@
+Caso 3 – Haddock Films
+Rol del caso dentro del sistema
+Haddock Films es un caso flagship.
+Este proyecto cumple una función estratégica central:
+	•	Posicionar el estudio como capaz de trabajar con marcas culturales de prestigio internacional
+	•	Asociar el trabajo a calidad cinematográfica, narrativa y criterio editorial
+	•	Demostrar capacidad para organizar grandes volúmenes de contenido sin perder claridad ni estética
+Debe aparecer entre los primeros casos del index, con fuerte presencia visual.
+
+TARJETA (Index / Grid)
+Objetivo de la tarjeta
+Transmitir prestigio, trayectoria y autoridad cultural de forma inmediata.
+Contenido de la tarjeta
+	•	Título: Haddock Films
+	•	Tag: CINE / CULTURA
+	•	Highlight (1 línea): Productora ganadora del Oscar · Producciones para Netflix
+(Si el diseño lo permite, microtexto secundario)
+	•	Experiencia digital para un catálogo cinematográfico internacional
+Uso visual
+	•	Imagen cinematográfica (still, poster o frame)
+	•	Estética sobria, editorial
+	•	Contraste alto, ritmo visual calmo
+La tarjeta debe comunicar implícitamente:
+“Este trabajo dialoga con la industria cinematográfica de primer nivel.”
+
+DESPLIEGUE DEL CASO – PANEL LATERAL
+Función del panel
+Explicar cómo se traduce una trayectoria cinematográfica compleja en una experiencia digital clara, usable y representativa de la marca.
+
+1. Hero
+Contenido:
+	•	Imagen hero (poster / frame de película)
+	•	Título: Haddock Films
+	•	Subtítulo: Una experiencia digital para una productora de alcance internacional
+	•	Tag visible: CINE / CULTURA
+El hero debe sentirse como una apertura de película: sobrio, preciso, narrativo.
+
+2. Snapshot (datos clave)
+Objetivo: lectura ejecutiva inmediata.
+Campos sugeridos:
+	•	Industria: Cine / Producción audiovisual
+	•	Tipo de proyecto: Web institucional / Catálogo cinematográfico
+	•	Alcance: Internacional
+	•	Contexto: Productora argentina con reconocimiento global
+	•	Premios: Oscar · múltiples reconocimientos internacionales
+	•	Producciones: Cine y series
+	•	Plataformas: Netflix (entre otras)
+
+3. El desafío
+Construir una web institucional capaz de representar el prestigio y la diversidad del trabajo de Haddock Films, organizando un amplio catálogo de películas y series sin perder identidad, claridad ni fuerza narrativa.
+
+4. La solución
+Se diseñó una experiencia digital con enfoque editorial, donde cada producción cuenta con su propia ficha: sinopsis, equipo, material visual y trailers, permitiendo recorrer la trayectoria del estudio de forma clara y atractiva.
+La arquitectura del sitio prioriza la navegación fluida, la jerarquía de contenido y una estética cinematográfica coherente con el universo de la productora.
+
+5. El impacto
+Haddock Films cuenta hoy con una plataforma digital que acompaña su crecimiento internacional, facilita la presentación de su obra y funciona como una carta de presentación sólida frente a socios, plataformas y nuevos proyectos.
+
+6. CTA
+Texto sugerido:
+Diseñemos una experiencia digital a la altura de tu contenido
+
+PÁGINA STANDALONE (EXPANSIÓN DEL CASO)
+Rol de la página individual
+Profundizar el universo narrativo y mostrar la complejidad del proyecto con mayor espacio visual.
+Contenido adicional sugerido
+	•	Desarrollo del enfoque editorial
+	•	Decisiones de arquitectura de información
+	•	Ejemplos de fichas de películas y series
+	•	Uso de video y trailers dentro del recorrido
+	•	Galería extendida de producciones
+La página standalone actúa como un dossier digital del proyecto.
+
+Qué NO mostrar en este caso
+	•	Detalles técnicos de implementación
+	•	Jerga de desarrollo
+	•	Listados de herramientas
+El foco está en:
+narrativa, prestigio cultural y experiencia.
+
+Estado del caso
+	•	Caso flagship definido
+	•	Contenido alineado a tono cinematográfico
+	•	Listo para diseño e implementación
+Siguiente paso:
+Revisión final de los tres casos flagship (muak · Segue · Haddock)
+

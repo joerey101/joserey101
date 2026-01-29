@@ -1,0 +1,81 @@
+Caso 5 – NBS Bazar Profesional
+Rol del caso dentro del sistema
+NBS Bazar Profesional es un caso B2B estratégico.
+Dentro del sistema cumple una función clara:
+	•	Demostrar capacidad para trabajar con empresas consolidadas (+20 años)
+	•	Mostrar dominio de modelos de negocio no transaccionales (presupuesto / lead)
+	•	Integrar ecommerce, SEO y generación de oportunidades comerciales
+Es un caso que habla de negocio real, no de venta directa.
+
+TARJETA (Index / Grid)
+Objetivo de la tarjeta
+Comunicar profesionalismo, trayectoria y foco en resultados comerciales.
+Contenido de la tarjeta
+	•	Título: NBS Bazar Profesional
+	•	Tag: B2B / GASTRONOMÍA
+	•	Highlight (1 línea): Plataforma digital para generación de presupuestos y leads B2B
+(Microtexto opcional)
+	•	Equipamiento 5 estrellas para hotelería y gastronomía
+Uso visual
+	•	Imagen de producto profesional / contexto hotelero
+	•	Estética sobria, confiable
+	•	Sensación de empresa sólida y estable
+
+DESPLIEGUE DEL CASO – PANEL LATERAL
+Función del panel
+Mostrar cómo una empresa tradicional se adapta al entorno digital sin perder su modelo comercial.
+
+1. Hero
+Contenido:
+	•	Imagen principal de producto / showroom
+	•	Título: NBS Bazar Profesional
+	•	Subtítulo: Digitalización del proceso comercial para hotelería y gastronomía profesional
+	•	Tag visible: B2B / GASTRONOMÍA
+
+2. Snapshot (datos clave)
+Objetivo: lectura ejecutiva inmediata.
+Campos sugeridos:
+	•	Industria: Gastronomía / Hotelería
+	•	Tipo de proyecto: Ecommerce orientado a presupuestos
+	•	Alcance: Argentina
+	•	Trayectoria: +20 años en el mercado
+	•	Plataforma: Tienda Nube
+	•	Modelo: Consultivo / B2B
+	•	Funcionalidad clave: Captación de leads
+
+3. El desafío
+Acompañar la transformación digital de una empresa con más de dos décadas de trayectoria, creando una plataforma online que permita presentar su catálogo completo y canalizar consultas y pedidos de presupuesto sin alterar su modelo comercial consultivo.
+
+4. La solución
+Se desarrolló una plataforma digital basada en Tienda Nube, estructurada para exhibir el portfolio de productos y facilitar el contacto directo mediante formularios y consultas segmentadas.
+El sistema centraliza las solicitudes de presupuesto, permite su seguimiento y se integra con una estrategia de SEO orientada al mercado argentino y a las marcas internacionales representadas.
+
+5. El impacto
+NBS Bazar Profesional cuenta hoy con un canal digital que potencia su proceso comercial, mejora la visibilidad de su oferta y genera oportunidades de negocio calificadas sin depender de la venta directa online.
+
+6. CTA
+Texto sugerido:
+Optimicemos tu proceso comercial digital
+
+PÁGINA STANDALONE (EXPANSIÓN DEL CASO)
+Rol de la página individual
+Mostrar en profundidad cómo un modelo B2B puede digitalizarse sin perder valor consultivo.
+Contenido adicional sugerido
+	•	Estrategia de arquitectura del catálogo
+	•	Lógica de presupuestos y seguimiento
+	•	SEO local y posicionamiento por marcas
+	•	Integración con el proceso comercial interno
+
+Qué NO mostrar en este caso
+	•	Comparaciones con ecommerce B2C
+	•	Métricas de venta directa
+	•	Jerga técnica innecesaria
+El foco está en:
+proceso, eficiencia y generación de oportunidades.
+
+Estado del caso
+	•	Caso B2B definido
+	•	Contenido alineado al sistema general
+Siguiente paso:
+Caso 6 – Gate Priority
+

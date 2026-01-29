@@ -1,0 +1,87 @@
+Caso 4 – Columba Store
+Rol del caso dentro del sistema
+Columba Store es un caso de alto impacto comercial.
+Dentro del sistema cumple un rol estratégico específico:
+	•	Demostrar capacidad para construir marcas con identidad emocional
+	•	Mostrar dominio de ecommerce internacional con logística real
+	•	Integrar storytelling cultural + performance
+Es un caso que conecta marca, negocio y operación, y debe ocupar una posición visible inmediatamente después de los flagship.
+
+TARJETA (Index / Grid)
+Objetivo de la tarjeta
+Comunicar identidad, alcance global y propósito emocional en una sola lectura.
+Contenido de la tarjeta
+	•	Título: Columba Store
+	•	Tag: ECOMMERCE / INTERNACIONAL
+	•	Highlight (1 línea): Sabores argentinos para el mundo
+(Microtexto opcional)
+	•	Ecommerce internacional con logística global
+Uso visual
+	•	Imagen de producto con fuerte carga emocional
+	•	Estética cálida, cercana, auténtica
+	•	Sensación de nostalgia y pertenencia
+La tarjeta debe comunicar implícitamente:
+“Esto no es solo una tienda, es una experiencia cultural exportada.”
+
+DESPLIEGUE DEL CASO – PANEL LATERAL
+Función del panel
+Mostrar cómo una idea cultural se transforma en un sistema comercial funcional y escalable.
+
+1. Hero
+Contenido:
+	•	Imagen principal de producto / lifestyle
+	•	Título: Columba Store
+	•	Subtítulo: Una tienda pensada para llevar los sabores de la infancia a cualquier parte del mundo
+	•	Tag visible: ECOMMERCE / INTERNACIONAL
+El hero debe generar conexión emocional inmediata.
+
+2. Snapshot (datos clave)
+Objetivo: lectura ejecutiva inmediata.
+Campos sugeridos:
+	•	Industria: Alimentos / Retail
+	•	Tipo de proyecto: Ecommerce internacional
+	•	Alcance: Global
+	•	Plataforma: Shopify
+	•	Logística: Integración con FedEx
+	•	Canales: Web + Email marketing
+	•	Mercado: USA y resto del mundo
+
+3. El desafío
+Crear una tienda online capaz de conectar emocionalmente con argentinos viviendo en el exterior, transformando la nostalgia en una experiencia de compra simple, confiable y global.
+
+4. La solución
+Se diseñó y desarrolló un ecommerce internacional sobre Shopify, combinando una identidad visual clara con una experiencia de compra directa y confiable.
+El sistema integra checkout optimizado, múltiples medios de pago, sincronización logística con FedEx y una estrategia de email marketing que acompaña al cliente desde la compra hasta la entrega del producto.
+
+5. El impacto
+Columba Store logró posicionarse como un punto de encuentro entre cultura, producto y logística, ofreciendo una experiencia de compra que conecta emocionalmente con su audiencia y funciona de manera eficiente a escala internacional.
+El impacto se comunica desde la integración real del sistema, no desde promesas.
+
+6. CTA
+Texto sugerido:
+Conversemos sobre tu proyecto de ecommerce internacional
+
+PÁGINA STANDALONE (EXPANSIÓN DEL CASO)
+Rol de la página individual
+Profundizar en la construcción de marca y en la arquitectura del sistema comercial.
+Contenido adicional sugerido
+	•	Storytelling de marca y concepto cultural
+	•	Decisiones de experiencia de usuario
+	•	Flujo completo de compra y postventa
+	•	Estrategia de email marketing y retención
+	•	SEO y posicionamiento para mercados internacionales
+La página standalone refuerza la solidez del proyecto.
+
+Qué NO mostrar en este caso
+	•	Listados técnicos extensos
+	•	Detalles irrelevantes de implementación
+	•	Jerga innecesaria
+El foco está en:
+identidad, sistema, operación y alcance global.
+
+Estado del caso
+	•	Caso secundario de alto impacto definido
+	•	Contenido listo para diseño e implementación
+Siguiente paso:
+Caso 5 – NBS Bazar Profesional
+
