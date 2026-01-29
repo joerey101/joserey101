@@ -87,26 +87,35 @@ export default function CaseStudyDrawer({ isOpen, onClose, caseStudy }: CaseStud
                             {/* HEIGHT WRAPPER allows scrolling */}
                             <div className="relative h-[400vh] w-full"> {/* Increased height for long scrolling narrative */}
 
-                                {/* --- SECTION 1: STICKY HERO (The "Crystal" Part) --- */}
+                                {/* --- SECTION 1: STICKY HERO (Robust Crossfade Technique) --- */}
                                 <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
 
-                                    {/* 1. Background Image */}
+                                    {/* 1. Base Sharp Image (Always Visible) */}
                                     <motion.div style={{ scale: imageScale }} className="absolute inset-0 z-0">
                                         <Image
                                             src={caseStudy.coverImage}
                                             alt={caseStudy.title}
                                             fill
-                                            className="object-cover" // Removed brightness-[0.7]
+                                            className="object-cover"
                                             priority
                                             quality={95}
                                         />
                                     </motion.div>
 
-                                    {/* 2. Dynamic Blur Overlay */}
+                                    {/* 2. Blurred Duplicate Image (Fades In) - Solves Backdrop Glitch */}
                                     <motion.div
-                                        style={{ opacity: blurOpacity }}
-                                        className="absolute inset-0 z-10 backdrop-blur-[20px]"
-                                    />
+                                        style={{ scale: imageScale, opacity: blurOpacity }}
+                                        className="absolute inset-0 z-10"
+                                    >
+                                        <Image
+                                            src={caseStudy.coverImage}
+                                            alt={caseStudy.title}
+                                            fill
+                                            className="object-cover blur-3xl brightness-50 saturate-150"
+                                            priority
+                                            quality={10}
+                                        />
+                                    </motion.div>
 
                                     {/* 3. Hero Text (Fades Out) */}
                                     <motion.div
@@ -130,7 +139,7 @@ export default function CaseStudyDrawer({ isOpen, onClose, caseStudy }: CaseStud
                                         className="absolute bottom-20 md:bottom-24 w-full flex justify-center gap-4 md:gap-8 px-6 z-20"
                                     >
                                         {caseStudy.snapshot.map((item, idx) => (
-                                            <div key={idx} className="bg-white/10 backdrop-blur-md border border-white/20 p-4 md:p-6 rounded-xl text-center min-w-[100px] shadow-lg">
+                                            <div key={idx} className="bg-white/10 border border-white/20 p-4 md:p-6 rounded-xl text-center min-w-[100px] shadow-lg backdrop-blur-sm">
                                                 <div className="text-xl md:text-3xl font-bold text-white mb-1">{item.value}</div>
                                                 <div className="text-[9px] md:text-[10px] uppercase tracking-widest text-white/60">{item.label}</div>
                                             </div>
