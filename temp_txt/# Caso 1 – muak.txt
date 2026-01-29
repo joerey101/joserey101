@@ -1,0 +1,132 @@
+# Caso 1 – muak.shop
+
+## Rol del caso dentro del sistema
+
+**muak.shop** es un **caso flagship**.
+
+Este proyecto cumple una función estratégica central dentro del sitio:
+
+* Demostrar capacidad para **crear marcas digitales desde cero**
+* Comunicar **desarrollo real**, no soluciones “one-click”
+* Mostrar criterio en **ecommerce internacional**
+* Integrar **tecnología, estrategia y estética** como un sistema único
+
+El foco no está en la herramienta, sino en **la decisión estratégica detrás de cada elección**.
+
+## TARJETA (Index / Grid)
+
+### Objetivo de la tarjeta
+
+Transmitir, en segundos, que se trata de un ecommerce internacional de alto nivel, construido con criterio estratégico y tecnología robusta.
+
+### Contenido de la tarjeta
+
+* **Título:** muak.shop
+* **Tag:** ECOMMERCE / MODA
+* **Highlight (1 línea):**
+
+  > Ecommerce internacional de joyas personalizadas · Shopify + Next.js
+
+### Uso visual
+
+* Imagen protagonista de producto / lifestyle
+* Estética premium, limpia, contemporánea
+* Sensación de marca global
+
+La tarjeta debe comunicar implícitamente:
+
+> “Esto no es una tienda armada en una tarde. Es un producto digital diseñado para escalar.”
+
+## DESPLIEGUE DEL CASO – PANEL LATERAL
+
+### Función del panel
+
+Permitir una lectura estratégica y clara del proyecto sin salir del flujo principal del sitio.
+
+
+### 1. Hero
+
+**Contenido:**
+
+* Imagen principal del ecommerce
+
+* Título: **muak.shop**
+
+* Subtítulo:
+
+  > Una marca de joyas pensada para competir a nivel internacional
+
+* Tag visible: ECOMMERCE / MODA
+
+El hero posiciona el proyecto como marca, no como plataforma.
+
+### 2. Snapshot (datos clave)
+
+**Objetivo:** ofrecer lectura ejecutiva inmediata.
+
+**Campos sugeridos:**
+
+* Industria: Moda / Joyas
+* Tipo de proyecto: Ecommerce internacional
+* Plataforma: Shopify
+* Arquitectura: Next.js / React
+* Alcance: Global
+* Cliente: Marca con base en Suiza
+
+### 3. El desafío
+
+> Desarrollar una tienda online desde cero capaz de operar a nivel internacional, con una identidad sólida, una experiencia de compra premium y un sistema de personalización de joyas de alto nivel, evitando soluciones genéricas o de bajo estándar.
+
+### 4. La solución
+
+> Se diseñó y construyó un ecommerce internacional sobre Shopify, integrando una arquitectura moderna basada en Next.js y React, lo que permitió mayor control sobre la experiencia de usuario, el rendimiento y la escalabilidad del proyecto.
+>
+> El trabajo incluyó una estrategia visual cuidada, apoyada en producción propia e imágenes generadas y optimizadas con el uso de inteligencia artificial, aplicada como herramienta estratégica para elevar la calidad del contenido y acelerar procesos creativos.
+
+
+
+### 5. El impacto
+
+> muak.shop se lanzó como una tienda abierta al mundo, con un sistema preparado para escalar, comunicar valor de marca y ofrecer una experiencia de compra alineada con estándares internacionales del segmento de joyería personalizada.
+
+El impacto se expresa en la **solidez del sistema**, no en promesas abstractas.
+
+### 6. CTA
+
+**Texto sugerido:**
+
+> Hablemos de un proyecto similar
+
+CTA directo, natural y alineado al recorrido del usuario.
+
+## PÁGINA STANDALONE (EXPANSIÓN DEL CASO)
+
+### Rol de la página individual
+
+Permitir una lectura más profunda del proyecto para quienes buscan entender el proceso completo.
+
+### Contenido adicional sugerido
+
+* Desarrollo del concepto de marca
+* Decisiones estratégicas de experiencia de usuario
+* Ejemplos del sistema de personalización
+* Uso de inteligencia artificial como apoyo creativo y estratégico
+* Galería extendida del ecommerce
+
+La página standalone **amplía** el caso, no lo redefine.
+
+## Qué NO mostrar en este caso
+
+* Explicaciones técnicas excesivamente detalladas
+* Jerga de desarrollo innecesaria
+* Listados de plugins o herramientas
+
+El foco está en:
+
+> criterio, estrategia, arquitectura y resultado.
+
+## Estado del caso
+
+* Rediseño estratégico aprobado
+* Contenido alineado a Antigravity + Vercel
+* Listo para implementación

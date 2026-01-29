@@ -1,0 +1,83 @@
+Caso 8 – Punto 360
+Rol del caso dentro del sistema
+Punto 360 funciona como el caso de cierre del sistema.
+No es un caso autorreferencial, sino demostrativo:
+	•	Muestra criterio creativo aplicado de forma sostenida en el tiempo
+	•	Integra imagen, video y performance en un mismo sistema
+	•	Demuestra continuidad, experiencia y resultados medibles
+Este caso cierra el recorrido mostrando el “cómo trabajamos” desde adentro, sin romper el tono profesional.
+
+TARJETA (Index / Grid)
+Objetivo de la tarjeta
+Comunicar trayectoria, calidad visual y orientación a resultados.
+Contenido de la tarjeta
+	•	Título: Punto 360
+	•	Tag: ESTUDIO / PERFORMANCE
+	•	Highlight (1 línea): Estudio de fotografía y video con foco en performance y posicionamiento
+(Microtexto opcional)
+	•	Más de 20 años de experiencia en producción visual
+Uso visual
+	•	Imagen fuerte de producción (foto o frame de video)
+	•	Estética profesional, limpia
+	•	Sensación de oficio y consistencia
+La tarjeta debe comunicar implícitamente:
+“Creatividad aplicada con objetivos claros.”
+
+DESPLIEGUE DEL CASO – PANEL LATERAL
+Función del panel
+Mostrar cómo un estudio creativo articula estética, estrategia y resultados reales.
+
+1. Hero
+Contenido:
+	•	Imagen principal de producción (foto o video still)
+	•	Título: Punto 360
+	•	Subtítulo: Producción visual estratégica para marcas y empresas
+	•	Tag visible: ESTUDIO / PERFORMANCE
+
+2. Snapshot (datos clave)
+Objetivo: lectura ejecutiva inmediata.
+Campos sugeridos:
+	•	Industria: Fotografía / Video / Publicidad
+	•	Tipo de proyecto: Estudio creativo
+	•	Alcance: Argentina
+	•	Trayectoria: +20 años
+	•	Clientes: Vacalin, Iluminarte, Landmark, Piero, SICA, entre otros
+	•	Canales: Web + Google Ads
+	•	Enfoque: Producción + performance
+
+3. El desafío
+Mantener un estándar visual alto a lo largo del tiempo, adaptándose a nuevos formatos, plataformas y demandas de performance sin perder calidad ni identidad.
+
+4. La solución
+Punto 360 se consolidó como un estudio integral que combina fotografía, video y estrategia digital, desarrollando piezas visuales pensadas tanto para construir marca como para funcionar en campañas de posicionamiento y performance.
+El trabajo se apoya en una navegación clara, una presentación cuidada del portfolio y una integración directa con campañas activas de Google Ads.
+
+5. El impacto
+El estudio cuenta con una plataforma digital que refleja la calidad de su trabajo, facilita el contacto con clientes y acompaña campañas de posicionamiento como uno de los principales estudios de fotografía publicitaria de Argentina.
+
+6. CTA
+Texto sugerido:
+Pensemos una estrategia visual orientada a resultados
+
+PÁGINA STANDALONE (EXPANSIÓN DEL CASO)
+Rol de la página individual
+Actuar como portfolio extendido y documento vivo del estudio.
+Contenido adicional sugerido
+	•	Selección curada de trabajos
+	•	Casos destacados por industria
+	•	Relación entre piezas visuales y performance
+	•	Evolución del estudio a lo largo del tiempo
+
+Qué NO mostrar en este caso
+	•	Autorreferencias excesivas
+	•	Narrativa personal
+	•	Listados cronológicos sin contexto
+El foco está en:
+oficio, consistencia y resultados.
+
+Estado del caso
+	•	Caso de cierre definido
+	•	Sistema de casos completo
+Siguiente paso:
+Revisión global y ajustes finales del sistema
+

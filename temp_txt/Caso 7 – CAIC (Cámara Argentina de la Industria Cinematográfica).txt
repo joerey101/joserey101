@@ -1,0 +1,83 @@
+Caso 7 – CAIC (Cámara Argentina de la Industria Cinematográfica)
+Rol del caso dentro del sistema
+CAIC es un caso institucional de alto prestigio sectorial.
+Dentro del sistema cumple una función estratégica muy clara:
+	•	Demostrar capacidad para trabajar con organismos institucionales
+	•	Comunicar industria, representación y escala colectiva
+	•	Posicionar el trabajo como puente entre producción local y proyección internacional
+Este caso refuerza credibilidad, seriedad y capacidad de síntesis.
+
+TARJETA (Index / Grid)
+Objetivo de la tarjeta
+Transmitir institucionalidad, representación sectorial y alcance internacional.
+Contenido de la tarjeta
+	•	Título: CAIC
+	•	Tag: INSTITUCIONAL / CINE
+	•	Highlight (1 línea): Plataforma institucional para la industria cinematográfica argentina
+(Microtexto opcional)
+	•	Punto de contacto entre productoras locales y el mundo
+Uso visual
+	•	Imagen institucional / cinematográfica
+	•	Estética sobria, clara, representativa
+	•	Sensación de organismo, no de marca comercial
+La tarjeta debe comunicar implícitamente:
+“Una industria organizada que se presenta al mundo.”
+
+DESPLIEGUE DEL CASO – PANEL LATERAL
+Función del panel
+Explicar cómo se traduce una industria compleja y diversa en una plataforma institucional clara y accesible.
+
+1. Hero
+Contenido:
+	•	Imagen representativa del cine argentino
+	•	Título: CAIC
+	•	Subtítulo: La cámara que representa a la industria cinematográfica argentina
+	•	Tag visible: INSTITUCIONAL / CINE
+
+2. Snapshot (datos clave)
+Objetivo: lectura ejecutiva inmediata.
+Campos sugeridos:
+	•	Industria: Cine / Producción audiovisual
+	•	Tipo de proyecto: Web institucional
+	•	Alcance: Internacional
+	•	Rol: Cámara sectorial
+	•	Representación: Principales productoras argentinas
+	•	Reconocimientos: Oscar · Emmy · Premios internacionales
+	•	Objetivo: Visibilidad y contacto institucional
+
+3. El desafío
+Representar digitalmente a una cámara que nuclea a las principales productoras cinematográficas del país, comunicando diversidad, prestigio y capacidad productiva sin diluir identidad ni claridad institucional.
+
+4. La solución
+Se diseñó una plataforma institucional que funciona como vidriera de la industria, ordenando la información, destacando el rol de la cámara y facilitando el contacto entre productoras argentinas y el mercado internacional.
+La experiencia prioriza claridad, navegación simple y una estética coherente con el universo cinematográfico.
+
+5. El impacto
+CAIC cuenta hoy con un canal digital que fortalece su rol institucional, mejora la visibilidad de la industria argentina y actúa como punto de entrada para vínculos y proyectos a escala internacional.
+
+6. CTA
+Texto sugerido:
+Diseñemos una plataforma institucional clara y representativa
+
+PÁGINA STANDALONE (EXPANSIÓN DEL CASO)
+Rol de la página individual
+Ampliar el contexto institucional y el alcance de la industria representada.
+Contenido adicional sugerido
+	•	Rol de la cámara dentro del ecosistema audiovisual
+	•	Estructura de representación
+	•	Relación con mercados y festivales internacionales
+	•	Ejemplos de contenido institucional
+
+Qué NO mostrar en este caso
+	•	Enfoque comercial
+	•	Detalles técnicos
+	•	Narrativa promocional
+El foco está en:
+institucionalidad, representación y proyección internacional.
+
+Estado del caso
+	•	Caso institucional definido
+	•	Contenido alineado al sistema general
+Siguiente paso:
+Caso 8 – Punto 360
+
