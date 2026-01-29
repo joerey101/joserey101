@@ -105,7 +105,7 @@ export default function CaseStudyDrawer({ isOpen, onClose, caseStudy }: CaseStud
                                     {/* 2. Dynamic Blur Overlay */}
                                     <motion.div
                                         style={{ opacity: blurOpacity }}
-                                        className="absolute inset-0 z-10 bg-black/30 backdrop-blur-[20px]"
+                                        className="absolute inset-0 z-10 backdrop-blur-[20px]"
                                     />
 
                                     {/* 3. Hero Text (Fades Out) */}
