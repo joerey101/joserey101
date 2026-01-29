@@ -14,7 +14,7 @@ export interface CaseStudy {
     url: string;
     isFlagship: boolean;
     hasStandalone: boolean;
-    coverImage: string; // Placeholder for now
+    coverImage: string;
 }
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -39,7 +39,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         url: 'https://muak.shop',
         isFlagship: true,
         hasStandalone: true,
-        coverImage: '/assets/placeholders/muak.jpg',
+        coverImage: 'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=2600&auto=format&fit=crop', // Jewelry/Fashion
     },
     // 2. Flagship: Segue Yachts
     {
@@ -62,7 +62,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         url: 'https://segue.com.ar',
         isFlagship: true,
         hasStandalone: true,
-        coverImage: '/assets/placeholders/segue.jpg',
+        coverImage: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2600&auto=format&fit=crop', // Leading Yacht
     },
     // 3. Flagship: Haddock Films
     {
@@ -85,7 +85,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         url: 'https://haddockfilms.com',
         isFlagship: true,
         hasStandalone: true,
-        coverImage: '/assets/placeholders/haddock.jpg',
+        coverImage: '/assets/img/haddock.png', // Real image exists!
     },
     // 4. Columba Store (Secondary)
     {
@@ -108,7 +108,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         url: '#',
         isFlagship: false,
         hasStandalone: false,
-        coverImage: '/assets/placeholders/columba.jpg',
+        coverImage: '/assets/img/columba.png', // Real image exists!
     },
     // 5. NBS Bazar Profesional
     {
@@ -131,7 +131,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         url: '#',
         isFlagship: false,
         hasStandalone: false,
-        coverImage: '/assets/placeholders/nbs.jpg',
+        coverImage: 'https://images.unsplash.com/photo-1556740758-90de2929450a?q=80&w=2600&auto=format&fit=crop', // Kitchen/Industrial
     },
     // 6. Gate Priority
     {
@@ -154,7 +154,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         url: '#',
         isFlagship: false,
         hasStandalone: false,
-        coverImage: '/assets/placeholders/gate.jpg',
+        coverImage: 'https://images.unsplash.com/photo-1542296332-2e44a99cfef9?q=80&w=2600&auto=format&fit=crop', // Airport/Travel
     },
     // 7. CAIC
     {
@@ -177,7 +177,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         url: '#',
         isFlagship: false,
         hasStandalone: false,
-        coverImage: '/assets/placeholders/caic.jpg',
+        coverImage: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2600&auto=format&fit=crop', // Cinema/Projector
     },
     // 8. Punto 360
     {
@@ -200,6 +200,6 @@ export const CASE_STUDIES: CaseStudy[] = [
         url: '#',
         isFlagship: false,
         hasStandalone: false,
-        coverImage: '/assets/placeholders/punto360.jpg',
+        coverImage: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2600&auto=format&fit=crop', // Studio/Tech
     }
 ];
