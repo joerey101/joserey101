@@ -149,12 +149,12 @@ export default function CaseStudyModal({ isOpen, onClose, caseStudy, lang }: Cas
                                     {caseStudy.keyMetrics && (
                                         <motion.div
                                             style={{ opacity: textFadeOut, y: metricsY }}
-                                            className="absolute bottom-20 md:bottom-16 left-0 w-full flex justify-center gap-3 md:gap-4 px-6 md:px-6"
+                                            className="absolute bottom-32 md:bottom-16 left-0 w-full flex flex-col md:flex-row justify-center gap-2 md:gap-4 px-10 md:px-6"
                                         >
                                             {caseStudy.keyMetrics.map((m, i) => (
-                                                <div key={i} className="bg-white/10 backdrop-blur-2xl border border-white/10 p-2 md:p-6 rounded-sm md:rounded-2xl flex flex-col items-center justify-center flex-1 md:min-w-[140px] text-center">
-                                                    <p className="text-base md:text-3xl font-display font-bold text-white mb-0.5 md:mb-1">{m.value}</p>
-                                                    <p className="text-[7px] md:text-[10px] uppercase tracking-wider text-white/50 leading-none">{m.label}</p>
+                                                <div key={i} className="bg-white/10 backdrop-blur-2xl border border-white/10 py-2 px-4 md:p-6 rounded-full md:rounded-2xl flex md:flex-col flex-row items-baseline md:items-center justify-center gap-2 md:gap-0 w-full md:w-auto md:min-w-[140px] text-center">
+                                                    <p className="text-sm md:text-3xl font-display font-bold text-white mb-0 md:mb-1">{m.value}</p>
+                                                    <p className="text-[9px] md:text-[10px] uppercase tracking-wider text-white/50 leading-none">{m.label}</p>
                                                 </div>
                                             ))}
                                         </motion.div>
