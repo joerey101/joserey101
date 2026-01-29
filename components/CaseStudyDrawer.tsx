@@ -1,9 +1,9 @@
-
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { CaseStudy } from '@/data/case-studies';
 
 // Basic Icons from SVG
@@ -21,148 +21,186 @@ interface CaseStudyDrawerProps {
 }
 
 export default function CaseStudyDrawer({ isOpen, onClose, caseStudy }: CaseStudyDrawerProps) {
-    const [mount, setMount] = useState(false);
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const { scrollY } = useScroll({ container: scrollRef });
+
+    // Apple-Style "Crystal" Blur Effect
+    // As user scrolls 400px, blur opacity goes from 0 to 1
+    const blurOpacity = useTransform(scrollY, [0, 400], [0, 1]);
+    // Parallax scale for depth
+    const imageScale = useTransform(scrollY, [0, 600], [1, 1.1]);
 
     useEffect(() => {
         if (isOpen) {
-            setMount(true);
             document.body.style.overflow = 'hidden';
         } else {
-            const timer = setTimeout(() => setMount(false), 500); // Animation duration
             document.body.style.overflow = 'unset';
-            return () => clearTimeout(timer);
+            if (scrollRef.current) scrollRef.current.scrollTop = 0; // Reset scroll
         }
+        return () => { document.body.style.overflow = 'unset'; };
     }, [isOpen]);
 
-    if (!mount && !isOpen) return null;
-
-    const currentCase = caseStudy;
-    if (!currentCase) return null;
+    if (!caseStudy) return null;
 
     return (
-        <div className={`fixed inset-0 z-[100] transition-visibility duration-0 ${isOpen ? 'visible' : 'invisible delay-500'}`}>
+        <AnimatePresence>
+            {isOpen && (
+                <div className="fixed inset-0 z-[100]">
 
-            {/* Backdrop */}
-            <div
-                className={`absolute inset-0 bg-black/80 backdrop-blur-md transition-opacity duration-500 ease-out ${isOpen ? 'opacity-100' : 'opacity-0'}`}
-                onClick={onClose}
-            >
-                <div className="absolute top-8 left-8 text-white hidden md:flex items-center gap-2 opacity-50 hover:opacity-100 cursor-pointer transition-opacity">
-                    <IconArrowLeft /> <span>VOLVER AL INDICE</span>
-                </div>
-            </div>
-
-            {/* Drawer Panel - Restoring the "Massive Slide" feel */}
-            <div
-                className={`absolute top-0 right-0 h-full w-full md:w-[85vw] lg:w-[70vw] bg-neutral-900 border-l border-white/10 shadow-[0_0_100px_rgba(0,0,0,0.8)] overflow-y-auto overflow-x-hidden transform transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
-            >
-                {/* Close Button fixed inside drawer */}
-                <button
-                    onClick={onClose}
-                    className="fixed top-6 right-6 z-50 p-4 rounded-full bg-black/20 text-white hover:bg-white hover:text-black transition-all border border-white/10 backdrop-blur-md group"
-                >
-                    <div className="group-hover:rotate-90 transition-transform duration-300">
-                        <IconClose />
-                    </div>
-                </button>
-
-                <div className="relative min-h-screen">
-
-                    {/* Hero Section */}
-                    <div className="relative h-[70vh] w-full">
-                        <Image
-                            src={currentCase.coverImage}
-                            alt={currentCase.title}
-                            fill
-                            className="object-cover"
-                            priority
-                            quality={90}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-neutral-900" />
-
-                        <div className="absolute bottom-0 left-0 p-8 md:p-20 w-full max-w-6xl">
-                            {/* Tagline Animation */}
-                            <div className={`transition-all duration-700 delay-300 transform ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-black uppercase leading-[0.85] tracking-tighter text-white mb-6">
-                                    {currentCase.title}
-                                </h1>
-                            </div>
-
-                            <div className={`transition-all duration-700 delay-500 transform ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <p className="text-xl md:text-3xl text-white/80 font-light max-w-3xl leading-snug">
-                                    {currentCase.subtitle}
-                                </p>
-                            </div>
+                    {/* Backdrop */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="absolute inset-0 bg-black/80 backdrop-blur-md"
+                        onClick={onClose}
+                    >
+                        <div className="absolute top-8 left-8 text-white hidden md:flex items-center gap-2 opacity-50 hover:opacity-100 cursor-pointer transition-opacity">
+                            <IconArrowLeft /> <span>VOLVER AL INDICE</span>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    {/* Snapshot Bar - Floating Effect */}
-                    <div className="relative z-10 -mt-16 px-8 md:px-20 mb-20">
-                        <div className="bg-neutral-800/50 backdrop-blur-xl border border-white/10 p-8 md:p-12 grid grid-cols-2 lg:grid-cols-4 gap-8 rounded-sm">
-                            {currentCase.snapshot.map((item, idx) => (
-                                <div key={idx} className="flex flex-col gap-2">
-                                    <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40">{item.label}</span>
-                                    <span className="text-lg md:text-xl font-bold font-display text-white">{item.value}</span>
+                    {/* Drawer Panel */}
+                    <motion.div
+                        initial={{ x: "100%" }}
+                        animate={{ x: 0 }}
+                        exit={{ x: "100%" }}
+                        transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                        className="absolute top-0 right-0 h-full w-full md:w-[85vw] lg:w-[70vw] bg-black shadow-[0_0_100px_rgba(0,0,0,0.8)] border-l border-white/10"
+                    >
+                        {/* Scroll Container */}
+                        <div ref={scrollRef} className="absolute inset-0 overflow-y-auto no-scrollbar scroll-smooth">
+
+                            {/* Sticky Hero Section (Apple Mode) */}
+                            <div className="sticky top-0 h-[80vh] w-full overflow-hidden z-0">
+                                <motion.div style={{ scale: imageScale }} className="relative w-full h-full">
+                                    <Image
+                                        src={caseStudy.coverImage}
+                                        alt={caseStudy.title}
+                                        fill
+                                        className="object-cover"
+                                        priority
+                                        quality={90}
+                                    />
+                                    {/* Gradient for text readability at bottom */}
+                                    <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black" />
+                                </motion.div>
+
+                                {/* The Magic Crystal Blur Layer */}
+                                <motion.div
+                                    style={{ opacity: blurOpacity }}
+                                    className="absolute inset-0 bg-black/80 backdrop-blur-xl pointer-events-none"
+                                />
+
+                                {/* Hero Text Content - Initially visible, then fades/blurs out slightly or stays legible? 
+                                   User said "foto se esfumaba". Text usually stays or parallax. 
+                                   Let's keep text fixed relative to image container bottom, but maybe fade it?
+                                   Actually, usually the text SCROLLS UP over the blur.
+                                */}
+                                <div className="absolute bottom-0 left-0 p-8 md:p-20 w-full max-w-6xl z-10 pointer-events-none">
+                                    <motion.h1
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.2, duration: 0.8 }}
+                                        className="text-6xl md:text-8xl lg:text-9xl font-display font-black uppercase leading-[0.85] tracking-tighter text-white mb-6"
+                                    >
+                                        {caseStudy.title}
+                                    </motion.h1>
+                                    <motion.p
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.4, duration: 0.8 }}
+                                        className="text-xl md:text-3xl text-white/80 font-light max-w-3xl leading-snug"
+                                    >
+                                        {caseStudy.subtitle}
+                                    </motion.p>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Content Blocks */}
-                    <div className="px-8 md:px-20 pb-40 max-w-5xl">
-
-                        {/* Challenge */}
-                        <div className="grid md:grid-cols-[200px_1fr] gap-8 mb-24">
-                            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-accent">El Desafío</h3>
-                            <p className="text-2xl md:text-4xl font-light leading-relaxed text-white/90">
-                                {currentCase.challenge}
-                            </p>
-                        </div>
-
-                        {/* Solution */}
-                        <div className="grid md:grid-cols-[200px_1fr] gap-8 mb-24 transition-opacity duration-1000 delay-300">
-                            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-accent">La Solución</h3>
-                            <div className="space-y-8">
-                                <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl">
-                                    {currentCase.solution}
-                                </p>
                             </div>
+
+                            {/* Scrolling Content (z-index higher than sticky hero) */}
+                            <div className="relative z-10 w-full bg-transparent">
+                                {/* Spacer to push content below the 80vh hero */}
+                                <div className="h-[80vh] pointer-events-none" />
+
+                                {/* Content Body - Background black to cover image as we scroll up */}
+                                <div className="bg-black border-t border-white/10 min-h-screen">
+
+                                    {/* Floating Snapshot Bar */}
+                                    <div className="-mt-16 px-8 md:px-20 mb-20 relative z-20">
+                                        <div className="bg-neutral-900/80 backdrop-blur-2xl border border-white/10 p-8 md:p-12 grid grid-cols-2 lg:grid-cols-4 gap-8 rounded-sm shadow-2xl">
+                                            {caseStudy.snapshot.map((item, idx) => (
+                                                <div key={idx} className="flex flex-col gap-2">
+                                                    <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40">{item.label}</span>
+                                                    <span className="text-lg md:text-xl font-bold font-display text-white">{item.value}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Narrative Content */}
+                                    <div className="px-8 md:px-20 pb-40 max-w-5xl">
+                                        <div className="grid md:grid-cols-[200px_1fr] gap-8 mb-24">
+                                            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-white/40">El Desafío</h3>
+                                            <p className="text-2xl md:text-4xl font-light leading-relaxed text-white/90">
+                                                {caseStudy.challenge}
+                                            </p>
+                                        </div>
+
+                                        <div className="grid md:grid-cols-[200px_1fr] gap-8 mb-24">
+                                            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-white/40">La Solución</h3>
+                                            <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl">
+                                                {caseStudy.solution}
+                                            </p>
+                                        </div>
+
+                                        <div className="grid md:grid-cols-[200px_1fr] gap-8 mb-32">
+                                            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-white/40">Impacto</h3>
+                                            <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl border-l-2 border-white/20 pl-6">
+                                                {caseStudy.impact}
+                                            </p>
+                                        </div>
+
+                                        {/* CTA */}
+                                        <div className="flex flex-col md:flex-row gap-8 items-center justify-between border-t border-white/10 pt-20">
+                                            {caseStudy.url && (
+                                                <a
+                                                    href={caseStudy.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-neutral-200 transition-colors text-sm"
+                                                >
+                                                    Visitar Sitio Projecto
+                                                </a>
+                                            )}
+
+                                            {caseStudy.hasStandalone && (
+                                                <Link
+                                                    href={`/case-studies/${caseStudy.slug}`}
+                                                    className="text-white/40 hover:text-white uppercase tracking-widest text-sm border-b border-transparent hover:border-white transition-all pb-1"
+                                                >
+                                                    Leer Caso Detallado →
+                                                </Link>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
-                        {/* Impact */}
-                        <div className="grid md:grid-cols-[200px_1fr] gap-8 mb-32">
-                            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-accent">Impacto</h3>
-                            <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl border-l-2 border-white/20 pl-6">
-                                {currentCase.impact}
-                            </p>
-                        </div>
+                        {/* Close Button fixed over everything */}
+                        <button
+                            onClick={onClose}
+                            className="absolute top-6 right-6 z-50 p-4 rounded-full bg-black/20 text-white hover:bg-white hover:text-black transition-all border border-white/10 backdrop-blur-md group"
+                        >
+                            <div className="group-hover:rotate-90 transition-transform duration-300">
+                                <IconClose />
+                            </div>
+                        </button>
 
-                        {/* Call To Action */}
-                        <div className="flex flex-col md:flex-row gap-8 items-center justify-between border-t border-white/10 pt-20">
-                            {currentCase.url && (
-                                <a
-                                    href={currentCase.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-accent transition-colors text-sm"
-                                >
-                                    Visitar Sitio Projecto
-                                </a>
-                            )}
-
-                            {currentCase.hasStandalone && (
-                                <Link
-                                    href={`/case-studies/${currentCase.slug}`}
-                                    className="text-white/40 hover:text-white uppercase tracking-widest text-sm border-b border-transparent hover:border-white transition-all pb-1"
-                                >
-                                    Leer Caso Detallado →
-                                </Link>
-                            )}
-                        </div>
-
-                    </div>
+                    </motion.div>
                 </div>
-            </div>
-        </div>
+            )}
+        </AnimatePresence>
     );
 }
