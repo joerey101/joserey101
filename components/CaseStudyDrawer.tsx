@@ -22,25 +22,23 @@ export default function CaseStudyDrawer({ isOpen, onClose, caseStudy }: CaseStud
     const containerRef = useRef<HTMLDivElement>(null);
 
     // Scroll Logic tied to the specific container of the case study details
-    const { scrollYProgress } = useScroll({
+    const { scrollY } = useScroll({
         container: containerRef,
-        offset: ["start start", "end end"]
+        // offset not needed for pixel values of the container itself
     });
 
-    // --- APPLE / CRYSTAL EFFECT MAPPINGS ---
-    // 1. Image Scale: Slight zoom on entrance
-    const imageScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
+    // --- APPLE / CRYSTAL EFFECT MAPPINGS (PIXEL BASED) ---
+    // 0px to 300px: Transition from Crystal Clear to Blurred
+    const imageScale = useTransform(scrollY, [0, 400], [1, 1.1]);
+    const blurOpacity = useTransform(scrollY, [10, 300], [0, 1]); // Starts after 10px to be safe
 
-    // 2. Blur: Start clear, become blurry as we scroll down to make text readable
-    const blurOpacity = useTransform(scrollYProgress, [0.05, 0.2], [0, 1]);
+    // Hero Text Animations
+    const heroTextOpacity = useTransform(scrollY, [0, 200], [1, 0]);
+    const heroTextY = useTransform(scrollY, [0, 200], [0, -50]);
 
-    // 3. Hero Text: Fades out and moves up
-    const heroTextOpacity = useTransform(scrollYProgress, [0.05, 0.15], [1, 0]);
-    const heroTextY = useTransform(scrollYProgress, [0.05, 0.15], [0, -50]);
-
-    // 4. Content Content: Slides in from bottom
-    const contentOpacity = useTransform(scrollYProgress, [0.15, 0.3], [0, 1]);
-    const contentTranslate = useTransform(scrollYProgress, [0.15, 0.3], [100, 0]);
+    // Content Entrance
+    const contentOpacity = useTransform(scrollY, [300, 500], [0, 1]);
+    const contentTranslate = useTransform(scrollY, [300, 500], [100, 0]);
 
     // Handle Scroll Lock
     useEffect(() => {
@@ -98,7 +96,7 @@ export default function CaseStudyDrawer({ isOpen, onClose, caseStudy }: CaseStud
                                             src={caseStudy.coverImage}
                                             alt={caseStudy.title}
                                             fill
-                                            className="object-cover brightness-[0.7]" // Darkened slightly
+                                            className="object-cover" // Removed brightness-[0.7]
                                             priority
                                             quality={95}
                                         />
