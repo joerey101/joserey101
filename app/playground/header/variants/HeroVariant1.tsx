@@ -57,9 +57,15 @@ function FlowFieldBackground() {
                 for (let i = 1; i < this.history.length; i++) {
                     ctx.lineTo(this.history[i].x, this.history[i].y);
                 }
-                ctx.strokeStyle = `rgba(0, 0, 0, ${0.03})`;
-                ctx.lineWidth = 1;
+                ctx.strokeStyle = `rgba(0, 0, 0, ${0.08})`;
+                ctx.lineWidth = 1.5;
                 ctx.stroke();
+
+                // Occasional highlight line
+                if (Math.random() > 0.99) {
+                    ctx.strokeStyle = `rgba(0, 243, 255, 0.2)`; // Electric blue touch
+                    ctx.stroke();
+                }
             }
         }
 
