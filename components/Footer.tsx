@@ -25,10 +25,10 @@ export default function Footer({ lang }: FooterProps) {
             </div>
 
             <div className="pt-20 relative z-10 mb-12">
-                <h2 className="font-display font-black text-[7vw] md:text-[5rem] lg:text-[6rem] leading-[0.9] tracking-[-0.03em] uppercase mb-6">
+                <h2 className="font-display font-black text-[7vw] md:text-[80px] lg:text-[100px] leading-[0.9] tracking-[-0.03em] uppercase mb-6">
                     {t.title}
                 </h2>
-                <p className="font-meta text-base md:text-lg lg:text-xl text-carbon/80 max-w-2xl font-bold leading-relaxed">
+                <p className="font-meta text-lg md:text-[32px] text-carbon/80 max-w-4xl font-bold leading-tight">
                     {t.desc}
                 </p>
             </div>

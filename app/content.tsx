@@ -319,7 +319,7 @@ export const content = {
         footer: {
             label: "CONEXIÓN // 2024 // LISTO PARA EL FUTURO",
             title: <>El Futuro es Ahora.<br /><span className="text-white">Evolucioná tu negocio.</span></>,
-            desc: "Convertimos tu visión en un activo digital con ingeniería, medición y foco en los detalles.",
+            desc: <>Convertimos tu visión en un activo digital <br /> con ingeniería, medición y foco en los detalles.</>,
             cta: "Hablemos",
             links: ["LinkedIn"],
             copyright: <>© 2024 JOSEREY STUDIO<br />DISEÑADO EN EL VACÍO<br />TODOS LOS DERECHOS RESERVADOS</>
@@ -608,7 +608,7 @@ export const content = {
         footer: {
             label: "CONNECTION // 2024 // READY FOR THE FUTURE",
             title: <>The Future is Now.<br /><span className="text-white">Evolve your business.</span></>,
-            desc: "We convert your vision into a digital asset with engineering, measurement, and focus on details.",
+            desc: <>We convert your vision into a digital asset <br /> with engineering, measurement, and focus on details.</>,
             cta: "Let's Talk",
             links: ["LinkedIn"],
             copyright: <>© 2024 JOSEREY STUDIO<br />DESIGNED IN THE VOID<br />ALL RIGHTS RESERVED</>
