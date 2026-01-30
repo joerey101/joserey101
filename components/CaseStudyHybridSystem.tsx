@@ -225,15 +225,15 @@ export default function CaseStudyHybridSystem({ initialCases, lang }: CaseStudyH
 
     return (
         <section id="work" className="py-20 md:py-32 bg-background-light overflow-hidden">
-            <div className="max-w-[1600px] mx-auto px-4 md:px-8">
+            <div className="max-w-[1800px] mx-auto px-4 md:px-12">
 
                 {/* Header */}
-                <div className="mb-8 flex items-end justify-between border-b border-carbon/10 pb-8">
+                <div className="mb-12 flex items-end justify-between border-b border-carbon/10 pb-8">
                     <div>
-                        <h2 className="text-5xl md:text-8xl font-display font-black uppercase text-carbon leading-[0.8]">
+                        <h2 className="text-5xl md:text-8xl lg:text-[10rem] font-display font-black uppercase text-carbon leading-[0.8] tracking-tighter">
                             {lang === 'es' ? 'Trabajos' : 'Selected'} <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-vibrant-orange">{lang === 'es' ? 'Seleccionados' : 'Work'}</span>
                         </h2>
-                        <p className="mt-6 text-carbon/60 text-sm md:text-lg font-light max-w-2xl leading-relaxed">
+                        <p className="mt-8 text-carbon/60 text-sm md:text-xl font-light max-w-3xl leading-relaxed">
                             {lang === 'es' ? 'Implementaciones reales en entornos complejos.' : 'Real-world implementations in complex environments.'}
                         </p>
                     </div>
