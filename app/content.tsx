@@ -1,10 +1,47 @@
+// --- INTERFACES ---
+
+export interface KeyMetric {
+    value: string;
+    label: string;
+}
+
+export interface CaseStudyDetails {
+    challenge: string;
+    solution: string;
+    impact: string;
+}
+
+export interface CaseStudy {
+    id: number | string;
+    title: string;
+    subtitle: string;
+    slug: string;
+    tagDisplay: string;
+    tag: string;
+    img: string;
+    color: string;
+    borderColor?: string;
+    videoUrl?: string;
+    keyMetrics?: KeyMetric[];
+    techStack?: string[];
+    cta?: {
+        text: string;
+        url: string;
+    };
+    details?: CaseStudyDetails;
+    extended?: {
+        intro: string;
+        body: string;
+    };
+}
+
 export const content = {
     es: {
         header: {
             work: "Trabajo",
             capabilities: "Capacidades",
             studio: "Estudio",
-            hire: "Contrátanos"
+            hire: "HABLEMOS"
         },
         hero: {
             typingWords: ["Convencional", "Rígida", "Burocrática"],
@@ -53,7 +90,7 @@ export const content = {
             titleSub: "Ahora ",
             titleSubHighlight: "hazlo.",
             desc: "La estrategia es solo ruido sin ejecución. Convierte la visión en sistema hoy mismo.",
-            cta: "Iniciar Ahora"
+            cta: "Hablemos de tu empresa"
         },
         selectedWork: {
             title: <>Casos de<br />Estudio</>,
@@ -66,86 +103,215 @@ export const content = {
             items: [
                 {
                     id: 1,
-                    title: "OSCAR ACADEMY AWARD",
-                    subtitle: "Infraestructura Digital para Productoras de Élite",
-                    slug: "oscar-academy-award",
-                    tag: "CULTURA",
-                    tagDisplay: "CULTURA",
-                    img: "/assets/img/haddock.png",
-                    color: "bg-neon-pink",
+                    title: "MUAK.SHOP",
+                    subtitle: "Ecommerce Internacional de Joyas",
+                    slug: "muak-shop",
+                    videoUrl: "/assets/img/muak.mp4",
+                    tag: "E-COMMERCE",
+                    tagDisplay: "E-COMMERCE",
+                    img: "/assets/img/Muak-shop.webp",
+                    color: "bg-lime-400",
+                    borderColor: "border-lime-400",
                     keyMetrics: [
-                        { value: "40%", label: "Interacción" },
-                        { value: "Oscar", label: "Legacy" },
-                        { value: "4K", label: "Video" }
+                        { value: "SUIZA", label: "Base" },
+                        { value: "Shopify", label: "Core" },
+                        { value: "Global", label: "Alcance" }
                     ],
-                    techStack: ["React", "Motion", "Nex.js"],
+                    techStack: ["Web", "Diseño", "Branding"],
+                    cta: {
+                        text: "Ver caso completo",
+                        url: "https://muak.shop"
+                    },
                     details: {
-                        challenge: "Modernizar la presencia digital de una productora ganadora del Oscar sin perder su legado histórico.",
-                        solution: "Desarrollo de un sitio web inmersivo tipo 'archivo vivo', utilizando Next.js para una carga instantánea de portfolios de video de alta resolución.",
-                        impact: "Aumento del 40% en consultas internacionales y una plataforma escalable para nuevos lanzamientos."
+                        challenge: "Desarrollar una marca digital que no parezca un 'template'. Crear una experiencia de compra internacional con lógica de personalización compleja y estándares estéticos suizos.",
+                        solution: "Arquitectura Headless híbrida: Shopify para el checkout seguro + Next.js para la experiencia de marca inmersiva. Un sistema visual que comunica lujo accesible.",
+                        impact: "Lanzamiento global inmediato. La marca se percibe como una entidad establecida, no como un experimento, ganando tracción en mercado europeo."
                     }
                 },
                 {
                     id: 2,
-                    title: "LÍDER INDUSTRIAL LATAM",
-                    subtitle: "Arquitectura de Negocios Corporativa",
-                    slug: "lider-industrial-latam",
-                    tag: "CORPORATIVO",
-                    tagDisplay: "CORPORATIVO",
-                    img: "/assets/img/mirgor.png",
-                    color: "bg-electric-blue",
+                    title: "SEGUE YACHTS",
+                    subtitle: "Experiencia Digital Premium",
+                    slug: "segue-yachts",
+                    tag: "BRANDING / DISEÑO",
+                    tagDisplay: "BRANDING / DISEÑO",
+                    img: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2600&auto=format&fit=crop",
+                    color: "bg-fuchsia-600",
+                    borderColor: "border-fuchsia-600",
+                    videoUrl: "/assets/img/Segue-X6.mp4",
                     keyMetrics: [
-                        { value: "60%", label: "Eficiencia" },
-                        { value: "SAP", label: "Sync" },
-                        { value: "Multi", label: "Tenant" }
+                        { value: "50+", label: "Años" },
+                        { value: "X - XS", label: "Series" },
+                        { value: "Global", label: "Brand" }
                     ],
-                    techStack: ["System Design", "CMS", "Data"],
+                    techStack: ["Web", "Diseño", "Branding"],
+                    cta: {
+                        text: "Ver caso completo",
+                        url: "https://discover.segueyachts.com/"
+                    },
                     details: {
-                        challenge: "Unificar la comunicación de un conglomerado industrial con múltiples unidades de negocio bajo una sola identidad digital coherente.",
-                        solution: "Implementación de un sistema de diseño atomizado y un CMS headless para gestionar contenido corporativo complejo.",
-                        impact: "Reducción del 60% en tiempos de actualización de contenido y mejora en la percepción de marca ante inversionistas."
+                        challenge: "Traducir la majestuosidad, la escala y el diseño de Segue Yachts al lenguaje digital, construyendo un primer punto de contacto de alto nivel.",
+                        solution: "Landing page concebida como expresión viva de la marca: narrativa visual, ritmo editorial y foco en el detalle. Arquitectura moderna para lograr fluidez absoluta.",
+                        impact: "Punto de entrada sólido al mundo digital. Diseñada para captar interés internacional y transformar audiencia en oportunidades de contacto real."
                     }
                 },
                 {
                     id: 3,
-                    title: "+50.000 ALUMNOS CONECTADOS",
-                    subtitle: "Ecosistema Educativo de Alto Tráfico",
-                    slug: "ucasal-alumnos-conectados",
-                    tag: "EDUCACIÓN",
-                    tagDisplay: "EDUCACIÓN",
-                    img: "/assets/img/ucasal.png",
-                    color: "bg-acid-green",
+                    title: "HADDOCK FILMS",
+                    subtitle: "Productora Ganadora del Oscar",
+                    slug: "haddock-films",
+                    videoUrl: "/assets/img/Haddock-Home.mp4",
+                    tag: "WEB / PLATAFORMA",
+                    tagDisplay: "WEB / PLATAFORMA",
+                    img: "/assets/img/haddock.png",
+                    color: "bg-blue-600",
+                    borderColor: "border-blue-600",
                     keyMetrics: [
-                        { value: "50k+", label: "Alumnos" },
-                        { value: "0%", label: "Downtime" },
-                        { value: "AWS", label: "Cloud" }
+                        { value: "OSCAR", label: "Winner" },
+                        { value: "Netflix", label: "Partner" },
+                        { value: "Global", label: "Reach" }
                     ],
-                    techStack: ["Cloud", "Scaling", "Database"],
+                    techStack: ["Web", "Diseño"],
+                    cta: {
+                        text: "Ver caso completo",
+                        url: "https://haddockfilms.com"
+                    },
                     details: {
-                        challenge: "Soportar picos de tráfico de 50k+ usuarios concurrentes durante inscripciones y exámenes.",
-                        solution: "Arquitectura cloud-native en AWS con auto-scaling y optimización de base de datos para alta disponibilidad.",
-                        impact: "0% de tiempo de inactividad durante los períodos críticos del año académico 2024."
+                        challenge: "Construir una web institucional capaz de representar el prestigio y la diversidad del trabajo de Haddock Films, organizando un amplio catálogo sin perder fuerza narrativa.",
+                        solution: "Experiencia digital con enfoque editorial. Cada producción cuenta con su propia ficha inmersiva, permitiendo recorrer la trayectoria del estudio de forma cinematográfica.",
+                        impact: "Plataforma digital que acompaña su crecimiento internacional y funciona como carta de presentación sólida frente a socios globales."
                     }
                 },
                 {
                     id: 4,
-                    title: "OPERACIÓN USA - LATAM",
-                    subtitle: "Logística Cross-Border y LLCs",
-                    slug: "operacion-usa-latam",
+                    title: "COLUMBA STORE",
+                    subtitle: "Sabores Argentinos al Mundo",
+                    slug: "columba-store",
                     tag: "E-COMMERCE",
                     tagDisplay: "E-COMMERCE",
-                    img: "/assets/img/columba.png",
-                    color: "bg-vibrant-orange",
+                    img: "/assets/img/Colmba_store_main.webp",
+                    color: "bg-lime-400",
+                    borderColor: "border-lime-400",
                     keyMetrics: [
-                        { value: "80%", label: "Automatización" },
                         { value: "USA", label: "Market" },
-                        { value: "Cross", label: "Border" }
+                        { value: "FedEx", label: "Logistics" },
+                        { value: "Shopify", label: "Core" }
                     ],
-                    techStack: ["Logistics", "API", "LLC"],
+                    techStack: ["Estrategia", "Web", "Diseño", "Branding"],
+                    cta: {
+                        text: "Ver caso completo",
+                        url: "https://columbastore.com/"
+                    },
                     details: {
-                        challenge: "Simplificar la complejidad operativa y legal del comercio transfronterizo para usuarios finales.",
-                        solution: "Plataforma de autogestión con integración de APIs de logística y seguimiento en tiempo real.",
-                        impact: "Automatización del 80% de las consultas de seguimiento y expansión exitosa al mercado estadounidense."
+                        challenge: "Crear una tienda online capaz de conectar emocionalmente con argentinos viviendo en el exterior, transformando la nostalgia en una experiencia de compra confiable.",
+                        solution: "Ecommerce internacional sobre Shopify con identidad visual clara e integración de checkout optimizado y sincronización logística real con FedEx.",
+                        impact: "Posicionamiento inmediato como punto de encuentro entre cultura y producto. Experiencia de compra que conecta emocionalmente y funciona eficientemente."
+                    }
+                },
+                {
+                    id: 5,
+                    title: "NBS BAZAR PROFESIONAL",
+                    subtitle: "Digitalización Comercial B2B",
+                    slug: "nbs-bazar-profesional",
+                    tag: "ESTRATEGIA / SISTEMA",
+                    tagDisplay: "ESTRATEGIA / SISTEMA",
+                    img: "/assets/img/NBS Bazar Profesional.webp",
+                    color: "bg-amber-400",
+                    borderColor: "border-amber-400",
+                    keyMetrics: [
+                        { value: "20+", label: "Años" },
+                        { value: "B2B", label: "Focus" },
+                        { value: "Leads", label: "Core" }
+                    ],
+                    techStack: ["B2B", "Web", "Diseño", "Branding"],
+                    cta: {
+                        text: "Ver caso completo",
+                        url: "https://www.nbsbazar.com/"
+                    },
+                    details: {
+                        challenge: "Acompañar la transformación digital de una empresa con más de dos décadas de trayectoria, unificando miles de SKUs en una plataforma coherente.",
+                        solution: "Arquitectura digital robusta integrando Tienda Nube con una estrategia SEO y CRM personalizada para captación B2B.",
+                        impact: "Activo digital que organiza su oferta comercial, facilita la autogestión de clientes y mejora el posicionamiento orgánico en el sector."
+                    }
+                },
+                {
+                    id: 6,
+                    title: "GATE PRIORITY",
+                    subtitle: "Logística Corporativa",
+                    slug: "gate-priority",
+                    tag: "WEB / PLATAFORMA",
+                    tagDisplay: "WEB / PLATAFORMA",
+                    img: "/assets/img/ucasal.png",
+                    color: "bg-blue-600",
+                    borderColor: "border-blue-600",
+                    videoUrl: "/assets/img/Gate-Priority.mp4",
+                    keyMetrics: [
+                        { value: "SaaS", label: "Model" },
+                        { value: "Logistics", label: "Sector" },
+                        { value: "Corp", label: "Target" }
+                    ],
+                    techStack: ["B2B", "Web", "Diseño"],
+                    cta: {
+                        text: "Ver caso completo",
+                        url: "https://gatepriority.com/"
+                    },
+                    details: {
+                        challenge: "Comunicar un servicio intangible y exclusivo transmitiendo confianza, seguridad y premiumness en una sola landing page destinada a la conversión.",
+                        solution: "Arquitectura de información clara sobre WordPress, con foco en la propuesta de valor y facilidad de contacto mediante formularios orientados a la captación.",
+                        impact: "Canal digital profesional que valida su promesa de servicio y facilita la captación de clientes corporativos."
+                    }
+                },
+                {
+                    id: 7,
+                    title: "CAIC",
+                    subtitle: "Cámara Industria Cinematográfica",
+                    slug: "caic-cine",
+                    tag: "WEB / PLATAFORMA",
+                    tagDisplay: "WEB / PLATAFORMA",
+                    img: "/assets/img/haddock.png",
+                    color: "bg-blue-600",
+                    borderColor: "border-blue-600",
+                    videoUrl: "/assets/img/CAIC-2026.mp4",
+                    keyMetrics: [
+                        { value: "Cine", label: "Industry" },
+                        { value: "Global", label: "Reach" },
+                        { value: "Oscar", label: "Rep" }
+                    ],
+                    techStack: ["Web", "Diseño"],
+                    cta: {
+                        text: "Ver caso completo",
+                        url: "https://caic-cine.org.ar/"
+                    },
+                    details: {
+                        challenge: "Representar digitalmente a una cámara que nuclea a las principales productoras del país, comunicando prestigio y capacidad productiva.",
+                        solution: "Plataforma institucional que funciona como vidriera de la industria, organizando la información y facilitando el contacto internacional.",
+                        impact: "Canal digital que fortalece su rol institucional y actúa como punto de entrada para vínculos y proyectos globales."
+                    }
+                },
+                {
+                    id: 8,
+                    title: "PUNTO 360",
+                    subtitle: "Estudio de Producción Visual",
+                    slug: "punto-360",
+                    tag: "BRANDING / DISEÑO",
+                    tagDisplay: "BRANDING / DISEÑO",
+                    img: "/assets/img/Punto360-Desarrollo.webp",
+                    color: "bg-fuchsia-600",
+                    borderColor: "border-fuchsia-600",
+                    keyMetrics: [
+                        { value: "20+", label: "Años" },
+                        { value: "Visual", label: "Core" },
+                        { value: "Ads", label: "Integr" }
+                    ],
+                    techStack: ["B2B", "Estrategia", "Web", "Diseño"],
+                    cta: {
+                        text: "Ver caso completo",
+                        url: "https://punto360.com.ar/"
+                    },
+                    details: {
+                        challenge: "Mantener un estándar visual alto a lo largo del tiempo, adaptándose a nuevos formatos de performance sin perder calidad ni identidad.",
+                        solution: "Plataforma digital que refleja la calidad de su trabajo visual y facilita el contacto con clientes mediante una navegación fluida.",
+                        impact: "Posicionamiento como uno de los principales estudios del sector, reflejando solidez y capacidad de adaptación."
                     }
                 }
             ]
@@ -155,7 +321,7 @@ export const content = {
             title: <>El Futuro es Ahora.<br /><span className="text-white">Evolucioná tu negocio.</span></>,
             desc: "Convertimos tu visión en un activo digital con ingeniería, medición y foco en los detalles.",
             cta: "Hablemos",
-            links: ["LinkedIn", "Twitter / X", "Read.cv"],
+            links: ["LinkedIn"],
             copyright: <>© 2024 JOSEREY STUDIO<br />DISEÑADO EN EL VACÍO<br />TODOS LOS DERECHOS RESERVADOS</>
         }
     },
@@ -164,7 +330,7 @@ export const content = {
             work: "Work",
             capabilities: "Capabilities",
             studio: "Studio",
-            hire: "Hire Us"
+            hire: "LET'S TALK"
         },
         hero: {
             typingWords: ["Conventional", "Rigid", "Bureaucratic"],
@@ -213,7 +379,7 @@ export const content = {
             titleSub: "Now ",
             titleSubHighlight: "do it.",
             desc: "Strategy is just noise without execution. Turn vision into system today.",
-            cta: "Start Now"
+            cta: "Let's talk about your business"
         },
         selectedWork: {
             title: <>Case<br />Studies</>,
@@ -226,86 +392,215 @@ export const content = {
             items: [
                 {
                     id: 1,
-                    title: "OSCAR ACADEMY AWARD",
-                    subtitle: "Digital Infrastructure for Elite Producers",
-                    slug: "oscar-academy-award",
-                    tag: "CULTURA",
-                    tagDisplay: "CULTURE",
-                    img: "/assets/img/haddock.png",
-                    color: "bg-neon-pink",
+                    title: "MUAK.SHOP",
+                    subtitle: "International Jewelry Ecommerce",
+                    slug: "muak-shop",
+                    videoUrl: "/assets/img/muak.mp4",
+                    tag: "E-COMMERCE",
+                    tagDisplay: "E-COMMERCE",
+                    img: "/assets/img/Muak-shop.webp",
+                    color: "bg-lime-400",
+                    borderColor: "border-lime-400",
                     keyMetrics: [
-                        { value: "40%", label: "Engagement" },
-                        { value: "Oscar", label: "Legacy" },
-                        { value: "4K", label: "Video" }
+                        { value: "SWITZ.", label: "Base" },
+                        { value: "Shopify", label: "Core" },
+                        { value: "Global", label: "Reach" }
                     ],
-                    techStack: ["React", "Motion", "Next.js"],
+                    techStack: ["Web", "Design", "Branding"],
+                    cta: {
+                        text: "View full case",
+                        url: "https://muak.shop"
+                    },
                     details: {
-                        challenge: "Modernize the digital presence of an Oscar-winning production company without losing its historical legacy.",
-                        solution: "Development of an immersive 'living archive' website, using Next.js for instant loading of high-resolution video portfolios.",
-                        impact: "40% increase in international inquiries and a scalable platform for new releases."
+                        challenge: "Develop a digital brand that doesn't look like a 'template'. Create an international shopping experience with complex customization logic and Swiss aesthetic standards.",
+                        solution: "Hybrid Headless Architecture: Shopify for secure checkout + Next.js for immersive brand experience. A visual system that communicates accessible luxury.",
+                        impact: "Immediate global launch. The brand is perceived as an established entity, not an experiment, gaining traction in the European market."
                     }
                 },
                 {
                     id: 2,
-                    title: "LATAM INDUSTRIAL LEADER",
-                    subtitle: "Corporate Business Architecture",
-                    slug: "lider-industrial-latam",
-                    tag: "CORPORATIVO",
-                    tagDisplay: "CORPORATE",
-                    img: "/assets/img/mirgor.png",
-                    color: "bg-electric-blue",
+                    title: "SEGUE YACHTS",
+                    subtitle: "Premium Digital Experience",
+                    slug: "segue-yachts",
+                    tag: "BRANDING / DESIGN",
+                    tagDisplay: "BRANDING / DESIGN",
+                    img: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2600&auto=format&fit=crop",
+                    color: "bg-fuchsia-600",
+                    borderColor: "border-fuchsia-600",
+                    videoUrl: "/assets/img/Segue-X6.mp4",
                     keyMetrics: [
-                        { value: "60%", label: "Efficiency" },
-                        { value: "SAP", label: "Sync" },
-                        { value: "Multi", label: "Tenant" }
+                        { value: "50+", label: "Years" },
+                        { value: "X - XS", label: "Series" },
+                        { value: "Global", label: "Brand" }
                     ],
-                    techStack: ["System Design", "CMS", "Data"],
+                    techStack: ["Web", "Design", "Branding"],
+                    cta: {
+                        text: "View full case",
+                        url: "https://discover.segueyachts.com/"
+                    },
                     details: {
-                        challenge: "Unify the communication of an industrial conglomerate with multiple business units under a single coherent digital identity.",
-                        solution: "Implementation of an atomic design system and a headless CMS to manage complex corporate content.",
-                        impact: "60% reduction in content update times and improved brand perception for investors."
+                        challenge: "Translate the majesty, scale, and design of Segue Yachts into digital language, building a high-level first point of contact.",
+                        solution: "A landing page conceived as a living expression of the brand: visual narrative, editorial rhythm, and focus on detail. Modern architecture for absolute fluidity.",
+                        impact: "Solid entry point to the digital world. Designed to capture international interest and transform audience into real contact opportunities."
                     }
                 },
                 {
                     id: 3,
-                    title: "+50.000 CONNECTED STUDENTS",
-                    subtitle: "High Traffic Educational Ecosystem",
-                    slug: "ucasal-alumnos-conectados",
-                    tag: "EDUCACIÓN",
-                    tagDisplay: "EDUCATION",
-                    img: "/assets/img/ucasal.png",
-                    color: "bg-acid-green",
+                    title: "HADDOCK FILMS",
+                    subtitle: "Oscar-Winning Production Company",
+                    slug: "haddock-films",
+                    videoUrl: "/assets/img/Haddock-Home.mp4",
+                    tag: "WEB / PLATFORM",
+                    tagDisplay: "WEB / PLATFORM",
+                    img: "/assets/img/haddock.png",
+                    color: "bg-blue-600",
+                    borderColor: "border-blue-600",
                     keyMetrics: [
-                        { value: "50k+", label: "Students" },
-                        { value: "0%", label: "Downtime" },
-                        { value: "AWS", label: "Cloud" }
+                        { value: "OSCAR", label: "Winner" },
+                        { value: "Netflix", label: "Partner" },
+                        { value: "Global", label: "Reach" }
                     ],
-                    techStack: ["Cloud", "Scaling", "Database"],
+                    techStack: ["Web", "Design"],
+                    cta: {
+                        text: "View full case",
+                        url: "https://haddockfilms.com"
+                    },
                     details: {
-                        challenge: "Support traffic peaks of 50k+ concurrent users during registrations and exams.",
-                        solution: "Cloud-native architecture on AWS with auto-scaling and database optimization for high availability.",
-                        impact: "0% downtime during critical academic periods of 2024."
+                        challenge: "Build an institutional website capable of representing the prestige and diversity of Haddock Films' work, organizing a vast catalog without losing narrative force.",
+                        solution: "Digital experience with an editorial focus. Each production has its own immersive sheet, allowing visitors to explore the studio's history cinematically.",
+                        impact: "Digital platform that accompanies its international growth and works as a solid introduction to global partners."
                     }
                 },
                 {
                     id: 4,
-                    title: "USA - LATAM OPERATION",
-                    subtitle: "Cross-Border Logistics and LLCs",
-                    slug: "operacion-usa-latam",
+                    title: "COLUMBA STORE",
+                    subtitle: "Argentine Flavors to the World",
+                    slug: "columba-store",
                     tag: "E-COMMERCE",
                     tagDisplay: "E-COMMERCE",
-                    img: "/assets/img/columba.png",
-                    color: "bg-vibrant-orange",
+                    img: "/assets/img/Colmba_store_main.webp",
+                    color: "bg-lime-400",
+                    borderColor: "border-lime-400",
                     keyMetrics: [
-                        { value: "80%", label: "Automation" },
                         { value: "USA", label: "Market" },
-                        { value: "Cross", label: "Border" }
+                        { value: "FedEx", label: "Logistics" },
+                        { value: "Shopify", label: "Core" }
                     ],
-                    techStack: ["Logistics", "API", "LLC"],
+                    techStack: ["Strategy", "Web", "Design", "Branding"],
+                    cta: {
+                        text: "View full case",
+                        url: "https://columbastore.com/"
+                    },
                     details: {
-                        challenge: "Simplify the operational and legal complexity of cross-border trade for end users.",
-                        solution: "Self-management platform with integration of logistics APIs and real-time tracking.",
-                        impact: "80% automation of tracking inquiries and successful expansion into the US market."
+                        challenge: "Create an online store capable of emotionally connecting with Argentines living abroad, transforming nostalgia into a reliable shopping experience.",
+                        solution: "International ecommerce on Shopify with a clear visual identity, optimized checkout integration, and real-time logistics sync with FedEx.",
+                        impact: "Immediate positioning as a meeting point between culture and product. A shopping experience that connects emotionally and works efficiently."
+                    }
+                },
+                {
+                    id: 5,
+                    title: "NBS PROFESSIONAL BAZAR",
+                    subtitle: "B2B Commercial Digitalization",
+                    slug: "nbs-bazar-profesional",
+                    tag: "STRATEGY / SYSTEM",
+                    tagDisplay: "STRATEGY / SYSTEM",
+                    img: "/assets/img/NBS Bazar Profesional.webp",
+                    color: "bg-amber-400",
+                    borderColor: "border-amber-400",
+                    keyMetrics: [
+                        { value: "20+", label: "Years" },
+                        { value: "B2B", label: "Focus" },
+                        { value: "Leads", label: "Core" }
+                    ],
+                    techStack: ["B2B", "Web", "Design", "Branding"],
+                    cta: {
+                        text: "View full case",
+                        url: "https://www.nbsbazar.com/"
+                    },
+                    details: {
+                        challenge: "Accompany the digital transformation of a company with over two decades of experience, unifying thousands of SKUs in a coherent platform.",
+                        solution: "Robust digital architecture integrating Tienda Nube with a custom SEO and CRM strategy for B2B lead generation.",
+                        impact: "Digital asset that organizes its commercial offer, facilitates client self-management, and improves organic positioning in the sector."
+                    }
+                },
+                {
+                    id: 6,
+                    title: "GATE PRIORITY",
+                    subtitle: "Corporate Logistics",
+                    slug: "gate-priority",
+                    tag: "WEB / PLATFORM",
+                    tagDisplay: "WEB / PLATFORM",
+                    img: "/assets/img/ucasal.png",
+                    color: "bg-blue-600",
+                    borderColor: "border-blue-600",
+                    videoUrl: "/assets/img/Gate-Priority.mp4",
+                    keyMetrics: [
+                        { value: "SaaS", label: "Model" },
+                        { value: "Logistics", label: "Sector" },
+                        { value: "Corp", label: "Target" }
+                    ],
+                    techStack: ["B2B", "Web", "Design"],
+                    cta: {
+                        text: "View full case",
+                        url: "https://gatepriority.com/"
+                    },
+                    details: {
+                        challenge: "Communicate an intangible and exclusive service by transmitting trust, security, and premiumness in a single landing page designed for conversion.",
+                        solution: "Clear information architecture on WordPress, focusing on the value proposition and ease of contact through lead-oriented forms.",
+                        impact: "Professional digital platform that validates its service promise and facilitates corporate client acquisition."
+                    }
+                },
+                {
+                    id: 7,
+                    title: "CAIC",
+                    subtitle: "Film Industry Chamber",
+                    slug: "caic-cine",
+                    tag: "WEB / PLATFORM",
+                    tagDisplay: "WEB / PLATFORM",
+                    img: "/assets/img/haddock.png",
+                    color: "bg-blue-600",
+                    borderColor: "border-blue-600",
+                    videoUrl: "/assets/img/CAIC-2026.mp4",
+                    keyMetrics: [
+                        { value: "Cinema", label: "Industry" },
+                        { value: "Global", label: "Reach" },
+                        { value: "Oscar", label: "Rep" }
+                    ],
+                    techStack: ["Web", "Design"],
+                    cta: {
+                        text: "View full case",
+                        url: "https://caic-cine.org.ar/"
+                    },
+                    details: {
+                        challenge: "Digitally represent a chamber that brings together the country's main production companies, communicating prestige and productive capacity.",
+                        solution: "Institutional platform that serves as an industry showcase, organizing information and facilitating international contact.",
+                        impact: "Digital channel that strengthens its institutional role and acts as an entry point for global links and projects."
+                    }
+                },
+                {
+                    id: 8,
+                    title: "PUNTO 360",
+                    subtitle: "Visual Production Studio",
+                    slug: "punto-360",
+                    tag: "BRANDING / DESIGN",
+                    tagDisplay: "BRANDING / DESIGN",
+                    img: "/assets/img/Punto360-Desarrollo.webp",
+                    color: "bg-fuchsia-600",
+                    borderColor: "border-fuchsia-600",
+                    keyMetrics: [
+                        { value: "20+", label: "Years" },
+                        { value: "Visual", label: "Core" },
+                        { value: "Ads", label: "Integr" }
+                    ],
+                    techStack: ["B2B", "Strategy", "Web", "Design"],
+                    cta: {
+                        text: "View full case",
+                        url: "https://punto360.com.ar/"
+                    },
+                    details: {
+                        challenge: "Maintain a high visual standard over time, adapting to new performance formats without losing quality or identity.",
+                        solution: "Digital platform that reflects the quality of its visual work and facilitates client contact through fluid navigation.",
+                        impact: "Positioning as one of the sector's main studios, reflecting solidity and adaptability."
                     }
                 }
             ]
@@ -315,18 +610,18 @@ export const content = {
             title: <>The Future is Now.<br /><span className="text-white">Evolve your business.</span></>,
             desc: "We convert your vision into a digital asset with engineering, measurement, and focus on details.",
             cta: "Let's Talk",
-            links: ["LinkedIn", "Twitter / X", "Read.cv"],
+            links: ["LinkedIn"],
             copyright: <>© 2024 JOSEREY STUDIO<br />DESIGNED IN THE VOID<br />ALL RIGHTS RESERVED</>
         }
     }
 };
 
-export function getCaseStudyBySlug(slug: string, lang: "es" | "en") {
-    const items = content[lang].selectedWork.items;
+export function getCaseStudyBySlug(slug: string, lang: "es" | "en"): CaseStudy | null {
+    const items = content[lang].selectedWork.items as CaseStudy[];
     return items.find(item => item.slug === slug) || null;
 }
 
-export function getCaseStudyById(id: string, lang: "es" | "en") {
-    const items = content[lang].selectedWork.items as any[];
+export function getCaseStudyById(id: string, lang: "es" | "en"): CaseStudy | null {
+    const items = content[lang].selectedWork.items as CaseStudy[];
     return items.find(item => item.id?.toString() === id || item.slug === id) || null;
 }

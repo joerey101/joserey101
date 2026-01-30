@@ -42,12 +42,45 @@ export default function MasonryCaseGrid() {
                             onClick={() => openDrawer(item)}
                             className="group relative aspect-[4/3] bg-neutral-900 cursor-pointer overflow-hidden border border-white/10"
                         >
-                            <Image
-                                src={item.coverImage}
-                                alt={item.title}
-                                fill
-                                className="object-cover opacity-80 group-hover:opacity-60 transition-all duration-700 group-hover:scale-105 saturate-0 group-hover:saturate-100" // Grayscale default, color hover for dramatic effect
-                            />
+                            {item.videoUrl ? (
+                                <div className="absolute inset-0 w-full h-full">
+                                    {item.videoUrl.startsWith('/') || item.videoUrl.endsWith('.mp4') ? (
+                                        <video
+                                            src={item.videoUrl}
+                                            autoPlay
+                                            loop
+                                            muted
+                                            playsInline
+                                            className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 pointer-events-none ${item.slug.includes('haddock') || item.slug.includes('oscar') ? 'scale-[1.75]' : 'scale-100 group-hover:scale-105'
+                                                } opacity-80 group-hover:opacity-100`}
+                                        />
+                                    ) : (
+                                        <iframe
+                                            src={`https://player.vimeo.com/video/${item.videoUrl.split('/').pop()}?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1`}
+                                            className="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none"
+                                            allow="autoplay; fullscreen; picture-in-picture"
+                                            allowFullScreen
+                                        />
+                                    )}
+                                </div>
+                            ) : (
+                                <Image
+                                    src={item.coverImage}
+                                    alt={item.title}
+                                    fill
+                                    className="object-cover opacity-80 group-hover:opacity-60 transition-all duration-700 group-hover:scale-105 saturate-0 group-hover:saturate-100"
+                                />
+                            )}
+                            {/* Overlay Image if no video, or partial overlay? 
+                                Actually, if video is present, we still want the opacity/saturation effects if possible.
+                                But iframes don't support CSS filters as easily on the content inside.
+                                The "saturate-0" effect on the PARENT might work if we apply it to the wrapper.
+                                However, let's stick to just showing the video for now as "Premium". 
+                                Or rendering the Image as well if video is not there.
+                            */}
+                            {!item.videoUrl && (
+                                <div className="hidden" /> // No-op, just ensuring structure is clean. 
+                            )}
 
                             {/* Overlay Vignette */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80" />

@@ -13,9 +13,7 @@ export default function Footer({ lang }: FooterProps) {
     const [isFormOpen, setIsFormOpen] = useState(false);
 
     const socialLinks = [
-        { name: "LinkedIn", url: "https://linkedin.com/in/joserey" }, // Replace with actual if known, or keep generic for now
-        { name: "Twitter / X", url: "https://x.com/joserey" },
-        { name: "Read.cv", url: "https://read.cv/joserey" }
+        { name: "LinkedIn", url: "https://linkedin.com/in/joserey" }
     ];
 
     return (

@@ -1,4 +1,3 @@
-
 export interface CaseStudy {
     id: string;
     slug: string;
@@ -15,16 +14,19 @@ export interface CaseStudy {
     isFlagship: boolean;
     hasStandalone: boolean;
     coverImage: string;
-    color: string; // Added visual color prop
+    videoUrl?: string;
+    color: string;
+    borderColor?: string; // Tailwind border color class, e.g., 'border-lime-400'
+    techStack?: string[]; // Secondary tags in neutral gray
 }
 
 export const CASE_STUDIES: CaseStudy[] = [
-    // 1. Flagship: muak.shop
+    // 1. MUAK
     {
         id: 'muak',
         slug: 'muak-shop',
         title: 'muak.shop',
-        tag: 'ECOMMERCE',
+        tag: 'E-COMMERCE',
         highlight: 'Ecommerce internacional de joyas personalizadas',
         subtitle: 'Una marca de joyas pensada para competir a nivel internacional',
         snapshot: [
@@ -33,22 +35,25 @@ export const CASE_STUDIES: CaseStudy[] = [
             { label: 'Stack', value: 'Next.js / Shopify' },
             { label: 'Alcance', value: 'Global' }
         ],
-        challenge: 'Desarrollar una tienda online desde cero capaz de operar a nivel internacional, con una identidad sólida, una experiencia de compra premium y un sistema de personalización de joyas de alto nivel, evitando soluciones genéricas o de bajo estándar.',
-        solution: 'Se diseñó y construyó un ecommerce internacional sobre Shopify, integrando una arquitectura moderna basada en Next.js y React, lo que permitió mayor control sobre la experiencia de usuario, el rendimiento y la escalabilidad del proyecto. El trabajo incluyó una estrategia visual cuidada, apoyada en producción propia e imágenes generadas y optimizadas con el uso de inteligencia artificial.',
-        impact: 'muak.shop se lanzó como una tienda abierta al mundo, con un sistema preparado para escalar, comunicar valor de marca y ofrecer una experiencia de compra alineada con estándares internacionales del segmento de joyería personalizada.',
-        ctaText: 'Hablemos de un proyecto similar',
+        challenge: 'Desarrollar una marca digital que no parezca un "template". Crear una experiencia de compra internacional con lógica de personalización compleja y estándares estéticos suizos.',
+        solution: 'Arquitectura Headless híbrida: Shopify para el checkout seguro + Next.js para la experiencia de marca inmersiva. Un sistema visual que comunica lujo accesible.',
+        impact: 'Lanzamiento global inmediato. La marca se percibe como una entidad establecida, no como un experimento, ganando tracción en mercado europeo.',
+        ctaText: 'Ver caso completo',
         url: 'https://muak.shop',
         isFlagship: true,
         hasStandalone: true,
-        coverImage: 'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=2600&auto=format&fit=crop',
-        color: 'bg-orange-500 text-white'
+        coverImage: '/assets/img/Muak-shop.webp',
+        videoUrl: '/assets/img/muak.mp4',
+        color: 'bg-lime-400 text-black',
+        borderColor: 'border-lime-400',
+        techStack: ['Web', 'Diseño', 'Branding']
     },
-    // 2. Flagship: Segue Yachts
+    // 2. SEGUE YACHTS
     {
         id: 'segue',
         slug: 'segue-yachts',
         title: 'Segue Yachts',
-        tag: 'LUXURY',
+        tag: 'BRANDING / DISEÑO',
         highlight: 'Landing de lanzamiento X & XS Series',
         subtitle: 'Una experiencia digital a la altura de una marca emblemática',
         snapshot: [
@@ -57,22 +62,25 @@ export const CASE_STUDIES: CaseStudy[] = [
             { label: 'Stack', value: 'Next.js / React' },
             { label: 'Alcance', value: 'Internacional' }
         ],
-        challenge: 'Traducir la majestuosidad, la escala y el diseño de Segue Yachts al lenguaje digital, construyendo un primer punto de contacto de alto nivel que acompañe el crecimiento de la marca y el lanzamiento de su nueva línea.',
-        solution: 'Se diseñó una landing page concebida como una expresión viva de la marca: narrativa visual, ritmo editorial, foco en detalle y una experiencia premium coherente con el producto. La implementación se realizó con una arquitectura moderna basada en Next.js y React para lograr rendimiento, fluidez y control total de la experiencia.',
-        impact: 'Segue incorporó un punto de entrada sólido al mundo digital: una pieza diseñada para captar interés internacional, sostener el relato de marca y transformar audiencia en oportunidades de contacto, en sinergia con su canal de Instagram.',
-        ctaText: 'Construyamos una experiencia digital a la altura de tu marca',
-        url: 'https://segue.com.ar',
+        challenge: 'Traducir la majestuosidad, la escala y el diseño de Segue Yachts al lenguaje digital, construyendo un primer punto de contacto de alto nivel.',
+        solution: 'Landing page concebida como expresión viva de la marca: narrativa visual, ritmo editorial y foco en el detalle. Arquitectura moderna para lograr fluidez absoluta.',
+        impact: 'Punto de entrada sólido al mundo digital. Diseñada para captar interés internacional y transformar audiencia en oportunidades de contacto real.',
+        ctaText: 'Ver caso completo',
+        url: 'https://discover.segueyachts.com/',
         isFlagship: true,
         hasStandalone: true,
         coverImage: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2600&auto=format&fit=crop',
-        color: 'bg-blue-600 text-white'
+        videoUrl: '/assets/img/Segue-X6.mp4',
+        color: 'bg-fuchsia-600 text-white',
+        borderColor: 'border-fuchsia-600',
+        techStack: ['Web', 'Diseño', 'Branding']
     },
-    // 3. Flagship: Haddock Films -> "Oscar Academy Award"
+    // 3. HADDOCK FILMS
     {
         id: 'haddock',
         slug: 'haddock-films',
-        title: 'Oscar Academy Award', // Title override for visual impact as per screenshot
-        tag: 'CULTURA',
+        title: 'Haddock Films',
+        tag: 'WEB / PLATAFORMA',
         highlight: 'Haddock Films: Productora ganadora del Oscar',
         subtitle: 'Una experiencia digital para una productora de alcance internacional',
         snapshot: [
@@ -81,21 +89,24 @@ export const CASE_STUDIES: CaseStudy[] = [
             { label: 'Premios', value: 'Oscar Winner' },
             { label: 'Alcance', value: 'Internacional' }
         ],
-        challenge: 'Construir una web institucional capaz de representar el prestigio y la diversidad del trabajo de Haddock Films, organizando un amplio catálogo de películas y series sin perder identidad, claridad ni fuerza narrativa.',
-        solution: 'Se diseñó una experiencia digital con enfoque editorial, donde cada producción cuenta con su propia ficha: sinopsis, equipo, material visual y trailers, permitiendo recorrer la trayectoria del estudio de forma clara y atractiva.',
-        impact: 'Haddock Films cuenta hoy con una plataforma digital que acompaña su crecimiento internacional, facilita la presentación de su obra y funciona como una carta de presentación sólida frente a socios, plataformas y nuevos proyectos.',
-        ctaText: 'Diseñemos una experiencia digital a la altura de tu contenido',
+        challenge: 'Construir una web institucional capaz de representar el prestigio y la diversidad del trabajo de Haddock Films, organizando un amplio catálogo sin perder fuerza narrativa.',
+        solution: 'Experiencia digital con enfoque editorial. Cada producción cuenta con su propia ficha inmersiva, permitiendo recorrer la trayectoria del estudio de forma cinematográfica.',
+        impact: 'Plataforma digital que acompaña su crecimiento internacional y funciona como carta de presentación sólida frente a socios globales.',
+        ctaText: 'Ver caso completo',
         url: 'https://haddockfilms.com',
         isFlagship: true,
         hasStandalone: true,
         coverImage: '/assets/img/haddock.png',
-        color: 'bg-pink-600 text-white'
+        videoUrl: '/assets/img/Haddock-Home.mp4',
+        color: 'bg-blue-600 text-white',
+        borderColor: 'border-blue-600',
+        techStack: ['Web', 'Diseño']
     },
-    // 4. Columba Store -> "Operación USA - LATAM"
+    // 4. COLUMBA STORE
     {
         id: 'columba',
         slug: 'columba-store',
-        title: 'Operación USA - Latam',
+        title: 'Columba Store',
         tag: 'E-COMMERCE',
         highlight: 'Columba Store: Sabores argentinos para el mundo',
         subtitle: 'Una tienda pensada para llevar los sabores de la infancia a cualquier parte del mundo',
@@ -105,49 +116,50 @@ export const CASE_STUDIES: CaseStudy[] = [
             { label: 'Plataforma', value: 'Shopify' },
             { label: 'Alcance', value: 'Global' }
         ],
-        challenge: 'Crear una tienda online capaz de conectar emocionalmente con argentinos viviendo en el exterior, transformando la nostalgia en una experiencia de compra simple, confiable y global.',
-        solution: 'Se diseñó y desarrolló un ecommerce internacional sobre Shopify, combinando una identidad visual clara con una experiencia de compra directa y confiable. El sistema integra checkout optimizado, múltiples medios de pago.',
-        impact: 'Columba Store logró posicionarse como un punto de encuentro entre cultura, producto y logística, ofreciendo una experiencia de compra que conecta emocionalmente con su audiencia.',
-        ctaText: 'Conversemos sobre tu proyecto de ecommerce internacional',
-        url: '#',
+        challenge: 'Crear una tienda online capaz de conectar emocionalmente con argentinos viviendo en el exterior, transformando la nostalgia en una experiencia de compra confiable.',
+        solution: 'Ecommerce internacional sobre Shopify con identidad visual clara e integración de checkout optimizado y sincronización logística real con FedEx.',
+        impact: 'Posicionamiento inmediato como punto de encuentro entre cultura y producto. Experiencia de compra que conecta emocionalmente y funciona eficientemente.',
+        ctaText: 'Ver caso completo',
+        url: 'https://columbastore.com/',
         isFlagship: false,
         hasStandalone: false,
-        coverImage: '/assets/img/columba.png',
-        color: 'bg-orange-600 text-white'
+        coverImage: '/assets/img/Colmba_store_main.webp',
+        color: 'bg-lime-400 text-black',
+        borderColor: 'border-lime-400',
+        techStack: ['Estrategia', 'Web', 'Diseño', 'Branding']
     },
-    // 5. NBS Bazar -> "+50.000 Alumnos Conectados" (Wait, UCASAL is Education. NBS is Bazar. Adjusting based on screenshot evidence)
-    // SCREENSHOT SHOWS: "+50.000 ALUMNOS CONECTADOS" with tag "EDUCACIÓN". This is clearly a case study.
-    // I will replace NBS with this Education case or CAIC if appropriate, but NBS was Bazar.
-    // Re-checking files. There was a `ucasal.png` in assets.
+    // 5. NBS BAZAR
     {
-        id: 'ucasal',
-        slug: 'ucasal-educacion',
-        title: '+50.000 Alumnos Conectados',
-        tag: 'EDUCACIÓN',
-        highlight: 'Ecosistema educativo de alto tráfico',
-        subtitle: 'Infraestructura digital para una de las universidades más grandes del país',
+        id: 'nbs',
+        slug: 'nbs-bazar-profesional',
+        title: 'NBS Bazar Profesional',
+        tag: 'ESTRATEGIA / SISTEMA',
+        highlight: 'Digitalización comercial B2B',
+        subtitle: 'De la estantería física al catálogo digital omnicanal',
         snapshot: [
-            { label: 'Industria', value: 'Educación' },
-            { label: 'Usuarios', value: '+50k' },
-            { label: 'Uptime', value: '99.9%' },
-            { label: 'Cloud', value: 'AWS' }
+            { label: 'Industria', value: 'Bazar / Gastro' },
+            { label: 'Tipo', value: 'B2B / Ecommerce' },
+            { label: 'Trayectoria', value: '20+ años' },
+            { label: 'Enfoque', value: 'Conversión' }
         ],
-        challenge: 'Soportar picos de tráfico de 50k+ usuarios concurrentes durante inscripciones y exámenes, garantizando estabilidad y velocidad de respuesta.',
-        solution: 'Arquitectura cloud-native en AWS con auto-scaling y optimización de base de datos para alta disponibilidad. Refactorización del frontend para mejorar la experiencia de inscripción.',
-        impact: '0% de tiempo de inactividad durante los períodos críticos del año académico 2024. Mejora del 40% en tiempos de carga.',
-        ctaText: 'Optimicemos tu infraestructura educativa',
-        url: '#',
-        isFlagship: true, // Promoted to flagship based on screenshot prominence
+        challenge: 'Acompañar la transformación digital de una empresa con más de dos décadas de trayectoria, unificando miles de SKUs en una plataforma coherente.',
+        solution: 'Arquitectura digital robusta integrando Tienda Nube con una estrategia SEO y CRM personalizada para captación B2B.',
+        impact: 'Activo digital que organiza su oferta comercial, facilita la autogestión de clientes y mejora el posicionamiento orgánico en el sector.',
+        ctaText: 'Ver caso completo',
+        url: 'https://www.nbsbazar.com/',
+        isFlagship: false,
         hasStandalone: false,
-        coverImage: '/assets/img/ucasal.png', // Assuming this matches the green campus image
-        color: 'bg-lime-400 text-black'
+        coverImage: '/assets/img/NBS Bazar Profesional.webp',
+        color: 'bg-amber-400 text-black',
+        borderColor: 'border-amber-400',
+        techStack: ['B2B', 'Web', 'Diseño', 'Branding']
     },
-    // 6. Gate Priority
+    // 6. GATE PRIORITY
     {
         id: 'gate',
         slug: 'gate-priority',
         title: 'Gate Priority',
-        tag: 'SERVICIOS',
+        tag: 'WEB / PLATAFORMA',
         highlight: 'Landing page de servicio VIP en aeropuertos',
         subtitle: 'Exclusividad y servicio desde el primer contacto digital',
         snapshot: [
@@ -157,45 +169,51 @@ export const CASE_STUDIES: CaseStudy[] = [
             { label: 'Alcance', value: 'Latinoamérica' }
         ],
         challenge: 'Comunicar un servicio intangible y exclusivo transmitiendo confianza, seguridad y premiumness en una sola landing page destinada a la conversión.',
-        solution: 'Se diseñó una landing page enfocada en la claridad de la propuesta de valor y la facilidad de contacto. El diseño utiliza códigos visuales del mundo premium/travel.',
-        impact: 'Gate Priority dispone de un activo digital que valida su promesa de servicio y facilita la captación de clientes corporativos.',
-        ctaText: 'Elevemos la percepción de tu servicio',
-        url: '#',
+        solution: 'Arquitectura de información clara sobre WordPress, con foco en la propuesta de valor y facilidad de contacto mediante formularios orientados a la captación.',
+        impact: 'Canal digital profesional que valida su promesa de servicio y facilita la captación de clientes corporativos.',
+        ctaText: 'Ver caso completo',
+        url: 'https://gatepriority.com/',
         isFlagship: false,
         hasStandalone: false,
-        coverImage: 'https://images.unsplash.com/photo-1542296332-2e44a99cfef9?q=80&w=2600&auto=format&fit=crop',
-        color: 'bg-zinc-800 text-white'
+        coverImage: '/assets/img/ucasal.png',
+        videoUrl: '/assets/img/Gate-Priority.mp4',
+        color: 'bg-blue-600 text-white',
+        borderColor: 'border-blue-600',
+        techStack: ['B2B', 'Web', 'Diseño']
     },
-    // 7. Mirgor -> "Líder Industrial Latam"
+    // 7. CAIC
     {
-        id: 'mirgor',
-        slug: 'mirgor-industrial',
-        title: 'Líder Industrial Latam',
-        tag: 'CORPORATIVO',
-        highlight: 'Mirgor: Innovación y producción a escala',
-        subtitle: 'Transformación digital para un gigante industrial',
+        id: 'caic',
+        slug: 'caic-cine',
+        title: 'CAIC',
+        tag: 'WEB / PLATAFORMA',
+        highlight: 'Cámara Industria Cinematográfica',
+        subtitle: 'Representación global de la industria del cine argentino',
         snapshot: [
-            { label: 'Industria', value: 'Manufactura' },
-            { label: 'Sedes', value: 'Latam' },
-            { label: 'Empleados', value: '+3000' },
-            { label: 'Tech', value: 'SAP / Web' }
+            { label: 'Industria', value: 'Cine' },
+            { label: 'Tipo', value: 'Institucional' },
+            { label: 'Alcance', value: 'Global' },
+            { label: 'Partner', value: 'Productoras' }
         ],
-        challenge: 'Unificar la comunicación de múltiples unidades de negocio bajo una identidad corporativa sólida y moderna.',
-        solution: 'Desarrollo de portal corporativo y herramientas internas de gestión.',
-        impact: 'Mejora en la comunicación interna y posicionamiento de marca empleadora.',
-        ctaText: 'Potenciemos tu comunicación corporativa',
-        url: '#',
-        isFlagship: true,
+        challenge: 'Representar digitalmente a una cámara que nuclea a las principales productoras del país, comunicando prestigio y capacidad productiva.',
+        solution: 'Plataforma institucional que funciona como vidriera de la industria, organizando la información y facilitando el contacto internacional.',
+        impact: 'Canal digital que fortalece su rol institucional y actúa como punto de entrada para vínculos y proyectos globales.',
+        ctaText: 'Ver caso completo',
+        url: 'https://caic-cine.org.ar/',
+        isFlagship: false,
         hasStandalone: false,
-        coverImage: '/assets/img/mirgor.png',
-        color: 'bg-cyan-400 text-black'
+        coverImage: '/assets/img/haddock.png',
+        videoUrl: '/assets/img/CAIC-2026.mp4',
+        color: 'bg-blue-600 text-white',
+        borderColor: 'border-blue-600',
+        techStack: ['Web', 'Diseño']
     },
-    // 8. Punto 360
+    // 8. PUNTO 360
     {
         id: 'punto360',
         slug: 'punto-360',
         title: 'Punto 360',
-        tag: 'ESTUDIO',
+        tag: 'BRANDING / DISEÑO',
         highlight: 'Estudio de fotografía y video performance',
         subtitle: 'Producción visual estratégica para marcas',
         snapshot: [
@@ -204,14 +222,16 @@ export const CASE_STUDIES: CaseStudy[] = [
             { label: 'Trayectoria', value: '+20 años' },
             { label: 'Enfoque', value: 'Performance' }
         ],
-        challenge: 'Mantener un estándar visual alto a lo largo del tiempo, adaptándose a nuevos formatos sin perder calidad.',
-        solution: 'Plataforma digital que refleja la calidad de su trabajo y facilita el contacto.',
-        impact: 'Posicionamiento como uno de los principales estudios de fotografía publicitaria.',
-        ctaText: 'Pensemos una estrategia visual orientada a resultados',
-        url: '#',
+        challenge: 'Mantener un estándar visual alto a lo largo del tiempo, adaptándose a nuevos formatos de performance sin perder calidad ni identidad.',
+        solution: 'Plataforma digital que refleja la calidad de su trabajo visual y facilita el contacto con clientes mediante una navegación fluida.',
+        impact: 'Posicionamiento como uno de los principales estudios del sector, reflejando solidez y capacidad de adaptación.',
+        ctaText: 'Ver caso completo',
+        url: 'https://punto360.com.ar/',
         isFlagship: false,
         hasStandalone: false,
-        coverImage: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2600&auto=format&fit=crop',
-        color: 'bg-purple-600 text-white'
+        coverImage: '/assets/img/Punto360-Desarrollo.webp',
+        color: 'bg-fuchsia-600 text-white',
+        borderColor: 'border-fuchsia-600',
+        techStack: ['B2B', 'Estrategia', 'Web', 'Diseño']
     }
 ];
