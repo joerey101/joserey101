@@ -5,71 +5,82 @@ import HeroBase from '../HeroBase';
 function DeepGridBackground() {
     return (
         <div className="absolute inset-0 z-0 bg-white overflow-hidden pointer-events-none">
-            {/* Layer 1: Base Grid */}
-            <div className="absolute inset-x-[-10%] inset-y-[-10%] w-[120%] h-[120%] grid-bg opacity-10 animate-subtle-drift"></div>
+            {/* Background Texture */}
+            <div className="absolute inset-0 grid-bg opacity-10"></div>
 
-            {/* Layer 2: Perspective Wireframe */}
+            {/* Perspective Layers */}
             <div className="absolute inset-0 perspective-container">
-                <div className="wireframe-plane top-plane"></div>
-                <div className="wireframe-plane bottom-plane"></div>
+                {/* Far Grid */}
+                <div className="wireframe-plane far-plane"></div>
+                {/* Main Mid Grid */}
+                <div className="wireframe-plane mid-plane"></div>
+                {/* Close Bottom Grid */}
+                <div className="wireframe-plane low-plane"></div>
             </div>
 
-            {/* Layer 3: Scanning Data Lines */}
-            <div className="absolute inset-0 opacity-[0.03]">
-                <div className="h-[2px] w-full bg-carbon absolute top-1/4 animate-scan-y"></div>
-                <div className="h-[2px] w-full bg-carbon absolute top-3/4 animate-scan-y-delayed"></div>
+            {/* Fog of Depth - White gradient masking the edges */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none z-10"></div>
+
+            {/* Active Data scanning pulses */}
+            <div className="absolute inset-0 z-20 overflow-hidden">
+                <div className="h-[1px] w-full bg-carbon/5 absolute top-0 animate-pulse-down"></div>
+                <div className="h-[1px] w-full bg-carbon/5 absolute bottom-0 animate-pulse-up"></div>
             </div>
 
             <style jsx>{`
                 .perspective-container {
-                    perspective: 1200px;
+                    perspective: 1500px;
                     width: 100%;
                     height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
                 .wireframe-plane {
                     position: absolute;
-                    width: 200%;
-                    height: 100%;
-                    left: -50%;
+                    width: 300%;
+                    height: 200%;
+                    left: -100%;
                     background-image: 
-                        linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
-                    background-size: 80px 80px;
+                        linear-gradient(to right, rgba(0,0,0,0.1) 1.5px, transparent 1.5px),
+                        linear-gradient(to bottom, rgba(0,0,0,0.1) 1.5px, transparent 1.5px);
+                    background-size: 100px 100px;
                 }
-                .top-plane {
-                    top: -10%;
-                    transform: rotateX(-80deg);
-                    transform-origin: top;
-                    opacity: 0.15;
-                    animation: grid-flow 60s linear infinite;
+                .far-plane {
+                    top: -60%;
+                    transform: rotateX(85deg) translateZ(-400px);
+                    opacity: 0.2;
+                    animation: drift-forward 80s linear infinite;
                 }
-                .bottom-plane {
-                    bottom: -10%;
-                    transform: rotateX(80deg);
-                    transform-origin: bottom;
+                .mid-plane {
+                    bottom: -30%;
+                    transform: rotateX(75deg) translateZ(0);
                     opacity: 0.15;
-                    animation: grid-flow-reverse 60s linear infinite;
+                    animation: drift-forward 40s linear infinite;
+                }
+                .low-plane {
+                    bottom: -80%;
+                    transform: rotateX(60deg) translateZ(400px);
+                    opacity: 0.05;
+                    animation: drift-forward 20s linear infinite;
                 }
 
-                @keyframes grid-flow {
-                    from { transform: rotateX(-80deg) translateY(0); }
-                    to { transform: rotateX(-80deg) translateY(80px); }
+                @keyframes drift-forward {
+                    from { transform: rotateX(inherit) translateY(0); }
+                    to { transform: rotateX(inherit) translateY(100px); }
                 }
-                @keyframes grid-flow-reverse {
-                    from { transform: rotateX(80deg) translateY(0); }
-                    to { transform: rotateX(80deg) translateY(-80px); }
+                @keyframes pulse-down {
+                    0% { top: -10%; opacity: 0; }
+                    50% { opacity: 1; }
+                    100% { top: 110%; opacity: 0; }
                 }
-                @keyframes subtle-drift {
-                    0%, 100% { transform: translate(0,0); }
-                    50% { transform: translate(20px, 10px); }
+                @keyframes pulse-up {
+                    0% { bottom: -10%; opacity: 0; }
+                    50% { opacity: 1; }
+                    100% { bottom: 110%; opacity: 0; }
                 }
-                @keyframes scan-y {
-                    0% { transform: translateY(-100vh); }
-                    100% { transform: translateY(100vh); }
-                }
-                .animate-subtle-drift { animation: subtle-drift 30s ease-in-out infinite; }
-                .animate-scan-y { animation: scan-y 15s linear infinite; }
-                .animate-scan-y-delayed { animation: scan-y 15s linear infinite 7.5s; }
+                .animate-pulse-down { animation: pulse-down 12s linear infinite; }
+                .animate-pulse-up { animation: pulse-up 15s linear infinite 4s; }
             `}</style>
         </div>
     );
