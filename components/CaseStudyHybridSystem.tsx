@@ -230,10 +230,10 @@ export default function CaseStudyHybridSystem({ initialCases, lang }: CaseStudyH
                 {/* Header */}
                 <div className="mb-12 flex items-end justify-between border-b border-carbon/10 pb-8">
                     <div>
-                        <h2 className="text-5xl md:text-8xl lg:text-[140px] font-display font-black uppercase text-carbon leading-[0.8] tracking-tighter">
+                        <h2 className="text-5xl md:text-8xl lg:text-[100px] font-display font-black uppercase text-carbon leading-[0.8] tracking-tighter">
                             {lang === 'es' ? 'Trabajos' : 'Selected'} <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-vibrant-orange">{lang === 'es' ? 'Seleccionados' : 'Work'}</span>
                         </h2>
-                        <p className="mt-8 text-carbon/60 text-sm md:text-[26px] font-light max-w-3xl leading-relaxed">
+                        <p className="mt-8 text-carbon/60 text-sm md:text-[32px] font-light max-w-4xl leading-relaxed">
                             {lang === 'es' ? 'Implementaciones reales en entornos complejos.' : 'Real-world implementations in complex environments.'}
                         </p>
                     </div>
