@@ -1,7 +1,8 @@
 # CURRENT TASK STATUS
-**ESTADO:** EN PROGRESO / REVISIÓN VISUAL DEPLOY
+**ESTADO:** REVERTIDO A STABLE / PAUSA POR DISCONFORMIDAD
 
 ## Contexto
-- Se ha implementado el sistema Masonry y Drawer con datos reales.
-- Se han corregido los estilos visuales (drawer premium, imágenes placeholders).
-- El usuario está revisando la versión en producción.
+- Se intentó implementar Masonry/Drawer Apple Style pero la ejecución visual no cumplió expectativas.
+- Se ha realizado un REVERT al commit `0aeccdf` (versión estable previa).
+- Se ha limpiado la carpeta `sanity` y rutas `app/work` para garantizar build verde.
+- El proyecto está en pausa hasta nueva instrucción.
