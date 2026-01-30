@@ -25,37 +25,37 @@ export default function Footer({ lang }: FooterProps) {
             </div>
 
             <div className="pt-20 relative z-10 mb-12">
-                <h2 className="font-display font-black text-[8vw] md:text-[6rem] leading-[0.9] tracking-[-0.03em] uppercase mb-6">
+                <h2 className="font-display font-black text-[7vw] md:text-[5rem] lg:text-[6rem] leading-[0.9] tracking-[-0.03em] uppercase mb-6">
                     {t.title}
                 </h2>
-                <p className="font-meta text-lg md:text-xl text-carbon/80 max-w-2xl font-bold leading-relaxed">
+                <p className="font-meta text-base md:text-lg lg:text-xl text-carbon/80 max-w-2xl font-bold leading-relaxed">
                     {t.desc}
                 </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-end relative z-10 pb-12">
-                <div className="md:col-span-6">
+                <div className="md:col-span-4 lg:col-span-5">
                     <button
                         onClick={() => setIsFormOpen(true)}
-                        className="inline-flex items-center gap-4 px-10 py-5 bg-carbon text-white rounded-full font-display font-bold text-2xl md:text-3xl uppercase tracking-widest hover:scale-105 hover:bg-white hover:text-carbon transition-all shadow-xl group cursor-pointer"
+                        className="inline-flex items-center gap-4 px-10 py-5 bg-carbon text-white rounded-full font-display font-bold text-xl md:text-2xl uppercase tracking-widest hover:scale-105 hover:bg-white hover:text-carbon transition-all shadow-xl group cursor-pointer"
                     >
-                        {t.cta} <span className="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
+                        {t.cta} <span className="material-symbols-outlined text-2xl group-hover:translate-x-2 transition-transform">arrow_outward</span>
                     </button>
                 </div>
-                <div className="md:col-span-3 flex flex-col gap-2 font-display text-sm uppercase tracking-widest font-bold">
+                <div className="md:col-span-4 lg:col-span-2 flex justify-center items-center font-display text-xs uppercase tracking-widest font-bold">
                     {socialLinks.map((link, i) => (
                         <a
                             key={i}
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-white transition-colors w-fit"
+                            className="hover:text-white transition-colors"
                         >
                             {link.name}
                         </a>
                     ))}
                 </div>
-                <div className="md:col-span-3 text-right">
+                <div className="md:col-span-4 lg:col-span-5 text-right">
                     <p className="font-meta text-[10px] uppercase tracking-widest font-bold opacity-60">
                         {t.copyright}
                     </p>
