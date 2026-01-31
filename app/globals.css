@@ -101,3 +101,33 @@ body {
   color: var(--color-carbon);
   font-family: var(--font-display);
 }
+
+@keyframes grid-flow {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 40px;
+  }
+}
+
+@keyframes grid-flow-reverse {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 -40px;
+  }
+}
+
+.animate-grid-flow {
+  animation: grid-flow 1s linear infinite;
+  will-change: background-position;
+}
+
+.animate-grid-flow-reverse {
+  animation: grid-flow-reverse 1s linear infinite;
+  will-change: background-position;
+}
