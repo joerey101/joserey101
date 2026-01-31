@@ -115,6 +115,7 @@ export default function CaseStudyModal({ isOpen, onClose, caseStudy, lang }: Cas
                                         {caseStudy.videoUrl.startsWith('/') || caseStudy.videoUrl.endsWith('.mp4') ? (
                                             <video
                                                 src={caseStudy.videoUrl}
+                                                poster={caseStudy.img}
                                                 autoPlay
                                                 loop
                                                 muted

@@ -150,7 +150,7 @@ const BentoCard = ({ item, isLarge }: { item: CaseStudy, isLarge?: boolean }) =>
                                 loop
                                 muted
                                 playsInline
-                                className="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition-all duration-700 grayscale group-hover:grayscale-0"
+                                className="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition-all duration-700 grayscale group-hover:grayscale-0 pointer-events-none"
                             />
                         ) : (
                             <iframe
