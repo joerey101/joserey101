@@ -38,27 +38,36 @@ export default function Footer({ lang }: FooterProps) {
                 </p>
             </div>
 
-            <div className="flex-grow flex flex-col justify-center items-center relative z-10 py-20">
-                <motion.div style={{ y, opacity }} className="text-center">
+            <div className="flex-grow flex flex-col justify-center items-center relative z-10 py-20 px-4">
+                <motion.div style={{ y, opacity }} className="text-center w-full">
 
-                    <h2 className="font-display font-black text-[12vw] leading-[0.8] tracking-tighter uppercase mb-12 mix-blend-difference">
+                    <h2 className="font-display font-black text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase mb-8 md:mb-12 mix-blend-difference">
                         EL FUTURO <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">ES AHORA.</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">ES AHORA.</span>
                     </h2>
 
-                    <p className="font-meta text-lg md:text-[24px] text-white/60 max-w-2xl mx-auto font-light leading-relaxed mb-16 uppercase tracking-widest">
-                        {t.desc}
-                    </p>
+                    <div className="font-meta text-lg md:text-[24px] text-white/80 max-w-4xl mx-auto font-light leading-snug mb-12 uppercase tracking-widest">
+                        {lang === 'es' ? (
+                            <>
+                                <span className="block md:inline">Convertimos tu visión de negocio</span>{' '}
+                                <span className="block md:inline">en un activo digital</span>{' '}
+                                <span className="block md:inline">con ingeniería, medición</span>{' '}
+                                <span className="block md:inline">y foco en los detalles.</span>
+                            </>
+                        ) : (
+                            t.desc
+                        )}
+                    </div>
 
                     <button
                         onClick={() => setIsFormOpen(true)}
-                        className="group relative inline-flex items-center justify-center gap-4 px-12 py-6 bg-white text-black rounded-full font-display font-black text-2xl md:text-3xl uppercase tracking-widest hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-500 cursor-pointer overflow-hidden"
+                        className="group relative inline-flex items-center justify-center gap-2 md:gap-4 px-8 py-4 md:px-12 md:py-6 bg-cyan-400 text-black rounded-full font-display font-black text-xl md:text-3xl uppercase tracking-widest hover:scale-105 hover:shadow-[0_0_40px_rgba(34,211,238,0.4)] transition-all duration-500 cursor-pointer overflow-hidden"
                     >
                         <span className="relative z-10">{t.cta}</span>
-                        <span className="material-symbols-outlined text-4xl group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500 relative z-10">arrow_outward</span>
+                        <span className="material-symbols-outlined text-2xl md:text-4xl group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500 relative z-10">arrow_outward</span>
 
                         {/* Button Hover Fill */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-gray-200 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-white to-cyan-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </button>
 
                 </motion.div>

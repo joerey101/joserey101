@@ -319,7 +319,7 @@ export const content = {
         footer: {
             label: "CONEXIÓN // 2024 // LISTO PARA EL FUTURO",
             title: <>El Futuro es Ahora.<br /><span className="text-white">Evolucioná tu negocio.</span></>,
-            desc: <>Convertimos tu visión en un activo digital <br /> con ingeniería, medición y foco en los detalles.</>,
+            desc: <>Convertimos tu visión de negocio en un activo digital <br className="hidden md:block" /> con ingeniería, medición y foco en los detalles.</>,
             cta: "Hablemos",
             links: ["LinkedIn"],
             copyright: <>© 2024 JOSEREY STUDIO<br />DISEÑADO EN EL VACÍO<br />TODOS LOS DERECHOS RESERVADOS</>
