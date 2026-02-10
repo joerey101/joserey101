@@ -322,7 +322,7 @@ export const content = {
             desc: <>Convertimos tu visión de negocio en un activo digital <br className="hidden md:block" /> con ingeniería, medición y foco en los detalles.</>,
             cta: "Hablemos",
             links: ["LinkedIn"],
-            copyright: <>© 2024 JOSEREY STUDIO<br />DISEÑADO EN EL VACÍO<br />TODOS LOS DERECHOS RESERVADOS</>
+            copyright: <>© 2001 - 2026 JOSEREY101<br />TODOS LOS DERECHOS RESERVADOS</>
         }
     },
     en: {
