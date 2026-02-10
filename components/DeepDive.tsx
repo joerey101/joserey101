@@ -1,5 +1,9 @@
+"use client";
+
 import Image from 'next/image';
 import { content } from '@/app/content';
+import { useState } from 'react';
+import ContactForm from './ContactForm';
 
 interface DeepDiveProps {
     lang: "es" | "en";
@@ -7,6 +11,7 @@ interface DeepDiveProps {
 
 export default function DeepDive({ lang }: DeepDiveProps) {
     const t = content[lang].deepDive;
+    const [isFormOpen, setIsFormOpen] = useState(false);
 
     return (
         <section className="relative py-32 px-6 md:px-12 overflow-hidden border-b border-grid-line">
@@ -34,13 +39,22 @@ export default function DeepDive({ lang }: DeepDiveProps) {
                 </div>
 
                 <div className="flex-shrink-0">
-                    <a href="mailto:hello@joserey101.com" className="group relative inline-flex items-center justify-center px-12 py-6 bg-white overflow-hidden rounded-none transition-all hover:scale-105 shadow-2xl">
+                    <button
+                        onClick={() => setIsFormOpen(true)}
+                        className="group relative inline-flex items-center justify-center px-12 py-6 bg-white overflow-hidden rounded-none transition-all hover:scale-105 shadow-2xl cursor-pointer"
+                    >
                         <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-electric-blue rounded-full group-hover:w-96 group-hover:h-96 opacity-10"></span>
                         <span className="relative font-bold font-display uppercase tracking-widest text-carbon text-xl group-hover:tracking-[0.3em] transition-all">{t.cta}</span>
                         <span className="material-symbols-outlined ml-4 text-carbon relative group-hover:translate-x-2 transition-transform">arrow_forward</span>
-                    </a>
+                    </button>
                 </div>
             </div>
+
+            <ContactForm
+                isOpen={isFormOpen}
+                onClose={() => setIsFormOpen(false)}
+                lang={lang}
+            />
         </section>
     );
 }

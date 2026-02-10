@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { content } from '@/app/content';
 import AppleSidebarMenu from './AppleSidebarMenu';
+import ContactForm from './ContactForm';
 
 interface HeaderProps {
     lang: "es" | "en";
@@ -14,6 +15,7 @@ export default function Header({ lang }: HeaderProps) {
     const t = content[lang].header;
     const isEs = lang === "es";
     const [currentTime, setCurrentTime] = useState("");
+    const [isFormOpen, setIsFormOpen] = useState(false);
 
     /*
         const { scrollY } = useScroll();
@@ -133,12 +135,12 @@ export default function Header({ lang }: HeaderProps) {
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <a
-                            href="mailto:hello@joserey101.com"
+                        <button
+                            onClick={() => setIsFormOpen(true)}
                             className="hidden md:flex items-center gap-2 bg-carbon text-white px-6 py-3 rounded-none font-meta text-[11px] font-black uppercase tracking-widest hover:bg-electric-blue hover:text-carbon transition-all shadow-[4px_4px_0px_rgba(0,240,255,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1"
                         >
                             {t.hire}
-                        </a>
+                        </button>
 
                         {/* Custom Menu Trigger for Mobile Presence */}
                         <div className="lg:hidden">
@@ -153,6 +155,12 @@ export default function Header({ lang }: HeaderProps) {
                     </div>
                 </div>
             </div>
+
+            <ContactForm
+                isOpen={isFormOpen}
+                onClose={() => setIsFormOpen(false)}
+                lang={lang}
+            />
 
             {/* 
             <motion.div
