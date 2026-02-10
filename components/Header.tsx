@@ -59,7 +59,7 @@ export default function Header({ lang }: HeaderProps) {
                 backgroundColor: headerBg,
                 borderBottomColor: headerBorder
             }}
-            className="fixed top-0 w-full z-50 border-b transition-colors duration-500 backdrop-blur-subtle"
+            className="fixed top-0 w-full z-[100] border-b transition-colors duration-500 backdrop-blur-subtle"
         >
             <div className="h-full max-w-[1800px] mx-auto flex items-center justify-between px-3 md:px-6 lg:px-12">
 
