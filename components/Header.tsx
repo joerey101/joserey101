@@ -17,17 +17,19 @@ export default function Header({ lang }: HeaderProps) {
     const [currentTime, setCurrentTime] = useState("");
     const [isFormOpen, setIsFormOpen] = useState(false);
 
+    const [headerBgState, setHeaderBgState] = useState("rgba(249, 250, 250, 0.9)");
+
     /*
         const { scrollY } = useScroll();
     
         // Transformaciones basadas en el scroll
         const headerHeight = useTransform(scrollY, [0, 100], ["100px", "72px"]);
-        const headerBg = useTransform(scrollY, [0, 100], ["rgba(249, 250, 250, 0)", "rgba(249, 250, 250, 0.9)"]);
+        // const headerBg = useTransform(scrollY, [0, 100], ["rgba(249, 250, 250, 0)", "rgba(249, 250, 250, 0.9)"]);
         const headerBorder = useTransform(scrollY, [0, 100], ["rgba(229, 229, 229, 0)", "rgba(229, 229, 229, 1)"]);
         const logoScale = useTransform(scrollY, [0, 100], [1, 0.9]);
     */
     const headerHeight = "72px";
-    const headerBg = "rgba(249, 250, 250, 0.9)";
+    // const headerBg = "rgba(249, 250, 250, 0.9)";
     const headerBorder = "rgba(229, 229, 229, 1)";
     const logoScale = 1;
 
@@ -46,6 +48,29 @@ export default function Header({ lang }: HeaderProps) {
         return () => clearInterval(interval);
     }, []);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const footer = document.getElementById('site-footer');
+            if (footer) {
+                const rect = footer.getBoundingClientRect();
+                // If footer top is entering the viewport close to the header (e.g. within 72px + buffer)
+                // Or actually, simply if the footer is visible at top.
+                // rect.top < 72 means the footer is under the header.
+                if (rect.top <= 80) { // 80px to be safe (72px header)
+                    setHeaderBgState("rgba(255, 255, 255, 1)");
+                } else {
+                    setHeaderBgState("rgba(249, 250, 250, 0.9)");
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        // Check once on mount
+        handleScroll();
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const menuItems = [
         { label: t.work, href: "#work" },
         { label: t.capabilities, href: "#blueprints" },
@@ -56,10 +81,10 @@ export default function Header({ lang }: HeaderProps) {
         <motion.header
             style={{
                 height: headerHeight,
-                backgroundColor: headerBg,
+                backgroundColor: headerBgState,
                 borderBottomColor: headerBorder
             }}
-            className="fixed top-0 w-full z-[999] border-b transition-colors duration-500 backdrop-blur-subtle"
+            className="fixed top-0 w-full z-[999] border-b transition-colors duration-300 backdrop-blur-subtle"
         >
             <div className="h-full max-w-[1800px] mx-auto flex items-center justify-between px-3 md:px-6 lg:px-12">
 

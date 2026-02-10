@@ -24,7 +24,7 @@ export default function Footer({ lang }: FooterProps) {
     const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
     return (
-        <footer ref={containerRef} className="bg-black text-white min-h-screen flex flex-col justify-between p-6 lg:p-12 relative overflow-hidden z-10 border-t border-white/10">
+        <footer id="site-footer" ref={containerRef} className="bg-black text-white min-h-screen flex flex-col justify-between p-6 lg:p-12 relative overflow-hidden z-10 border-t border-white/10">
 
             {/* Background Grid Accent */}
             <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
