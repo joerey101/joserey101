@@ -38,7 +38,7 @@ export default function Footer({ lang }: FooterProps) {
             <div className="flex-grow flex flex-col justify-center items-center relative z-10 py-20 px-4">
                 <motion.div style={{ y, opacity }} className="text-center w-full">
 
-                    <h2 className="font-display font-black text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase mb-16 md:mb-24 mix-blend-difference">
+                    <h2 className="font-display font-black text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase mb-16 md:mb-24">
                         EL FUTURO <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">ES AHORA.</span>
                     </h2>
