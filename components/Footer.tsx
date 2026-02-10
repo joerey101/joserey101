@@ -43,14 +43,23 @@ export default function Footer({ lang }: FooterProps) {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">ES AHORA.</span>
                     </h2>
 
-                    <div className="font-meta text-lg md:text-[24px] text-white/80 max-w-4xl mx-auto font-light leading-snug mb-16 md:mb-24 uppercase tracking-widest">
+                    <div className="font-meta text-lg text-white/80 max-w-6xl mx-auto font-light leading-snug mb-16 md:mb-24 uppercase tracking-widest md:text-[30px] md:font-normal md:leading-normal">
                         {lang === 'es' ? (
                             <>
-                                <span className="block">Convertimos</span>
-                                <span className="block">tu visión de negocio</span>
-                                <span className="block mb-2">en un activo digital</span>
-                                <span className="block">con ingeniería, medición</span>
-                                <span className="block">y foco en los detalles.</span>
+                                {/* Mobile Layout (Stacked) */}
+                                <div className="md:hidden">
+                                    <span className="block">Convertimos</span>
+                                    <span className="block">tu visión de negocio</span>
+                                    <span className="block mb-2">en un activo digital</span>
+                                    <span className="block">con ingeniería, medición</span>
+                                    <span className="block">y foco en los detalles.</span>
+                                </div>
+
+                                {/* Desktop Layout (2 Lines) */}
+                                <div className="hidden md:block">
+                                    Convertimos tu visión de negocio en un activo digital <br />
+                                    con ingeniería, medición y foco en los detalles.
+                                </div>
                             </>
                         ) : (
                             t.desc
