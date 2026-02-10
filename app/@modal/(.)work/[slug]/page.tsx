@@ -3,7 +3,8 @@
 import { use } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getCaseStudyBySlug } from "@/app/content";
-import CaseStudyModal from "@/components/CaseStudyModal";
+import dynamic from 'next/dynamic';
+const CaseStudyModal = dynamic(() => import('@/components/CaseStudyModal'), { ssr: false });
 
 export default function InterceptedWorkPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = use(params);

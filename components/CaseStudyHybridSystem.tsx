@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useMediaQuery } from 'react-responsive';
+import dynamic from 'next/dynamic';
+const CaseStudyDrawer = dynamic(() => import('./CaseStudyDrawer'), { ssr: false });
+import { CASE_STUDIES } from '@/data/case-studies';
 
 // --- TYPES & INTERFACES ---
 
@@ -37,16 +39,18 @@ const AccordionCard = ({
     item,
     isActive,
     onHover,
-    onLeave
+    onLeave,
+    onClick
 }: {
     item: CaseStudy,
     isActive: boolean,
     onHover: () => void,
-    onLeave: () => void
+    onLeave: () => void,
+    onClick: (e: React.MouseEvent) => void
 }) => {
     return (
-        <Link
-            href={`/work/${item.slug}`}
+        <div
+            onClick={onClick}
             className="relative h-[600px] overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 ease-in-out border border-transparent hover:border-white/10"
             onMouseEnter={onHover}
             onMouseLeave={onLeave}
@@ -127,17 +131,17 @@ const AccordionCard = ({
                     0{item.id}
                 </span>
             </div>
-        </Link>
+        </div>
     );
 };
 
 
 // 2. Bento Card (Secondary Grid Items)
-const BentoCard = ({ item, isLarge }: { item: CaseStudy, isLarge?: boolean }) => {
+const BentoCard = ({ item, isLarge, onClick }: { item: CaseStudy, isLarge?: boolean, onClick: (e: React.MouseEvent) => void }) => {
     return (
-        <Link
-            href={`/work/${item.slug}`}
-            className={`group relative rounded-2xl overflow-hidden bg-zinc-900 border border-white/5 hover:border-white/20 transition-all duration-300 ${isLarge ? 'md:col-span-3' : 'md:col-span-2'}`}
+        <div
+            onClick={onClick}
+            className={`group relative rounded-2xl overflow-hidden bg-zinc-900 border border-white/5 hover:border-white/20 transition-all duration-300 cursor-pointer ${isLarge ? 'md:col-span-3' : 'md:col-span-2'}`}
         >
             <div className="aspect-[4/3] w-full h-full relative">
                 {/* Background Media */}
@@ -193,7 +197,7 @@ const BentoCard = ({ item, isLarge }: { item: CaseStudy, isLarge?: boolean }) =>
                     </div>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 }
 
@@ -201,9 +205,27 @@ const BentoCard = ({ item, isLarge }: { item: CaseStudy, isLarge?: boolean }) =>
 // --- MAIN ORCHESTRATOR ---
 
 export default function CaseStudyHybridSystem({ initialCases, lang }: CaseStudyHybridSystemProps) {
-    const isMobile = useMediaQuery({ maxWidth: 768 });
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const [activeFilter, setActiveFilter] = useState<string>("ALL");
+
+    // --- DRAWER STATE ---
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const [selectedCase, setSelectedCase] = useState<any>(null);
+
+    const handleOpenDrawer = (slug: string) => {
+        const found = CASE_STUDIES.find(c => c.slug === slug);
+        if (found) {
+            setSelectedCase(found);
+            setIsDrawerOpen(true);
+        }
+    };
 
     // 1. EXTRACT UNIQUE TAGS
     const allTags = Array.from(new Set([
@@ -278,20 +300,68 @@ export default function CaseStudyHybridSystem({ initialCases, lang }: CaseStudyH
                                             isActive={activeIndex === idx}
                                             onHover={() => setActiveIndex(idx)}
                                             onLeave={() => { }}
+                                            onClick={() => handleOpenDrawer(item.slug)}
                                         />
                                     ))}
                                 </div>
 
-                                {/* Mobile: Vertical Stack */}
+                                {/* Mobile: Vertical Stack - REFACTORED FOR VIDEO PRIORITY */}
                                 <div className="md:hidden flex flex-col gap-4">
                                     {flagships.map((item) => (
-                                        <Link key={item.id} href={`/work/${item.slug}`} className="relative h-[400px] rounded-2xl overflow-hidden">
-                                            <Image src={item.img} alt={item.title} fill className="object-cover brightness-75" />
-                                            <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                                                <h3 className="text-4xl font-display font-black uppercase text-white">{item.title}</h3>
-                                                <p className="text-white/80 text-sm uppercase tracking-widest">{item.subtitle}</p>
+                                        <div
+                                            key={item.id}
+                                            onClick={() => handleOpenDrawer(item.slug)}
+                                            className="relative h-[500px] rounded-2xl overflow-hidden cursor-pointer group border border-white/10"
+                                        >
+                                            {/* Background Layer: Try Video first, fall back to Image if needed */}
+                                            {item.videoUrl ? (
+                                                <>
+                                                    {/* Video Layer */}
+                                                    <video
+                                                        src={item.videoUrl}
+                                                        autoPlay
+                                                        loop
+                                                        muted
+                                                        playsInline
+                                                        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 
+                                                            ${item.slug.includes('haddock') || item.slug.includes('oscar')
+                                                                ? 'scale-[1.75]' // Mobile Haddock Fix
+                                                                : 'scale-105'
+                                                            } 
+                                                            brightness-75`}
+                                                    />
+                                                    {/* Optional: Fallback Image underneath if video takes time to load (z-0) 
+                                                        Actually, let's just trust the video or use poster if available. 
+                                                        For now, clean video implementation.
+                                                    */}
+                                                </>
+                                            ) : (
+                                                <Image
+                                                    src={item.img}
+                                                    alt={item.title}
+                                                    fill
+                                                    className="object-cover brightness-75 group-hover:scale-105 transition-transform duration-700"
+                                                />
+                                            )}
+
+                                            {/* Gradient Overlay */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90" />
+
+                                            {/* Content Overlay */}
+                                            <div className="absolute inset-0 p-6 flex flex-col justify-end z-20">
+                                                <div className="mb-2">
+                                                    <span className={`inline-block px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-carbon ${item.color} rounded-sm mb-2`}>
+                                                        {item.tagDisplay}
+                                                    </span>
+                                                </div>
+                                                <h3 className="text-4xl font-display font-black uppercase text-white leading-[0.9] mb-2 drop-shadow-lg">
+                                                    {item.title}
+                                                </h3>
+                                                <p className="text-white/80 text-sm uppercase tracking-widest font-light border-l-2 border-white/30 pl-3">
+                                                    {item.subtitle}
+                                                </p>
                                             </div>
-                                        </Link>
+                                        </div>
                                     ))}
                                 </div>
                             </div>
@@ -307,6 +377,7 @@ export default function CaseStudyHybridSystem({ initialCases, lang }: CaseStudyH
                                             key={item.id}
                                             item={item}
                                             isLarge={activeFilter === "ALL" ? idx < 2 : idx % 3 === 0}
+                                            onClick={() => handleOpenDrawer(item.slug)}
                                         />
                                     ))}
                                 </div>
@@ -322,6 +393,13 @@ export default function CaseStudyHybridSystem({ initialCases, lang }: CaseStudyH
                 </AnimatePresence>
 
             </div>
+
+            {/* Case Study Drawer */}
+            <CaseStudyDrawer
+                isOpen={isDrawerOpen}
+                onClose={() => setIsDrawerOpen(false)}
+                caseStudy={selectedCase}
+            />
         </section>
     );
 }

@@ -4,7 +4,8 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { CASE_STUDIES, CaseStudy } from '@/data/case-studies';
-import CaseStudyDrawer from './CaseStudyDrawer';
+import dynamic from 'next/dynamic';
+const CaseStudyDrawer = dynamic(() => import('./CaseStudyDrawer'), { ssr: false });
 
 export default function MasonryCaseGrid() {
     const [selectedCase, setSelectedCase] = useState<CaseStudy | null>(null);

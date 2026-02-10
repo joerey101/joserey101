@@ -15,14 +15,19 @@ export default function Header({ lang }: HeaderProps) {
     const isEs = lang === "es";
     const [currentTime, setCurrentTime] = useState("");
 
-    // Hook para el scroll dinámico
-    const { scrollY } = useScroll();
-
-    // Transformaciones basadas en el scroll
-    const headerHeight = useTransform(scrollY, [0, 100], ["100px", "72px"]);
-    const headerBg = useTransform(scrollY, [0, 100], ["rgba(249, 250, 250, 0)", "rgba(249, 250, 250, 0.9)"]);
-    const headerBorder = useTransform(scrollY, [0, 100], ["rgba(229, 229, 229, 0)", "rgba(229, 229, 229, 1)"]);
-    const logoScale = useTransform(scrollY, [0, 100], [1, 0.9]);
+    /*
+        const { scrollY } = useScroll();
+    
+        // Transformaciones basadas en el scroll
+        const headerHeight = useTransform(scrollY, [0, 100], ["100px", "72px"]);
+        const headerBg = useTransform(scrollY, [0, 100], ["rgba(249, 250, 250, 0)", "rgba(249, 250, 250, 0.9)"]);
+        const headerBorder = useTransform(scrollY, [0, 100], ["rgba(229, 229, 229, 0)", "rgba(229, 229, 229, 1)"]);
+        const logoScale = useTransform(scrollY, [0, 100], [1, 0.9]);
+    */
+    const headerHeight = "72px";
+    const headerBg = "rgba(249, 250, 250, 0.9)";
+    const headerBorder = "rgba(229, 229, 229, 1)";
+    const logoScale = 1;
 
     useEffect(() => {
         const updateClock = () => {
@@ -149,11 +154,12 @@ export default function Header({ lang }: HeaderProps) {
                 </div>
             </div>
 
-            {/* Scroll Progress Line (Subtle) */}
+            {/* 
             <motion.div
                 className="absolute bottom-0 left-0 h-[1px] bg-electric-blue/30"
                 style={{ scaleX: useTransform(scrollY, [0, 4000], [0, 1]) }}
             />
+            */}
         </motion.header>
     );
 }

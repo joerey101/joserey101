@@ -1,14 +1,20 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useCallback } from 'react';
 
 export default function WorkHeroApple() {
-    const containerRef = useRef<HTMLDivElement>(null);
+    // Callback ref pattern to ensure useScroll only sees the container when it's ready
+    const [container, setContainer] = useState<HTMLElement | null>(null);
+    const containerRef = useCallback((node: HTMLElement) => {
+        if (node !== null) {
+            setContainer(node);
+        }
+    }, []);
 
     // Detect scroll progress
     const { scrollYProgress } = useScroll({
-        target: containerRef,
+        target: container ? { current: container } as any : undefined,
         offset: ["start start", "end end"]
     });
 
