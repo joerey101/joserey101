@@ -65,8 +65,8 @@ function ModalInnerContent({ caseStudy, lang, onClose }: { caseStudy: CaseStudy,
     });
 
     // Mappings for the transition
-    const blurOpacity = useTransform(scrollYProgress, [0.05, 0.15], [0, 1]);
-    const imageScale = useTransform(scrollYProgress, [0.05, 0.2], [1, 1.1]);
+    // REMOVED GLOBAL BLUR - Background stays sharp as requested
+    const imageScale = useTransform(scrollYProgress, [0.05, 0.2], [1, 1.05]);
     const textFadeOut = useTransform(scrollYProgress, [0.02, 0.1], [1, 0]);
     const metricsY = useTransform(scrollYProgress, [0.05, 0.15], [0, -50]);
 
@@ -146,11 +146,7 @@ function ModalInnerContent({ caseStudy, lang, onClose }: { caseStudy: CaseStudy,
                     {/* Gradient Overlay for Contrast */}
                     <div className="absolute inset-0 z-[5] bg-gradient-to-t from-black via-transparent to-black/30" />
 
-                    {/* Blur Layer */}
-                    <motion.div
-                        style={{ opacity: blurOpacity }}
-                        className="absolute inset-0 z-10 bg-zinc-900/10 backdrop-blur-md"
-                    />
+                    {/* DELETED: Global Blur Layer that was making the video "non-nitido" */}
 
                     {/* Hero Text */}
                     <motion.div
@@ -207,14 +203,13 @@ function ModalInnerContent({ caseStudy, lang, onClose }: { caseStudy: CaseStudy,
                     <div className="relative w-full pb-32">
                         <div className="h-[100vh] w-full" />
 
-                        {/* CONTENT AREA - Now with "Crystal" panel for contrast */}
+                        {/* CONTENT AREA - CRYSTAL PANEL (Contrast only where text exists) */}
                         <motion.div
                             style={{
                                 opacity: contentOpacity,
                                 y: contentY,
-                                backgroundColor: `rgba(10, 10, 10, 0.6)` // Fallback
                             }}
-                            className="relative z-30 -mt-[40vh] py-32 px-8 md:px-20 bg-black/60 backdrop-blur-3xl rounded-t-[4rem] border-t border-white/5"
+                            className="relative z-30 -mt-[40vh] py-32 px-8 md:px-20 bg-black/80 backdrop-blur-2xl rounded-t-[4rem] border-t border-white/10 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]"
                         >
                             <div className="max-w-4xl mx-auto flex flex-col gap-16">
                                 {/* Challenge */}
