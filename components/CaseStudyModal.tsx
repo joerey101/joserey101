@@ -82,7 +82,7 @@ function ModalInnerContent({ caseStudy, lang, onClose }: { caseStudy: CaseStudy,
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={onClose}
-                className="absolute inset-0 bg-black/30 backdrop-blur-sm cursor-pointer"
+                className="absolute inset-0 bg-black/80 backdrop-blur-md cursor-pointer"
             />
 
             {/* Modal Container (Drawer) */}
@@ -91,7 +91,7 @@ function ModalInnerContent({ caseStudy, lang, onClose }: { caseStudy: CaseStudy,
                 animate={{ x: "0%" }}
                 exit={{ x: "100%" }}
                 transition={{ type: "spring", damping: 35, stiffness: 300 }}
-                className="relative z-[101] w-full lg:w-[70vw] xl:w-[60vw] bg-black shadow-2xl overflow-hidden"
+                className="relative z-[101] w-full lg:w-[70vw] xl:w-[60vw] bg-black shadow-2xl border-l border-white/10 overflow-hidden"
             >
                 {/* 1. FIXED BACKGROUND LAYER (Hero Image & Text) */}
                 <div className="absolute inset-0 z-0 w-full h-full overflow-hidden flex flex-col items-center justify-start md:justify-center pt-24 md:pt-0 pointer-events-none">
@@ -111,7 +111,7 @@ function ModalInnerContent({ caseStudy, lang, onClose }: { caseStudy: CaseStudy,
                                         loop
                                         muted
                                         playsInline
-                                        className={`absolute inset-0 w-full h-full object-cover brightness-50 ${caseStudy.slug.includes('haddock') ? 'scale-[1.75]' : ''}`}
+                                        className={`absolute inset-0 w-full h-full object-cover brightness-[0.35] ${caseStudy.slug.includes('haddock') ? 'scale-[1.75]' : ''}`}
                                     />
                                 ) : (
                                     <iframe
@@ -135,11 +135,14 @@ function ModalInnerContent({ caseStudy, lang, onClose }: { caseStudy: CaseStudy,
                                 src={caseStudy.img}
                                 alt={caseStudy.title}
                                 fill
-                                className="object-cover brightness-50"
+                                className="object-cover brightness-[0.35]"
                                 priority
                             />
                         )}
                     </motion.div>
+
+                    {/* Gradient Overlay for Contrast */}
+                    <div className="absolute inset-0 z-[5] bg-gradient-to-t from-black via-transparent to-black/30" />
 
                     {/* Blur Layer */}
                     <motion.div
@@ -253,7 +256,8 @@ function ModalInnerContent({ caseStudy, lang, onClose }: { caseStudy: CaseStudy,
                                 <div className="pt-16 border-t border-white/5 flex justify-start">
                                     <button
                                         onClick={() => {
-                                            window.location.href = `/work/${caseStudy.slug}?lang=${lang}`;
+                                            // Forced reload to full page prevents staying in the intercepted drawer
+                                            window.location.href = `/work/${caseStudy.slug}`;
                                         }}
                                         className="group flex items-center gap-2 text-white/80 hover:text-white transition-colors text-xl md:text-2xl font-medium"
                                     >
