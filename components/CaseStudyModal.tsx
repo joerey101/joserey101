@@ -65,7 +65,7 @@ function ModalInnerContent({ caseStudy, lang, onClose }: { caseStudy: CaseStudy,
     });
 
     // Mappings for the transition
-    // REMOVED GLOBAL BLUR - Background stays sharp as requested
+    const blurOpacity = useTransform(scrollYProgress, [0.05, 0.15], [0, 1]);
     const imageScale = useTransform(scrollYProgress, [0.05, 0.2], [1, 1.05]);
     const textFadeOut = useTransform(scrollYProgress, [0.02, 0.1], [1, 0]);
     const metricsY = useTransform(scrollYProgress, [0.05, 0.15], [0, -50]);
@@ -73,8 +73,6 @@ function ModalInnerContent({ caseStudy, lang, onClose }: { caseStudy: CaseStudy,
     // Content entrance - More gradual for a luxurious feel
     const contentOpacity = useTransform(scrollYProgress, [0.05, 0.2], [0, 1]);
     const contentY = useTransform(scrollYProgress, [0.05, 0.2], [400, 0]);
-    // Added a background opacity scroll for the content sheet itself
-    const contentBgOpacity = useTransform(scrollYProgress, [0.1, 0.25], [0, 0.95]);
 
     return (
         <div className="fixed inset-0 z-[100] flex justify-end">
@@ -146,7 +144,11 @@ function ModalInnerContent({ caseStudy, lang, onClose }: { caseStudy: CaseStudy,
                     {/* Gradient Overlay for Contrast */}
                     <div className="absolute inset-0 z-[5] bg-gradient-to-t from-black via-transparent to-black/30" />
 
-                    {/* DELETED: Global Blur Layer that was making the video "non-nitido" */}
+                    {/* Original Approved Blur Layer */}
+                    <motion.div
+                        style={{ opacity: blurOpacity }}
+                        className="absolute inset-0 z-10 bg-zinc-900/10 backdrop-blur-md"
+                    />
 
                     {/* Hero Text */}
                     <motion.div
@@ -203,71 +205,73 @@ function ModalInnerContent({ caseStudy, lang, onClose }: { caseStudy: CaseStudy,
                     <div className="relative w-full pb-32">
                         <div className="h-[100vh] w-full" />
 
-                        {/* CONTENT AREA - CRYSTAL PANEL (Contrast only where text exists) */}
-                        <motion.div
-                            style={{
-                                opacity: contentOpacity,
-                                y: contentY,
-                            }}
-                            className="relative z-30 -mt-[40vh] py-32 px-8 md:px-20 bg-black/80 backdrop-blur-2xl rounded-t-[4rem] border-t border-white/10 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]"
-                        >
-                            <div className="max-w-4xl mx-auto flex flex-col gap-16">
-                                {/* Challenge */}
-                                <div className={`relative pl-8 border-l-4 transition-colors duration-500 ${caseStudy.borderColor || 'border-white/10'} flex flex-col gap-4`}>
-                                    <span className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]">
-                                        01 — {lang === 'es' ? 'EL DESAFÍO' : 'THE CHALLENGE'}
-                                    </span>
-                                    <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-[1.1] text-white">
-                                        "{caseStudy.details?.challenge}"
-                                    </p>
-                                </div>
-
-                                {/* Solution */}
-                                <div className={`relative pl-8 border-l-4 transition-colors duration-500 ${caseStudy.borderColor || 'border-white/10'} flex flex-col gap-4`}>
-                                    <span className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]">
-                                        02 — {lang === 'es' ? 'LA SOLUCIÓN' : 'THE SOLUTION'}
-                                    </span>
-                                    <div className="space-y-6">
-                                        <p className="text-lg md:text-xl font-light leading-relaxed text-white/70">
-                                            {caseStudy.details?.solution}
+                        {/* CONTENT AREA - NO BACKGROUND, JUST TEXT ON TOP OF FULL-SCREEN BLUR */}
+                        <div className="relative z-30 -mt-[15vh]">
+                            <motion.div
+                                style={{
+                                    opacity: contentOpacity,
+                                    y: contentY,
+                                }}
+                                className="w-full py-32 px-8 md:px-20 flex flex-col items-center"
+                            >
+                                <div className="max-w-4xl w-full flex flex-col gap-16">
+                                    {/* Challenge */}
+                                    <div className={`relative pl-8 border-l-4 transition-colors duration-500 ${caseStudy.borderColor || 'border-white/10'} flex flex-col gap-4`}>
+                                        <span className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]">
+                                            01 — {lang === 'es' ? 'EL DESAFÍO' : 'THE CHALLENGE'}
+                                        </span>
+                                        <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-[1.1] text-white">
+                                            "{caseStudy.details?.challenge}"
                                         </p>
-                                        {caseStudy.techStack && (
-                                            <div className="flex flex-wrap gap-2 mt-4">
-                                                {caseStudy.techStack.map(tech => (
-                                                    <span key={tech} className="px-4 py-1 rounded-sm bg-white/30 text-white border border-white/10 text-[10px] uppercase font-bold backdrop-blur-sm">
-                                                        {tech}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        )}
+                                    </div>
+
+                                    {/* Solution */}
+                                    <div className={`relative pl-8 border-l-4 transition-colors duration-500 ${caseStudy.borderColor || 'border-white/10'} flex flex-col gap-4`}>
+                                        <span className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]">
+                                            02 — {lang === 'es' ? 'LA SOLUCIÓN' : 'THE SOLUTION'}
+                                        </span>
+                                        <div className="space-y-6">
+                                            <p className="text-lg md:text-xl font-light leading-relaxed text-white/70">
+                                                {caseStudy.details?.solution}
+                                            </p>
+                                            {caseStudy.techStack && (
+                                                <div className="flex flex-wrap gap-2 mt-4">
+                                                    {caseStudy.techStack.map(tech => (
+                                                        <span key={tech} className="px-4 py-1 rounded-sm bg-white/30 text-white border border-white/10 text-[10px] uppercase font-bold backdrop-blur-sm">
+                                                            {tech}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    {/* Impact */}
+                                    <div className={`relative pl-8 border-l-4 transition-colors duration-500 ${caseStudy.borderColor || 'border-white/10'} flex flex-col gap-4`}>
+                                        <span className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]">
+                                            03 — {lang === 'es' ? 'EL IMPACTO' : 'THE IMPACT'}
+                                        </span>
+                                        <p className="text-xl md:text-2xl font-display font-medium leading-[1.3] text-white">
+                                            {caseStudy.details?.impact}
+                                        </p>
+                                    </div>
+
+                                    {/* CTA */}
+                                    <div className="pt-16 border-t border-white/5 flex justify-start">
+                                        <button
+                                            onClick={() => {
+                                                // Forced reload to full page prevents staying in the intercepted drawer
+                                                window.location.href = `/work/${caseStudy.slug}`;
+                                            }}
+                                            className="group flex items-center gap-2 text-white hover:text-white/80 transition-colors text-xl md:text-2xl font-medium drop-shadow-md"
+                                        >
+                                            {lang === 'es' ? 'Ver caso completo' : 'View full case'}
+                                            <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
+                                        </button>
                                     </div>
                                 </div>
-
-                                {/* Impact */}
-                                <div className={`relative pl-8 border-l-4 transition-colors duration-500 ${caseStudy.borderColor || 'border-white/10'} flex flex-col gap-4`}>
-                                    <span className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]">
-                                        03 — {lang === 'es' ? 'EL IMPACTO' : 'THE IMPACT'}
-                                    </span>
-                                    <p className="text-xl md:text-2xl font-display font-medium leading-[1.3] text-white">
-                                        {caseStudy.details?.impact}
-                                    </p>
-                                </div>
-
-                                {/* CTA */}
-                                <div className="pt-16 border-t border-white/5 flex justify-start">
-                                    <button
-                                        onClick={() => {
-                                            // Forced reload to full page prevents staying in the intercepted drawer
-                                            window.location.href = `/work/${caseStudy.slug}`;
-                                        }}
-                                        className="group flex items-center gap-2 text-white/80 hover:text-white transition-colors text-xl md:text-2xl font-medium"
-                                    >
-                                        {lang === 'es' ? 'Ver caso completo' : 'View full case'}
-                                        <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
-                                    </button>
-                                </div>
-                            </div>
-                        </motion.div>
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
             </motion.div>
