@@ -70,9 +70,11 @@ function ModalInnerContent({ caseStudy, lang, onClose }: { caseStudy: CaseStudy,
     const textFadeOut = useTransform(scrollYProgress, [0.02, 0.1], [1, 0]);
     const metricsY = useTransform(scrollYProgress, [0.05, 0.15], [0, -50]);
 
-    // Content entrance
-    const contentOpacity = useTransform(scrollYProgress, [0.12, 0.25], [0, 1]);
-    const contentY = useTransform(scrollYProgress, [0.12, 0.25], [100, 0]);
+    // Content entrance - More gradual for a luxurious feel
+    const contentOpacity = useTransform(scrollYProgress, [0.05, 0.2], [0, 1]);
+    const contentY = useTransform(scrollYProgress, [0.05, 0.2], [400, 0]);
+    // Added a background opacity scroll for the content sheet itself
+    const contentBgOpacity = useTransform(scrollYProgress, [0.1, 0.25], [0, 0.95]);
 
     return (
         <div className="fixed inset-0 z-[100] flex justify-end">
@@ -205,10 +207,14 @@ function ModalInnerContent({ caseStudy, lang, onClose }: { caseStudy: CaseStudy,
                     <div className="relative w-full pb-32">
                         <div className="h-[100vh] w-full" />
 
-                        {/* CONTENT AREA */}
+                        {/* CONTENT AREA - Now with "Crystal" panel for contrast */}
                         <motion.div
-                            style={{ opacity: contentOpacity, y: contentY }}
-                            className="relative z-30 -mt-[30vh] pb-40 px-8 md:px-20"
+                            style={{
+                                opacity: contentOpacity,
+                                y: contentY,
+                                backgroundColor: `rgba(10, 10, 10, 0.6)` // Fallback
+                            }}
+                            className="relative z-30 -mt-[40vh] py-32 px-8 md:px-20 bg-black/60 backdrop-blur-3xl rounded-t-[4rem] border-t border-white/5"
                         >
                             <div className="max-w-4xl mx-auto flex flex-col gap-16">
                                 {/* Challenge */}
