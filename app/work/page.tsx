@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata = {
-    title: 'Selected Work | José Rey',
+    title: 'Selected Work | Bestarlight',
     description: 'Casos de estudio y proyectos destacados.',
 };
 

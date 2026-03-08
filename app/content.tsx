@@ -322,7 +322,7 @@ export const content = {
             desc: <>Convertimos tu visión de negocio en un activo digital <br className="hidden md:block" /> con ingeniería, medición y foco en los detalles.</>,
             cta: "Hablemos",
             links: ["LinkedIn"],
-            copyright: <>© 2001 - 2026 JOSEREY101<br />TODOS LOS DERECHOS RESERVADOS</>
+            copyright: <>© 2001 - 2026 BESTARLIGHT<br />TODOS LOS DERECHOS RESERVADOS</>
         }
     },
     en: {
@@ -611,7 +611,7 @@ export const content = {
             desc: <>We convert your vision into a digital asset <br /> with engineering, measurement, and focus on details.</>,
             cta: "Let's Talk",
             links: ["LinkedIn"],
-            copyright: <>© 2024 JOSEREY STUDIO<br />DESIGNED IN THE VOID<br />ALL RIGHTS RESERVED</>
+            copyright: <>© 2024 BESTARLIGHT<br />DESIGNED IN THE VOID<br />ALL RIGHTS RESERVED</>
         }
     }
 };

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Manrope, Special_Elite, Permanent_Marker } from "next/font/google";
 import "./globals.css";
+import StarlightIntro from '@/components/StarlightIntro';
 
 // Force load Material Symbols using standard link in head via Next.js metadata is tricky with simple link, so we use a simple import in globals or layout.
 // Since globals @import might effectively be delayed, let's try standard link injection in the body or Head if we were using Pages router.
@@ -29,7 +30,7 @@ const permanentMarker = Permanent_Marker({
 });
 
 export const metadata: Metadata = {
-  title: "joserey101 | Inteligencia Estratégica",
+  title: "Bestarlight | Inteligencia Estratégica",
   description: "Redefiniendo la Autoridad Digital",
 };
 
@@ -49,6 +50,7 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${manrope.variable} ${specialElite.variable} ${permanentMarker.variable} antialiased`}
         suppressHydrationWarning
       >
+        <StarlightIntro />
         {children}
         {modal}
       </body>

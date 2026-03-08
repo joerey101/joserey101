@@ -1,0 +1,89 @@
+/* ============================================================
+   StarlightIntro.module.css
+   Overlay de intro — se monta sobre todo el contenido del site
+   ============================================================ */
+
+/* Contenedor principal — cubre toda la pantalla */
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none; /* el sitio debajo sigue siendo clickeable */
+}
+
+/* Canvas de la animación */
+.canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 9999;
+}
+
+/* Div del flash blanco supernova */
+.bloom {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: none;
+}
+
+/* Logo ✦ STARLIGHT que aparece después del bloom */
+.logoContainer {
+  position: fixed;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  z-index: 10001;
+  opacity: 0;
+  text-align: center;
+  pointer-events: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.starIcon {
+  font-size: 1.2rem;
+  color: #111;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.15));
+  animation: pulseStar 2.5s ease-in-out infinite;
+}
+
+.logoText {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0d0d0d;
+  letter-spacing: 0.25em;
+}
+
+@keyframes pulseStar {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+
+/* Botón replay (opcional, solo si showReplay={true}) */
+.replay {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  z-index: 10002;
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.5);
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  backdrop-filter: blur(10px);
+  transition: background 0.2s, color 0.2s;
+  pointer-events: auto; /* este elemento sí recibe clicks */
+}
+
+.replay:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.8);
+}

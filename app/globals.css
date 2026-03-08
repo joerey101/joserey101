@@ -97,7 +97,7 @@ html {
 }
 
 body {
-  background: var(--color-background-light);
+  background: #000;
   color: var(--color-carbon);
   font-family: var(--font-display);
 }

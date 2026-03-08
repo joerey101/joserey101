@@ -99,7 +99,7 @@ export default function Header({ lang }: HeaderProps) {
                         </motion.div>
                         <div className="flex flex-col">
                             <span className="font-display font-black text-xl tracking-tighter uppercase italic leading-none">
-                                JOSEREY101
+                                BESTARLIGHT
                             </span>
                             <span className="font-meta text-[8px] uppercase tracking-[0.3em] text-carbon/40 font-bold">
                                 Digital Architect
