@@ -39,10 +39,10 @@ export default function Hero({ lang }: HeroProps) {
                     <div className="flex flex-col items-start justify-center text-left w-full h-full">
                         <span className="block text-base md:text-xl font-meta font-bold opacity-70 mb-4 tracking-[0.4em] uppercase text-electric-blue">{t.weCreate}</span>
 
-                        <div className="flex flex-col items-start text-left gap-1 mb-4 w-full">
-                            <span className="text-white font-display font-black text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85]">{t.strategy}</span>
-                            <span className="text-white font-display font-black text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85]">{t.systems}</span>
-                            <span className="text-white font-display font-black text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85] whitespace-nowrap">{t.digitalMind}</span>
+                        <div className="flex flex-col items-start text-left gap-2 md:gap-1 mb-6 w-full">
+                            <span className="text-white font-display font-black text-[clamp(2.75rem,11vw,9rem)] md:text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85] uppercase">{t.strategy}</span>
+                            <span className="text-white font-display font-black text-[clamp(2.75rem,11vw,9rem)] md:text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85] uppercase">{t.systems}</span>
+                            <span className="text-white font-display font-black text-[clamp(2.75rem,11vw,9rem)] md:text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85] uppercase whitespace-normal md:whitespace-nowrap break-words max-w-full">{t.digitalMind}</span>
                         </div>
 
                         <div id="hero-footer-text" ref={footerTextRef} className="flex flex-col items-start justify-start gap-4 w-full">

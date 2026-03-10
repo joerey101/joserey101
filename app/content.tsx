@@ -56,7 +56,7 @@ export const content = {
                     <span className="text-white/70 block">Unificamos Marketing Estratégico, Ingeniería, Operaciones y Cultura bajo una misma arquitectura.</span>
                 </>
             ),
-            descMobile: "Unificamos Marketing, Ingeniería y Cultura. Transformamos visiones en sistemas escalables.",
+            descMobile: "Unificamos Marketing Estratégico, Ingeniería, Operaciones y Cultura bajo una misma arquitectura.",
             cta: "Descúbranos"
         },
         blueprints: {
