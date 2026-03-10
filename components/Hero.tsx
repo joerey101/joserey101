@@ -28,28 +28,28 @@ export default function Hero({ lang }: HeroProps) {
     }, [t]);
 
     return (
-        <section className="flex flex-col items-center justify-center pt-0 px-8 text-center h-screen relative overflow-hidden bg-[#02050B] border-b border-grid-line">
+        <section className="flex flex-col items-center justify-center pt-0 px-2 lg:px-8 text-center h-[100svh] relative overflow-hidden bg-[#02050B] border-b border-grid-line w-full">
             <MilkyWay />
 
-            <div className="max-w-[1800px] mx-auto w-full relative z-10 flex flex-col items-start justify-center h-full px-3 md:px-6 lg:px-12">
+            <div className="max-w-[1800px] mx-auto w-full relative z-10 flex flex-col items-center lg:items-start justify-center h-full px-2 md:px-6 lg:px-12">
 
                 {/* Block B - Ahora único bloque visible */}
-                <div id="block-b" ref={blockBRef} className="flex flex-col justify-center w-full h-full py-12 md:py-0 gap-2 md:gap-4 max-w-5xl">
+                <div id="block-b" ref={blockBRef} className="flex flex-col justify-center w-full h-full py-12 md:py-0 gap-2 md:gap-4 max-w-full lg:max-w-5xl">
 
                     <div className="flex flex-col items-center lg:items-start justify-center text-center lg:text-left w-full h-full lg:pt-[5vh]">
-                        <span className="block text-base md:text-xl font-meta font-bold opacity-70 mb-4 tracking-[0.4em] uppercase text-electric-blue">{t.weCreate}</span>
+                        <span className="block text-sm md:text-xl font-meta font-bold opacity-70 mb-4 tracking-[0.4em] uppercase text-electric-blue">{t.weCreate}</span>
 
-                        <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-2 md:gap-1 mb-6 w-full">
-                            <span className="text-white font-display font-black text-[clamp(2.75rem,11vw,9rem)] md:text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85] uppercase">{t.strategy}</span>
-                            <span className="text-white font-display font-black text-[clamp(2.75rem,11vw,9rem)] md:text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85] uppercase">{t.systems}</span>
-                            <span className="text-white font-display font-black text-[clamp(2.75rem,11vw,9rem)] md:text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85] uppercase whitespace-normal md:whitespace-nowrap break-words max-w-full">{t.digitalMind}</span>
+                        <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-1 md:gap-1 mb-8 w-full max-w-[100vw]">
+                            <span className="text-white font-display font-black text-[clamp(2.75rem,14vw,9rem)] md:text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85] uppercase w-full">{t.strategy}</span>
+                            <span className="text-white font-display font-black text-[clamp(2.75rem,14vw,9rem)] md:text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85] uppercase w-full">{t.systems}</span>
+                            <span className="text-white font-display font-black text-[clamp(2.5rem,12vw,9rem)] md:text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85] uppercase whitespace-normal md:whitespace-nowrap break-words w-full">{t.digitalMind}</span>
                         </div>
 
                         <div id="hero-footer-text" ref={footerTextRef} className="flex flex-col items-center lg:items-start justify-start gap-4 w-full">
                             <div className="text-xl md:text-[1.7rem] md:whitespace-nowrap leading-snug md:leading-tight text-white font-medium text-center lg:text-left hidden md:block">
                                 {t.desc}
                             </div>
-                            <p className="text-base leading-relaxed text-white/80 font-medium text-center lg:text-left md:hidden px-4">
+                            <p className="text-[0.95rem] leading-relaxed text-white/80 font-medium text-center lg:text-left md:hidden px-2 max-w-[90%] mx-auto">
                                 {t.descMobile}
                             </p>
 
