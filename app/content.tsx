@@ -53,7 +53,6 @@ export const content = {
             digitalMind: "PENSAMIENTO DIGITAL",
             desc: (
                 <>
-                    <strong className="text-white block mb-0 md:mb-1">Trabajamos sobre los fundamentos esenciales: Personas, Procesos y Datos.</strong>
                     <span className="text-white/70 block">Unificamos Marketing Estratégico, Ingeniería, Operaciones y Cultura bajo una misma arquitectura.</span>
                 </>
             ),
