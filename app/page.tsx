@@ -9,8 +9,7 @@ export default function Home() {
   const lang = "es";
   return (
     <>
-      {/* Global Grid Overlay */}
-      <div className="fixed inset-0 grid-bg pointer-events-none opacity-40 z-0"></div>
+      {/* Global Grid Overlay Removido */}
 
       {/* Sticky Edge Labels */}
       <div className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 mix-blend-multiply">

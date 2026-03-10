@@ -50,11 +50,11 @@ export const content = {
             weCreate: "Creamos",
             strategy: "ESTRATEGIA",
             systems: "SISTEMAS",
-            digitalMind: "MENTE DIGITAL",
+            digitalMind: "PENSAMIENTO DIGITAL",
             desc: (
                 <>
-                    <strong className="text-carbon block mb-2">Trabajamos sobre los fundamentos esenciales: Personas, Procesos y Datos.</strong>
-                    Unificamos Marketing Estratégico, Ingeniería, Operaciones y Cultura bajo una misma arquitectura.
+                    <strong className="text-white block mb-0 md:mb-1">Trabajamos sobre los fundamentos esenciales: Personas, Procesos y Datos.</strong>
+                    <span className="text-white/70 block">Unificamos Marketing Estratégico, Ingeniería, Operaciones y Cultura bajo una misma arquitectura.</span>
                 </>
             ),
             descMobile: "Unificamos Marketing, Ingeniería y Cultura. Transformamos visiones en sistemas escalables.",
@@ -66,15 +66,15 @@ export const content = {
             items: [
                 {
                     id: 1,
-                    title: "ARQUITECTURA DE NEGOCIO",
-                    subtitle: "PENSAMIENTO SISTÉMICO Y POSICIONAMIENTO 101",
-                    desc: "No hacemos 'branding' decorativo. Diseñamos la estructura comercial y la narrativa de marca necesarias para penetrar mercados saturados. Definimos el norte estratégico y la viabilidad económica antes de escribir una sola línea de código."
+                    title: "ARQUITECTURA ESTRATÉGICA 360°",
+                    subtitle: "EVOLUCIÓN DINÁMICA DE LA ESTRUCTURA OPERATIVA",
+                    desc: "Nos involucramos desde el origen para desglosar la estructura de tu compañía, aplicando IA para mapear y cuantificar cada paso hacia el mercado. Definimos la viabilidad económica con la velocidad que la tecnología actual exige."
                 },
                 {
                     id: 2,
-                    title: "INGENIERÍA DE SISTEMAS",
-                    subtitle: "FLUJOS GENERATIVOS Y AUTOMATIZACIÓN (AGENTS)",
-                    desc: "Desarrollo de software a medida potenciado por Inteligencia Artificial. Creamos ecosistemas digitales que trabajan 24/7, eliminando tareas repetitivas y reduciendo la fricción operativa a cero. Tecnología invisible, resultados tangibles."
+                    title: "ESTRUCTURAS DIGITALES DE ALTO RENDIMIENTO",
+                    subtitle: "OPTIMIZACIÓN DE CAPAS OPERATIVAS MEDIANTE LÓGICA GENERATIVA.",
+                    desc: "Despliegue de flujos de trabajo automatizados para la optimización de procesos críticos. Integramos IA en la arquitectura existente para la eliminación de tareas redundantes y la mitigación de errores operativos. Ejecución orientada a la eficiencia del ciclo de negocio."
                 },
                 {
                     id: 3,
@@ -85,12 +85,12 @@ export const content = {
             ]
         },
         deepDive: {
-            titleMain: "¿Lo ",
-            titleHighlight: "viste?",
-            titleSub: "Ahora ",
-            titleSubHighlight: "hazlo.",
-            desc: "La estrategia es solo ruido sin ejecución. Convierte la visión en sistema hoy mismo.",
-            cta: "Hablemos de tu empresa"
+            titleMain: "DEJE DE ",
+            titleHighlight: "GESTIONAR ",
+            titleSub: "POR ",
+            titleSubHighlight: "INTUICIÓN.",
+            desc: "Integramos los flujos de trabajo que su estructura demanda. Pasemos del diseño estratégico a la operación automatizada de forma inmediata.",
+            cta: "Agendar reunión"
         },
         selectedWork: {
             title: <>Casos de<br />Estudio</>,
