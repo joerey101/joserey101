@@ -30,8 +30,52 @@ const permanentMarker = Permanent_Marker({
 });
 
 export const metadata: Metadata = {
-  title: "Bestarlight | Inteligencia Estratégica",
-  description: "Redefiniendo la Autoridad Digital",
+  metadataBase: new URL("https://bestarlight.com"),
+  title: {
+    default: "Bestarlight | Inteligencia Estratégica",
+    template: "%s | Bestarlight",
+  },
+  description: "Redefiniendo la Autoridad Digital. Unificamos Marketing Estratégico, Ingeniería, Operaciones y Cultura bajo una misma arquitectura.",
+  keywords: ["inteligencia estratégica", "arquitectura digital", "marketing estratégico", "operaciones data-driven", "escalabilidad tecnológica", "Bestarlight"],
+  authors: [{ name: "Bestarlight" }],
+  creator: "Bestarlight",
+  publisher: "Bestarlight",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+    languages: {
+      es: "/",
+      en: "/en",
+    },
+  },
+  openGraph: {
+    title: "Bestarlight | Inteligencia Estratégica",
+    description: "Redefiniendo la Autoridad Digital con Arquitectura Estratégica y flujos impulsados por IA.",
+    url: "https://bestarlight.com",
+    siteName: "Bestarlight",
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bestarlight | Inteligencia Estratégica",
+    description: "Unificamos Marketing, Ingeniería y Operaciones bajo una misma arquitectura.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -41,6 +85,15 @@ export default function RootLayout({
   children: React.ReactNode;
   modal: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Bestarlight",
+    url: "https://bestarlight.com",
+    logo: "https://bestarlight.com/favicon.ico",
+    description: "Unificamos Marketing Estratégico, Ingeniería, Operaciones y Cultura bajo una misma arquitectura.",
+  };
+
   return (
     <html lang="es">
       <head>
@@ -50,6 +103,10 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${manrope.variable} ${specialElite.variable} ${permanentMarker.variable} antialiased`}
         suppressHydrationWarning
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <StarlightIntro />
         {children}
         {modal}
