@@ -110,7 +110,7 @@ export default function HeroMobileFinal() {
                                 <div className="w-1.5 h-1.5 bg-pink-500 rounded-full animate-pulse" style={{ animationDelay: '0.3s' }}></div>
                             </div>
                             <span className="text-gray-500 text-[10px] tracking-[0.3em] uppercase font-bold">
-                                JOSEREY101
+                                BESTARLIGHT
                             </span>
                         </div>
                     </div>

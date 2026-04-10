@@ -96,7 +96,7 @@ const AccordionCard = ({
             {/* Content Overlay */}
             <div className={`absolute inset-0 z-10 flex flex-col justify-end p-8 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-70'}`}>
                 <div className="flex flex-wrap gap-2 mb-4">
-                    <span className={`inline-block w-fit px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-carbon ${item.color} rounded-sm`}>
+                    <span className="inline-block w-fit px-3 py-1 text-[10px] font-bold uppercase tracking-widest bg-secondary text-white rounded-sm">
                         {item.tagDisplay}
                     </span>
                     {isActive && item.techStack && (
@@ -176,7 +176,7 @@ const BentoCard = ({ item, isLarge, onClick }: { item: CaseStudy, isLarge?: bool
                 {/* Overlay Content */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-black/80 via-transparent to-transparent z-10">
                     <div className="flex flex-wrap gap-2 mb-4 group-hover:translate-x-2 transition-transform">
-                        <span className={`text-[10px] font-bold uppercase tracking-widest text-carbon ${item.color} px-2 py-0.5 rounded-sm`}>
+                        <span className="text-[10px] font-bold uppercase tracking-widest bg-secondary text-white px-2 py-0.5 rounded-sm">
                             {item.tagDisplay}
                         </span>
                         {item.techStack && item.techStack
@@ -350,7 +350,7 @@ export default function CaseStudyHybridSystem({ initialCases, lang }: CaseStudyH
                                             {/* Content Overlay */}
                                             <div className="absolute inset-0 p-6 flex flex-col justify-end z-20">
                                                 <div className="mb-2">
-                                                    <span className={`inline-block px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-carbon ${item.color} rounded-sm mb-2`}>
+                                                    <span className="inline-block px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-secondary text-white rounded-sm mb-2">
                                                         {item.tagDisplay}
                                                     </span>
                                                 </div>

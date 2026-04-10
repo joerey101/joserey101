@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Manrope, Special_Elite, Permanent_Marker } from "next/font/google";
+import { Space_Grotesk, Manrope, Special_Elite, Permanent_Marker, Inter } from "next/font/google";
 import "./globals.css";
-import StarlightIntro from '@/components/StarlightIntro';
 
 // Force load Material Symbols using standard link in head via Next.js metadata is tricky with simple link, so we use a simple import in globals or layout.
 // Since globals @import might effectively be delayed, let's try standard link injection in the body or Head if we were using Pages router.
@@ -9,6 +8,11 @@ import StarlightIntro from '@/components/StarlightIntro';
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -100,14 +104,13 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
       <body
-        className={`${spaceGrotesk.variable} ${manrope.variable} ${specialElite.variable} ${permanentMarker.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${manrope.variable} ${specialElite.variable} ${permanentMarker.variable} ${inter.variable} antialiased`}
         suppressHydrationWarning
       >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <StarlightIntro />
         {children}
         {modal}
       </body>

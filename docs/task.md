@@ -1,8 +1,9 @@
 # CURRENT TASK STATUS
-**ESTADO:** REVERTIDO A STABLE / PAUSA POR DISCONFORMIDAD
+**ESTADO:** INTEGRACIÓN STARLIGHT 2.0 ACTIVA EN `/version2`
 
 ## Contexto
-- Se intentó implementar Masonry/Drawer Apple Style pero la ejecución visual no cumplió expectativas.
-- Se ha realizado un REVERT al commit `0aeccdf` (versión estable previa).
-- Se ha limpiado la carpeta `sanity` y rutas `app/work` para garantizar build verde.
-- El proyecto está en pausa hasta nueva instrucción.
+- Se ha implementado el diseño industrial Starlight 2.0 de forma aislada para no afectar el home original.
+- Los nuevos componentes están en `/components/v2/`.
+- La ruta de previsualización es `http://localhost:3000/version2`.
+- Se ha priorizado la alineación milimétrica del Hero y la unificación de colores al Azul Corporativo (`bg-secondary`).
+- El proyecto está listo para continuar puliendo márgenes e interactividad en esta nueva ruta.

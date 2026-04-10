@@ -1,5 +1,5 @@
 # BAJADA TÉCNICA: Módulo Menú Lateral "Apple Style"
-**Proyecto:** JOSEREY101
+**Proyecto:** Bestarlight
 **Tecnología:** Next.js (App Router), Framer Motion, Tailwind CSS
 
 ---
@@ -28,7 +28,7 @@ Los elementos del menú no aparecen todos a la vez. Cada ítem tiene un retraso 
 
 Si vas a usar este código en un entorno de IA para prototipar:
 
-1.  **Contexto de Diseño:** El diseño de JOSEREY101 es "Brutalista Refinado". Usa tipografías `Black` (peso 900) y tracking muy ajustado (`tighter`).
+1.  **Contexto de Diseño:** El diseño de Bestarlight es "Brutalista Refinado". Usa tipografías `Black` (peso 900) y tracking muy ajustado (`tighter`).
 2.  **Lógica del Trigger:** El botón de cierre (`X`) debe tener una micro-animación de rotación (`rotate-90`) al hacer hover para indicar interacción.
 3.  **Manejo de Estados:** Asegúrate de que el `AnimatePresence` esté envolviendo todo el bloque para que el "Exit Animation" (cuando el menú se cierra) no sea abrupto.
 4.  **Colores:** 

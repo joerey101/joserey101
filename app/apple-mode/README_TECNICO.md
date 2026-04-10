@@ -37,4 +37,4 @@ Para usar este efecto en una nueva página o sección:
 "Usa el componente `AppleHealthSection` que está en `/components` como base. Necesito replicar el efecto de scroll de Apple en la sección [NOMBRE_SECCION], usando la imagen [RUTA_IMAGEN]. Asegúrate de mantener el posicionamiento `sticky` y sincronizar el `scrollYProgress` con la opacidad del desenfoque para que el texto sea perfectamente legible al subir."
 
 ---
-*Módulo generado por Antigravity para JOSEREY101.*
+*Módulo generado por Antigravity para Bestarlight.*

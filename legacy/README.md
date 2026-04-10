@@ -1,4 +1,4 @@
-# joserey101.com | Strategic Intelligence Studio
+# bestarlight.com | Strategic Intelligence Studio
 
 **Current Version:** v1.0 (Frankenstein Merge)
 **Design System:** "Neo-Swiss Pop" (Oyster White / Deep Carbon / Neon Accents)

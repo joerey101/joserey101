@@ -107,10 +107,10 @@ export default function AppleSidebarMenu({ lang, items }: AppleSidebarMenuProps)
                                     {lang === "es" ? "Hablemos" : "Let's Talk"}
                                 </p>
                                 <a
-                                    href="mailto:hello@joserey101.com"
+                                    href="mailto:hello@bestarlight.com"
                                     className="text-lg font-display font-bold hover:text-neon-pink transition-colors"
                                 >
-                                    hello@joserey101.com
+                                    hello@bestarlight.com
                                 </a>
                             </div>
                         </motion.div>

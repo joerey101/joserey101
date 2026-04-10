@@ -23,7 +23,7 @@ export default function Header({ lang }: HeaderProps) {
                     <div className="size-8 bg-carbon flex items-center justify-center rounded-none rotate-45">
                         <span className="material-symbols-outlined text-primary text-xl -rotate-45">bolt</span>
                     </div>
-                    <h1 className="font-display font-bold text-xl tracking-tighter uppercase italic">joserey101</h1>
+                    <h1 className="font-display font-bold text-xl tracking-tighter uppercase italic">bestarlight</h1>
                 </div>
 
                 <nav className="hidden md:flex items-center gap-12 font-meta text-[11px] font-bold uppercase tracking-widest text-carbon/80">
@@ -48,7 +48,7 @@ export default function Header({ lang }: HeaderProps) {
                 </nav>
 
                 <div className="flex items-center gap-4">
-                    <a href="mailto:hello@joserey101.com" className="hidden sm:block bg-carbon text-white px-6 py-2 rounded-full font-meta text-xs font-bold uppercase tracking-wider hover:bg-neon-pink hover:scale-105 transition-all shadow-lg">
+                    <a href="mailto:hello@bestarlight.com" className="hidden sm:block bg-carbon text-white px-6 py-2 rounded-full font-meta text-xs font-bold uppercase tracking-wider hover:bg-neon-pink hover:scale-105 transition-all shadow-lg">
                         {t.hire}
                     </a>
                     <AppleSidebarMenu lang={lang} items={menuItems} />
