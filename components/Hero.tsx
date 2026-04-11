@@ -47,11 +47,11 @@ export default function Hero({ lang }: HeroProps) {
                 </span>
 
                 <h1 className="font-display font-black tracking-tighter uppercase italic text-white leading-[0.95] mb-6">
-                    <span className="block text-[5vw] whitespace-nowrap">
-                        {t.weCreate} <span className="text-electric-blue">{t.strategy},</span>
+                    <span className="block text-[4.5vw] whitespace-nowrap">
+                        {t.weCreate} <span className="text-electric-blue">{t.strategy}</span>
                     </span>
-                    <span className="block text-[5vw] whitespace-nowrap">
-                        {t.systems} y <span className="text-neon-pink">{t.digitalMind}</span>.
+                    <span className="block text-[4.5vw] whitespace-nowrap">
+                        {t.systems} <span className="text-neon-pink">{t.digitalMind}</span>.
                     </span>
                 </h1>
 

@@ -38,32 +38,12 @@ export default function Footer({ lang }: FooterProps) {
             <div className="flex-grow flex flex-col justify-center items-center relative z-10 py-20 px-4">
                 <motion.div style={{ y, opacity }} className="text-center w-full">
 
-                    <h2 className="font-display font-black text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase mb-16 md:mb-24">
-                        EL FUTURO <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">ES AHORA.</span>
+                    <h2 className="font-display font-black text-[12vw] md:text-[8vw] leading-[0.9] tracking-tighter uppercase mb-12 md:mb-16">
+                        {t.title}
                     </h2>
 
                     <div className="font-meta text-lg text-white/80 max-w-6xl mx-auto font-light leading-snug mb-16 md:mb-24 uppercase tracking-widest md:text-[30px] md:font-normal md:leading-normal">
-                        {lang === 'es' ? (
-                            <>
-                                {/* Mobile Layout (Stacked) */}
-                                <div className="md:hidden">
-                                    <span className="block">Convertimos</span>
-                                    <span className="block">tu visión de negocio</span>
-                                    <span className="block mb-2">en un activo digital</span>
-                                    <span className="block">con ingeniería, medición</span>
-                                    <span className="block">y foco en los detalles.</span>
-                                </div>
-
-                                {/* Desktop Layout (2 Lines) */}
-                                <div className="hidden md:block">
-                                    Convertimos tu visión de negocio en un activo digital <br />
-                                    con ingeniería, medición y foco en los detalles.
-                                </div>
-                            </>
-                        ) : (
-                            t.desc
-                        )}
+                        {t.desc}
                     </div>
 
                     <button

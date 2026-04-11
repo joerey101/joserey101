@@ -4,30 +4,22 @@ import Blueprints from "@/components/Blueprints";
 import DeepDive from "@/components/DeepDive";
 import SelectedWork from "@/components/SelectedWork";
 import Footer from "@/components/Footer";
+import { LaboratorioIASection, EntryFilterSection, DiagnosticCTASection } from "@/components/AdditionalSections";
 
 export default function Home() {
   const lang = "es";
   return (
     <>
-      {/* Global Grid Overlay Removido */}
-
-      {/* Sticky Edge Labels */}
-      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 mix-blend-multiply">
-        <span className="sticky-label rotate-180 font-meta text-[10px] font-extrabold tracking-[0.2em] uppercase opacity-40">ESTRATEGIA / DISEÑO / IA</span>
-        <div className="w-[1px] h-20 bg-carbon/20"></div>
-      </div>
-      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 mix-blend-multiply pointer-events-none">
-        <div className="w-[1px] h-20 bg-carbon/20"></div>
-        <span className="sticky-label rotate-180 font-meta text-[10px] font-extrabold tracking-[0.2em] uppercase opacity-40">SINCE 2021 - ARGENTINA</span>
-      </div>
-
       <Header lang={lang} />
 
       <main className="relative pt-24">
         <Hero lang={lang} />
         <Blueprints lang={lang} />
+        <LaboratorioIASection lang={lang} />
         <DeepDive lang={lang} />
+        <EntryFilterSection lang={lang} />
         <SelectedWork lang={lang} />
+        <DiagnosticCTASection lang={lang} />
       </main>
 
       <Footer lang={lang} />

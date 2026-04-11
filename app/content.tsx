@@ -45,19 +45,19 @@ export const content = {
         },
         hero: {
             typingWords: ["Convencional", "Rígida", "Burocrática"],
-            label: "Redefiniendo la Autoridad Digital",
+            label: "Ingeniería de mercado aplicada.",
             logic: "LÓGICA",
-            weCreate: "Creamos",
-            strategy: "ESTRATEGIA",
-            systems: "SISTEMAS",
-            digitalMind: "PENSAMIENTO DIGITAL",
+            weCreate: "CONSTRUIMOS LA",
+            strategy: "INFRAESTRUCTURA",
+            systems: "que convierte su operación en una",
+            digitalMind: "ventaja competitiva",
             desc: (
                 <>
-                    <span className="text-white/70 block">Unificamos Marketing Estratégico, Ingeniería, Operaciones y Cultura bajo una misma arquitectura.</span>
+                    <span className="text-white/70 block">Integramos tecnología, estrategia e inteligencia artificial en una arquitectura que funciona.</span>
                 </>
             ),
-            descMobile: "Unificamos Marketing Estratégico, Ingeniería, Operaciones y Cultura bajo una misma arquitectura.",
-            cta: "Descúbranos"
+            descMobile: "Integramos tecnología, estrategia e inteligencia artificial en una arquitectura que funciona.",
+            cta: "Explorar solución"
         },
         blueprints: {
             title: "INGENIERÍA DE MERCADO",
@@ -65,34 +65,48 @@ export const content = {
             items: [
                 {
                     id: 1,
-                    title: "ARQUITECTURA ESTRATÉGICA 360°",
-                    subtitle: "EVOLUCIÓN DINÁMICA DE LA ESTRUCTURA OPERATIVA",
-                    desc: "Nos involucramos desde el origen para desglosar la estructura de tu compañía, aplicando IA para mapear y cuantificar cada paso hacia el mercado. Definimos la viabilidad económica con la velocidad que la tecnología actual exige.",
+                    title: "AUDITORÍA ESTRATÉGICA 1 A 1",
+                    subtitle: "Antes de construir, entendemos.",
+                    desc: "Inmersión directa en la estructura comercial y operativa de la empresa. Mapeamos ineficiencias, evaluamos viabilidad económica con soporte de IA y definimos el camino exacto hacia la modernización. Sin supuestos, con datos.",
                     cta: "Explorar módulo"
                 },
                 {
                     id: 2,
-                    title: "ESTRUCTURAS DIGITALES DE ALTO RENDIMIENTO",
-                    subtitle: "OPTIMIZACIÓN DE CAPAS OPERATIVAS MEDIANTE LÓGICA GENERATIVA.",
-                    desc: "Despliegue de flujos de trabajo automatizados para la optimización de procesos críticos. Integramos IA en la arquitectura existente para la eliminación de tareas redundantes y la mitigación de errores operativos. Ejecución orientada a la eficiencia del ciclo de negocio.",
+                    title: "ECOSISTEMAS WEB Y CANALES DIGITALES",
+                    subtitle: "Presencia digital con estructura detrás.",
+                    desc: "Desarrollamos plataformas de alto rendimiento conectadas a los flujos de trabajo reales de la organización. Cada canal tiene un propósito medible dentro de la operación comercial.",
                     cta: "Desplegar sistema"
                 },
                 {
                     id: 3,
-                    title: "OPERACIONES & DATA",
-                    subtitle: "ENFOQUE DATA-DRIVEN Y ESCALABILIDAD",
-                    desc: "Lo que no se mide, no existe. Transformamos la intuición en certeza mediante tableros de control y métricas en tiempo real. Diseñamos la infraestructura operativa necesaria para soportar un crecimiento masivo sin generar caos interno.",
+                    title: "GESTIÓN E INTELIGENCIA OPERATIVA",
+                    subtitle: "De datos dispersos a visión de negocio.",
+                    desc: "Unificamos herramientas, procesos y fuentes de información en un sistema de control centralizado. El resultado: visibilidad total sobre la operación y capacidad de respuesta inmediata ante cualquier variable del mercado.",
                     cta: "Ver métricas"
                 }
             ]
         },
         deepDive: {
-            titleMain: "DEJE DE ",
-            titleHighlight: "GESTIONAR ",
-            titleSub: "POR ",
-            titleSubHighlight: "INTUICIÓN.",
-            desc: "Integramos los flujos de trabajo que su estructura demanda. Pasemos del diseño estratégico a la operación automatizada de forma inmediata.",
-            cta: "Agendar reunión"
+            titleMain: "LA TECNOLOGÍA NO ",
+            titleHighlight: "TRANSFORMA ",
+            titleSub: "NEGOCIOS. LA ",
+            titleSubHighlight: "EJECUCIÓN SÍ.",
+            desc: "Convertimos su visión en un sistema que opera, mide y escala.",
+            cta: "Agendar diagnóstico"
+        },
+        laboratorioIA: {
+            title: "LABORATORIO IA",
+            subtitle: "Donde la producción escala sin que la operación colapse.",
+            desc: "Desarrollamos sistemas generativos para la producción automatizada de activos visuales: ambientación de producto, contenido de campaña y personajes virtuales para e-commerce. Reducción real de costos de producción a escala."
+        },
+        filtroEntrada: {
+            title: "No trabajamos con todos. Trabajamos con los que están listos.",
+            desc: "Antes de cualquier propuesta, realizamos un diagnóstico inicial para evaluar si existe alineación real entre los objetivos de la empresa y nuestra forma de operar. Si hay match estructural, avanzamos. Si no, lo decimos."
+        },
+        ctaPrincipal: {
+            title: "Primera reunión de diagnóstico — 45 minutos.",
+            desc: "Sin presentaciones de venta. Sin promesas. Una conversación estructurada para entender dónde está la empresa hoy y qué necesita para llegar a donde quiere estar. Si hay trabajo para hacer juntos, lo vamos a saber en esa reunión.",
+            buttonText: "Agendar diagnóstico →"
         },
         selectedWork: {
             title: <>Casos de<br />Estudio</>,
@@ -320,9 +334,9 @@ export const content = {
         },
         footer: {
             label: "CONEXIÓN // 2024 // LISTO PARA EL FUTURO",
-            title: <>El Futuro es Ahora.<br /><span className="text-white">Evolucioná tu negocio.</span></>,
-            desc: <>Convertimos tu visión de negocio en un activo digital <br className="hidden md:block" /> con ingeniería, medición y foco en los detalles.</>,
-            cta: "Hablemos",
+            title: <>La tecnología no transforma negocios.<br /><span className="text-white">La ejecución sí.</span></>,
+            desc: <>Convertimos su visión en un sistema que opera, mide y escala.</>,
+            cta: "Explorar diagnóstico",
             links: ["LinkedIn"],
             copyright: <>© 2001 - 2026 BESTARLIGHT<br />TODOS LOS DERECHOS RESERVADOS</>
         }
