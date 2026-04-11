@@ -2,7 +2,7 @@
 
 import { content } from '@/app/content';
 
-interface BlueprintsProps {
+interface BlueprintsGridProps {
     lang: "es" | "en";
 }
 
@@ -12,13 +12,13 @@ const cardConfig = [
     { numColor: "text-carbon",        ctaColor: "text-carbon",        icon: "monitoring"   },
 ];
 
-export default function Blueprints({ lang }: BlueprintsProps) {
+export default function BlueprintsGrid({ lang }: BlueprintsGridProps) {
     const t = content[lang].blueprints;
 
     return (
         <section id="blueprints" className="border-t border-grid-line bg-white relative">
 
-            {/* Section header */}
+            {/* Section header — identical to current site */}
             <div className="flex flex-col md:flex-row items-baseline justify-between px-8 py-10 border-b border-grid-line bg-[#E5E5E5]">
                 <div className="flex items-center w-full md:w-auto">
                     <h2 className="text-[50px] md:text-[80px] font-bold tracking-tighter uppercase italic text-carbon md:ml-[80px] leading-none">
@@ -30,7 +30,7 @@ export default function Blueprints({ lang }: BlueprintsProps) {
                 </span>
             </div>
 
-            {/* Cards grid */}
+            {/* Cards grid — 1px gap using bg-grid-line as separator */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-grid-line">
                 {t.items.map((item, i) => {
                     const cfg = cardConfig[i];

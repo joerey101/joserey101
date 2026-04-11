@@ -67,19 +67,22 @@ export const content = {
                     id: 1,
                     title: "ARQUITECTURA ESTRATÉGICA 360°",
                     subtitle: "EVOLUCIÓN DINÁMICA DE LA ESTRUCTURA OPERATIVA",
-                    desc: "Nos involucramos desde el origen para desglosar la estructura de tu compañía, aplicando IA para mapear y cuantificar cada paso hacia el mercado. Definimos la viabilidad económica con la velocidad que la tecnología actual exige."
+                    desc: "Nos involucramos desde el origen para desglosar la estructura de tu compañía, aplicando IA para mapear y cuantificar cada paso hacia el mercado. Definimos la viabilidad económica con la velocidad que la tecnología actual exige.",
+                    cta: "Explorar módulo"
                 },
                 {
                     id: 2,
                     title: "ESTRUCTURAS DIGITALES DE ALTO RENDIMIENTO",
                     subtitle: "OPTIMIZACIÓN DE CAPAS OPERATIVAS MEDIANTE LÓGICA GENERATIVA.",
-                    desc: "Despliegue de flujos de trabajo automatizados para la optimización de procesos críticos. Integramos IA en la arquitectura existente para la eliminación de tareas redundantes y la mitigación de errores operativos. Ejecución orientada a la eficiencia del ciclo de negocio."
+                    desc: "Despliegue de flujos de trabajo automatizados para la optimización de procesos críticos. Integramos IA en la arquitectura existente para la eliminación de tareas redundantes y la mitigación de errores operativos. Ejecución orientada a la eficiencia del ciclo de negocio.",
+                    cta: "Desplegar sistema"
                 },
                 {
                     id: 3,
                     title: "OPERACIONES & DATA",
                     subtitle: "ENFOQUE DATA-DRIVEN Y ESCALABILIDAD",
-                    desc: "Lo que no se mide, no existe. Transformamos la intuición en certeza mediante tableros de control y métricas en tiempo real. Diseñamos la infraestructura operativa necesaria para soportar un crecimiento masivo sin generar caos interno."
+                    desc: "Lo que no se mide, no existe. Transformamos la intuición en certeza mediante tableros de control y métricas en tiempo real. Diseñamos la infraestructura operativa necesaria para soportar un crecimiento masivo sin generar caos interno.",
+                    cta: "Ver métricas"
                 }
             ]
         },
@@ -356,19 +359,22 @@ export const content = {
                     id: 1,
                     title: "BUSINESS ARCHITECTURE",
                     subtitle: "SYSTEMIC THINKING AND POSITIONING 101",
-                    desc: "We don't do decorative 'branding'. We design the commercial structure and brand narrative needed to penetrate saturated markets. We define the strategic north and economic viability before writing a single line of code."
+                    desc: "We don't do decorative 'branding'. We design the commercial structure and brand narrative needed to penetrate saturated markets. We define the strategic north and economic viability before writing a single line of code.",
+                    cta: "Explore module"
                 },
                 {
                     id: 2,
                     title: "SYSTEMS ENGINEERING",
                     subtitle: "GENERATIVE FLOWS AND AUTOMATION (AGENTS)",
-                    desc: "Custom software development powered by Artificial Intelligence. We create digital ecosystems that work 24/7, eliminating repetitive tasks and reducing operational friction to zero. Invisible technology, tangible results."
+                    desc: "Custom software development powered by Artificial Intelligence. We create digital ecosystems that work 24/7, eliminating repetitive tasks and reducing operational friction to zero. Invisible technology, tangible results.",
+                    cta: "Deploy system"
                 },
                 {
                     id: 3,
                     title: "OPERATIONS & DATA",
                     subtitle: "DATA-DRIVEN APPROACH AND SCALABILITY",
-                    desc: "What isn't measured doesn't exist. We transform intuition into certainty through control dashboards and real-time metrics. We design the operational infrastructure needed to support massive growth without generating internal chaos."
+                    desc: "What isn't measured doesn't exist. We transform intuition into certainty through control dashboards and real-time metrics. We design the operational infrastructure needed to support massive growth without generating internal chaos.",
+                    cta: "View metrics"
                 }
             ]
         },

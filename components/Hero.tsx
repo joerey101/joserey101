@@ -29,7 +29,16 @@ export default function Hero({ lang }: HeroProps) {
 
     return (
         <section className="flex flex-col items-center justify-center pt-0 px-2 lg:px-8 text-center h-[100svh] relative overflow-hidden bg-[#02050B] border-b border-grid-line w-full">
-            <MilkyWay />
+            {/* Video de fondo */}
+            <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+                src="/assets/img/HOME-VIDEO-STARLIGHT.mp4"
+            />
+            <div className="absolute inset-0 bg-carbon/60 pointer-events-none" />
 
             <div className="max-w-[1800px] mx-auto w-full relative z-10 flex flex-col items-center lg:items-start justify-center h-full px-2 md:px-6 lg:px-12">
 
