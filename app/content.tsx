@@ -400,6 +400,20 @@ export const content = {
             desc: "Strategy is just noise without execution. Turn vision into system today.",
             cta: "Let's talk about your business"
         },
+        laboratorioIA: {
+            title: "AI LAB",
+            subtitle: "Scaling production without operational collapse.",
+            desc: "We develop generative systems for automated visual asset production: product staging, campaign content, and virtual characters for e-commerce. Real cost reduction at scale."
+        },
+        filtroEntrada: {
+            title: "We don't work with everyone. Only with those ready to scale.",
+            desc: "Before any proposal, we perform an initial diagnostic to evaluate alignment between company goals and our operations. If there's a match, we move forward. If not, we'll tell you."
+        },
+        ctaPrincipal: {
+            title: "First Diagnostic Meeting — 45 Minutes.",
+            desc: "No sales pitches. No promises. A structured conversation to understand where your company is today and what it needs to reach its goals. If there's work to be done together, we'll find out in this meeting.",
+            buttonText: "Schedule Diagnostic →"
+        },
         selectedWork: {
             title: <>Case<br />Studies</>,
             filters: {
