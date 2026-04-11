@@ -28,7 +28,7 @@ export default function Hero({ lang }: HeroProps) {
     }, [t]);
 
     return (
-        <section className="flex flex-col items-center justify-center pt-0 px-2 lg:px-8 text-center h-[100svh] relative overflow-hidden bg-[#02050B] border-b border-grid-line w-full">
+        <section className="flex flex-col items-start justify-center pt-0 h-[100svh] relative overflow-hidden bg-[#02050B] border-b border-grid-line w-full">
             {/* Video de fondo */}
             <video
                 autoPlay
@@ -40,31 +40,32 @@ export default function Hero({ lang }: HeroProps) {
             />
             <div className="absolute inset-0 bg-carbon/60 pointer-events-none" />
 
-            <div className="max-w-[1800px] mx-auto w-full relative z-10 flex flex-col items-center lg:items-start justify-center h-full px-2 md:px-6 lg:px-12">
+            <div className="w-full relative z-10 flex flex-col justify-center h-full px-8 lg:px-16">
 
-                {/* Block B - Ahora único bloque visible */}
-                <div id="block-b" ref={blockBRef} className="flex flex-col justify-center w-full h-full py-12 md:py-0 gap-2 md:gap-4 max-w-full lg:max-w-5xl">
+                <span className="font-meta text-[10px] font-bold uppercase tracking-[0.4em] text-electric-blue mb-6">
+                    {t.label}
+                </span>
 
-                    <div className="flex flex-col items-center lg:items-start justify-center text-center lg:text-left w-full h-full lg:pt-[5vh] px-0">
-                        <span className="block text-sm md:text-xl font-meta font-bold opacity-70 mb-4 tracking-[0.4em] uppercase text-electric-blue">{t.weCreate}</span>
+                <h1 className="font-display font-black tracking-tighter uppercase italic text-white leading-[0.95] mb-6">
+                    <span className="block text-[5vw] whitespace-nowrap">
+                        {t.weCreate} <span className="text-electric-blue">{t.strategy},</span>
+                    </span>
+                    <span className="block text-[5vw] whitespace-nowrap">
+                        {t.systems} y <span className="text-neon-pink">{t.digitalMind}</span>.
+                    </span>
+                </h1>
 
-                        <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-1 md:gap-1 mb-8 w-full">
-                            <span className="text-white font-display font-black text-[clamp(2.75rem,15.5vw,9rem)] md:text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85] uppercase w-full">{t.strategy}</span>
-                            <span className="text-white font-display font-black text-[clamp(2.75rem,15.5vw,9rem)] md:text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85] uppercase w-full">{t.systems}</span>
-                            <span className="text-white font-display font-black text-[clamp(2.5rem,13.5vw,9rem)] md:text-[clamp(3.5rem,9vw,9rem)] tracking-tighter leading-[0.85] uppercase whitespace-normal md:whitespace-nowrap break-words w-full">{t.digitalMind}</span>
-                        </div>
+                <p className="font-meta text-base text-white/60 whitespace-nowrap mb-10">
+                    {t.descMobile}
+                </p>
 
-                        <div id="hero-footer-text" ref={footerTextRef} className="flex flex-col items-center lg:items-start justify-start gap-4 w-full">
-                            <div className="text-xl md:text-[1.7rem] md:whitespace-nowrap leading-snug md:leading-tight text-white font-medium text-center lg:text-left hidden md:block">
-                                {t.desc}
-                            </div>
-                            <p className="text-[0.95rem] leading-relaxed text-white/80 font-medium text-center lg:text-left md:hidden px-4">
-                                {t.descMobile}
-                            </p>
-
-                            {/* Botones temporalmente removidos por pedido */}
-                        </div>
-                    </div>
+                <div className="flex items-center gap-4">
+                    <a href="#blueprints" className="bg-white text-carbon px-8 py-4 rounded-full font-meta text-[11px] font-black uppercase tracking-widest hover:bg-electric-blue hover:text-white transition-all">
+                        {t.cta}
+                    </a>
+                    <a href="#work" className="border border-white/30 text-white px-8 py-4 rounded-full font-meta text-[11px] font-black uppercase tracking-widest hover:border-white transition-all">
+                        {lang === "es" ? "Ver trabajo" : "Our work"}
+                    </a>
                 </div>
 
             </div>
