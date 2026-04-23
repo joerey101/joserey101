@@ -225,20 +225,25 @@ export default function BeStarLightCaseStudySystem({ initialCases, lang, label, 
         }
     };
 
-    // 1. EXTRACT UNIQUE TAGS
-    const allTags = Array.from(new Set([
+    // 1. CANONICAL TAGS LIST
+    const allTags = [
         "ALL",
-        ...initialCases.flatMap(c => [
-            c.tagDisplay || "", 
-            ...(c.techStack || [])
-        ]).filter(Boolean).map(t => t.toUpperCase())
-    ]));
+        "E-COMMERCE",
+        "WEB",
+        "DISEÑO",
+        "BRANDING",
+        "ESTRATEGIA",
+        "B2B",
+        "DRONES",
+        "FOTOGRAFÍA"
+    ];
 
     // 2. FILTER CASES
     const filteredCases = initialCases.filter(c => {
         if (activeFilter === "ALL") return true;
-        return c.tagDisplay?.toUpperCase() === activeFilter ||
-            (c.techStack && c.techStack.some((t: string) => t?.toUpperCase() === activeFilter));
+        const normalizedTag = c.tagDisplay?.toUpperCase() || "";
+        const normalizedStack = c.techStack?.map(t => t.toUpperCase()) || [];
+        return normalizedTag.includes(activeFilter) || normalizedStack.some(t => t.includes(activeFilter));
     });
 
     // 3. SPLIT DATA
