@@ -272,53 +272,26 @@ export default function BeStarLightCaseStudySystem({ initialCases, lang, label, 
                 </div>
 
                 {/* 0. FILTER BAR */}
-                <div className="mb-12">
-                    {/* Desktop: Button Tags */}
-                    <div className="hidden md:flex flex-wrap justify-center gap-2">
-                        {allTags.map((tag) => (
-                            <button
-                                key={tag}
-                                onClick={() => {
-                                    setActiveFilter(tag);
-                                    setActiveIndex(0);
-                                }}
-                                className="px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all duration-300 border"
-                                style={{
-                                    fontFamily: 'var(--mono)',
-                                    backgroundColor: activeFilter === tag ? 'var(--fg)' : 'transparent',
-                                    color: activeFilter === tag ? 'var(--bg)' : 'var(--fg)',
-                                    borderColor: activeFilter === tag ? 'var(--fg)' : 'rgba(20, 16, 16, 0.1)',
-                                    transform: activeFilter === tag ? 'scale(1.05)' : 'scale(1)'
-                                }}
-                            >
-                                {tag === "ALL" ? (lang === 'es' ? 'TODOS' : 'ALL') : tag}
-                            </button>
-                        ))}
-                    </div>
-
-                    {/* Mobile: Elegant Dropdown */}
-                    <div className="md:hidden w-full flex justify-center">
-                        <div className="relative w-full max-w-[300px]">
-                            <select
-                                value={activeFilter}
-                                onChange={(e) => {
-                                    setActiveFilter(e.target.value);
-                                    setActiveIndex(0);
-                                }}
-                                className="w-full bg-transparent border-b-2 border-[var(--fg)] py-4 px-2 text-xs font-bold uppercase tracking-[0.2em] appearance-none cursor-pointer focus:outline-none"
-                                style={{ fontFamily: 'var(--mono)', color: 'var(--fg)' }}
-                            >
-                                {allTags.map((tag) => (
-                                    <option key={tag} value={tag} className="bg-[var(--bg)] text-[var(--fg)]">
-                                        {tag === "ALL" ? (lang === 'es' ? 'TODOS LOS PROYECTOS' : 'ALL PROJECTS') : tag}
-                                    </option>
-                                ))}
-                            </select>
-                            <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">
-                                <span className="text-[var(--accent)]">↓</span>
-                            </div>
-                        </div>
-                    </div>
+                <div className="mb-12 flex flex-wrap justify-start gap-2 max-w-4xl">
+                    {allTags.map((tag) => (
+                        <button
+                            key={tag}
+                            onClick={() => {
+                                setActiveFilter(tag);
+                                setActiveIndex(0);
+                            }}
+                            className="px-4 py-2 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest transition-all duration-300 border whitespace-nowrap"
+                            style={{
+                                fontFamily: 'var(--mono)',
+                                backgroundColor: activeFilter === tag ? 'var(--fg)' : 'transparent',
+                                color: activeFilter === tag ? 'var(--bg)' : 'var(--fg)',
+                                borderColor: activeFilter === tag ? 'var(--fg)' : 'rgba(20, 16, 16, 0.1)',
+                                transform: activeFilter === tag ? 'scale(1.05)' : 'scale(1)'
+                            }}
+                        >
+                            {tag === "ALL" ? (lang === 'es' ? 'TODOS' : 'ALL') : tag}
+                        </button>
+                    ))}
                 </div>
 
                 <AnimatePresence mode="wait">
