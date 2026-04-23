@@ -12,7 +12,7 @@ export function LaboratorioIASection({ lang }: SectionProps) {
     const t = content[lang];
     if (lang !== "es") return null;
     return (
-        <section className="bg-carbon text-white py-24 px-8 lg:px-16 border-y border-white/10 relative overflow-hidden">
+        <section id="lab" className="bg-carbon text-white py-24 px-8 lg:px-16 border-y border-white/10 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-1/3 h-full bg-electric-blue/5 blur-[120px] rounded-full pointer-events-none" />
             <div className="max-w-[1400px] mx-auto">
                 <span className="font-meta text-[10px] font-bold uppercase tracking-[0.4em] text-neon-pink mb-4 block">

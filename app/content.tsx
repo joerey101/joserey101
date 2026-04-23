@@ -333,12 +333,66 @@ export const content = {
             ]
         },
         footer: {
-            label: "CONEXIÓN // 2024 // LISTO PARA EL FUTURO",
+            label: "CONEXIÓN // 2026 // LISTO PARA EL FUTURO",
             title: <>La tecnología no transforma negocios.<br /><span className="text-white">La ejecución sí.</span></>,
             desc: <>Convertimos su visión en un sistema que opera, mide y escala.</>,
             cta: "Explorar diagnóstico",
             links: ["LinkedIn"],
             copyright: <>© 2001 - 2026 BESTARLIGHT<br />TODOS LOS DERECHOS RESERVADOS</>
+        },
+        vortex: {
+            hero: {
+                line1: "Estrategia",
+                line2: "con estructura",
+                line3: "real detrás.",
+                yearTag: "MKTING & COMUNICACIÓN TECH / 2026",
+                desc: <>Modernizamos organizaciones que ya funcionan.<br />Diagnóstico real, ecosistemas digitales e inteligencia operativa.</>,
+                ctaPrimary: "Agendar diagnóstico",
+                ctaSecondary: "Ver casos reales"
+            },
+            stats: [
+                { num: "+340%", label: "conversión promedio" },
+                { num: "-60%", label: "tiempo de cierre" },
+                { num: "×2.8", label: "ticket promedio" },
+                { num: "IA", label: "en cada proceso" }
+            ],
+            services: {
+                label: "Módulos de servicio / 03",
+                items: [
+                    { id: "01", title: "Auditoría Estratégica 1 a 1", sub: "Antes de construir, entendemos.", desc: "Inmersión directa en la estructura comercial. Mapeamos ineficiencias, evaluamos viabilidad con IA y definimos el camino real hacia la modernización." },
+                    { id: "02", title: "Ecosistemas Web", sub: "Presencia con estructura detrás.", desc: "Desarrollamos plataformas de alto rendimiento conectadas a los flujos de trabajo reales de la organización. Cada canal tiene un propósito medible." },
+                    { id: "03", title: "Gestión e Inteligencia", sub: "De datos a visión de negocio.", desc: "Unificamos herramientas y procesos en un sistema de control centralizado. Visibilidad total sobre la operación y capacidad de respuesta inmediata." }
+                ]
+            },
+            casesLabel: "TRABAJOS SELECCIONADOS",
+            casesTitle: "Implementaciones reales en entornos complejos.",
+            ideas: {
+                label: "Ideas que funcionan / 04",
+                title: "Estrategia con estructura real detrás.",
+                items: [
+                    { title: "Estructura", desc: "No hacemos diseño decorativo. Construimos la base técnica para que tu marca pueda escalar sin fricción." },
+                    { title: "Velocidad", desc: "Reducimos tiempos de ejecución integrando IA en los flujos de trabajo internos de tu equipo." },
+                    { title: "Resultados", desc: "Cada línea de código está orientada a mover la aguja del negocio. Si no es medible, no es prioridad." }
+                ]
+            },
+            contact: {
+                title: <>Hablemos de tu<br />próximo paso</>,
+                desc: "Estamos listos para auditar tu estructura actual.",
+                form: {
+                    name: "NOMBRE",
+                    company: "EMPRESA",
+                    email: "EMAIL",
+                    problem: "¿QUÉ QUERÉS RESOLVER?",
+                    context: "CONTEXTO (OPCIONAL)",
+                    placeholderName: "Tu nombre",
+                    placeholderCompany: "Tu organización",
+                    placeholderEmail: "tu@empresa.com",
+                    placeholderContext: "Contanos brevemente el desafío de tu organización...",
+                    selectModule: "Seleccioná un módulo",
+                    cta: "Enviar y agendar diagnóstico →",
+                    footer: "Sin spam. Sin compromiso. Tu información es confidencial."
+                }
+            }
         }
     },
     en: {
@@ -639,12 +693,66 @@ export const content = {
             ]
         },
         footer: {
-            label: "CONNECTION // 2024 // READY FOR THE FUTURE",
+            label: "CONNECTION // 2026 // READY FOR THE FUTURE",
             title: <>The Future is Now.<br /><span className="text-white">Evolve your business.</span></>,
             desc: <>We convert your vision into a digital asset <br /> with engineering, measurement, and focus on details.</>,
             cta: "Let's Talk",
             links: ["LinkedIn"],
-            copyright: <>© 2024 BESTARLIGHT<br />DESIGNED IN THE VOID<br />ALL RIGHTS RESERVED</>
+            copyright: <>© 2001 - 2026 BESTARLIGHT<br />ALL RIGHTS RESERVED</>
+        },
+        vortex: {
+            hero: {
+                line1: "Strategy",
+                line2: "with real",
+                line3: "structure behind.",
+                yearTag: "MKTING & COMMUNICATION TECH / 2026",
+                desc: <>We modernize organizations that already work.<br />Real diagnosis, digital ecosystems, and operational intelligence.</>,
+                ctaPrimary: "Schedule diagnosis",
+                ctaSecondary: "See real cases"
+            },
+            stats: [
+                { num: "+340%", label: "average conversion" },
+                { num: "-60%", label: "closing time" },
+                { num: "×2.8", label: "average ticket" },
+                { num: "AI", label: "in every process" }
+            ],
+            services: {
+                label: "Service Modules / 03",
+                items: [
+                    { id: "01", title: "1-on-1 Strategic Audit", sub: "Before building, we understand.", desc: "Direct immersion in the commercial structure. We map inefficiencies, evaluate viability with AI, and define the real path to modernization." },
+                    { id: "02", title: "Web Ecosystems", sub: "Presence with structure behind.", desc: "We develop high-performance platforms connected to the organization's real workflows. Each channel has a measurable purpose." },
+                    { id: "03", title: "Management & Intelligence", sub: "From data to business vision.", desc: "We unify tools and processes in a centralized control system. Total visibility over operations and immediate response capability." }
+                ]
+            },
+            casesLabel: "SELECTED WORKS",
+            casesTitle: "Real implementations in complex environments.",
+            ideas: {
+                label: "Ideas that work / 04",
+                title: "Strategy with real structure behind.",
+                items: [
+                    { title: "Structure", desc: "We don't do decorative design. We build the technical foundation so your brand can scale without friction." },
+                    { title: "Speed", desc: "We reduce execution times by integrating AI into your team's internal workflows." },
+                    { title: "Results", desc: "Every line of code is oriented to move the business needle. If it's not measurable, it's not a priority." }
+                ]
+            },
+            contact: {
+                title: <>Let's talk about<br />your next step</>,
+                desc: "We are ready to audit your current structure.",
+                form: {
+                    name: "NAME",
+                    company: "COMPANY",
+                    email: "EMAIL",
+                    problem: "WHAT DO YOU WANT TO SOLVE?",
+                    context: "CONTEXT (OPTIONAL)",
+                    placeholderName: "Your name",
+                    placeholderCompany: "Your organization",
+                    placeholderEmail: "you@company.com",
+                    placeholderContext: "Briefly tell us about your organization's challenge...",
+                    selectModule: "Select a module",
+                    cta: "Send and schedule diagnosis →",
+                    footer: "No spam. No commitment. Your information is confidential."
+                }
+            }
         }
     }
 };

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { content } from '@/app/content';
 import AppleSidebarMenu from './AppleSidebarMenu';
 import ContactForm from './ContactForm';
@@ -19,17 +19,7 @@ export default function Header({ lang }: HeaderProps) {
 
     const [headerBgState, setHeaderBgState] = useState("rgba(249, 250, 250, 0.9)");
 
-    /*
-        const { scrollY } = useScroll();
-    
-        // Transformaciones basadas en el scroll
-        const headerHeight = useTransform(scrollY, [0, 100], ["100px", "72px"]);
-        // const headerBg = useTransform(scrollY, [0, 100], ["rgba(249, 250, 250, 0)", "rgba(249, 250, 250, 0.9)"]);
-        const headerBorder = useTransform(scrollY, [0, 100], ["rgba(229, 229, 229, 0)", "rgba(229, 229, 229, 1)"]);
-        const logoScale = useTransform(scrollY, [0, 100], [1, 0.9]);
-    */
     const headerHeight = "72px";
-    // const headerBg = "rgba(249, 250, 250, 0.9)";
     const headerBorder = "rgba(229, 229, 229, 1)";
     const logoScale = 1;
 
@@ -187,12 +177,6 @@ export default function Header({ lang }: HeaderProps) {
                 lang={lang}
             />
 
-            {/* 
-            <motion.div
-                className="absolute bottom-0 left-0 h-[1px] bg-electric-blue/30"
-                style={{ scaleX: useTransform(scrollY, [0, 4000], [0, 1]) }}
-            />
-            */}
         </motion.header>
     );
 }
