@@ -242,8 +242,8 @@ export default function BeStarLightCaseStudySystem({ initialCases, lang, label, 
     const filteredCases = initialCases.filter(c => {
         if (activeFilter === "ALL") return true;
         const normalizedTag = c.tagDisplay?.toUpperCase() || "";
-        const normalizedStack = c.techStack?.map(t => t.toUpperCase()) || [];
-        return normalizedTag.includes(activeFilter) || normalizedStack.some(t => t.includes(activeFilter));
+        const normalizedStack = c.techStack?.map((t: string) => t.toUpperCase()) || [];
+        return normalizedTag.includes(activeFilter) || normalizedStack.some((t: string) => t.includes(activeFilter));
     });
 
     // 3. SPLIT DATA
