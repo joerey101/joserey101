@@ -18,6 +18,7 @@ interface CaseStudy {
     color: string;
     videoUrl?: string;
     techStack?: string[];
+    alt?: string;
 }
 
 interface BeStarLightCaseStudySystemProps {
