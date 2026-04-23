@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import Link from "next/link";
-import BeStarLightCaseStudySystem from "@/components/BeStarLightCaseStudySystem";
+import dynamic from "next/dynamic";
+const BeStarLightCaseStudySystem = dynamic(() => import("@/components/BeStarLightCaseStudySystem"), { ssr: false });
 import { content } from "@/app/content";
 import "./bestarlight.css";
 
@@ -122,14 +123,9 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="stats-strip">
-        <div className="bsl-container" style={{ display: 'flex' }}>
-          {BESTARLIGHT.stats.map((stat, i) => (
-            <div className="sstat" key={i}>
-              <p className="sstat-num">{stat.num}</p>
-              <p className="sstat-label">{stat.label}</p>
-            </div>
-          ))}
+      <div className="stats-strip" aria-hidden="true">
+        <div className="bsl-container">
+          {/* Visual separator gap */}
         </div>
       </div>
 
@@ -139,7 +135,6 @@ export default function Home() {
           <div className="svc-list reveal">
             {BESTARLIGHT.services.items.map((svc, i) => (
               <div className="svc-item" key={i}>
-                <p className="svc-i-num">{svc.id}</p>
                 <h2 className="svc-i-title">{svc.title}</h2>
                 <p className="svc-i-sub">{svc.sub}</p>
                 <p className="svc-i-desc">{svc.desc}</p>

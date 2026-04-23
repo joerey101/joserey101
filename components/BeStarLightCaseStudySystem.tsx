@@ -228,14 +228,17 @@ export default function BeStarLightCaseStudySystem({ initialCases, lang, label, 
     // 1. EXTRACT UNIQUE TAGS
     const allTags = Array.from(new Set([
         "ALL",
-        ...initialCases.flatMap(c => [c.tagDisplay, ...(c.techStack || [])]).map(t => t.toUpperCase())
+        ...initialCases.flatMap(c => [
+            c.tagDisplay || "", 
+            ...(c.techStack || [])
+        ]).filter(Boolean).map(t => t.toUpperCase())
     ]));
 
     // 2. FILTER CASES
     const filteredCases = initialCases.filter(c => {
         if (activeFilter === "ALL") return true;
-        return c.tagDisplay.toUpperCase() === activeFilter ||
-            (c.techStack && c.techStack.some((t: string) => t.toUpperCase() === activeFilter));
+        return c.tagDisplay?.toUpperCase() === activeFilter ||
+            (c.techStack && c.techStack.some((t: string) => t?.toUpperCase() === activeFilter));
     });
 
     // 3. SPLIT DATA
@@ -251,20 +254,20 @@ export default function BeStarLightCaseStudySystem({ initialCases, lang, label, 
                     <div className="text-[10px] uppercase tracking-[0.25em] mb-6" style={{ fontFamily: 'var(--mono)', color: 'var(--accent)' }}>
                         {lang === 'es' ? 'Casos de estudio' : 'Case Studies'}
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-black uppercase leading-[0.9]" style={{ fontFamily: 'var(--serif)', color: 'var(--text)' }}>
+                    <h2 className="text-4xl md:text-6xl font-black uppercase leading-[0.9]" style={{ fontFamily: 'var(--serif)', color: 'var(--fg)' }}>
                         {lang === 'es' ? (
                             <>TRABAJOS <em style={{ color: 'rgb(212, 56, 13)', fontStyle: 'italic' }}>SELECCIONADOS</em></>
                         ) : (
                             <>SELECTED <em style={{ color: 'rgb(212, 56, 13)', fontStyle: 'italic' }}>WORKS</em></>
                         )}
                     </h2>
-                    <p className="mt-6 text-sm md:text-xl font-light max-w-2xl" style={{ fontFamily: 'var(--sans)', color: 'var(--text)', opacity: 0.7, lineHeight: 1.6 }}>
+                    <p className="mt-6 text-sm md:text-xl font-light max-w-2xl" style={{ fontFamily: 'var(--sans)', color: 'var(--fg)', opacity: 0.7, lineHeight: 1.6 }}>
                         {title || (lang === 'es' ? 'Implementaciones reales en entornos complejos.' : 'Real-world implementations in complex environments.')}
                     </p>
                 </div>
 
                 {/* 0. FILTER BAR */}
-                <div className="flex flex-wrap gap-2 mb-12">
+                <div className="flex flex-wrap justify-center gap-2 mb-12">
                     {allTags.map((tag) => (
                         <button
                             key={tag}
@@ -275,9 +278,9 @@ export default function BeStarLightCaseStudySystem({ initialCases, lang, label, 
                             className="px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all duration-300 border"
                             style={{
                                 fontFamily: 'var(--mono)',
-                                backgroundColor: activeFilter === tag ? 'var(--text)' : 'transparent',
-                                color: activeFilter === tag ? 'var(--bg)' : 'var(--text)',
-                                borderColor: activeFilter === tag ? 'var(--text)' : 'rgba(20, 16, 16, 0.1)',
+                                backgroundColor: activeFilter === tag ? 'var(--fg)' : 'transparent',
+                                color: activeFilter === tag ? 'var(--bg)' : 'var(--fg)',
+                                borderColor: activeFilter === tag ? 'var(--fg)' : 'rgba(20, 16, 16, 0.1)',
                                 transform: activeFilter === tag ? 'scale(1.05)' : 'scale(1)'
                             }}
                         >
@@ -317,7 +320,7 @@ export default function BeStarLightCaseStudySystem({ initialCases, lang, label, 
                                         <div
                                             key={item.id}
                                             onClick={() => handleOpenDrawer(item.slug)}
-                                            className="relative h-[450px] rounded-[20px] overflow-hidden cursor-pointer group border border-[#141010]/10"
+                                            className="relative h-[280px] w-full rounded-[20px] overflow-hidden cursor-pointer group border border-[#141010]/10"
                                         >
                                             {/* Background Layer */}
                                             <div className="absolute inset-0 bg-[#141010]">
@@ -386,7 +389,7 @@ export default function BeStarLightCaseStudySystem({ initialCases, lang, label, 
 
                         {filteredCases.length === 0 && (
                             <div className="py-20 text-center">
-                                <p className="font-display uppercase tracking-widest" style={{ color: 'var(--text)', opacity: 0.4 }}>No se encontraron casos para este filtro.</p>
+                                <p className="font-display uppercase tracking-widest" style={{ color: 'var(--fg)', opacity: 0.4 }}>No se encontraron casos para este filtro.</p>
                             </div>
                         )}
                     </motion.div>

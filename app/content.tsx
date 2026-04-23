@@ -410,7 +410,7 @@ export const content = {
                 { num: "IA", label: "en cada proceso" }
             ],
             services: {
-                label: "Módulos de servicio / 03",
+                label: "Módulos de servicio",
                 items: [
                     { id: "01", title: "Consultoría y Estrategia B2B", sub: "Ingeniería de Mercado.", desc: "Inmersión directa en la estructura comercial. Mapeamos ineficiencias, evaluamos viabilidad y definimos el camino real hacia la modernización corporativa." },
                     { id: "02", title: "E-commerce y Ecosistemas Web", sub: "Arquitecturas sólidas y escalables.", desc: "Desarrollamos plataformas de alto rendimiento conectadas a los flujos de trabajo reales de la organización. Especialistas en Shopify, VTEX y desarrollos a medida." },
@@ -420,7 +420,7 @@ export const content = {
             casesLabel: "TRABAJOS SELECCIONADOS",
             casesTitle: "Implementaciones reales en entornos complejos.",
             ideas: {
-                label: "Ideas que funcionan / 04",
+                label: "Ideas que funcionan",
                 title: "Estrategia con estructura real detrás.",
                 items: [
                     { title: "Estructura", desc: "No hacemos diseño decorativo. Construimos la base técnica para que tu marca pueda escalar sin fricción." },
@@ -824,7 +824,7 @@ export const content = {
                 { num: "AI", label: "in every process" }
             ],
             services: {
-                label: "Service Modules / 03",
+                label: "Service Modules",
                 items: [
                     { id: "01", title: "B2B Consulting & Strategy", sub: "Market Engineering.", desc: "Deep immersion in commercial structures. We map inefficiencies, evaluate feasibility, and define the real path to corporate modernization." },
                     { id: "02", title: "E-commerce & Web Ecosystems", sub: "Robust and scalable architectures.", desc: "We develop high-performance platforms connected to the organization's real workflows. Specialists in Shopify, VTEX, and custom developments." },
@@ -834,7 +834,7 @@ export const content = {
             casesLabel: "SELECTED WORKS",
             casesTitle: "Real implementations in complex environments.",
             ideas: {
-                label: "Ideas that work / 04",
+                label: "Ideas that work",
                 title: "Strategy with real structure behind.",
                 items: [
                     { title: "Structure", desc: "We don't do decorative design. We build the technical foundation so your brand can scale without friction." },

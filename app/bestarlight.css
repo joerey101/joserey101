@@ -134,7 +134,7 @@
 .bsl-theme .btn-hero-s { font-family: var(--sans); font-size: 14px; font-weight: 500; color: rgba(240,235,224,0.6); border: 1px solid rgba(240,235,224,0.15); padding: 14px 32px; border-radius: 2px; text-decoration: none; transition: all 0.2s; }
 .bsl-theme .btn-hero-s:hover { color: #f0ebe0; border-color: rgba(240,235,224,0.4); }
 
-.bsl-theme .stats-strip { background: var(--accent); display: flex; min-height: 120px; contain-intrinsic-size: auto 120px; }
+.bsl-theme .stats-strip { background: var(--accent); height: 10px; }
 .bsl-theme .sstat { flex: 1; padding: 28px 40px; border-right: 1px solid rgba(255,255,255,0.15); }
 .bsl-theme .sstat:last-child { border-right: none; }
 .bsl-theme .sstat-num { font-family: var(--serif); font-size: 36px; font-weight: 900; color: #fff; margin-bottom: 4px; }
@@ -278,6 +278,7 @@
     display: none;
   }
 
+  .bsl-theme #casos { padding: 80px 0; }
   .bsl-theme .stats-strip .bsl-container {
     flex-direction: column;
   }
