@@ -336,52 +336,6 @@ export const content = {
                         solution: "Plataforma digital que refleja la calidad de su trabajo visual y facilita el contacto con clientes mediante una navegación fluida.",
                         impact: "Posicionamiento como uno de los principales estudios del sector, reflejando solidez y capacidad de adaptación."
                     }
-                },
-                {
-                    id: 9,
-                    title: "LOGÍSTICA 360",
-                    subtitle: "Producción Aérea con Drones",
-                    slug: "drones-logistica",
-                    tag: "PRODUCCIÓN AV",
-                    tagDisplay: "PRODUCCIÓN AV",
-                    img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=2600&auto=format&fit=crop",
-                    color: "bg-sky-500",
-                    borderColor: "border-sky-500",
-                    keyMetrics: [
-                        { value: "4K", label: "Resolución" },
-                        { value: "Drone", label: "Tech" },
-                        { value: "Pyme", label: "Target" }
-                    ],
-                    techStack: ["Producción AV", "Drones", "Industrial"],
-                    alt: "Producción audiovisual con drones para inspección de logística industrial 4K",
-                    details: {
-                        challenge: "Capturar la escala y complejidad operativa de una planta logística de 50.000 m2 para materiales de marketing institucional.",
-                        solution: "Operación de drones de alta precisión en entornos controlados, capturando dinámicas de flujo, almacenamiento y despacho en alta resolución.",
-                        impact: "Activo visual de alto impacto para presentaciones comerciales y landing pages, logrando comunicar solidez operativa en segundos."
-                    }
-                },
-                {
-                    id: 10,
-                    title: "PORTFOLIO B2B",
-                    subtitle: "Fotografía Industrial Premium",
-                    slug: "fotografia-industrial",
-                    tag: "PRODUCCIÓN AV",
-                    tagDisplay: "PRODUCCIÓN AV",
-                    img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2600&auto=format&fit=crop",
-                    color: "bg-zinc-800",
-                    borderColor: "border-zinc-800",
-                    keyMetrics: [
-                        { value: "Premium", label: "Calidad" },
-                        { value: "FullFrame", label: "Sensor" },
-                        { value: "B2B", label: "Focus" }
-                    ],
-                    techStack: ["Fotografía", "Publicidad", "B2B"],
-                    alt: "Fotografía publicitaria de maquinaria industrial y procesos corporativos B2B",
-                    details: {
-                        challenge: "Humanizar y jerarquizar procesos técnicos e industriales complejos a través de una estética visual cinematográfica.",
-                        solution: "Dirección de arte enfocada en el detalle, iluminación controlada en planta y post-producción técnica para catálogos digitales de alta gama.",
-                        impact: "Mejora del 40% en la percepción de calidad percibida en canales digitales, alineando la imagen de marca con el rigor de la ingeniería."
-                    }
                 }
             ]
         },
@@ -730,52 +684,6 @@ export const content = {
                         challenge: "Maintain a high visual standard over time, adapting to new performance formats without losing quality or identity.",
                         solution: "Digital platform that reflects the quality of its visual work and facilitates client contact through fluid navigation.",
                         impact: "Positioning as one of the sector's main studios, reflecting solidity and adaptability."
-                    }
-                },
-                {
-                    id: 9,
-                    title: "LOGISTICS 360",
-                    subtitle: "Aerial Drone Production",
-                    slug: "drones-logistica",
-                    tag: "AV PRODUCTION",
-                    tagDisplay: "AV PRODUCTION",
-                    img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=2600&auto=format&fit=crop",
-                    color: "bg-sky-500",
-                    borderColor: "border-sky-500",
-                    keyMetrics: [
-                        { value: "4K", label: "Resolution" },
-                        { value: "Drone", label: "Tech" },
-                        { value: "SME", label: "Target" }
-                    ],
-                    techStack: ["AV Production", "Drones", "Industrial"],
-                    alt: "Audiovisual production with drones for 4K industrial logistics inspection",
-                    details: {
-                        challenge: "Capture the operational scale and complexity of a 50,000 m2 logistics plant for institutional marketing materials.",
-                        solution: "High-precision drone operation in controlled environments, capturing flow, storage, and dispatch dynamics in high resolution.",
-                        impact: "High-impact visual asset for commercial presentations and landing pages, communicating operational strength in seconds."
-                    }
-                },
-                {
-                    id: 10,
-                    title: "B2B PORTFOLIO",
-                    subtitle: "Premium Industrial Photography",
-                    slug: "fotografia-industrial",
-                    tag: "AV PRODUCTION",
-                    tagDisplay: "AV PRODUCTION",
-                    img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2600&auto=format&fit=crop",
-                    color: "bg-zinc-800",
-                    borderColor: "border-zinc-800",
-                    keyMetrics: [
-                        { value: "Premium", label: "Quality" },
-                        { value: "FullFrame", label: "Sensor" },
-                        { value: "B2B", label: "Focus" }
-                    ],
-                    techStack: ["Photography", "Advertising", "B2B"],
-                    alt: "Advertising photography of industrial machinery and B2B corporate processes",
-                    details: {
-                        challenge: "Humanize and elevate complex technical and industrial processes through a cinematic visual aesthetic.",
-                        solution: "Art direction focused on detail, controlled lighting in the plant, and technical post-production for high-end digital catalogs.",
-                        impact: "40% improvement in perceived quality across digital channels, aligning the brand image with engineering rigor."
                     }
                 }
             ]
