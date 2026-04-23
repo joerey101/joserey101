@@ -15,19 +15,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: 'https://bestarlight.com/#work',
+      url: 'https://bestarlight.com/#casos',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: 'https://bestarlight.com/#blueprints',
+      url: 'https://bestarlight.com/#servicios',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: 'https://bestarlight.com/#lab',
+      url: 'https://bestarlight.com/#ideas',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,

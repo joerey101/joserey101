@@ -20,7 +20,7 @@ interface CaseStudy {
     techStack?: string[];
 }
 
-interface VortexCaseStudySystemProps {
+interface BeStarLightCaseStudySystemProps {
     initialCases: any[];
     lang: "es" | "en";
     label?: string;
@@ -46,6 +46,10 @@ const AccordionCard = ({
     return (
         <div
             onClick={onClick}
+            role="button"
+            aria-label={`Ver caso de estudio: ${item.title}`}
+            tabIndex={0}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(e as any); } }}
             className="relative h-[600px] overflow-hidden rounded-[24px] cursor-pointer transition-all duration-500 ease-in-out border border-transparent hover:border-[#141010]/10"
             onMouseEnter={onHover}
             onMouseLeave={onLeave}
@@ -79,8 +83,9 @@ const AccordionCard = ({
                 ) : (
                     <Image
                         src={item.img}
-                        alt={item.title}
+                        alt={item.alt || item.title}
                         fill
+                        priority={item.id === 1}
                         className={`object-cover transition-all duration-700 ${isActive ? 'scale-105 brightness-75' : 'scale-110 brightness-50 grayscale'}`}
                     />
                 )}
@@ -137,6 +142,10 @@ const BentoCard = ({ item, isLarge, onClick }: { item: CaseStudy, isLarge?: bool
     return (
         <div
             onClick={onClick}
+            role="button"
+            aria-label={`Ver caso de estudio: ${item.title}`}
+            tabIndex={0}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(e as any); } }}
             className={`group relative rounded-[24px] overflow-hidden bg-[#141010] border border-[#141010]/5 hover:border-[#141010]/20 transition-all duration-300 cursor-pointer ${isLarge ? 'md:col-span-3' : 'md:col-span-2'}`}
         >
             <div className="aspect-[4/3] w-full h-full relative">
@@ -162,7 +171,7 @@ const BentoCard = ({ item, isLarge, onClick }: { item: CaseStudy, isLarge?: bool
                     ) : (
                         <Image
                             src={item.img}
-                            alt={item.title}
+                            alt={item.alt || item.title}
                             fill
                             className="object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0"
                         />
@@ -199,7 +208,7 @@ const BentoCard = ({ item, isLarge, onClick }: { item: CaseStudy, isLarge?: bool
 
 
 // --- MAIN ORCHESTRATOR ---
-export default function VortexCaseStudySystem({ initialCases, lang, label, title }: VortexCaseStudySystemProps) {
+export default function BeStarLightCaseStudySystem({ initialCases, lang, label, title }: BeStarLightCaseStudySystemProps) {
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const [activeFilter, setActiveFilter] = useState<string>("ALL");
 
@@ -218,8 +227,8 @@ export default function VortexCaseStudySystem({ initialCases, lang, label, title
     // 1. EXTRACT UNIQUE TAGS
     const allTags = Array.from(new Set([
         "ALL",
-        ...initialCases.flatMap(c => [c.tagDisplay, ...(c.techStack || [])])
-    ])).map(t => t.toUpperCase());
+        ...initialCases.flatMap(c => [c.tagDisplay, ...(c.techStack || [])]).map(t => t.toUpperCase())
+    ]));
 
     // 2. FILTER CASES
     const filteredCases = initialCases.filter(c => {
@@ -233,10 +242,10 @@ export default function VortexCaseStudySystem({ initialCases, lang, label, title
     const secondaryList = filteredCases.slice(activeFilter === "ALL" ? FLAGSHIP_COUNT : 4);
 
     return (
-        <section id="work" className="w-full pt-16 pb-24 relative z-10" style={{ background: 'var(--bg)' }}>
+        <section id="casos" className="w-full pt-16 pb-24 relative z-10" style={{ background: 'var(--bg)' }}>
             <div className="max-w-[1800px] mx-auto px-4 md:px-8">
                 
-                {/* Section Title matching Vortex */}
+                {/* Section Title matching BeStarLight */}
                 <div className="mb-12">
                     <div className="text-[10px] uppercase tracking-[0.25em] mb-6" style={{ fontFamily: 'var(--mono)', color: 'var(--accent)' }}>
                         {lang === 'es' ? 'Casos de estudio' : 'Case Studies'}

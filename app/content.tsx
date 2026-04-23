@@ -28,6 +28,7 @@ export interface CaseStudy {
         text: string;
         url: string;
     };
+    alt?: string;
     details?: CaseStudyDetails;
     extended?: {
         intro: string;
@@ -114,7 +115,8 @@ export const content = {
                 all: "Todos",
                 corp: "Corporativo",
                 ecom: "E-Commerce",
-                culture: "Cultura & Educación"
+                culture: "Cultura & Educación",
+                av: "Producción Audiovisual"
             },
             items: [
                 {
@@ -138,6 +140,7 @@ export const content = {
                         text: "Ver caso completo",
                         url: "https://muak.shop"
                     },
+                    alt: "E-commerce internacional de joyas Muak Shop - Diseño minimalista suizo",
                     details: {
                         challenge: "Desarrollar una marca digital que no parezca un 'template'. Crear una experiencia de compra internacional con lógica de personalización compleja y estándares estéticos suizos.",
                         solution: "Arquitectura Headless híbrida: Shopify para el checkout seguro + Next.js para la experiencia de marca inmersiva. Un sistema visual que comunica lujo accesible.",
@@ -165,6 +168,7 @@ export const content = {
                         text: "Ver caso completo",
                         url: "https://discover.segueyachts.com/"
                     },
+                    alt: "Segue Yachts - Experiencia digital premium para yates de lujo",
                     details: {
                         challenge: "Traducir la majestuosidad, la escala y el diseño de Segue Yachts al lenguaje digital, construyendo un primer punto de contacto de alto nivel.",
                         solution: "Landing page concebida como expresión viva de la marca: narrativa visual, ritmo editorial y foco en el detalle. Arquitectura moderna para lograr fluidez absoluta.",
@@ -192,6 +196,7 @@ export const content = {
                         text: "Ver caso completo",
                         url: "https://haddockfilms.com"
                     },
+                    alt: "Haddock Films - Web institucional para productora cinematográfica ganadora del Oscar",
                     details: {
                         challenge: "Construir una web institucional capaz de representar el prestigio y la diversidad del trabajo de Haddock Films, organizando un amplio catálogo sin perder fuerza narrativa.",
                         solution: "Experiencia digital con enfoque editorial. Cada producción cuenta con su propia ficha inmersiva, permitiendo recorrer la trayectoria del estudio de forma cinematográfica.",
@@ -218,6 +223,7 @@ export const content = {
                         text: "Ver caso completo",
                         url: "https://columbastore.com/"
                     },
+                    alt: "Columba Store - E-commerce de productos argentinos con logística internacional",
                     details: {
                         challenge: "Crear una tienda online capaz de conectar emocionalmente con argentinos viviendo en el exterior, transformando la nostalgia en una experiencia de compra confiable.",
                         solution: "Ecommerce internacional sobre Shopify con identidad visual clara e integración de checkout optimizado y sincronización logística real con FedEx.",
@@ -244,6 +250,7 @@ export const content = {
                         text: "Ver caso completo",
                         url: "https://www.nbsbazar.com/"
                     },
+                    alt: "NBS Bazar Profesional - Digitalización comercial y estrategia B2B",
                     details: {
                         challenge: "Acompañar la transformación digital de una empresa con más de dos décadas de trayectoria, unificando miles de SKUs en una plataforma coherente.",
                         solution: "Arquitectura digital robusta integrando Tienda Nube con una estrategia SEO y CRM personalizada para captación B2B.",
@@ -329,6 +336,52 @@ export const content = {
                         solution: "Plataforma digital que refleja la calidad de su trabajo visual y facilita el contacto con clientes mediante una navegación fluida.",
                         impact: "Posicionamiento como uno de los principales estudios del sector, reflejando solidez y capacidad de adaptación."
                     }
+                },
+                {
+                    id: 9,
+                    title: "LOGÍSTICA 360",
+                    subtitle: "Producción Aérea con Drones",
+                    slug: "drones-logistica",
+                    tag: "PRODUCCIÓN AV",
+                    tagDisplay: "PRODUCCIÓN AV",
+                    img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=2600&auto=format&fit=crop",
+                    color: "bg-sky-500",
+                    borderColor: "border-sky-500",
+                    keyMetrics: [
+                        { value: "4K", label: "Resolución" },
+                        { value: "Drone", label: "Tech" },
+                        { value: "Pyme", label: "Target" }
+                    ],
+                    techStack: ["Producción AV", "Drones", "Industrial"],
+                    alt: "Producción audiovisual con drones para inspección de logística industrial 4K",
+                    details: {
+                        challenge: "Capturar la escala y complejidad operativa de una planta logística de 50.000 m2 para materiales de marketing institucional.",
+                        solution: "Operación de drones de alta precisión en entornos controlados, capturando dinámicas de flujo, almacenamiento y despacho en alta resolución.",
+                        impact: "Activo visual de alto impacto para presentaciones comerciales y landing pages, logrando comunicar solidez operativa en segundos."
+                    }
+                },
+                {
+                    id: 10,
+                    title: "PORTFOLIO B2B",
+                    subtitle: "Fotografía Industrial Premium",
+                    slug: "fotografia-industrial",
+                    tag: "PRODUCCIÓN AV",
+                    tagDisplay: "PRODUCCIÓN AV",
+                    img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2600&auto=format&fit=crop",
+                    color: "bg-zinc-800",
+                    borderColor: "border-zinc-800",
+                    keyMetrics: [
+                        { value: "Premium", label: "Calidad" },
+                        { value: "FullFrame", label: "Sensor" },
+                        { value: "B2B", label: "Focus" }
+                    ],
+                    techStack: ["Fotografía", "Publicidad", "B2B"],
+                    alt: "Fotografía publicitaria de maquinaria industrial y procesos corporativos B2B",
+                    details: {
+                        challenge: "Humanizar y jerarquizar procesos técnicos e industriales complejos a través de una estética visual cinematográfica.",
+                        solution: "Dirección de arte enfocada en el detalle, iluminación controlada en planta y post-producción técnica para catálogos digitales de alta gama.",
+                        impact: "Mejora del 40% en la percepción de calidad percibida en canales digitales, alineando la imagen de marca con el rigor de la ingeniería."
+                    }
                 }
             ]
         },
@@ -340,11 +393,11 @@ export const content = {
             links: ["LinkedIn"],
             copyright: <>© 2001 - 2026 BESTARLIGHT<br />TODOS LOS DERECHOS RESERVADOS</>
         },
-        vortex: {
+        bestarlight: {
             hero: {
-                line1: "Estrategia",
-                line2: "con estructura",
-                line3: "real detrás.",
+                line1: "Ingeniería de",
+                line2: "Mercado y",
+                line3: "Estrategia B2B.",
                 yearTag: "MKTING & COMUNICACIÓN TECH / 2026",
                 desc: <>Modernizamos organizaciones que ya funcionan.<br />Diagnóstico real, ecosistemas digitales e inteligencia operativa.</>,
                 ctaPrimary: "Agendar diagnóstico",
@@ -359,9 +412,9 @@ export const content = {
             services: {
                 label: "Módulos de servicio / 03",
                 items: [
-                    { id: "01", title: "Auditoría Estratégica 1 a 1", sub: "Antes de construir, entendemos.", desc: "Inmersión directa en la estructura comercial. Mapeamos ineficiencias, evaluamos viabilidad con IA y definimos el camino real hacia la modernización." },
-                    { id: "02", title: "Ecosistemas Web", sub: "Presencia con estructura detrás.", desc: "Desarrollamos plataformas de alto rendimiento conectadas a los flujos de trabajo reales de la organización. Cada canal tiene un propósito medible." },
-                    { id: "03", title: "Gestión e Inteligencia", sub: "De datos a visión de negocio.", desc: "Unificamos herramientas y procesos en un sistema de control centralizado. Visibilidad total sobre la operación y capacidad de respuesta inmediata." }
+                    { id: "01", title: "Consultoría y Estrategia B2B", sub: "Ingeniería de Mercado.", desc: "Inmersión directa en la estructura comercial. Mapeamos ineficiencias, evaluamos viabilidad y definimos el camino real hacia la modernización corporativa." },
+                    { id: "02", title: "E-commerce y Ecosistemas Web", sub: "Arquitecturas sólidas y escalables.", desc: "Desarrollamos plataformas de alto rendimiento conectadas a los flujos de trabajo reales de la organización. Especialistas en Shopify, VTEX y desarrollos a medida." },
+                    { id: "03", title: "Producción Visual y Drones", sub: "Contenido de alto nivel para marcas B2B.", desc: "Fotografía publicitaria e industrial, cobertura con drones y post-producción profesional. Documentamos la excelencia operativa de su empresa." }
                 ]
             },
             casesLabel: "TRABAJOS SELECCIONADOS",
@@ -402,46 +455,29 @@ export const content = {
             studio: "Studio",
             hire: "LET'S TALK"
         },
-        hero: {
-            typingWords: ["Conventional", "Rigid", "Bureaucratic"],
-            label: "Redefining Digital Authority",
-            logic: "LOGIC",
-            weCreate: "We Create",
-            strategy: "STRATEGY",
-            systems: "SYSTEMS",
-            digitalMind: "DIGITAL MIND",
-            desc: (
-                <>
-                    <strong className="text-carbon block mb-2">We work on the essential foundations: People, Processes, and Data.</strong>
-                    We unify Strategic Marketing, Engineering, Operations, and Culture under a single architecture.
-                </>
-            ),
-            descMobile: "We unify Marketing, Engineering, and Culture. We transform visions into scalable systems.",
-            cta: "Discover Us"
-        },
         blueprints: {
             title: "MARKET ENGINEERING",
             subtitle: "Key Competencies / 001-003",
             items: [
                 {
                     id: 1,
-                    title: "BUSINESS ARCHITECTURE",
-                    subtitle: "SYSTEMIC THINKING AND POSITIONING 101",
-                    desc: "We don't do decorative 'branding'. We design the commercial structure and brand narrative needed to penetrate saturated markets. We define the strategic north and economic viability before writing a single line of code.",
+                    title: "B2B Consulting & Strategy",
+                    subtitle: "MARKET ENGINEERING",
+                    desc: "Deep immersion in commercial structures. We map inefficiencies, evaluate feasibility, and define the real path to corporate modernization.",
                     cta: "Explore module"
                 },
                 {
                     id: 2,
-                    title: "SYSTEMS ENGINEERING",
-                    subtitle: "GENERATIVE FLOWS AND AUTOMATION (AGENTS)",
-                    desc: "Custom software development powered by Artificial Intelligence. We create digital ecosystems that work 24/7, eliminating repetitive tasks and reducing operational friction to zero. Invisible technology, tangible results.",
+                    title: "E-commerce & Web Ecosystems",
+                    subtitle: "ROBUST ARCHITECTURES",
+                    desc: "We develop high-performance platforms connected to real organizational workflows. Experts in Shopify, VTEX, and custom developments.",
                     cta: "Deploy system"
                 },
                 {
                     id: 3,
-                    title: "OPERATIONS & DATA",
-                    subtitle: "DATA-DRIVEN APPROACH AND SCALABILITY",
-                    desc: "What isn't measured doesn't exist. We transform intuition into certainty through control dashboards and real-time metrics. We design the operational infrastructure needed to support massive growth without generating internal chaos.",
+                    title: "Visual Production & Drones",
+                    subtitle: "B2B VISUAL AUTHORITY",
+                    desc: "High-level industrial and advertising photography, drone coverage, and professional post-production. Documenting your operational excellence.",
                     cta: "View metrics"
                 }
             ]
@@ -474,7 +510,8 @@ export const content = {
                 all: "All",
                 corp: "Corporate",
                 ecom: "E-Commerce",
-                culture: "Culture & Education"
+                culture: "Culture & Education",
+                av: "AV Production"
             },
             items: [
                 {
@@ -498,6 +535,7 @@ export const content = {
                         text: "View full case",
                         url: "https://muak.shop"
                     },
+                    alt: "International jewelry e-commerce Muak Shop - Minimalist Swiss design",
                     details: {
                         challenge: "Develop a digital brand that doesn't look like a 'template'. Create an international shopping experience with complex customization logic and Swiss aesthetic standards.",
                         solution: "Hybrid Headless Architecture: Shopify for secure checkout + Next.js for immersive brand experience. A visual system that communicates accessible luxury.",
@@ -525,6 +563,7 @@ export const content = {
                         text: "View full case",
                         url: "https://discover.segueyachts.com/"
                     },
+                    alt: "Segue Yachts - Premium digital experience for luxury yachts",
                     details: {
                         challenge: "Translate the majesty, scale, and design of Segue Yachts into digital language, building a high-level first point of contact.",
                         solution: "A landing page conceived as a living expression of the brand: visual narrative, editorial rhythm, and focus on detail. Modern architecture for absolute fluidity.",
@@ -552,6 +591,7 @@ export const content = {
                         text: "View full case",
                         url: "https://haddockfilms.com"
                     },
+                    alt: "Haddock Films - Institutional website for Oscar-winning film production company",
                     details: {
                         challenge: "Build an institutional website capable of representing the prestige and diversity of Haddock Films' work, organizing a vast catalog without losing narrative force.",
                         solution: "Digital experience with an editorial focus. Each production has its own immersive sheet, allowing visitors to explore the studio's history cinematically.",
@@ -578,6 +618,7 @@ export const content = {
                         text: "View full case",
                         url: "https://columbastore.com/"
                     },
+                    alt: "Columba Store - E-commerce for Argentine products with international logistics",
                     details: {
                         challenge: "Create an online store capable of emotionally connecting with Argentines living abroad, transforming nostalgia into a reliable shopping experience.",
                         solution: "International ecommerce on Shopify with a clear visual identity, optimized checkout integration, and real-time logistics sync with FedEx.",
@@ -604,6 +645,7 @@ export const content = {
                         text: "View full case",
                         url: "https://www.nbsbazar.com/"
                     },
+                    alt: "NBS Professional Bazar - Commercial digitalization and B2B strategy",
                     details: {
                         challenge: "Accompany the digital transformation of a company with over two decades of experience, unifying thousands of SKUs in a coherent platform.",
                         solution: "Robust digital architecture integrating Tienda Nube with a custom SEO and CRM strategy for B2B lead generation.",
@@ -689,6 +731,52 @@ export const content = {
                         solution: "Digital platform that reflects the quality of its visual work and facilitates client contact through fluid navigation.",
                         impact: "Positioning as one of the sector's main studios, reflecting solidity and adaptability."
                     }
+                },
+                {
+                    id: 9,
+                    title: "LOGISTICS 360",
+                    subtitle: "Aerial Drone Production",
+                    slug: "drones-logistica",
+                    tag: "AV PRODUCTION",
+                    tagDisplay: "AV PRODUCTION",
+                    img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=2600&auto=format&fit=crop",
+                    color: "bg-sky-500",
+                    borderColor: "border-sky-500",
+                    keyMetrics: [
+                        { value: "4K", label: "Resolution" },
+                        { value: "Drone", label: "Tech" },
+                        { value: "SME", label: "Target" }
+                    ],
+                    techStack: ["AV Production", "Drones", "Industrial"],
+                    alt: "Audiovisual production with drones for 4K industrial logistics inspection",
+                    details: {
+                        challenge: "Capture the operational scale and complexity of a 50,000 m2 logistics plant for institutional marketing materials.",
+                        solution: "High-precision drone operation in controlled environments, capturing flow, storage, and dispatch dynamics in high resolution.",
+                        impact: "High-impact visual asset for commercial presentations and landing pages, communicating operational strength in seconds."
+                    }
+                },
+                {
+                    id: 10,
+                    title: "B2B PORTFOLIO",
+                    subtitle: "Premium Industrial Photography",
+                    slug: "fotografia-industrial",
+                    tag: "AV PRODUCTION",
+                    tagDisplay: "AV PRODUCTION",
+                    img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2600&auto=format&fit=crop",
+                    color: "bg-zinc-800",
+                    borderColor: "border-zinc-800",
+                    keyMetrics: [
+                        { value: "Premium", label: "Quality" },
+                        { value: "FullFrame", label: "Sensor" },
+                        { value: "B2B", label: "Focus" }
+                    ],
+                    techStack: ["Photography", "Advertising", "B2B"],
+                    alt: "Advertising photography of industrial machinery and B2B corporate processes",
+                    details: {
+                        challenge: "Humanize and elevate complex technical and industrial processes through a cinematic visual aesthetic.",
+                        solution: "Art direction focused on detail, controlled lighting in the plant, and technical post-production for high-end digital catalogs.",
+                        impact: "40% improvement in perceived quality across digital channels, aligning the brand image with engineering rigor."
+                    }
                 }
             ]
         },
@@ -700,13 +788,32 @@ export const content = {
             links: ["LinkedIn"],
             copyright: <>© 2001 - 2026 BESTARLIGHT<br />ALL RIGHTS RESERVED</>
         },
-        vortex: {
+        hero: {
+            typingWords: ["Conventional", "Rigid", "Bureaucratic"],
+            label: "B2B STRATEGY",
+            title: "Market Engineering",
+            desc: "Strategic consulting for the corporate sector.",
+            logic: "LOGIC",
+            weCreate: "WE CREATE THE",
+            strategy: "INFRASTRUCTURE",
+            systems: "that turns your operation into a",
+            digitalMind: "competitive advantage",
+            descMobile: "Strategic consulting for the corporate sector.",
+            cta: "Explore solution"
+        },
+        bestarlight: {
             hero: {
-                line1: "Strategy",
-                line2: "with real",
-                line3: "structure behind.",
+                line1: "Market",
+                line2: "Engineering &",
+                line3: "B2B Strategy.",
                 yearTag: "MKTING & COMMUNICATION TECH / 2026",
-                desc: <>We modernize organizations that already work.<br />Real diagnosis, digital ecosystems, and operational intelligence.</>,
+                desc: (
+                    <>
+                        <strong className="text-carbon block mb-2">30 years of experience in corporate restructuring.</strong>
+                        We design communication strategy and robust e-commerce architectures for the B2B sector.
+                    </>
+                ),
+                descMobile: "We unify Marketing, Engineering, and Culture. We transform visions into scalable systems.",
                 ctaPrimary: "Schedule diagnosis",
                 ctaSecondary: "See real cases"
             },
@@ -719,9 +826,9 @@ export const content = {
             services: {
                 label: "Service Modules / 03",
                 items: [
-                    { id: "01", title: "1-on-1 Strategic Audit", sub: "Before building, we understand.", desc: "Direct immersion in the commercial structure. We map inefficiencies, evaluate viability with AI, and define the real path to modernization." },
-                    { id: "02", title: "Web Ecosystems", sub: "Presence with structure behind.", desc: "We develop high-performance platforms connected to the organization's real workflows. Each channel has a measurable purpose." },
-                    { id: "03", title: "Management & Intelligence", sub: "From data to business vision.", desc: "We unify tools and processes in a centralized control system. Total visibility over operations and immediate response capability." }
+                    { id: "01", title: "B2B Consulting & Strategy", sub: "Market Engineering.", desc: "Deep immersion in commercial structures. We map inefficiencies, evaluate feasibility, and define the real path to corporate modernization." },
+                    { id: "02", title: "E-commerce & Web Ecosystems", sub: "Robust and scalable architectures.", desc: "We develop high-performance platforms connected to the organization's real workflows. Specialists in Shopify, VTEX, and custom developments." },
+                    { id: "03", title: "Visual Production & Drones", sub: "High-level content for B2B brands.", desc: "Advertising and industrial photography, drone coverage, and professional post-production. Documenting your operational excellence." }
                 ]
             },
             casesLabel: "SELECTED WORKS",
