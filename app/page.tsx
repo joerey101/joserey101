@@ -310,8 +310,8 @@ export default function Home() {
                       <label htmlFor="problem">{BESTARLIGHT.contact.form.problem}</label>
                       <select id="problem" name="problem" required>
                         <option value="">{BESTARLIGHT.contact.form.selectModule}</option>
-                        {BESTARLIGHT.services.items.map((svc, i) => (
-                          <option key={i} value={svc.title}>{svc.title}</option>
+                        {BESTARLIGHT.services.items.map((svc: any, i: number) => (
+                          <option key={i} value={svc.plainTitle}>{svc.plainTitle}</option>
                         ))}
                         <option value="other">{lang === "es" ? "No sé por dónde empezar" : "I don't know where to start"}</option>
                       </select>

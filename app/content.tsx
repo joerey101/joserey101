@@ -366,9 +366,9 @@ export const content = {
             services: {
                 label: "Módulos de servicio",
                 items: [
-                    { id: "01", title: <>Consultoría y<br />Estrategia B2B</>, sub: "Ingeniería de Mercado.", desc: "Inmersión directa en la estructura comercial. Mapeamos ineficiencias, evaluamos viabilidad y definimos el camino real hacia la modernización corporativa." },
-                    { id: "02", title: "E-commerce y Ecosistemas Web", sub: "Arquitecturas sólidas y escalables.", desc: "Desarrollamos plataformas de alto rendimiento conectadas a los flujos de trabajo reales de la organización. Especialistas en Shopify, VTEX y desarrollos a medida." },
-                    { id: "03", title: "Producción Visual y Drones", sub: "Contenido de alto nivel para marcas B2B.", desc: "Fotografía publicitaria e industrial, cobertura con drones y post-producción profesional. Documentamos la excelencia operativa de su empresa." }
+                    { id: "01", title: <>Consultoría y<br />Estrategia B2B</>, plainTitle: "Consultoría y Estrategia B2B", sub: "Ingeniería de Mercado.", desc: "Inmersión directa en la estructura comercial. Mapeamos ineficiencias, evaluamos viabilidad y definimos el camino real hacia la modernización corporativa." },
+                    { id: "02", title: "E-commerce y Ecosistemas Web", plainTitle: "E-commerce y Ecosistemas Web", sub: "Arquitecturas sólidas y escalables.", desc: "Desarrollamos plataformas de alto rendimiento conectadas a los flujos de trabajo reales de la organización. Especialistas en Shopify, VTEX y desarrollos a medida." },
+                    { id: "03", title: "Producción Visual y Drones", plainTitle: "Producción Visual y Drones", sub: "Contenido de alto nivel para marcas B2B.", desc: "Fotografía publicitaria e industrial, cobertura con drones y post-producción profesional. Documentamos la excelencia operativa de su empresa." }
                 ]
             },
             casesLabel: "TRABAJOS SELECCIONADOS",
