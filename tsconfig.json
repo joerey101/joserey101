@@ -19,7 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@joserey/device-viewer": ["../Sandbox Mobile/device-viewer/dist/device-viewer.es.js"],
+      "@joserey/device-viewer/*": ["../Sandbox Mobile/device-viewer/*"]
     }
   },
   "include": [

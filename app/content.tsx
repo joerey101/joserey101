@@ -353,7 +353,7 @@ export const content = {
                 line2: "Mercado y",
                 line3: "Estrategia B2B.",
                 yearTag: "MKTING & COMUNICACIÓN TECH / 2026",
-                desc: <>Modernizamos organizaciones que ya funcionan.<br />Diagnóstico real, ecosistemas digitales e inteligencia operativa.</>,
+                desc: <>Modernizamos organizaciones que ya funcionan. Diagnóstico real, ecosistemas digitales e inteligencia operativa.</>,
                 ctaPrimary: "Agendar diagnóstico",
                 ctaSecondary: "Ver casos reales"
             },
@@ -366,7 +366,7 @@ export const content = {
             services: {
                 label: "Módulos de servicio",
                 items: [
-                    { id: "01", title: "Consultoría y Estrategia B2B", sub: "Ingeniería de Mercado.", desc: "Inmersión directa en la estructura comercial. Mapeamos ineficiencias, evaluamos viabilidad y definimos el camino real hacia la modernización corporativa." },
+                    { id: "01", title: <>Consultoría y<br />Estrategia B2B</>, sub: "Ingeniería de Mercado.", desc: "Inmersión directa en la estructura comercial. Mapeamos ineficiencias, evaluamos viabilidad y definimos el camino real hacia la modernización corporativa." },
                     { id: "02", title: "E-commerce y Ecosistemas Web", sub: "Arquitecturas sólidas y escalables.", desc: "Desarrollamos plataformas de alto rendimiento conectadas a los flujos de trabajo reales de la organización. Especialistas en Shopify, VTEX y desarrollos a medida." },
                     { id: "03", title: "Producción Visual y Drones", sub: "Contenido de alto nivel para marcas B2B.", desc: "Fotografía publicitaria e industrial, cobertura con drones y post-producción profesional. Documentamos la excelencia operativa de su empresa." }
                 ]

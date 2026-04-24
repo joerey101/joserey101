@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  transpilePackages: ["@joserey/device-viewer"],
   images: {
     remotePatterns: [
       {
@@ -20,7 +21,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://formspree.io https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' blob: data: https://images.unsplash.com https://cdn.sanity.io https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://formspree.io https://www.google-analytics.com; frame-ancestors 'none'; upgrade-insecure-requests;",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://formspree.io https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' blob: data: https://images.unsplash.com https://cdn.sanity.io https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://formspree.io https://www.google-analytics.com; frame-ancestors 'self'; upgrade-insecure-requests;",
           },
           {
             key: 'Strict-Transport-Security',
@@ -28,7 +29,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'X-Frame-Options',
-            value: 'DENY',
+            value: 'SAMEORIGIN',
           },
           {
             key: 'X-Content-Type-Options',

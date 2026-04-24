@@ -8,7 +8,10 @@ import { ArrowRight } from "@phosphor-icons/react";
 
 // Icons
 const IconClose = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
 );
 
 interface CaseStudyDrawerProps {
@@ -114,44 +117,49 @@ function DrawerInnerContent({ caseStudy, onClose }: { caseStudy: CaseStudy, onCl
                 {/* Hero Text */}
                 <motion.div
                     style={{ opacity: heroTextOpacity, y: heroTextY }}
-                    className="relative z-20 text-center px-4 max-w-5xl"
+                    className="relative z-20 text-center px-6 max-w-5xl"
                 >
-                    <div className="flex flex-wrap justify-center gap-2 mb-6 pointer-events-auto">
-                        <span className={`px-4 py-1 text-xs font-bold uppercase tracking-[0.3em] rounded-sm shadow-lg ${caseStudy.color} bg-opacity-90`}>
+                    {/* Tags (2x2 Centered Grid) */}
+                    <div className="grid grid-cols-2 gap-2 mb-8 w-fit mx-auto pointer-events-auto">
+                        <span className={`px-4 py-1 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm shadow-lg ${caseStudy.color} bg-opacity-90 flex items-center justify-center`}>
                             {caseStudy.tag}
                         </span>
-                        {caseStudy.techStack?.map((tag, idx) => (
-                            <span key={idx} className="px-4 py-1 text-xs font-bold uppercase tracking-[0.3em] rounded-sm bg-white/30 text-white border border-white/10">
+                        {caseStudy.techStack?.slice(0, 3).map((tag, idx) => (
+                            <span key={idx} className="px-4 py-1 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm bg-white/20 text-white border border-white/10 backdrop-blur-sm flex items-center justify-center">
                                 {tag}
                             </span>
                         ))}
                     </div>
-                    <h2 className="font-display font-black text-5xl md:text-8xl lg:text-9xl uppercase leading-[0.85] tracking-tighter text-white mb-6 drop-shadow-2xl">
+
+                    <h2 className="font-display font-black text-6xl md:text-8xl lg:text-9xl uppercase leading-[0.8] tracking-tighter text-white mb-6 drop-shadow-2xl">
                         {caseStudy.title}
                     </h2>
-                    <p className="font-meta text-lg md:text-2xl font-light text-white/90 max-w-2xl mx-auto drop-shadow-md">
+                    <p className="font-meta text-xl md:text-2xl font-bold text-white max-w-2xl mx-auto drop-shadow-md">
                         {caseStudy.subtitle}
                     </p>
                 </motion.div>
 
-                {/* Floating Metrics */}
+                {/* Floating Metrics (Transparent Light Rows) */}
                 <motion.div
                     style={{ opacity: heroTextOpacity, y: heroTextY }}
-                    className="absolute bottom-16 md:bottom-24 w-full flex justify-center gap-4 md:gap-8 px-6 z-20 pointer-events-auto"
+                    className="absolute bottom-8 md:bottom-24 w-full flex flex-col md:flex-row justify-center gap-3 md:gap-8 px-6 z-20 pointer-events-auto"
                 >
                     {caseStudy.snapshot.map((item, idx) => (
-                        <div key={idx} className="bg-white/80 border border-white/20 p-4 md:p-6 rounded-xl text-center min-w-[100px] shadow-xl backdrop-blur-sm">
-                            <div className="text-xl md:text-3xl font-bold text-black mb-1">{item.value}</div>
-                            <div className="text-[9px] md:text-[10px] uppercase tracking-widest text-black/60 font-bold">{item.label}</div>
+                        <div key={idx} className="bg-white/10 border border-white/10 p-3 md:p-6 rounded-xl flex md:flex-col items-center md:items-center justify-between md:justify-center gap-4 min-w-0 md:min-w-[120px] shadow-2xl backdrop-blur-xl">
+                            <div className="flex flex-col items-start md:items-center leading-tight">
+                                <div className="text-[9px] uppercase tracking-[0.2em] text-white/50 font-bold order-2 md:order-1">{item.label}</div>
+                                <div className="text-lg md:text-3xl font-black text-white order-1 md:order-2 leading-none">{item.value}</div>
+                            </div>
+                            <div className="md:hidden w-6 h-[1px] bg-white/20" />
                         </div>
                     ))}
                 </motion.div>
             </div>
 
-            {/* Close Button - Floating Fixed */}
+            {/* Close Button - Floating Fixed - Lowered to avoid Menu */}
             <button
                 onClick={onClose}
-                className="absolute top-8 right-8 z-[120] p-4 bg-white text-black rounded-full hover:scale-110 transition-transform shadow-xl"
+                className="fixed top-28 right-8 z-[10000] p-2 bg-white text-black rounded-full hover:scale-110 transition-transform shadow-xl"
             >
                 <IconClose />
             </button>
@@ -175,8 +183,8 @@ function DrawerInnerContent({ caseStudy, onClose }: { caseStudy: CaseStudy, onCl
                                 {/* 01. Challenge */}
                                 <div className={`relative pl-8 border-l-4 transition-colors duration-500 ${caseStudy.borderColor || 'border-white/10'} space-y-4`}>
                                     <span className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]">01 — El Desafío</span>
-                                    <p className="text-2xl md:text-4xl lg:text-5xl font-light leading-[1.1] text-white drop-shadow-md">
-                                        "{caseStudy.challenge}"
+                                    <p className="text-lg md:text-xl font-light leading-relaxed text-white drop-shadow-md">
+                                        {caseStudy.challenge}
                                     </p>
                                 </div>
 
@@ -191,7 +199,7 @@ function DrawerInnerContent({ caseStudy, onClose }: { caseStudy: CaseStudy, onCl
                                 {/* 03. Impact */}
                                 <div className={`relative pl-8 border-l-4 transition-colors duration-500 ${caseStudy.borderColor || 'border-white/10'} space-y-4`}>
                                     <span className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]">03 — El Impacto</span>
-                                    <p className="text-xl md:text-2xl font-light leading-relaxed text-white drop-shadow-md">
+                                    <p className="text-lg md:text-xl font-light leading-relaxed text-white drop-shadow-md">
                                         {caseStudy.impact}
                                     </p>
                                 </div>
@@ -236,7 +244,7 @@ export default function CaseStudyDrawer({ isOpen, onClose, caseStudy }: CaseStud
     return (
         <AnimatePresence>
             {isOpen && (
-                <div className="fixed inset-0 z-[100] flex justify-end">
+                <div className="fixed inset-0 z-[9999] flex justify-end">
                     {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }}
