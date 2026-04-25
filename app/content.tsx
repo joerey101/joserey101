@@ -721,17 +721,21 @@ export const content = {
         },
         bestarlight: {
             hero: {
-                line1: "Market",
-                line2: "Engineering &",
-                line3: "B2B Strategy.",
-                yearTag: "MKTING & COMMUNICATION TECH / 2026",
-                desc: (
-                    <>
-                        <strong className="text-carbon block mb-2">30 years of experience in corporate restructuring.</strong>
-                        We design communication strategy and robust e-commerce architectures for the B2B sector.
-                    </>
-                ),
-                descMobile: "We unify Marketing, Engineering, and Culture. We transform visions into scalable systems.",
+                yearTag: "BUENOS AIRES · SINCE 2001",
+                headers: [
+                    {
+                        title: "We modernize organizations<br class=\"desktop-br\" />that already work.",
+                        sub: "B2B Strategy, digital ecosystems and AI automation for companies that need to scale without breaking what's already running."
+                    },
+                    {
+                        title: "Technology that integrates<br class=\"desktop-br\" />into the business.",
+                        sub: "We design digital ecosystems connected to your company's real processes. Shopify, Tienda Nube, WooCommerce and custom developments with applied AI."
+                    },
+                    {
+                        title: "Less friction,<br class=\"desktop-br\" />more speed.",
+                        sub: "We reduce operational times by integrating AI and automation into your team's workflows."
+                    }
+                ],
                 ctaPrimary: "Schedule diagnosis",
                 ctaSecondary: "See real cases"
             },
@@ -744,9 +748,9 @@ export const content = {
             services: {
                 label: "Service Modules",
                 items: [
-                    { id: "01", title: "B2B Consulting & Strategy", sub: "Market Engineering.", desc: "Deep immersion in commercial structures. We map inefficiencies, evaluate feasibility, and define the real path to corporate modernization." },
-                    { id: "02", title: "E-commerce & Web Ecosystems", sub: "Robust and scalable architectures.", desc: "We develop high-performance platforms connected to the organization's real workflows. Specialists in Shopify, VTEX, and custom developments." },
-                    { id: "03", title: "Visual Production & Drones", sub: "High-level content for B2B brands.", desc: "Advertising and industrial photography, drone coverage, and professional post-production. Documenting your operational excellence." }
+                    { id: "01", title: <>B2B Consulting &<br />Strategy</>, plainTitle: "B2B Consulting & Strategy", sub: "The map before the code.", desc: "We audit your commercial structure, detect bottlenecks and create a modernization plan with clear priorities. Deliverable: written diagnostic and 90-day roadmap." },
+                    { id: "02", title: "E-commerce & Web Ecosystems", plainTitle: "E-commerce & Web Ecosystems", sub: "Robust and scalable architectures.", desc: "We develop high-performance platforms connected to the organization's real workflows. Specialists in Shopify, Tienda Nube, WooCommerce and custom developments with applied AI." },
+                    { id: "03", title: "Visual Production & Drones", plainTitle: "Visual Production & Drones", sub: "Image that sustains the brand.", desc: "Advertising and industrial photography, drone coverage, and professional post-production. 25 years of experience in art direction and production, now applied to your B2B communication." }
                 ]
             },
             casesLabel: "SELECTED WORKS",
@@ -755,14 +759,14 @@ export const content = {
                 label: "Ideas that work",
                 title: "Strategy with real structure behind.",
                 items: [
-                    { title: "Structure", desc: "We don't do decorative design. We build the technical foundation so your brand can scale without friction." },
-                    { title: "Speed", desc: "We reduce execution times by integrating AI into your team's internal workflows." },
-                    { title: "Results", desc: "Every line of code is oriented to move the business needle. If it's not measurable, it's not a priority." }
+                    { title: "Structure", desc: "We start with the foundation, not the facade. Diagnosis first, then code. This way, what we build sustains growth instead of slowing it down." },
+                    { title: "Speed", desc: "We use AI and automation to execute faster. You reach the market sooner, with less friction in the process and tighter costs." },
+                    { title: "Results", desc: "We work with clear indicators from day one. Every deliverable responds to a business goal, not an aesthetic whim." }
                 ]
             },
             contact: {
                 title: <>Let's talk about<br />your next step</>,
-                desc: "We are ready to audit your current structure.",
+                desc: "First diagnostic meeting: 45 minutes to understand your situation and set priorities.",
                 form: {
                     name: "NAME",
                     company: "COMPANY",
@@ -774,7 +778,7 @@ export const content = {
                     placeholderEmail: "you@company.com",
                     placeholderContext: "Briefly tell us about your organization's challenge...",
                     selectModule: "Select a module",
-                    cta: "Send and schedule diagnosis →",
+                    cta: "Schedule diagnostic meeting →",
                     footer: "No spam. No commitment. Your information is confidential."
                 }
             }
