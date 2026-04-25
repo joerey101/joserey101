@@ -12,10 +12,10 @@
   --sans: var(--font-inter), sans-serif;
   --mono: 'Space Mono', monospace;
 
-  /* SISTEMA DE CONTENEDORES FLUIDO */
-  --container-wide: min(95%, 1800px);
-  --container-narrow: min(92%, 1400px);
-  --container-px: clamp(24px, 5vw, 80px);
+  /* SISTEMA DE CONTENEDORES FLUIDO - OPTIMIZADO PARA PANTALLAS GRANDES */
+  --container-wide: min(98%, 1920px);
+  --container-narrow: min(95%, 1500px);
+  --container-px: clamp(20px, 4vw, 60px);
 
   /* ESCALA TIPOGRÁFICA FLUIDA */
   --font-h1: clamp(3.5rem, 7vw, 7rem);      /* ~56px a 112px */

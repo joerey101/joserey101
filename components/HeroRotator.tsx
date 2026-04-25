@@ -132,7 +132,6 @@ export default function HeroRotator({ headers, interval = 7000 }: HeroRotatorPro
           font-weight: 900;
           color: #f0ebe0;
           margin: 0;
-          max-width: 1100px;
           letter-spacing: -0.02em;
           text-wrap: balance;
         }
