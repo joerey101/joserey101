@@ -356,7 +356,7 @@ export const content = {
                         sub: "Estrategia B2B, ecosistemas digitales y automatización con IA para empresas que necesitan escalar sin romper lo que ya anda."
                     },
                     {
-                        title: "Tecnología que se integra<br class=\"desktop-br\" />al negocio.",
+                        title: "Tecnología que se<br class=\"desktop-br\" />integra al negocio.",
                         sub: "Diseñamos ecosistemas digitales conectados a los procesos reales de tu empresa. Shopify, Tienda Nube, WooCommerce y desarrollos a medida con IA aplicada."
                     },
                     {
@@ -728,7 +728,7 @@ export const content = {
                         sub: "B2B Strategy, digital ecosystems and AI automation for companies that need to scale without breaking what's already running."
                     },
                     {
-                        title: "Technology that integrates<br class=\"desktop-br\" />into the business.",
+                        title: "Technology that<br class=\"desktop-br\" />integrates into the business.",
                         sub: "We design digital ecosystems connected to your company's real processes. Shopify, Tienda Nube, WooCommerce and custom developments with applied AI."
                     },
                     {
