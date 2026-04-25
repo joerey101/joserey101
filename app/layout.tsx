@@ -45,14 +45,14 @@ const permanentMarker = Permanent_Marker({
 export const metadata: Metadata = {
   metadataBase: new URL("https://bestarlight.com"),
   title: {
-    default: "BeStarLight • Tecnología y Comunicación + IA en tus procesos",
+    default: "Marketing, Comunicación y Tecnología | BeStarLight",
     template: "%s | BeStarLight",
   },
-  description: "Consultoría estratégica B2B con +25 años de experiencia. Reestructuración de comunicación, arquitecturas e-commerce y posicionamiento digital técnico en LATAM.",
-  keywords: ["ingeniería de mercado", "consultoría B2B", "estrategia corporativa", "arquitectura e-commerce", "posicionamiento digital técnico", "marketing B2B Argentina", "Bestarlight"],
-  authors: [{ name: "Bestarlight" }],
-  creator: "Bestarlight",
-  publisher: "Bestarlight",
+  description: "Marketing, comunicación y tecnología con 27 años de trayectoria. Estrategia, e-commerce, IA aplicada y producción visual. Buenos Aires · Miami.",
+  keywords: ["agencia marketing y tecnología", "agencia comunicación digital", "consultoría e-commerce", "implementación IA empresas", "desarrollo Shopify", "Tienda Nube", "automatización procesos", "producción visual", "drone FPV", "marketing B2B Latam", "agencia Buenos Aires Miami", "BeStarLight"],
+  authors: [{ name: "BeStarLight" }],
+  creator: "BeStarLight",
+  publisher: "BeStarLight",
   formatDetection: {
     email: false,
     address: false,
@@ -70,17 +70,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Bestarlight | Ingeniería de Mercado y Estrategia B2B",
-    description: "Consultoría estratégica B2B con +25 años de experiencia. Reestructuración de comunicación y arquitecturas e-commerce sólidas.",
+    title: "Marketing, Comunicación y Tecnología | BeStarLight",
+    description: "27 años de trayectoria acompañando marcas con estrategia, desarrollo digital, IA aplicada y producción visual. Buenos Aires · Miami.",
     url: "https://bestarlight.com",
-    siteName: "Bestarlight",
+    siteName: "BeStarLight",
     locale: "es_AR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bestarlight | Ingeniería de Mercado B2B",
-    description: "+25 años de experiencia en reestructuración de estrategia corporativa y e-commerce.",
+    title: "Marketing, Comunicación y Tecnología | BeStarLight",
+    description: "27 años de trayectoria acompañando marcas con estrategia, desarrollo digital, IA aplicada y producción visual. Buenos Aires · Miami.",
   },
   robots: {
     index: true,
@@ -102,39 +102,104 @@ export default function RootLayout({
   children: React.ReactNode;
   modal: React.ReactNode;
 }>) {
-  const jsonLd = {
+  const professionalServiceJsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Bestarlight",
+    "name": "BeStarLight",
+    "description": "Agencia de marketing, comunicación y tecnología con 27 años de trayectoria. Estrategia, desarrollo digital, IA aplicada y producción visual.",
     "url": "https://bestarlight.com",
-    "logo": "https://bestarlight.com/favicon.ico",
-    "image": [
-      "https://bestarlight.com/assets/img/Muak-shop.webp",
-      "https://bestarlight.com/assets/img/haddock.png",
-      "https://bestarlight.com/assets/img/Colmba_store_main.webp",
-      "https://bestarlight.com/assets/img/NBS Bazar Profesional.webp"
-    ],
-    "description": "Consultoría estratégica B2B y Auditoría en Ingeniería de Mercado con +25 años de experiencia.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Buenos Aires",
-      "addressCountry": "AR"
+    "logo": "https://bestarlight.com/logo.png",
+    "founder": {
+      "@type": "Person",
+      "name": "José Rey"
     },
+    "foundingDate": "2001",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Miami",
+        "addressCountry": "US"
+      }
+    ],
     "areaServed": [
-      { "@type": "Country", "name": "Argentina" },
-      { "@type": "Country", "name": "Uruguay" },
-      { "@type": "Country", "name": "Chile" },
-      { "@type": "Country", "name": "Paraguay" },
-      { "@type": "Country", "name": "Peru" }
+      "Argentina", "Uruguay", "Chile", "Paraguay", "Perú", "Colombia", "Estados Unidos"
     ],
     "knowsAbout": [
-      "Estrategia corporativa",
-      "E-commerce",
-      "Fotografía Publicitaria",
-      "Ingeniería de Mercado",
-      "Comunicación B2B"
+      "Marketing digital",
+      "Comunicación corporativa",
+      "Implementación con IA",
+      "E-commerce y desarrollo digital",
+      "Shopify",
+      "Tienda Nube",
+      "WooCommerce",
+      "Salesforce CRM",
+      "Producción audiovisual",
+      "Filmación con drone FPV"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/bestarlight"
     ]
   };
+
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "José Rey",
+    "jobTitle": "Founder & Director",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "BeStarLight"
+    },
+    "alumniOf": "Universidad del Salvador",
+    "knowsAbout": [
+      "Marketing digital",
+      "Comunicación",
+      "Implementación con IA",
+      "E-commerce",
+      "Salesforce CRM"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/joserey"
+    ]
+  };
+
+  /*
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué hace BeStarLight?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BeStarLight es una agencia de marketing, comunicación y tecnología con 27 años de trayectoria. Combinamos estrategia, desarrollo digital, IA aplicada y producción visual en un solo equipo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿En qué países trabajan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trabajamos con marcas en Argentina, Uruguay, Chile, Paraguay, Perú, Colombia y Estados Unidos. Tenemos sedes en Buenos Aires y Miami."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué plataformas de e-commerce manejan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trabajamos con Shopify, Tienda Nube, WooCommerce y desarrollos a medida con IA aplicada."
+        }
+      }
+    ]
+  };
+  */
 
   return (
     <html lang="es" className="scroll-smooth">
@@ -162,7 +227,11 @@ export default function RootLayout({
       >
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         {children}
         {modal}

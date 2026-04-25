@@ -352,16 +352,16 @@ export const content = {
                 yearTag: "BUENOS AIRES · DESDE 2001",
                 headers: [
                     {
-                        title: "Modernizamos organizaciones<br class=\"desktop-br\" />que ya funcionan.",
-                        sub: "Estrategia B2B, ecosistemas digitales y automatización con IA para empresas que necesitan escalar sin romper lo que ya anda."
-                    },
-                    {
                         title: "Tecnología que se<br class=\"desktop-br\" />integra al negocio.",
                         sub: "Diseñamos ecosistemas digitales conectados a los procesos reales de tu empresa. Shopify, Tienda Nube, WooCommerce y desarrollos a medida con IA aplicada."
                     },
                     {
-                        title: "Menos fricción,<br class=\"desktop-br\" />más velocidad.",
-                        sub: "Reducimos tiempos operativos integrando IA y automatización en los flujos de trabajo de tu equipo."
+                        title: "Planeamiento,<br class=\"desktop-br\" />objetivos y velocidad.",
+                        sub: "Revisamos tu estructura, definimos prioridades y ejecutamos con IA y automatización para que tu equipo gane tiempo y claridad."
+                    },
+                    {
+                        title: "Marketing, comunicación<br class=\"desktop-br\" />y tecnología, en un solo equipo.",
+                        sub: "Trayectoria de 27 años acompañando marcas con estrategia, desarrollo digital e IA aplicada."
                     }
                 ],
                 ctaPrimary: "Agendar diagnóstico"
@@ -377,7 +377,7 @@ export const content = {
                 items: [
                     { id: "01", title: <>Consultoría y<br />Estrategia B2B</>, plainTitle: "Consultoría y Estrategia B2B", sub: "El mapa antes del código.", desc: "Auditamos tu estructura comercial, detectamos cuellos de botella y armamos un plan de modernización con prioridades claras. Entregable: diagnóstico escrito y hoja de ruta a 90 días." },
                     { id: "02", title: "E-commerce y Ecosistemas Web", plainTitle: "E-commerce y Ecosistemas Web", sub: "Arquitecturas sólidas y escalables.", desc: "Diseñamos plataformas conectadas a los procesos reales de tu empresa. Trabajamos sobre Shopify, Tienda Nube, WooCommerce y desarrollos a medida con IA aplicada." },
-                    { id: "03", title: "Producción Visual y Drones", plainTitle: "Producción Visual y Drones", sub: "Imagen que sostiene la marca.", desc: "Fotografía publicitaria e industrial, cobertura con drones y post-producción profesional. 25 años de experiencia en dirección de arte y producción, ahora aplicados a tu comunicación B2B." }
+                    { id: "03", title: "Producción Visual y Drones", plainTitle: "Producción Visual y Drones", sub: "Imagen que sostiene la marca.", desc: "Fotografía publicitaria e industrial, cobertura con drones y post-producción profesional. 27 años de experiencia en dirección de arte y producción, ahora aplicados a tu comunicación B2B." }
                 ]
             },
             casesLabel: "TRABAJOS SELECCIONADOS",
@@ -723,16 +723,16 @@ export const content = {
                 yearTag: "BUENOS AIRES · SINCE 2001",
                 headers: [
                     {
-                        title: "We modernize organizations<br class=\"desktop-br\" />that already work.",
-                        sub: "B2B Strategy, digital ecosystems and AI automation for companies that need to scale without breaking what's already running."
-                    },
-                    {
                         title: "Technology that<br class=\"desktop-br\" />integrates into the business.",
                         sub: "We design digital ecosystems connected to your company's real processes. Shopify, Tienda Nube, WooCommerce and custom developments with applied AI."
                     },
                     {
-                        title: "Less friction,<br class=\"desktop-br\" />more speed.",
-                        sub: "We reduce operational times by integrating AI and automation into your team's workflows."
+                        title: "Planning,<br class=\"desktop-br\" />objectives and speed.",
+                        sub: "We review your structure, define priorities, and execute with AI and automation so your team gains time and clarity."
+                    },
+                    {
+                        title: "Marketing, communication<br class=\"desktop-br\" />and technology, in a single team.",
+                        sub: "27-year trajectory accompanying brands with strategy, digital development, and applied AI."
                     }
                 ],
                 ctaPrimary: "Schedule diagnosis"
@@ -748,7 +748,7 @@ export const content = {
                 items: [
                     { id: "01", title: <>B2B Consulting &<br />Strategy</>, plainTitle: "B2B Consulting & Strategy", sub: "The map before the code.", desc: "We audit your commercial structure, detect bottlenecks and create a modernization plan with clear priorities. Deliverable: written diagnostic and 90-day roadmap." },
                     { id: "02", title: "E-commerce & Web Ecosystems", plainTitle: "E-commerce & Web Ecosystems", sub: "Robust and scalable architectures.", desc: "We develop high-performance platforms connected to the organization's real workflows. Specialists in Shopify, Tienda Nube, WooCommerce and custom developments with applied AI." },
-                    { id: "03", title: "Visual Production & Drones", plainTitle: "Visual Production & Drones", sub: "Image that sustains the brand.", desc: "Advertising and industrial photography, drone coverage, and professional post-production. 25 years of experience in art direction and production, now applied to your B2B communication." }
+                    { id: "03", title: "Visual Production & Drones", plainTitle: "Visual Production & Drones", sub: "Image that sustains the brand.", desc: "Advertising and industrial photography, drone coverage, and professional post-production. 27 years of experience in art direction and production, now applied to your B2B communication." }
                 ]
             },
             casesLabel: "SELECTED WORKS",
