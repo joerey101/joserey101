@@ -364,8 +364,7 @@ export const content = {
                         sub: "Reducimos tiempos operativos integrando IA y automatización en los flujos de trabajo de tu equipo."
                     }
                 ],
-                ctaPrimary: "Agendar diagnóstico",
-                ctaSecondary: "Ver casos reales"
+                ctaPrimary: "Agendar diagnóstico"
             },
             stats: [
                 { num: "+340%", label: "conversión promedio" },
@@ -736,8 +735,7 @@ export const content = {
                         sub: "We reduce operational times by integrating AI and automation into your team's workflows."
                     }
                 ],
-                ctaPrimary: "Schedule diagnosis",
-                ctaSecondary: "See real cases"
+                ctaPrimary: "Schedule diagnosis"
             },
             stats: [
                 { num: "+340%", label: "average conversion" },

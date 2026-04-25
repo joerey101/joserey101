@@ -55,7 +55,6 @@ export default function Home() {
           <div className="nav-links">
             <a href="#servicios">{CONTENT.header.capabilities}</a>
             <a href="#casos">{CONTENT.header.work}</a>
-            <a href="#casos" className="hidden lg:block">{BESTARLIGHT.hero.ctaSecondary}</a>
             <a href="#ideas">{lang === "es" ? "Ideas" : "Ideas"}</a>
             <div className="lang-switcher">
               <button 
@@ -96,9 +95,6 @@ export default function Home() {
             <div className="hero-actions">
               <a href="#contacto" className="btn-hero-p">
                 {BESTARLIGHT.hero.ctaPrimary} →
-              </a>
-              <a href="#casos" className="btn-hero-s">
-                {BESTARLIGHT.hero.ctaSecondary}
               </a>
             </div>
           </div>

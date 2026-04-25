@@ -45,10 +45,10 @@ const permanentMarker = Permanent_Marker({
 export const metadata: Metadata = {
   metadataBase: new URL("https://bestarlight.com"),
   title: {
-    default: "Bestarlight | Ingeniería de Mercado y Estrategia B2B",
-    template: "%s | Bestarlight",
+    default: "BeStarLight • Tecnología y Comunicación + IA en tus procesos",
+    template: "%s | BeStarLight",
   },
-  description: "Consultoría estratégica B2B con 30 años de experiencia. Reestructuración de comunicación, arquitecturas e-commerce y posicionamiento digital técnico en LATAM.",
+  description: "Consultoría estratégica B2B con +25 años de experiencia. Reestructuración de comunicación, arquitecturas e-commerce y posicionamiento digital técnico en LATAM.",
   keywords: ["ingeniería de mercado", "consultoría B2B", "estrategia corporativa", "arquitectura e-commerce", "posicionamiento digital técnico", "marketing B2B Argentina", "Bestarlight"],
   authors: [{ name: "Bestarlight" }],
   creator: "Bestarlight",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Bestarlight | Ingeniería de Mercado y Estrategia B2B",
-    description: "Consultoría estratégica B2B con 30 años de experiencia. Reestructuración de comunicación y arquitecturas e-commerce sólidas.",
+    description: "Consultoría estratégica B2B con +25 años de experiencia. Reestructuración de comunicación y arquitecturas e-commerce sólidas.",
     url: "https://bestarlight.com",
     siteName: "Bestarlight",
     locale: "es_AR",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Bestarlight | Ingeniería de Mercado B2B",
-    description: "30 años de experiencia en reestructuración de estrategia corporativa y e-commerce.",
+    description: "+25 años de experiencia en reestructuración de estrategia corporativa y e-commerce.",
   },
   robots: {
     index: true,
@@ -114,7 +114,7 @@ export default function RootLayout({
       "https://bestarlight.com/assets/img/Colmba_store_main.webp",
       "https://bestarlight.com/assets/img/NBS Bazar Profesional.webp"
     ],
-    "description": "Consultoría estratégica B2B y Auditoría en Ingeniería de Mercado con 30 años de experiencia.",
+    "description": "Consultoría estratégica B2B y Auditoría en Ingeniería de Mercado con +25 años de experiencia.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Buenos Aires",
