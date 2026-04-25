@@ -49,9 +49,17 @@ export default function Home() {
 
       <nav id="nav" className={scrolled ? "scrolled" : ""} aria-label="Navegación principal">
         <div className="container-wide bsl-px" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div className="nav-logo" aria-label="Bestarlight Logo">
+          <a 
+            href="#" 
+            className="nav-logo" 
+            aria-label="Bestarlight Logo"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
             Be <em>StarLight</em>
-          </div>
+          </a>
           <div className="nav-links">
             <a href="#servicios">{CONTENT.header.capabilities}</a>
             <a href="#casos">{CONTENT.header.work}</a>
@@ -125,7 +133,6 @@ export default function Home() {
       <BeStarLightCaseStudySystem 
         initialCases={cases} 
         lang={lang} 
-        label={BESTARLIGHT.casesLabel}
         title={BESTARLIGHT.casesTitle}
       />
 
@@ -160,8 +167,8 @@ export default function Home() {
 
       <section id="clientes">
         <div className="container-wide bsl-px">
-          <p className="s-label">
-            {BESTARLIGHT.casesLabel}
+          <p className="s-label" style={{ fontSize: 'calc(var(--font-mono) * 1.4)', fontWeight: 900 }}>
+            {lang === 'es' ? 'ALGUNOS DE NUESTROS CLIENTES' : 'SOME OF OUR CLIENTS'}
           </p>
         </div>
         <div className="clients-marquee-wrap">
