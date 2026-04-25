@@ -139,7 +139,7 @@ export default function Home() {
               <p>{BESTARLIGHT.ideas.title}</p>
               
               <div className="ideas-badge">
-                <span className="badge-num">27</span>
+                <span className="badge-num"><span className="plus-sign">+</span>27</span>
                 <span className="badge-txt">AÑOS GENERANDO RESULTADOS JUNTO A EMPRESAS</span>
               </div>
             </div>
