@@ -127,24 +127,24 @@ export default function HeroRotator({ headers, interval = 7000 }: HeroRotatorPro
 
         .hero-title-dynamic {
           font-family: var(--serif);
-          font-size: clamp(48px, 7vw, 110px);
+          font-size: var(--font-h1);
           line-height: 0.95;
           font-weight: 900;
           color: #f0ebe0;
           margin: 0;
           max-width: 1100px;
           letter-spacing: -0.02em;
-          text-wrap: balance; /* Distribute lines evenly */
+          text-wrap: balance;
         }
 
         .hero-desc-dynamic {
           font-family: var(--sans);
-          font-size: 19px;
+          font-size: var(--font-body-lg);
           line-height: 1.5;
           color: rgba(240, 235, 224, 0.55);
           max-width: 800px;
           margin: 0;
-          text-wrap: pretty; /* Avoid orphans */
+          text-wrap: pretty;
         }
 
         .desktop-br {
@@ -154,31 +154,19 @@ export default function HeroRotator({ headers, interval = 7000 }: HeroRotatorPro
         /* Responsive Adjustments */
         @media (max-width: 1024px) {
           .desktop-br { display: none; }
-          .hero-title-container { min-height: 240px; }
+          .hero-title-container { min-height: clamp(180px, 25vw, 240px); }
         }
 
         @media (max-width: 768px) {
           .hero-title-container { 
-            min-height: 220px; 
+            min-height: auto; 
             margin-bottom: 32px;
-            justify-content: flex-start; /* Normal alignment in mobile */
+            justify-content: flex-start;
           }
           .hero-desc-container { 
-            min-height: 120px; 
+            min-height: auto; 
             margin-bottom: 24px;
           }
-          .hero-title-dynamic {
-            font-size: clamp(34px, 12vw, 56px);
-            text-wrap: balance;
-          }
-          .hero-desc-dynamic {
-            font-size: 17px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .hero-title-container { min-height: 260px; }
-          .hero-desc-container { min-height: 160px; }
         }
 
         .hero-indicators {
