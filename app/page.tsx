@@ -244,7 +244,7 @@ export default function Home() {
                 <div className="cl-step">
                   <span className="cl-step-num">03</span>
                   <span className="cl-step-text">
-                    {lang === "es" ? "Reunión de diagnóstico, sin costo" : "Diagnostic meeting, no cost"}
+                    {lang === "es" ? "Primera reunión, sin costo" : "First meeting, no cost"}
                   </span>
                 </div>
               </div>

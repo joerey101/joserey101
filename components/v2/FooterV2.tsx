@@ -43,7 +43,7 @@ export default function Footer({ lang }: { lang: "es" | "en" }) {
                                     className="bg-secondary text-white px-10 py-5 font-bold uppercase tracking-widest text-sm transition-transform active:scale-95 hover:bg-secondary-container hover:text-on-secondary-container"
                                     onClick={() => setIsFormOpen(true)}
                                 >
-                                    {isEs ? "COTIZAR DIAGNÓSTICO" : "REQUEST DIAGNOSTIC"}
+                                    {isEs ? "HABLEMOS DE TU PROYECTO" : "LET'S TALK ABOUT YOUR PROJECT"}
                                 </button>
                             </div>
                             <div className="flex flex-col gap-4 items-end">

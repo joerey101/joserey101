@@ -93,7 +93,7 @@ export const content = {
             titleSub: "NEGOCIOS. LA ",
             titleSubHighlight: "EJECUCIÓN SÍ.",
             desc: "Convertimos su visión en un sistema que opera, mide y escala.",
-            cta: "Agendar diagnóstico"
+            cta: "Hablemos de tu proyecto"
         },
         laboratorioIA: {
             title: "LABORATORIO IA",
@@ -102,12 +102,12 @@ export const content = {
         },
         filtroEntrada: {
             title: "No trabajamos con todos. Trabajamos con los que están listos.",
-            desc: "Antes de cualquier propuesta, realizamos un diagnóstico inicial para evaluar si existe alineación real entre los objetivos de la empresa y nuestra forma de operar. Si hay match estructural, avanzamos. Si no, lo decimos."
+            desc: "Antes de cualquier propuesta, realizamos un análisis inicial para evaluar si existe alineación real entre los objetivos de la empresa y nuestra forma de operar. Si hay match estructural, avanzamos. Si no, lo decimos."
         },
         ctaPrincipal: {
-            title: "Primera reunión de diagnóstico — 45 minutos.",
+            title: "Primera reunión de 45 minutos.",
             desc: "Sin presentaciones de venta. Sin promesas. Una conversación estructurada para entender dónde está la empresa hoy y qué necesita para llegar a donde quiere estar. Si hay trabajo para hacer juntos, lo vamos a saber en esa reunión.",
-            buttonText: "Agendar diagnóstico →"
+            buttonText: "Hablemos de tu proyecto →"
         },
         selectedWork: {
             title: <>Casos de<br />Estudio</>,
@@ -343,7 +343,7 @@ export const content = {
             label: "CONEXIÓN // 2026 // LISTO PARA EL FUTURO",
             title: <>La tecnología no transforma negocios.<br /><span className="text-white">La ejecución sí.</span></>,
             desc: <>Convertimos su visión en un sistema que opera, mide y escala.</>,
-            cta: "Explorar diagnóstico",
+            cta: "Hablemos de tu proyecto",
             links: ["LinkedIn"],
             copyright: <>© 2001 - 2026 BESTARLIGHT<br />TODOS LOS DERECHOS RESERVADOS</>
         },
@@ -364,7 +364,7 @@ export const content = {
                         sub: "Trayectoria de 27 años acompañando marcas con estrategia, desarrollo digital e IA aplicada."
                     }
                 ],
-                ctaPrimary: "Agendar diagnóstico"
+                ctaPrimary: "Hablemos de tu proyecto"
             },
             stats: [
                 { num: "+340%", label: "conversión promedio" },
@@ -375,7 +375,7 @@ export const content = {
             services: {
                 label: "Módulos de servicio",
                 items: [
-                    { id: "01", title: <>Consultoría y<br />Estrategia B2B</>, plainTitle: "Consultoría y Estrategia B2B", sub: "El mapa antes del código.", desc: "Auditamos tu estructura comercial, detectamos cuellos de botella y armamos un plan de modernización con prioridades claras. Entregable: diagnóstico escrito y hoja de ruta a 90 días." },
+                    { id: "01", title: <>Consultoría y<br />Estrategia B2B</>, plainTitle: "Consultoría y Estrategia B2B", sub: "El mapa antes del código.", desc: "Auditamos tu estructura comercial, detectamos cuellos de botella y armamos un plan de modernización con prioridades claras. Entregable: documento estratégico y hoja de ruta a 90 días." },
                     { id: "02", title: "E-commerce y Ecosistemas Web", plainTitle: "E-commerce y Ecosistemas Web", sub: "Arquitecturas sólidas y escalables.", desc: "Diseñamos plataformas conectadas a los procesos reales de tu empresa. Trabajamos sobre Shopify, Tienda Nube, WooCommerce y desarrollos a medida con IA aplicada." },
                     { id: "03", title: "Producción Visual y Drones", plainTitle: "Producción Visual y Drones", sub: "Imagen que sostiene la marca.", desc: "Fotografía publicitaria e industrial, cobertura con drones y post-producción profesional. 27 años de experiencia en dirección de arte y producción, ahora aplicados a tu comunicación B2B." }
                 ]
@@ -386,14 +386,14 @@ export const content = {
                 label: "Ideas que funcionan",
                 title: "Estrategia con estructura real detrás.",
                 items: [
-                    { title: "Estructura", desc: "Arrancamos por la base, no por la fachada. Primero el diagnóstico, después el código. Así lo que construimos sostiene el crecimiento en lugar de frenarlo." },
+                    { title: "Estructura", desc: "Arrancamos por la base, no por la fachada. Primero el análisis, después el código. Así lo que construimos sostiene el crecimiento en lugar de frenarlo." },
                     { title: "Velocidad", desc: "Usamos IA y automatización para ejecutar más rápido. Llegás antes al mercado, con menos fricción en el proceso y costos más ajustados." },
                     { title: "Resultados", desc: "Trabajamos con indicadores claros desde el día uno. Cada entregable responde a un objetivo de negocio, no a un capricho estético." }
                 ]
             },
             contact: {
-                title: <>Hablemos de tu<br />próximo paso</>,
-                desc: "Primera reunión de diagnóstico: 45 minutos para entender tu situación y marcar prioridades.",
+                title: <>Hablemos de tu<br />proyecto</>,
+                desc: "Primera reunión de 45 minutos para entender tu situación y marcar prioridades.",
                 form: {
                     name: "NOMBRE",
                     company: "EMPRESA",
@@ -405,7 +405,7 @@ export const content = {
                     placeholderEmail: "tu@empresa.com",
                     placeholderContext: "Contanos brevemente el desafío de tu organización...",
                     selectModule: "Seleccioná un módulo",
-                    cta: "Agendar reunión de diagnóstico →",
+                    cta: "Hablemos de tu proyecto →",
                     footer: "Sin spam. Sin compromiso. Tu información es confidencial."
                 }
             }
@@ -465,7 +465,7 @@ export const content = {
         ctaPrincipal: {
             title: "First Diagnostic Meeting — 45 Minutes.",
             desc: "No sales pitches. No promises. A structured conversation to understand where your company is today and what it needs to reach its goals. If there's work to be done together, we'll find out in this meeting.",
-            buttonText: "Schedule Diagnostic →"
+            buttonText: "Let's talk →"
         },
         selectedWork: {
             title: <>Case<br />Studies</>,
@@ -735,7 +735,7 @@ export const content = {
                         sub: "27-year trajectory accompanying brands with strategy, digital development, and applied AI."
                     }
                 ],
-                ctaPrimary: "Schedule diagnosis"
+                ctaPrimary: "Let's talk about your project"
             },
             stats: [
                 { num: "+340%", label: "average conversion" },
