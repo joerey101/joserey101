@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 const BeStarLightCaseStudySystem = dynamic(() => import("@/components/BeStarLightCaseStudySystem"), { ssr: false });
 import { content } from "@/app/content";
 import "./bestarlight.css";
+import HeroRotator from '@/components/HeroRotator';
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -47,7 +48,7 @@ export default function Home() {
       <a href="#main-content" className="skip-link">Saltar al contenido principal</a>
 
       <nav id="nav" className={scrolled ? "scrolled" : ""} aria-label="Navegación principal">
-        <div className="bsl-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="container-wide bsl-px" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div className="nav-logo" aria-label="Bestarlight Logo">
             Be <em>StarLight</em>
           </div>
@@ -86,51 +87,32 @@ export default function Home() {
           ESTRATEGIA · SISTEMAS · RESULTADO · ESTRATEGIA · SISTEMAS · RESULTADO
           · ESTRATEGIA · SISTEMAS · RESULTADO ·{"\u00A0"}
         </div>
-        <div className="bsl-container">
+        <div className="container-wide bsl-px">
           <div className="hero-content">
             <div className="hero-tag">{BESTARLIGHT.hero.yearTag}</div>
-            <h1 className="hero-h1">
-              <span className="line1">
-                <span className="word">
-                  <span className="word-inner">{BESTARLIGHT.hero.line1}</span>
-                </span>
-              </span>
-              <span className="line2">
-                <span className="word">
-                  <span className="word-inner">{BESTARLIGHT.hero.line2}</span>
-                </span>
-              </span>
-              <span className="line3">
-                <span className="word">
-                  <span className="word-inner">{BESTARLIGHT.hero.line3}</span>
-                </span>
-              </span>
-            </h1>
-            <div className="hero-bottom">
-              <p className="hero-desc">
-                {BESTARLIGHT.hero.desc}
-              </p>
-              <div className="hero-actions">
-                <a href="#contacto" className="btn-hero-p">
-                  {BESTARLIGHT.hero.ctaPrimary} →
-                </a>
-                <a href="#casos" className="btn-hero-s">
-                  {BESTARLIGHT.hero.ctaSecondary}
-                </a>
-              </div>
+            
+            <HeroRotator headers={BESTARLIGHT.hero.headers} />
+
+            <div className="hero-actions">
+              <a href="#contacto" className="btn-hero-p">
+                {BESTARLIGHT.hero.ctaPrimary} →
+              </a>
+              <a href="#casos" className="btn-hero-s">
+                {BESTARLIGHT.hero.ctaSecondary}
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       <div className="stats-strip" aria-hidden="true">
-        <div className="bsl-container">
+        <div className="container-wide bsl-px">
           {/* Visual separator gap */}
         </div>
       </div>
 
       <section id="servicios">
-        <div className="bsl-container">
+        <div className="container-narrow bsl-px">
           <p className="s-label reveal">{BESTARLIGHT.services.label}</p>
           <div className="svc-list reveal">
             {BESTARLIGHT.services.items.map((svc, i) => (
@@ -138,9 +120,6 @@ export default function Home() {
                 <h2 className="svc-i-title">{svc.title}</h2>
                 <p className="svc-i-sub">{svc.sub}</p>
                 <p className="svc-i-desc">{svc.desc}</p>
-                <a href="#contacto" className="svc-i-cta">
-                  {lang === "es" ? "Explorar módulo" : "Explore module"} →
-                </a>
               </div>
             ))}
           </div>
@@ -155,18 +134,23 @@ export default function Home() {
       />
 
       <section id="ideas">
-        <div className="bsl-container">
+        <div className="container-narrow bsl-px">
           <div className="ideas-layout">
             <div className="ideas-intro reveal">
               <h2>
                 {lang === "es" ? <>Ideas que <em>trabajan.</em></> : <>Ideas that <em>work.</em></>}
               </h2>
               <p>{BESTARLIGHT.ideas.title}</p>
+              
+              <div className="ideas-badge">
+                <span className="badge-num">+25</span>
+                <span className="badge-txt">AÑOS GENERANDO RESULTADOS JUNTO A EMPRESAS</span>
+              </div>
             </div>
             <div className="ideas-list">
               {BESTARLIGHT.ideas.items.map((idea, i) => (
                 <div className={`idea-row reveal reveal-delay-${i}`} key={i}>
-                  <span className="ir-num">— {i === 0 ? "I" : i === 1 ? "II" : "III"}</span>
+                  <span className="ir-num">{i === 0 ? "I" : i === 1 ? "II" : "III"}</span>
                   <div>
                     <h3 className="ir-title">{idea.title}</h3>
                     <p className="ir-text">{idea.desc}</p>
@@ -179,7 +163,7 @@ export default function Home() {
       </section>
 
       <section id="clientes">
-        <div className="bsl-container">
+        <div className="container-wide bsl-px">
           <p className="s-label">
             {BESTARLIGHT.casesLabel}
           </p>
@@ -240,7 +224,7 @@ export default function Home() {
       </section>
 
       <section id="contacto">
-        <div className="bsl-container">
+        <div className="container-narrow bsl-px">
           <div className="contact-grid">
             <div className="cl-left reveal">
               <h2>{BESTARLIGHT.contact.title}</h2>
@@ -257,7 +241,7 @@ export default function Home() {
                 <div className="cl-step">
                   <span className="cl-step-num">03</span>
                   <span className="cl-step-text">
-                    {lang === "es" ? "Auditoría estratégica inicial gratuita" : "Free initial strategic audit"}
+                    {lang === "es" ? "Reunión de diagnóstico, sin costo" : "Diagnostic meeting, no cost"}
                   </span>
                 </div>
               </div>
@@ -350,7 +334,7 @@ export default function Home() {
 
       </main>
       <footer>
-        <div className="bsl-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="container-wide bsl-px" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div className="ft-logo">
             Be <em>StarLight</em>
           </div>

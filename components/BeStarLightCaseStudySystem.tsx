@@ -252,7 +252,7 @@ export default function BeStarLightCaseStudySystem({ initialCases, lang, label, 
 
     return (
         <section id="casos" className="w-full pt-16 pb-24 relative z-10" style={{ background: 'var(--bg)' }}>
-            <div className="max-w-[1800px] mx-auto px-4 md:px-8">
+            <div className="container-wide bsl-px">
                 
                 {/* Section Title matching BeStarLight */}
                 <div className="mb-12">

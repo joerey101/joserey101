@@ -349,11 +349,21 @@ export const content = {
         },
         bestarlight: {
             hero: {
-                line1: "Ingeniería de",
-                line2: "Mercado y",
-                line3: "Estrategia B2B.",
-                yearTag: "MKTING & COMUNICACIÓN TECH / 2026",
-                desc: <>Modernizamos organizaciones que ya funcionan. Diagnóstico real, ecosistemas digitales e inteligencia operativa.</>,
+                yearTag: "BUENOS AIRES · DESDE 2001",
+                headers: [
+                    {
+                        title: "Modernizamos organizaciones<br class=\"desktop-br\" />que ya funcionan.",
+                        sub: "Estrategia B2B, ecosistemas digitales y automatización con IA para empresas que necesitan escalar sin romper lo que ya anda."
+                    },
+                    {
+                        title: "Tecnología que se integra<br class=\"desktop-br\" />al negocio.",
+                        sub: "Diseñamos ecosistemas digitales conectados a los procesos reales de tu empresa. Shopify, Tienda Nube, WooCommerce y desarrollos a medida con IA aplicada."
+                    },
+                    {
+                        title: "Menos fricción,<br class=\"desktop-br\" />más velocidad.",
+                        sub: "Reducimos tiempos operativos integrando IA y automatización en los flujos de trabajo de tu equipo."
+                    }
+                ],
                 ctaPrimary: "Agendar diagnóstico",
                 ctaSecondary: "Ver casos reales"
             },
@@ -366,9 +376,9 @@ export const content = {
             services: {
                 label: "Módulos de servicio",
                 items: [
-                    { id: "01", title: <>Consultoría y<br />Estrategia B2B</>, plainTitle: "Consultoría y Estrategia B2B", sub: "Ingeniería de Mercado.", desc: "Inmersión directa en la estructura comercial. Mapeamos ineficiencias, evaluamos viabilidad y definimos el camino real hacia la modernización corporativa." },
-                    { id: "02", title: "E-commerce y Ecosistemas Web", plainTitle: "E-commerce y Ecosistemas Web", sub: "Arquitecturas sólidas y escalables.", desc: "Desarrollamos plataformas de alto rendimiento conectadas a los flujos de trabajo reales de la organización. Especialistas en Shopify, VTEX y desarrollos a medida." },
-                    { id: "03", title: "Producción Visual y Drones", plainTitle: "Producción Visual y Drones", sub: "Contenido de alto nivel para marcas B2B.", desc: "Fotografía publicitaria e industrial, cobertura con drones y post-producción profesional. Documentamos la excelencia operativa de su empresa." }
+                    { id: "01", title: <>Consultoría y<br />Estrategia B2B</>, plainTitle: "Consultoría y Estrategia B2B", sub: "El mapa antes del código.", desc: "Auditamos tu estructura comercial, detectamos cuellos de botella y armamos un plan de modernización con prioridades claras. Entregable: diagnóstico escrito y hoja de ruta a 90 días." },
+                    { id: "02", title: "E-commerce y Ecosistemas Web", plainTitle: "E-commerce y Ecosistemas Web", sub: "Arquitecturas sólidas y escalables.", desc: "Diseñamos plataformas conectadas a los procesos reales de tu empresa. Trabajamos sobre Shopify, Tienda Nube, WooCommerce y desarrollos a medida con IA aplicada." },
+                    { id: "03", title: "Producción Visual y Drones", plainTitle: "Producción Visual y Drones", sub: "Imagen que sostiene la marca.", desc: "Fotografía publicitaria e industrial, cobertura con drones y post-producción profesional. 25 años de experiencia en dirección de arte y producción, ahora aplicados a tu comunicación B2B." }
                 ]
             },
             casesLabel: "TRABAJOS SELECCIONADOS",
@@ -377,14 +387,14 @@ export const content = {
                 label: "Ideas que funcionan",
                 title: "Estrategia con estructura real detrás.",
                 items: [
-                    { title: "Estructura", desc: "No hacemos diseño decorativo. Construimos la base técnica para que tu marca pueda escalar sin fricción." },
-                    { title: "Velocidad", desc: "Reducimos tiempos de ejecución integrando IA en los flujos de trabajo internos de tu equipo." },
-                    { title: "Resultados", desc: "Cada línea de código está orientada a mover la aguja del negocio. Si no es medible, no es prioridad." }
+                    { title: "Estructura", desc: "Arrancamos por la base, no por la fachada. Primero el diagnóstico, después el código. Así lo que construimos sostiene el crecimiento en lugar de frenarlo." },
+                    { title: "Velocidad", desc: "Usamos IA y automatización para ejecutar más rápido. Llegás antes al mercado, con menos fricción en el proceso y costos más ajustados." },
+                    { title: "Resultados", desc: "Trabajamos con indicadores claros desde el día uno. Cada entregable responde a un objetivo de negocio, no a un capricho estético." }
                 ]
             },
             contact: {
                 title: <>Hablemos de tu<br />próximo paso</>,
-                desc: "Estamos listos para auditar tu estructura actual.",
+                desc: "Primera reunión de diagnóstico: 45 minutos para entender tu situación y marcar prioridades.",
                 form: {
                     name: "NOMBRE",
                     company: "EMPRESA",
@@ -396,7 +406,7 @@ export const content = {
                     placeholderEmail: "tu@empresa.com",
                     placeholderContext: "Contanos brevemente el desafío de tu organización...",
                     selectModule: "Seleccioná un módulo",
-                    cta: "Enviar y agendar diagnóstico →",
+                    cta: "Agendar reunión de diagnóstico →",
                     footer: "Sin spam. Sin compromiso. Tu información es confidencial."
                 }
             }
