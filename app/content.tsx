@@ -345,11 +345,11 @@ export const content = {
             desc: <>Convertimos su visión en un sistema que opera, mide y escala.</>,
             cta: "Hablemos de tu proyecto",
             links: ["LinkedIn"],
-            copyright: <>© 2001 - 2026 BESTARLIGHT<br />TODOS LOS DERECHOS RESERVADOS</>
+            copyright: <>© 1999 - 2026 BESTARLIGHT<br />TODOS LOS DERECHOS RESERVADOS</>
         },
         bestarlight: {
             hero: {
-                yearTag: "BUENOS AIRES · DESDE 2001",
+                yearTag: "BUENOS AIRES · DESDE 1999",
                 headers: [
                     {
                         title: "Tecnología que se<br class=\"desktop-br\" />integra al negocio.",
@@ -703,7 +703,7 @@ export const content = {
             desc: <>We convert your vision into a digital asset <br /> with engineering, measurement, and focus on details.</>,
             cta: "Let's Talk",
             links: ["LinkedIn"],
-            copyright: <>© 2001 - 2026 BESTARLIGHT<br />ALL RIGHTS RESERVED</>
+            copyright: <>© 1999 - 2026 BESTARLIGHT<br />ALL RIGHTS RESERVED</>
         },
         hero: {
             typingWords: ["Conventional", "Rigid", "Bureaucratic"],
@@ -720,7 +720,7 @@ export const content = {
         },
         bestarlight: {
             hero: {
-                yearTag: "BUENOS AIRES · SINCE 2001",
+                yearTag: "BUENOS AIRES · SINCE 1999",
                 headers: [
                     {
                         title: "Technology that<br class=\"desktop-br\" />integrates into the business.",

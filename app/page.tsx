@@ -335,14 +335,24 @@ export default function Home() {
         </div>
       </section>
 
-      </main>
-      <footer>
-        <div className="container-wide bsl-px" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div className="ft-logo">
-            Be <em>StarLight</em>
+
+        <section className="cero-magia reveal" style={{ paddingBottom: '0' }}>
+          <div className="container-wide bsl-px">
+            <h2 className="cero-magia-text">
+              Cero magia. <em>Todo trabajo.</em>
+            </h2>
           </div>
-          <p className="ft-copy" style={{ margin: 0, opacity: 1, color: '#f0ebe0' }}>
-            Marketing & Comunicación Tech • Buenos Aires • 2001 - 2026
+        </section>
+
+      </main>
+
+      <footer style={{ background: 'var(--fg)', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="container-wide bsl-px" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '40px 0' }}>
+          <div className="ft-logo" style={{ fontSize: '18px', fontWeight: 'bold', color: 'var(--bg)' }}>
+            Be <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>StarLight</em>
+          </div>
+          <p className="ft-copy" style={{ margin: 0, opacity: 0.4, color: 'var(--bg)', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+            Marketing & Comunicación Tech • Buenos Aires • 1999 - 2026
           </p>
         </div>
       </footer>

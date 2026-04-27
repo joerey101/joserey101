@@ -45,7 +45,7 @@ const permanentMarker = Permanent_Marker({
 export const metadata: Metadata = {
   metadataBase: new URL("https://bestarlight.com"),
   title: {
-    default: "Marketing, Comunicación y Tecnología | BeStarLight",
+    default: "BeStarLight — Marketing, Comunicación y Tecnología",
     template: "%s | BeStarLight",
   },
   description: "Marketing, comunicación y tecnología con 27 años de trayectoria. Estrategia, e-commerce, IA aplicada y producción visual. Buenos Aires · Miami.",
