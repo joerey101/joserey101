@@ -360,4 +360,17 @@ section {
 
   .bsl-theme footer .container-wide { flex-direction: column; gap: 24px; text-align: center; }
   .bsl-theme .ft-links { justify-content: center; }
+
+  .cero-magia { padding: 4rem 0 0 0; }
+  .cero-magia-text { 
+    text-wrap: balance; 
+    white-space: normal;
+    font-size: clamp(2.5rem, 12vw, 4.5rem);
+    line-height: 0.9;
+    padding: 0 20px;
+  }
+  .cero-magia-text em {
+    display: block;
+    white-space: nowrap;
+  }
 }
