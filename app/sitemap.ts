@@ -12,25 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://bestarlight.com/en',
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://bestarlight.com/#casos',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://bestarlight.com/#servicios',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://bestarlight.com/#ideas',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
+      priority: 0.9,
     },
   ]
 }

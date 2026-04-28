@@ -55,8 +55,14 @@ export const metadata: Metadata = {
   creator: "BeStarLight",
   publisher: "BeStarLight",
   icons: {
-    icon: "/Bestarlight-icon.svg",
-    apple: "/Bestarlight-icon.svg",
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/Bestarlight-icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   formatDetection: {
     email: false,
@@ -75,17 +81,26 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Marketing, Comunicación y Tecnología | BeStarLight",
+    title: "BeStarLight — Marketing, Comunicación y Tecnología",
     description: "27 años de trayectoria acompañando marcas con estrategia, desarrollo digital, IA aplicada y producción visual. Buenos Aires · Miami.",
     url: "https://bestarlight.com",
     siteName: "BeStarLight",
     locale: "es_AR",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1024,
+        height: 1024,
+        alt: "BeStarLight — Marketing, Comunicación y Tecnología",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marketing, Comunicación y Tecnología | BeStarLight",
-    description: "27 años de trayectoria acompañando marcas con estrategia, desarrollo digital, IA aplicada y producción visual. Buenos Aires · Miami.",
+    title: "BeStarLight — Marketing, Comunicación y Tecnología",
+    description: "27 años de trayectoria acompañando marcas con estrategia, desarrollo digital, IA aplicada y producción visual.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -113,12 +128,12 @@ export default function RootLayout({
     "name": "BeStarLight",
     "description": "Agencia de marketing, comunicación y tecnología con 27 años de trayectoria. Estrategia, desarrollo digital, IA aplicada y producción visual.",
     "url": "https://bestarlight.com",
-    "logo": "https://bestarlight.com/logo.png",
+    "logo": "https://bestarlight.com/og-image.png",
     "founder": {
       "@type": "Person",
       "name": "José Rey"
     },
-    "foundingDate": "2001",
+    "foundingDate": "1999",
     "address": [
       {
         "@type": "PostalAddress",
