@@ -18,7 +18,7 @@ export default function WhatsAppButton() {
         aria-label="Contactar por WhatsApp"
       >
         <Image 
-          src="/WhatsApp.webp" 
+          src="/WhatsApp.svg" 
           alt="WhatsApp" 
           width={32} 
           height={32} 
