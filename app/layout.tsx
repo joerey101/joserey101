@@ -90,8 +90,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.png",
-        width: 1024,
-        height: 1024,
+        width: 1200,
+        height: 630,
         alt: "BeStarLight — Marketing, Comunicación y Tecnología",
       },
     ],
@@ -163,7 +163,37 @@ export default function RootLayout({
     ],
     "sameAs": [
       "https://www.linkedin.com/company/bestarlight"
-    ]
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Casos de Estudio de Ingeniería de Mercado",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Muak Shop E-commerce",
+            "image": "https://bestarlight.com/assets/img/Muak-shop.webp"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Segue Yachts Experience",
+            "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80\u0026w=2600\u0026auto=format\u0026fit=crop"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Haddock Films Platform",
+            "image": "https://bestarlight.com/assets/img/haddock.png"
+          }
+        }
+      ]
+    }
   };
 
   const personJsonLd = {
