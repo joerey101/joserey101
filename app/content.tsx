@@ -352,15 +352,15 @@ export const content = {
                 yearTag: "BUENOS AIRES · DESDE 1999",
                 headers: [
                     {
-                        title: "Tecnología que se<br class=\"desktop-br\" />integra al negocio.",
+                        title: "Tecnología que se<br class=\"desktop-br\" /> integra al negocio.",
                         sub: "Diseñamos ecosistemas digitales conectados a los procesos reales de tu empresa. Shopify, Tienda Nube, WooCommerce y desarrollos a medida con IA aplicada."
                     },
                     {
-                        title: "Planeamiento,<br class=\"desktop-br\" />objetivos y velocidad.",
+                        title: "Planeamiento,<br class=\"desktop-br\" /> objetivos y velocidad.",
                         sub: "Revisamos tu estructura, definimos prioridades y ejecutamos con IA y automatización para que tu equipo gane tiempo y claridad."
                     },
                     {
-                        title: "Marketing, comunicación<br class=\"desktop-br\" />y tecnología, en un solo equipo.",
+                        title: "Marketing, comunicación<br class=\"desktop-br\" /> y tecnología, en un solo equipo.",
                         sub: "Trayectoria de 27 años acompañando marcas con estrategia, desarrollo digital e IA aplicada."
                     }
                 ],
@@ -723,15 +723,15 @@ export const content = {
                 yearTag: "BUENOS AIRES · SINCE 1999",
                 headers: [
                     {
-                        title: "Technology that<br class=\"desktop-br\" />integrates into the business.",
+                        title: "Technology that<br class=\"desktop-br\" /> integrates into the business.",
                         sub: "We design digital ecosystems connected to your company's real processes. Shopify, Tienda Nube, WooCommerce and custom developments with applied AI."
                     },
                     {
-                        title: "Planning,<br class=\"desktop-br\" />objectives and speed.",
+                        title: "Planning,<br class=\"desktop-br\" /> objectives and speed.",
                         sub: "We review your structure, define priorities, and execute with AI and automation so your team gains time and clarity."
                     },
                     {
-                        title: "Marketing, communication<br class=\"desktop-br\" />and technology, in a single team.",
+                        title: "Marketing, communication<br class=\"desktop-br\" /> and technology, in a single team.",
                         sub: "27-year trajectory accompanying brands with strategy, digital development, and applied AI."
                     }
                 ],

@@ -18,6 +18,7 @@ export default function Header({ lang }: HeaderProps) {
     const [isFormOpen, setIsFormOpen] = useState(false);
 
     const [headerBgState, setHeaderBgState] = useState("rgba(249, 250, 250, 0.9)");
+    const [scrolled, setScrolled] = useState(false);
 
     const headerHeight = "72px";
     const headerBorder = "rgba(229, 229, 229, 1)";
@@ -40,6 +41,7 @@ export default function Header({ lang }: HeaderProps) {
 
     useEffect(() => {
         const handleScroll = () => {
+            setScrolled(window.scrollY > 60);
             const footer = document.getElementById('site-footer');
             if (footer) {
                 const rect = footer.getBoundingClientRect();
@@ -80,21 +82,12 @@ export default function Header({ lang }: HeaderProps) {
 
                 {/* LEFT: LOGO AREA - More presence */}
                 <div className="flex items-center gap-6">
-                    <Link href="/" className="flex items-center gap-3 group">
-                        <motion.div
-                            style={{ scale: logoScale }}
-                            className="size-10 bg-carbon flex items-center justify-center rounded-sm rotate-45 group-hover:rotate-[225deg] transition-transform duration-700 ease-in-out"
-                        >
-                            <span className="material-symbols-outlined text-electric-blue text-2xl -rotate-45 group-hover:rotate-[135deg] transition-transform duration-700">bolt</span>
-                        </motion.div>
-                        <div className="flex flex-col">
-                            <span className="font-display font-black text-xl tracking-tighter uppercase italic leading-none">
-                                BESTARLIGHT
-                            </span>
-                            <span className="font-meta text-[8px] uppercase tracking-[0.3em] text-carbon/40 font-bold">
-                                Digital Architect
-                            </span>
-                        </div>
+                    <Link href="/" className="flex items-center group h-16 md:h-20">
+                        <img 
+                            src="/Bestarlight-main-black.svg" 
+                            alt="Bestarlight Logo" 
+                            className="h-full w-auto transition-transform duration-500 group-hover:scale-105" 
+                        />
                     </Link>
 
                     {/* DESKTOP STATUS (Fills the 'empty' space) */}

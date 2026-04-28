@@ -18,7 +18,7 @@
   --container-px: clamp(20px, 4vw, 60px);
 
   /* ESCALA TIPOGRÁFICA FLUIDA */
-  --font-h1: clamp(3.5rem, 7vw, 7rem);      /* ~56px a 112px */
+  --font-h1: clamp(2.5rem, 7vw, 7rem);      /* ~40px a 112px */
   --font-h2: clamp(2rem, 4.5vw, 4rem);       /* ~32px a 64px */
   --font-h3: clamp(1.25rem, 2vw, 1.5rem);   /* ~20px a 24px */
   --font-body-lg: clamp(1rem, 1.2vw, 1.2rem); /* ~16px a 19px */
@@ -210,7 +210,7 @@ section {
 .bsl-theme .ch-meta { font-family: var(--mono); font-size: 10px; color: var(--fg2); }
 
 .bsl-theme #ideas { background: var(--bg); scroll-margin-top: 100px; }
-.bsl-theme .ideas-layout { display: grid; grid-template-columns: minmax(300px, 0.4fr) minmax(0, 0.6fr); gap: var(--space-gap); align-items: start; }
+.bsl-theme .ideas-layout { display: grid; grid-template-columns: minmax(240px, 0.4fr) minmax(0, 0.6fr); gap: var(--space-gap); align-items: start; }
 .bsl-theme .ideas-intro h2 { font-family: var(--serif); font-size: var(--font-h2); font-weight: 900; line-height: 1.05; color: var(--fg); margin-bottom: 24px; }
 .bsl-theme .ideas-intro h2 em { color: var(--accent); }
 .bsl-theme .ideas-intro p { font-family: var(--sans); font-size: var(--font-body-lg); font-weight: 500; color: var(--fg2); line-height: 1.75; margin-bottom: 40px; }
@@ -269,7 +269,7 @@ section {
 .bsl-theme .cl-logo:hover { opacity: 1; filter: grayscale(0); transform: scale(1.05); }
 
 .bsl-theme #contacto { background: var(--fg); scroll-margin-top: 100px; }
-.bsl-theme .contact-grid { display: grid; grid-template-columns: minmax(300px, 0.45fr) minmax(0, 0.55fr); gap: var(--space-gap); }
+.bsl-theme .contact-grid { display: grid; grid-template-columns: minmax(240px, 0.45fr) minmax(0, 0.55fr); gap: var(--space-gap); }
 .bsl-theme .cl-left { padding-left: clamp(0px, 4vw, 40px); }
 .bsl-theme .cl-left h2 { font-family: var(--serif); font-size: var(--font-h2); font-weight: 900; color: #f0ebe0; line-height: 1.05; margin-bottom: 28px; letter-spacing: -0.02em; }
 .bsl-theme .cl-left h2 em { color: var(--accent); font-style: italic; }
@@ -334,6 +334,19 @@ section {
   color: var(--accent);
 }
 
+/* --- BR de títulos: solo activo en desktop grande --- */
+@media (max-width: 1024px) {
+  .desktop-br { display: none !important; }
+}
+
+/* --- ESTRUCTURA TABLET/INTERMEDIO --- */
+@media (max-width: 900px) {
+  .bsl-theme .ideas-layout { grid-template-columns: 1fr; }
+  .bsl-theme .ideas-badge { transform: none !important; }
+  .bsl-theme .contact-grid { grid-template-columns: 1fr; }
+  .bsl-theme .cl-left { padding-left: 0; }
+}
+
 /* --- ESTRUCTURA MOBILE --- */
 @media (max-width: 768px) {
   .bsl-theme nav { padding: 16px 0; }
@@ -360,6 +373,7 @@ section {
 
   .bsl-theme footer .container-wide { flex-direction: column; gap: 24px; text-align: center; }
   .bsl-theme .ft-links { justify-content: center; }
+  .bsl-theme .ft-logo { margin-left: 0 !important; }
 
   .cero-magia { padding: 4rem 0 0 0; }
   .cero-magia-text { 

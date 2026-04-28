@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Manrope, Special_Elite, Permanent_Marker, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import SandboxToggle from "@/components/SandboxToggle";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -53,6 +54,10 @@ export const metadata: Metadata = {
   authors: [{ name: "BeStarLight" }],
   creator: "BeStarLight",
   publisher: "BeStarLight",
+  icons: {
+    icon: "/Bestarlight-icon.svg",
+    apple: "/Bestarlight-icon.svg",
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -233,6 +238,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
+        <SandboxToggle />
         {children}
         {modal}
       </body>

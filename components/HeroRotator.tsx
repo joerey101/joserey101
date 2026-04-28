@@ -162,6 +162,9 @@ export default function HeroRotator({ headers, interval = 7000 }: HeroRotatorPro
             margin-bottom: 32px;
             justify-content: flex-start;
           }
+          .hero-title-dynamic {
+            text-wrap: wrap;
+          }
           .hero-desc-container { 
             min-height: auto; 
             margin-bottom: 24px;

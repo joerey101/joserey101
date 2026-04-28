@@ -58,7 +58,34 @@ export default function Home() {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            Be <em>StarLight</em>
+            <div className="logo-transition-wrapper" style={{ position: 'relative', height: '64px', width: '208px' }}>
+              <img 
+                src="/Bestarlight-main.svg" 
+                alt="Bestarlight Logo" 
+                style={{ 
+                  position: 'absolute', 
+                  top: 0, 
+                  left: 0, 
+                  height: '100%', 
+                  width: 'auto', 
+                  opacity: scrolled ? 0 : 1, 
+                  transition: 'opacity 0.4s ease-in-out' 
+                }} 
+              />
+              <img 
+                src="/Bestarlight-main-black.svg" 
+                alt="Bestarlight Logo" 
+                style={{ 
+                  position: 'absolute', 
+                  top: 0, 
+                  left: 0, 
+                  height: '100%', 
+                  width: 'auto', 
+                  opacity: scrolled ? 1 : 0, 
+                  transition: 'opacity 0.4s ease-in-out' 
+                }} 
+              />
+            </div>
           </a>
           <div className="nav-links">
             <a href="#servicios">{CONTENT.header.capabilities}</a>
@@ -347,9 +374,9 @@ export default function Home() {
       </main>
 
       <footer style={{ background: 'var(--fg)', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="container-wide bsl-px" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '40px 0' }}>
-          <div className="ft-logo" style={{ fontSize: '18px', fontWeight: 'bold', color: 'var(--bg)' }}>
-            Be <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>StarLight</em>
+        <div className="container-wide bsl-px" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '40px 0' }}>
+          <div className="ft-logo" style={{ color: 'var(--bg)', marginLeft: '65px' }}>
+            <img src="/Bestarlight-main.svg" alt="Bestarlight Logo" style={{ height: '51px', width: 'auto' }} />
           </div>
           <p className="ft-copy" style={{ margin: 0, opacity: 0.4, color: 'var(--bg)', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
             Marketing & Comunicación Tech • Buenos Aires • 1999 - 2026

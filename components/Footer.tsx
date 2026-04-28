@@ -60,9 +60,13 @@ export default function Footer({ lang }: FooterProps) {
                 </motion.div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-end relative z-10 pb-4 border-t border-white/10 pt-8">
-                <div className="md:col-span-4 lg:col-span-5 flex items-center gap-4">
-                    <span className="block font-display font-bold text-2xl tracking-tighter">BESTARLIGHT</span>
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10 pb-4 border-t border-white/10 pt-8">
+                <div className="md:col-span-4 lg:col-span-5 flex items-center gap-4 ml-[65px]">
+                    <img 
+                        src="/Bestarlight-main.svg" 
+                        alt="Bestarlight Logo" 
+                        className="h-[51px] w-auto" 
+                    />
                     <a
                         href="https://linkedin.com/in/joserey"
                         target="_blank"
