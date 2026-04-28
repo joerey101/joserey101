@@ -3,6 +3,8 @@ import { Space_Grotesk, Manrope, Special_Elite, Permanent_Marker, Inter, Playfai
 import "./globals.css";
 import Script from "next/script";
 import SandboxToggle from "@/components/SandboxToggle";
+import WhatsAppButton from "@/components/WhatsAppButton";
+
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -286,6 +288,7 @@ export default function RootLayout({
         <SandboxToggle />
         {children}
         {modal}
+        <WhatsAppButton />
       </body>
     </html>
   );
