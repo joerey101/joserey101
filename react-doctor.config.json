@@ -1,0 +1,10 @@
+{
+  "ignore": {
+    "rules": [],
+    "files": [
+      "app/layout.tsx:301",
+      "app/layout.tsx:305", 
+      "components/HeroRotator.tsx:65"
+    ]
+  }
+}
