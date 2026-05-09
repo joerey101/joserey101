@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Manrope, Special_Elite, Permanent_Marker, Inter, Playfair_Display } from "next/font/google";
+import { Space_Grotesk, Manrope, Special_Elite, Permanent_Marker, Inter, Playfair_Display, Cormorant_Garamond, DM_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import SandboxToggle from "@/components/SandboxToggle";
@@ -43,6 +43,28 @@ const permanentMarker = Permanent_Marker({
   variable: "--font-permanent-marker",
   weight: "400",
   subsets: ["latin"],
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  display: "swap",
+});
+
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -256,9 +278,6 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4B9M19GWBR"
@@ -274,7 +293,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${spaceGrotesk.variable} ${manrope.variable} ${specialElite.variable} ${permanentMarker.variable} ${inter.variable} ${playfair.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${manrope.variable} ${specialElite.variable} ${permanentMarker.variable} ${inter.variable} ${playfair.variable} ${cormorant.variable} ${dmSans.variable} ${spaceMono.variable} antialiased`}
         suppressHydrationWarning
       >
         <script
